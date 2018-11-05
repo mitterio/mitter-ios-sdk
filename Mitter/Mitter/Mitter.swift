@@ -8,9 +8,9 @@
 
 import Foundation
 
-public class Mitter: NSObject {
-    public override init() {
-        super.init()
+public class Mitter {
+    init() {
+        
     }
     
     public func testPrint() {

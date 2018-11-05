@@ -1,0 +1,6 @@
+framework module Pods_Mitter {
+  umbrella header "Pods-Mitter-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26BA130DBC01858B0A4E6F55 /* Pods_Mitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D03DA1590C2BF3411E86D67B /* Pods_Mitter.framework */; };
 		43F9A0762190476500CF6296 /* Mitter.h in Headers */ = {isa = PBXBuildFile; fileRef = 43F9A0742190476500CF6296 /* Mitter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		43F9A07D2190477B00CF6296 /* Mitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F9A07C2190477B00CF6296 /* Mitter.swift */; };
 /* End PBXBuildFile section */
@@ -16,6 +17,9 @@
 		43F9A0742190476500CF6296 /* Mitter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Mitter.h; sourceTree = "<group>"; };
 		43F9A0752190476500CF6296 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43F9A07C2190477B00CF6296 /* Mitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mitter.swift; sourceTree = "<group>"; };
+		7B72975E87A88E8A7E7A5CA2 /* Pods-Mitter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mitter.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mitter/Pods-Mitter.release.xcconfig"; sourceTree = "<group>"; };
+		BD097D8917BABEDAAB9CF295 /* Pods-Mitter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mitter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mitter/Pods-Mitter.debug.xcconfig"; sourceTree = "<group>"; };
+		D03DA1590C2BF3411E86D67B /* Pods_Mitter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mitter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -23,17 +27,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26BA130DBC01858B0A4E6F55 /* Pods_Mitter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0009B39D9CAAAE3F3C2BBBF7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D03DA1590C2BF3411E86D67B /* Pods_Mitter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		108A15D0B07A02963454A3D4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BD097D8917BABEDAAB9CF295 /* Pods-Mitter.debug.xcconfig */,
+				7B72975E87A88E8A7E7A5CA2 /* Pods-Mitter.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		43F9A0672190476500CF6296 = {
 			isa = PBXGroup;
 			children = (
 				43F9A0732190476500CF6296 /* Mitter */,
 				43F9A0722190476500CF6296 /* Products */,
+				108A15D0B07A02963454A3D4 /* Pods */,
+				0009B39D9CAAAE3F3C2BBBF7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +97,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 43F9A0792190476500CF6296 /* Build configuration list for PBXNativeTarget "Mitter" */;
 			buildPhases = (
+				EE8C9EB0BA9C187C04DC60C2 /* [CP] Check Pods Manifest.lock */,
 				43F9A06C2190476500CF6296 /* Headers */,
 				43F9A06D2190476500CF6296 /* Sources */,
 				43F9A06E2190476500CF6296 /* Frameworks */,
@@ -128,6 +153,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EE8C9EB0BA9C187C04DC60C2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mitter-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		43F9A06D2190476500CF6296 /* Sources */ = {
@@ -265,6 +315,7 @@
 		};
 		43F9A07A2190476500CF6296 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD097D8917BABEDAAB9CF295 /* Pods-Mitter.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -292,6 +343,7 @@
 		};
 		43F9A07B2190476500CF6296 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B72975E87A88E8A7E7A5CA2 /* Pods-Mitter.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
