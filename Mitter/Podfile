@@ -4,4 +4,8 @@ use_frameworks!
 
 target 'Mitter' do
     pod 'Alamofire', '~> 4.7'
+    pod 'RxSwift',    '~> 4.0'
+    pod 'RxCocoa',    '~> 4.0'
+    pod 'Moya/RxSwift', '~> 11.0'
+    pod 'Moya-ModelMapper/RxSwift', '7.1.0'
 end
