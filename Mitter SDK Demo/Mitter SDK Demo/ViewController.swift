@@ -18,7 +18,7 @@ class ViewController: UIViewController {
 
     func testSDK() {
         let mitter = Mitter()
-        mitter.getUser(userId: "")
+        mitter.getUser(userId: "E3CAM-jjw8A-WeqDe-cWFe7")
             .subscribe { event in
                 switch event {
                 case .success(let user):

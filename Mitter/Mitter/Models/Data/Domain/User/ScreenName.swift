@@ -16,3 +16,13 @@ public struct ScreenName: Mappable {
         try screenName = map.from("screenName")
     }
 }
+
+extension ScreenName: Equatable {
+    public static func ==(lhs: ScreenName, rhs: ScreenName) -> Bool {
+        guard lhs.screenName == rhs.screenName else {
+            return false
+        }
+        
+        return true
+    }
+}
