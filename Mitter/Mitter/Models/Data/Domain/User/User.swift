@@ -13,10 +13,18 @@ public struct User: Mappable {
     public var userId: String
     public var internalId: String
     public var screenName: ScreenName?
+    public var systemUser: Bool
+    public var synthetic: Bool? = false
+    public var entityProfile: EntityProfile<User>?
+    public var blocked: Bool? = false
     
     public init(map: Mapper) throws {
         try userId = map.from("identifier")
         try internalId = map.from("internalId")
         screenName = map.optionalFrom("screenName")
+        try systemUser = map.from("systemUser")
+        synthetic = map.optionalFrom("synthetic")
+        entityProfile = map.optionalFrom("entityProfile")
+        blocked = map.optionalFrom("blocked")
     }
 }
