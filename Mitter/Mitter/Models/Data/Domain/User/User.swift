@@ -10,13 +10,14 @@ import Foundation
 import Mapper
 
 public struct User: Mappable {
-    public var userId: String
-    public var internalId: String
-    public var screenName: ScreenName?
-    public var systemUser: Bool
-    public var synthetic: Bool? = false
-    public var entityProfile: EntityProfile<User>?
-    public var blocked: Bool? = false
+    public let userId: String
+    public let internalId: String
+    public let screenName: ScreenName?
+    public let systemUser: Bool
+    public let synthetic: Bool?
+    public let entityProfile: EntityProfile<User>?
+    public let blocked: Bool?
+    public let auditInfo: AuditInfo
     
     public init(map: Mapper) throws {
         try userId = map.from("identifier")
@@ -26,5 +27,6 @@ public struct User: Mappable {
         synthetic = map.optionalFrom("synthetic")
         entityProfile = map.optionalFrom("entityProfile")
         blocked = map.optionalFrom("blocked")
+        try auditInfo = map.from("auditInfo")
     }
 }

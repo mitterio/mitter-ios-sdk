@@ -10,10 +10,10 @@ import Foundation
 import Mapper
 
 public struct Attribute: Mappable {
-    public var key: String
-    public var contentType: String
-    public var contentEncoding: String
-    public var value: String
+    public let key: String
+    public let contentType: String
+    public let contentEncoding: String
+    public let value: String
     
     public init(map: Mapper) throws {
         try key = map.from("key")

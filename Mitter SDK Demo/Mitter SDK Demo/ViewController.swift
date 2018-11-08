@@ -24,7 +24,7 @@ class ViewController: UIViewController {
                 case .success(let user):
                     print(user)
                     if user.screenName != nil {
-                    print("Current User is: \(user.screenName!.screenName)")
+                        print("Current User is: \(user.screenName!.screenName)")
                     }
                 case .error(let error):
                     print(error)

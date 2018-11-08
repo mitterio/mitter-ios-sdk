@@ -13,6 +13,7 @@
 		43EB3B5F21945C870052A90C /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EB3B5E21945C870052A90C /* Identifiable.swift */; };
 		43EB3B62219460DE0052A90C /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EB3B61219460DE0052A90C /* Attribute.swift */; };
 		43EB3B65219462000052A90C /* EntityProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EB3B64219462000052A90C /* EntityProfile.swift */; };
+		43EB3B6B2194699C0052A90C /* AuditInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EB3B6A2194699C0052A90C /* AuditInfo.swift */; };
 		43F42525219192D4007759F7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F42524219192D4007759F7 /* User.swift */; };
 		43F9A0762190476500CF6296 /* Mitter.h in Headers */ = {isa = PBXBuildFile; fileRef = 43F9A0742190476500CF6296 /* Mitter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		43F9A07D2190477B00CF6296 /* Mitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F9A07C2190477B00CF6296 /* Mitter.swift */; };
@@ -24,6 +25,7 @@
 		43EB3B5E21945C870052A90C /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		43EB3B61219460DE0052A90C /* Attribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attribute.swift; sourceTree = "<group>"; };
 		43EB3B64219462000052A90C /* EntityProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityProfile.swift; sourceTree = "<group>"; };
+		43EB3B6A2194699C0052A90C /* AuditInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuditInfo.swift; sourceTree = "<group>"; };
 		43F42524219192D4007759F7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		43F9A0712190476500CF6296 /* Mitter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Mitter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43F9A0742190476500CF6296 /* Mitter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Mitter.h; sourceTree = "<group>"; };
@@ -112,9 +114,18 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
+		43EB3B69219469870052A90C /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				43EB3B6A2194699C0052A90C /* AuditInfo.swift */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
 		43F4252021919255007759F7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				43EB3B69219469870052A90C /* Commons */,
 				43F42521219192A1007759F7 /* Data */,
 			);
 			path = Models;
@@ -287,6 +298,7 @@
 				43EB3B65219462000052A90C /* EntityProfile.swift in Sources */,
 				4391985A2191BC23003A38FC /* UserApiService.swift in Sources */,
 				43F42525219192D4007759F7 /* User.swift in Sources */,
+				43EB3B6B2194699C0052A90C /* AuditInfo.swift in Sources */,
 				43EB3B5F21945C870052A90C /* Identifiable.swift in Sources */,
 				43F9A07D2190477B00CF6296 /* Mitter.swift in Sources */,
 			);

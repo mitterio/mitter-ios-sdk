@@ -1,5 +1,5 @@
 //
-//  Identifiable.swift
+//  AuditInfo.swift
 //  Mitter
 //
 //  Created by Rahul Chowdhury on 08/11/18.
@@ -9,12 +9,12 @@
 import Foundation
 import Mapper
 
-public struct Identifiable<T>: Mappable {
-    public let domainId: String
-    public let ofType: Identifiable<T>.Type
+public struct AuditInfo: Mappable {
+    public let createdAt: Int64?
+    public let updatedAt: Int64?
     
     public init(map: Mapper) throws {
-        try domainId = map.from("identifier")
-        ofType = type(of: self)
+        createdAt = map.optionalFrom("createdAt")
+        updatedAt = map.optionalFrom("updatedAt")
     }
 }

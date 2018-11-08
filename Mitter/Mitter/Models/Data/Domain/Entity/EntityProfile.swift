@@ -10,10 +10,11 @@ import Foundation
 import Mapper
 
 public struct EntityProfile<T>: Mappable {
-    public var entityId: Identifiable<T>
+    public let entityId: Identifiable<T>
     public var attributes: [Attribute] = [Attribute]()
     
     public init(map: Mapper) throws {
         try entityId = map.from("entityId")
+        try attributes = map.from("attributes")
     }
 }

@@ -10,7 +10,7 @@ import Foundation
 import Mapper
 
 public struct ScreenName: Mappable {
-    public var screenName: String
+    public let screenName: String
     
     public init(map: Mapper) throws {
         try screenName = map.from("screenName")
