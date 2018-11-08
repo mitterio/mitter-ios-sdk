@@ -23,6 +23,7 @@ class ViewController: UIViewController {
                 switch event {
                 case .success(let user):
                     print(user)
+                    
                     if user.screenName != nil {
                         print("Current User is: \(user.screenName!.screenName)")
                     }

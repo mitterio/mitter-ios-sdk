@@ -18,6 +18,7 @@ public struct User: Mappable {
     public let entityProfile: EntityProfile<User>?
     public let blocked: Bool?
     public let auditInfo: AuditInfo
+    public var userLocators: [UserLocator] = [UserLocator]()
     
     public init(map: Mapper) throws {
         try userId = map.from("identifier")
@@ -28,5 +29,6 @@ public struct User: Mappable {
         entityProfile = map.optionalFrom("entityProfile")
         blocked = map.optionalFrom("blocked")
         try auditInfo = map.from("auditInfo")
+        userLocators = map.optionalFrom("userLocators") ?? []
     }
 }
