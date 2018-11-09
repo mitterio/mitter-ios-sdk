@@ -16,6 +16,12 @@ PODS:
   - Moya/RxSwift (11.0.2):
     - Moya/Core
     - RxSwift (~> 4.0)
+  - PhoneNumberKit (2.5.0):
+    - PhoneNumberKit/PhoneNumberKitCore (= 2.5.0)
+    - PhoneNumberKit/UIKit (= 2.5.0)
+  - PhoneNumberKit/PhoneNumberKitCore (2.5.0)
+  - PhoneNumberKit/UIKit (2.5.0):
+    - PhoneNumberKit/PhoneNumberKitCore
   - Result (3.2.4)
   - RxAtomic (4.4.0)
   - RxCocoa (4.4.0):
@@ -27,6 +33,7 @@ DEPENDENCIES:
   - Alamofire (~> 4.7)
   - Moya-ModelMapper/RxSwift (= 7.1.0)
   - Moya/RxSwift (~> 11.0)
+  - PhoneNumberKit (~> 2.5)
   - RxCocoa (~> 4.0)
   - RxSwift (~> 4.0)
 
@@ -36,6 +43,7 @@ SPEC REPOS:
     - ModelMapper
     - Moya
     - Moya-ModelMapper
+    - PhoneNumberKit
     - Result
     - RxAtomic
     - RxCocoa
@@ -46,11 +54,12 @@ SPEC CHECKSUMS:
   ModelMapper: d73910ce35d8dca0042bcea4cddc24050014e09a
   Moya: a725035953bc1c0eb1be505ab903984501d82440
   Moya-ModelMapper: 35209257d9e886cedf91289559a41723f5fbd095
+  PhoneNumberKit: 32a1cd1e0aa9e950feb01886a22fd7386b8cf903
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
   RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
 
-PODFILE CHECKSUM: 47f21709527dc9ba772ff1a162b85a4a16fb9c35
+PODFILE CHECKSUM: e6e3bd4464cd22229ddaf602b76b70349177a9bf
 
 COCOAPODS: 1.5.3

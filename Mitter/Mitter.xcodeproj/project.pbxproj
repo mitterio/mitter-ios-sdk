@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		26BA130DBC01858B0A4E6F55 /* Pods_Mitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D03DA1590C2BF3411E86D67B /* Pods_Mitter.framework */; };
+		431CF53D2195B79A002963F0 /* UserRemoteSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431CF53C2195B79A002963F0 /* UserRemoteSource.swift */; };
+		431CF5412195B81E002963F0 /* UserRepositoryContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431CF5402195B81E002963F0 /* UserRepositoryContract.swift */; };
+		431CF5432195BA65002963F0 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431CF5422195BA65002963F0 /* UserRepository.swift */; };
 		439198542191A815003A38FC /* ScreenName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439198532191A815003A38FC /* ScreenName.swift */; };
 		4391985A2191BC23003A38FC /* UserApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439198592191BC23003A38FC /* UserApiService.swift */; };
 		43EB3B5F21945C870052A90C /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EB3B5E21945C870052A90C /* Identifiable.swift */; };
@@ -23,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		431CF53C2195B79A002963F0 /* UserRemoteSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRemoteSource.swift; sourceTree = "<group>"; };
+		431CF5402195B81E002963F0 /* UserRepositoryContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryContract.swift; sourceTree = "<group>"; };
+		431CF5422195BA65002963F0 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		439198532191A815003A38FC /* ScreenName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenName.swift; sourceTree = "<group>"; };
 		439198592191BC23003A38FC /* UserApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiService.swift; sourceTree = "<group>"; };
 		43EB3B5E21945C870052A90C /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
@@ -71,6 +77,23 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		431CF53E2195B7F5002963F0 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				431CF53F2195B807002963F0 /* User */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		431CF53F2195B807002963F0 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				431CF5402195B81E002963F0 /* UserRepositoryContract.swift */,
+				431CF5422195BA65002963F0 /* UserRepository.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		439198552191BBD8003A38FC /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				439198592191BC23003A38FC /* UserApiService.swift */,
+				431CF53C2195B79A002963F0 /* UserRemoteSource.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -196,6 +220,7 @@
 		43F9A0732190476500CF6296 /* Mitter */ = {
 			isa = PBXGroup;
 			children = (
+				431CF53E2195B7F5002963F0 /* Repository */,
 				439198552191BBD8003A38FC /* Data */,
 				43F4252021919255007759F7 /* Models */,
 				43F9A0742190476500CF6296 /* Mitter.h */,
@@ -315,10 +340,13 @@
 				43EB3B75219478FB0052A90C /* Application.swift in Sources */,
 				43EB3B73219477B00052A90C /* VerificationStatus.swift in Sources */,
 				43EB3B65219462000052A90C /* EntityProfile.swift in Sources */,
+				431CF5412195B81E002963F0 /* UserRepositoryContract.swift in Sources */,
 				4391985A2191BC23003A38FC /* UserApiService.swift in Sources */,
 				43F42525219192D4007759F7 /* User.swift in Sources */,
 				43EB3B71219477580052A90C /* UserLocator.swift in Sources */,
 				43EB3B6B2194699C0052A90C /* AuditInfo.swift in Sources */,
+				431CF5432195BA65002963F0 /* UserRepository.swift in Sources */,
+				431CF53D2195B79A002963F0 /* UserRemoteSource.swift in Sources */,
 				43EB3B5F21945C870052A90C /* Identifiable.swift in Sources */,
 				43F9A07D2190477B00CF6296 /* Mitter.swift in Sources */,
 			);
