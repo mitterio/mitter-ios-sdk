@@ -28,6 +28,7 @@ PODS:
     - RxSwift (~> 4.0)
   - RxSwift (4.4.0):
     - RxAtomic (~> 4.4)
+  - Swinject (2.5.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
@@ -36,6 +37,7 @@ DEPENDENCIES:
   - PhoneNumberKit (~> 2.5)
   - RxCocoa (~> 4.0)
   - RxSwift (~> 4.0)
+  - Swinject (~> 2.5.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -48,6 +50,7 @@ SPEC REPOS:
     - RxAtomic
     - RxCocoa
     - RxSwift
+    - Swinject
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
@@ -59,7 +62,8 @@ SPEC CHECKSUMS:
   RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
   RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
+  Swinject: 82cdb851f63f91bba974e3eca1d69780f2f7677e
 
-PODFILE CHECKSUM: e6e3bd4464cd22229ddaf602b76b70349177a9bf
+PODFILE CHECKSUM: 25aa4339157afd734f439745532ee825ccf2f0c7
 
 COCOAPODS: 1.5.3
