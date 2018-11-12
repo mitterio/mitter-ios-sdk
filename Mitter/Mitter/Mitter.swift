@@ -11,16 +11,21 @@ import Moya
 import Moya_ModelMapper
 import RxSwift
 import Swinject
+import JWTDecode
 
 public class Mitter {
+    private let userAuthToken: String
     private let userApiContainer: UserApiContainer
     
-    public init() {
+    public init(userAuthToken: String) {
+        self.userAuthToken = userAuthToken
+        do {
+            let jwt = try decode(jwt: self.userAuthToken)
+            print("App ID: \(jwt.body["applicationId"])")
+        } catch {
+            
+        }
         userApiContainer = UserApiContainer()
-    }
-    
-    public func testPrint() {
-        print("Welcome to Mitter!")
     }
     
     public func getUser(userId: String, completion: @escaping (Result<User>) -> Void) {

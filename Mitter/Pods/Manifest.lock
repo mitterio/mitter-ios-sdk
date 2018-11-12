@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.7.3)
+  - JWTDecode (2.1.1)
   - ModelMapper (9.0.0)
   - Moya (11.0.2):
     - Moya/Core (= 11.0.2)
@@ -32,6 +33,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
+  - JWTDecode (~> 2.1)
   - Moya-ModelMapper/RxSwift (= 7.1.0)
   - Moya/RxSwift (~> 11.0)
   - PhoneNumberKit (~> 2.5)
@@ -42,6 +44,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - JWTDecode
     - ModelMapper
     - Moya
     - Moya-ModelMapper
@@ -54,6 +57,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  JWTDecode: 83e8b381aafe27158d9f692cbdca2b12d61d460c
   ModelMapper: d73910ce35d8dca0042bcea4cddc24050014e09a
   Moya: a725035953bc1c0eb1be505ab903984501d82440
   Moya-ModelMapper: 35209257d9e886cedf91289559a41723f5fbd095
@@ -64,6 +68,6 @@ SPEC CHECKSUMS:
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
   Swinject: 82cdb851f63f91bba974e3eca1d69780f2f7677e
 
-PODFILE CHECKSUM: 25aa4339157afd734f439745532ee825ccf2f0c7
+PODFILE CHECKSUM: 96a8f58f82d668b9c908a8fecf547839bb13298e
 
 COCOAPODS: 1.5.3
