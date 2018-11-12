@@ -23,19 +23,16 @@ public class Mitter {
         print("Welcome to Mitter!")
     }
     
-    public func getUser(userId: String) {
-        let fetchUserAction = userApiContainer.container.resolve(Action.self, name: Constants.Users.Actions.fetchUser) as! FetchUserAction
+    public func getUser(userId: String, completion: @escaping (Result<User>) -> Void) {
+        let fetchUserAction = userApiContainer.getFetchUserAction()
+        
         fetchUserAction.execute(t: userId)
             .subscribe { event in
                 switch event {
                 case .success(let user):
-                    print(user)
-                    
-                    if user.screenName != nil {
-                        print("Current User is: \(user.screenName!.screenName)")
-                    }
-                case .error(let error):
-                    print(error)
+                    completion(Result.success(user))
+                case .error:
+                    completion(Result.error)
                 }
         }
     }

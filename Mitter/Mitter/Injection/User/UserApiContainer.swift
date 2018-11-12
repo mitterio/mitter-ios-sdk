@@ -11,14 +11,21 @@ import Swinject
 import Moya
 
 class UserApiContainer {
-    let container: Container
+    private let container: Container
 
     init() {
         container = Container()
         registerUserApiLayers()
     }
     
-    func registerUserApiLayers() {
+    func getFetchUserAction() -> FetchUserAction {
+        return container.resolve(
+            Action.self,
+            name: Constants.Users.Actions.fetchUser
+            ) as! FetchUserAction
+    }
+    
+    private func registerUserApiLayers() {
         container.register(UserRepositoryContract.self, name: Constants.Users.userRemoteSource) {
             _ in UserRemoteSource(apiProvider: MoyaProvider<UserApiService>())
         }
@@ -40,7 +47,5 @@ class UserApiContainer {
                 ) as! UserRepository
             )
         }
-        
-        print("Layers registered!")
     }
 }

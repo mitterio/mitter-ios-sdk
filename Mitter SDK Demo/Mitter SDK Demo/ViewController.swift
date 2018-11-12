@@ -10,16 +10,22 @@ import UIKit
 import Mitter
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         testSDK()
     }
-
+    
     func testSDK() {
         let mitter = Mitter()
-        mitter.getUser(userId: "E3CAM-jjw8A-WeqDe-cWFe7")
-        
+        mitter.getUser(userId: "E3CAM-jjw8A-WeqDe-cWFe7") {
+            result in
+            switch result {
+            case .success(let user):
+                print("Current User is: \(user.screenName!.screenName)")
+            case .error:
+                print("Unable to get user!")
+            }
+        }
     }
 }
-
