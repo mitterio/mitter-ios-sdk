@@ -10,5 +10,8 @@ import Foundation
 import RxSwift
 
 protocol UniParamAction {
-    <#requirements#>
+    associatedtype T
+    associatedtype V
+    
+    func execute(t: T) -> PrimitiveSequence<SingleTrait, V>
 }

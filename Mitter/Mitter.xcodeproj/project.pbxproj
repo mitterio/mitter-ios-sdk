@@ -14,6 +14,7 @@
 		431CF5472195BD20002963F0 /* UniParamAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431CF5462195BD20002963F0 /* UniParamAction.swift */; };
 		439198542191A815003A38FC /* ScreenName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439198532191A815003A38FC /* ScreenName.swift */; };
 		4391985A2191BC23003A38FC /* UserApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439198592191BC23003A38FC /* UserApiService.swift */; };
+		4395EA142199665C004DD4A3 /* FetchUserAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4395EA132199665C004DD4A3 /* FetchUserAction.swift */; };
 		43EB3B5F21945C870052A90C /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EB3B5E21945C870052A90C /* Identifiable.swift */; };
 		43EB3B62219460DE0052A90C /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EB3B61219460DE0052A90C /* Attribute.swift */; };
 		43EB3B65219462000052A90C /* EntityProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EB3B64219462000052A90C /* EntityProfile.swift */; };
@@ -33,6 +34,7 @@
 		431CF5462195BD20002963F0 /* UniParamAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniParamAction.swift; sourceTree = "<group>"; };
 		439198532191A815003A38FC /* ScreenName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenName.swift; sourceTree = "<group>"; };
 		439198592191BC23003A38FC /* UserApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiService.swift; sourceTree = "<group>"; };
+		4395EA132199665C004DD4A3 /* FetchUserAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUserAction.swift; sourceTree = "<group>"; };
 		43EB3B5E21945C870052A90C /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		43EB3B61219460DE0052A90C /* Attribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attribute.swift; sourceTree = "<group>"; };
 		43EB3B64219462000052A90C /* EntityProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityProfile.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 		431CF5442195BCFA002963F0 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				4395EA1221996643004DD4A3 /* User */,
 				431CF5452195BD03002963F0 /* Base */,
 			);
 			path = Domain;
@@ -141,6 +144,14 @@
 			children = (
 				439198592191BC23003A38FC /* UserApiService.swift */,
 				431CF53C2195B79A002963F0 /* UserRemoteSource.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		4395EA1221996643004DD4A3 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				4395EA132199665C004DD4A3 /* FetchUserAction.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -361,6 +372,7 @@
 				43EB3B65219462000052A90C /* EntityProfile.swift in Sources */,
 				431CF5412195B81E002963F0 /* UserRepositoryContract.swift in Sources */,
 				4391985A2191BC23003A38FC /* UserApiService.swift in Sources */,
+				4395EA142199665C004DD4A3 /* FetchUserAction.swift in Sources */,
 				43F42525219192D4007759F7 /* User.swift in Sources */,
 				43EB3B71219477580052A90C /* UserLocator.swift in Sources */,
 				43EB3B6B2194699C0052A90C /* AuditInfo.swift in Sources */,
