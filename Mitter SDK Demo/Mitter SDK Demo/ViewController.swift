@@ -19,18 +19,7 @@ class ViewController: UIViewController {
     func testSDK() {
         let mitter = Mitter()
         mitter.getUser(userId: "E3CAM-jjw8A-WeqDe-cWFe7")
-            .subscribe { event in
-                switch event {
-                case .success(let user):
-                    print(user)
-                    
-                    if user.screenName != nil {
-                        print("Current User is: \(user.screenName!.screenName)")
-                    }
-                case .error(let error):
-                    print(error)
-                }
-        }
+        
     }
 }
 

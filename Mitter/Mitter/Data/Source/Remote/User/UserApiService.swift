@@ -47,7 +47,7 @@ extension UserApiService: TargetType {
         return [
             "Content-Type": "application/json",
             "X-Mitter-Application-Id": "MZzf4-na9nL-O98wq-M1HxS",
-            "X-Issued-Mitter-User-Authorization": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJtaXR0ZXItaW8iLCJ1c2VyVG9rZW5JZCI6IkZ4cWpEbVhZY2tlcnVIWEMiLCJ1c2VydG9rZW4iOiJraHFuNWphbGFtajBpZjdla3RxcjF1b2dibiIsImFwcGxpY2F0aW9uSWQiOiJNWnpmNC1uYTluTC1POTh3cS1NMUh4UyIsInVzZXJJZCI6IkUzQ0FNLWpqdzhBLVdlcURlLWNXRmU3In0.AYVqNPPu3gMS9GWas4ookNwgrruRDtyiBRvAlnn4CROS5Lvh91IdIG2pvpxOe-WyS21T9nKps4FI0c1xsU1OlQ"
+            "X-Issued-Mitter-User-Authorization": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJtaXR0ZXItaW8iLCJ1c2VyVG9rZW5JZCI6Ikl6blBOMFNHWnNvUGE1SGMiLCJ1c2VydG9rZW4iOiJqMmJ1MTYyZzBya2U3cm5jZmczbjlzOW4wciIsImFwcGxpY2F0aW9uSWQiOiJNWnpmNC1uYTluTC1POTh3cS1NMUh4UyIsInVzZXJJZCI6IkUzQ0FNLWpqdzhBLVdlcURlLWNXRmU3In0.9YM-NKAmXPyAAya-5Bw3Ck7g5jtlDrhp7BwfJwpCKdAYesEKrC491hmrL_kzgZM9Ic9kHniqUcPoYc9tLImfqA"
         ]
     }
 }

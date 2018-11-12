@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-protocol UniParamAction {
+protocol UniParamAction: Action {
     associatedtype T
     associatedtype V
     
