@@ -14,28 +14,54 @@ import Swinject
 import JWTDecode
 
 public class Mitter {
-    private let applicationId: String
-    private let userId: String
-    private let userAuthToken: String
+    private var applicationId: String
+    private var userId: String
+    private var userAuthToken: AuthToken
     
+    private let libDefaults: LibDefaults
     private let userApiContainer: UserApiContainer
     private let disposeBag = DisposeBag()
     
     public init(applicationId: String, userAuthToken: String = "") {
         self.applicationId = applicationId
-        self.userAuthToken = userAuthToken
+        self.userAuthToken = AuthToken(id: "", signedToken: userAuthToken)
         
-        do {
-            let jwt = try decode(jwt: self.userAuthToken)
-            userId = "\(jwt.body["userId"] ?? "")"
-        } catch {
-            userId = ""
-        }
+        let jwt = try? decode(jwt: self.userAuthToken.signedToken)
+        userId = "\(jwt?.body["userId"] ?? "")"
         
+        libDefaults = LibDefaults(applicationId: applicationId)
         userApiContainer = UserApiContainer()
+        
+        setUserId(userId)
     }
     
-    public func getUser(userId: String, completion: @escaping (Result<User>) -> Void) {
+    public func getUserId() -> String {
+        if userId.isEmpty {
+            return libDefaults.getUserId()
+        }
+        
+        return userId
+    }
+    
+    public func setUserId(_ userId: String) {
+        self.userId = userId
+        libDefaults.saveUserId(userId: userId)
+    }
+    
+    public func getUserAuthToken() -> AuthToken {
+        if userAuthToken.signedToken.isEmpty {
+            return libDefaults.getToken()
+        }
+        
+        return userAuthToken
+    }
+    
+    public func setUserAuthToken(_ userAuthToken: String) {
+        self.userAuthToken = AuthToken(id: "", signedToken: userAuthToken)
+        libDefaults.saveToken(authToken: self.userAuthToken)
+    }
+    
+    public func getUser(_ userId: String, completion: @escaping (Result<User>) -> Void) {
         let fetchUserAction = userApiContainer.getFetchUserAction()
         
         fetchUserAction
@@ -51,6 +77,6 @@ public class Mitter {
     }
     
     public func getCurrentUser(completion: @escaping (Result<User>) -> Void) {
-        getUser(userId: userId, completion: completion)
+        getUser(userId, completion: completion)
     }
 }
