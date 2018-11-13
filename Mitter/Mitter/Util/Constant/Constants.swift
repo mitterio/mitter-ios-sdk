@@ -17,4 +17,9 @@ enum Constants {
             static let fetchUser = "FetchUserAction"
         }
     }
+    
+    enum Keys {
+        static let userId = "UserId"
+        static let authToken = "AuthToken"
+    }
 }
