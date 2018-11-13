@@ -11,9 +11,15 @@ import Swinject
 import Moya
 
 class UserApiContainer {
+    private let applicationId: String
+    private let userAuthToken: String
+    
     private let container: Container
-
-    init() {
+    
+    init(applicationId: String, userAuthToken: String) {
+        self.applicationId = applicationId
+        self.userAuthToken = userAuthToken
+        
         container = Container()
         registerUserApiLayers()
     }
@@ -27,7 +33,16 @@ class UserApiContainer {
     
     private func registerUserApiLayers() {
         container.register(UserRepositoryContract.self, name: Constants.Users.userRemoteSource) {
-            _ in UserRemoteSource(apiProvider: MoyaProvider<UserApiService>())
+            _ in UserRemoteSource(
+                apiProvider: MoyaProvider<UserApiService>(
+                    plugins: [
+                        ApiAuthPlugin(
+                            applicationId: self.applicationId,
+                            userAuthToken: self.userAuthToken
+                        )
+                    ]
+                )
+            )
         }
         
         container.register(UserRepositoryContract.self, name: Constants.Users.userRepository) {
@@ -35,7 +50,7 @@ class UserApiContainer {
                 userRemoteSource: resolver.resolve(
                     UserRepositoryContract.self,
                     name: Constants.Users.userRemoteSource
-                ) as! UserRemoteSource
+                    ) as! UserRemoteSource
             )
         }
         
@@ -44,7 +59,7 @@ class UserApiContainer {
                 userRepository: resolver.resolve(
                     UserRepositoryContract.self,
                     name: Constants.Users.userRepository
-                ) as! UserRepository
+                    ) as! UserRepository
             )
         }
     }

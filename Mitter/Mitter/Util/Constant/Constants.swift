@@ -9,6 +9,11 @@
 import Foundation
 
 enum Constants {
+    enum Headers {
+        static let applicationId = "X-Mitter-Application-Id"
+        static let userAuthToken = "X-Issued-Mitter-User-Authorization"
+    }
+    
     enum Users {
         static let userRemoteSource = "UserRemoteSource"
         static let userRepository = "UserRepository"

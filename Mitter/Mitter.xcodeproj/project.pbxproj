@@ -18,6 +18,7 @@
 		4395023F219AF95500E9079C /* TokenDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4395023E219AF95500E9079C /* TokenDefaults.swift */; };
 		43950241219AFB7100E9079C /* AuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43950240219AFB7100E9079C /* AuthToken.swift */; };
 		43950243219AFBEF00E9079C /* LibDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43950242219AFBEF00E9079C /* LibDefaults.swift */; };
+		43950246219B0C7300E9079C /* ApiAuthPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43950245219B0C7300E9079C /* ApiAuthPlugin.swift */; };
 		4395EA142199665C004DD4A3 /* FetchUserAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4395EA132199665C004DD4A3 /* FetchUserAction.swift */; };
 		4395EA1821997B22004DD4A3 /* UserApiContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4395EA1721997B22004DD4A3 /* UserApiContainer.swift */; };
 		4395EA1F21997E12004DD4A3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4395EA1E21997E12004DD4A3 /* Constants.swift */; };
@@ -46,6 +47,7 @@
 		4395023E219AF95500E9079C /* TokenDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenDefaults.swift; sourceTree = "<group>"; };
 		43950240219AFB7100E9079C /* AuthToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthToken.swift; sourceTree = "<group>"; };
 		43950242219AFBEF00E9079C /* LibDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibDefaults.swift; sourceTree = "<group>"; };
+		43950245219B0C7300E9079C /* ApiAuthPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiAuthPlugin.swift; sourceTree = "<group>"; };
 		4395EA132199665C004DD4A3 /* FetchUserAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUserAction.swift; sourceTree = "<group>"; };
 		4395EA1721997B22004DD4A3 /* UserApiContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiContainer.swift; sourceTree = "<group>"; };
 		4395EA1E21997E12004DD4A3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -185,6 +187,14 @@
 			path = Defaults;
 			sourceTree = "<group>";
 		};
+		43950244219B0C5000E9079C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				43950245219B0C7300E9079C /* ApiAuthPlugin.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		4395EA1221996643004DD4A3 /* User */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +222,7 @@
 		4395EA1C21997DE4004DD4A3 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				43950244219B0C5000E9079C /* Network */,
 				4395EA1D21997DFC004DD4A3 /* Constant */,
 			);
 			path = Util;
@@ -467,6 +478,7 @@
 				43950243219AFBEF00E9079C /* LibDefaults.swift in Sources */,
 				43EB3B5F21945C870052A90C /* Identifiable.swift in Sources */,
 				4395EA1821997B22004DD4A3 /* UserApiContainer.swift in Sources */,
+				43950246219B0C7300E9079C /* ApiAuthPlugin.swift in Sources */,
 				431CF5472195BD20002963F0 /* UniParamAction.swift in Sources */,
 				43F9A07D2190477B00CF6296 /* Mitter.swift in Sources */,
 			);

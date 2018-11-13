@@ -14,24 +14,34 @@ import Swinject
 import JWTDecode
 
 public class Mitter {
-    private var applicationId: String
-    private var userId: String
-    private var userAuthToken: AuthToken
+    let libDefaults: LibDefaults
     
-    private let libDefaults: LibDefaults
+    private var applicationId: String
+    private var userId: String = ""
+    private var userAuthToken: AuthToken = AuthToken()
+    
     private let userApiContainer: UserApiContainer
     private let disposeBag = DisposeBag()
     
     public init(applicationId: String, userAuthToken: String = "") {
         self.applicationId = applicationId
-        self.userAuthToken = AuthToken(id: "", signedToken: userAuthToken)
+        
+        libDefaults = LibDefaults(applicationId: applicationId)
+        
+        self.userAuthToken = libDefaults.getToken()
+        if self.userAuthToken.signedToken.isEmpty {
+            let authToken = AuthToken(id: "", signedToken: userAuthToken)
+            self.userAuthToken = authToken
+            libDefaults.saveToken(authToken: authToken)
+        }
+        
+        userApiContainer = UserApiContainer(
+            applicationId: self.applicationId,
+            userAuthToken: self.userAuthToken.signedToken
+        )
         
         let jwt = try? decode(jwt: self.userAuthToken.signedToken)
         userId = "\(jwt?.body["userId"] ?? "")"
-        
-        libDefaults = LibDefaults(applicationId: applicationId)
-        userApiContainer = UserApiContainer()
-        
         setUserId(userId)
     }
     
