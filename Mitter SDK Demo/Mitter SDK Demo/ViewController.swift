@@ -17,8 +17,11 @@ class ViewController: UIViewController {
     }
     
     func testSDK() {
-        let mitter = Mitter(userAuthToken: "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJtaXR0ZXItaW8iLCJ1c2VyVG9rZW5JZCI6Ikl6blBOMFNHWnNvUGE1SGMiLCJ1c2VydG9rZW4iOiJqMmJ1MTYyZzBya2U3cm5jZmczbjlzOW4wciIsImFwcGxpY2F0aW9uSWQiOiJNWnpmNC1uYTluTC1POTh3cS1NMUh4UyIsInVzZXJJZCI6IkUzQ0FNLWpqdzhBLVdlcURlLWNXRmU3In0.9YM-NKAmXPyAAya-5Bw3Ck7g5jtlDrhp7BwfJwpCKdAYesEKrC491hmrL_kzgZM9Ic9kHniqUcPoYc9tLImfqA")
-        mitter.getUser(userId: "E3CAM-jjw8A-WeqDe-cWFe7") {
+        let mitter = Mitter(
+            applicationId: "bECxP-iwZKH-mk1cs-kvnop",
+            userAuthToken: "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJtaXR0ZXItaW8iLCJ1c2VyVG9rZW5JZCI6IlY1VVZQUjRXTTlGaUtNU2giLCJ1c2VydG9rZW4iOiJncTU1NXFkaDh1bzkxbW1oNGpjOTl1YW9jNiIsImFwcGxpY2F0aW9uSWQiOiJiRUN4UC1pd1pLSC1tazFjcy1rdm5vcCIsInVzZXJJZCI6ImFpNkUzLUVBanVYLUprRGhiLThZcUJxIn0.yPQPIZQ1k9UEz2nXgItcdzOcd57n9LjkMwa3Ogr1UfWOebaoIOzW3G-uKyZNFb1snvMkVWhdknMKFYVJWr9Owg"
+        )
+        mitter.getUser("ai6E3-EAjuX-JkDhb-8YqBq") {
             result in
             switch result {
             case .success(let user):
