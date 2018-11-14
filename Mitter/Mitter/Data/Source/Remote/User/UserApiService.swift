@@ -15,7 +15,7 @@ enum UserApiService {
 
 extension UserApiService: TargetType {
     var baseURL: URL {
-        return URL(string: "https://api.mitter.io")!
+        return URL(string: "https://api.staging.mitter.io")!
     }
     
     var path: String {

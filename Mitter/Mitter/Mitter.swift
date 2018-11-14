@@ -83,7 +83,7 @@ public class Mitter {
                 case .error:
                     completion(Result.error)
                 }
-            }.disposed(by: disposeBag)
+            }
     }
     
     public func getCurrentUser(completion: @escaping (Result<User>) -> Void) {
