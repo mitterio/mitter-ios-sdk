@@ -14,6 +14,6 @@ protocol UserRepositoryContract {
     
     func addUserDeliveryEndpoint(
         userId: String,
-        deliveryEndpoint: DeliveryEndpoint
+        fcmDeliveryEndpoint: FcmDeliveryEndpoint
     ) -> PrimitiveSequence<SingleTrait, DeliveryEndpoint>
 }

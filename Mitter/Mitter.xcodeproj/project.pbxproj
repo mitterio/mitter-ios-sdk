@@ -16,6 +16,9 @@
 		432C502B219D78E6002A0EDA /* FcmDeliveryEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432C502A219D78E6002A0EDA /* FcmDeliveryEndpoint.swift */; };
 		432C502D219D7A87002A0EDA /* StandardEndpointTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432C502C219D7A87002A0EDA /* StandardEndpointTypes.swift */; };
 		432C5030219D90AC002A0EDA /* Wrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432C502F219D90AC002A0EDA /* Wrap.swift */; };
+		432C5032219D9443002A0EDA /* BiParamAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432C5031219D9443002A0EDA /* BiParamAction.swift */; };
+		432C5034219D981E002A0EDA /* AddFcmDeliveryEndpointAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432C5033219D981E002A0EDA /* AddFcmDeliveryEndpointAction.swift */; };
+		432C5045219DA2FB002A0EDA /* NetworkLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432C5044219DA2FB002A0EDA /* NetworkLoggerPlugin.swift */; };
 		439198542191A815003A38FC /* ScreenName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439198532191A815003A38FC /* ScreenName.swift */; };
 		4391985A2191BC23003A38FC /* UserApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439198592191BC23003A38FC /* UserApiService.swift */; };
 		4395023D219AF91300E9079C /* UserMetaDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4395023C219AF91300E9079C /* UserMetaDefaults.swift */; };
@@ -27,7 +30,7 @@
 		4395EA1821997B22004DD4A3 /* UserApiContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4395EA1721997B22004DD4A3 /* UserApiContainer.swift */; };
 		4395EA1F21997E12004DD4A3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4395EA1E21997E12004DD4A3 /* Constants.swift */; };
 		4395EA21219989F0004DD4A3 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4395EA20219989F0004DD4A3 /* Action.swift */; };
-		4395EA3021999E49004DD4A3 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4395EA2F21999E49004DD4A3 /* Result.swift */; };
+		4395EA3021999E49004DD4A3 /* ApiResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4395EA2F21999E49004DD4A3 /* ApiResult.swift */; };
 		43EB3B5F21945C870052A90C /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EB3B5E21945C870052A90C /* Identifiable.swift */; };
 		43EB3B62219460DE0052A90C /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EB3B61219460DE0052A90C /* Attribute.swift */; };
 		43EB3B65219462000052A90C /* EntityProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EB3B64219462000052A90C /* EntityProfile.swift */; };
@@ -49,6 +52,9 @@
 		432C502A219D78E6002A0EDA /* FcmDeliveryEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FcmDeliveryEndpoint.swift; sourceTree = "<group>"; };
 		432C502C219D7A87002A0EDA /* StandardEndpointTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardEndpointTypes.swift; sourceTree = "<group>"; };
 		432C502F219D90AC002A0EDA /* Wrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wrap.swift; sourceTree = "<group>"; };
+		432C5031219D9443002A0EDA /* BiParamAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiParamAction.swift; sourceTree = "<group>"; };
+		432C5033219D981E002A0EDA /* AddFcmDeliveryEndpointAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFcmDeliveryEndpointAction.swift; sourceTree = "<group>"; };
+		432C5044219DA2FB002A0EDA /* NetworkLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLoggerPlugin.swift; sourceTree = "<group>"; };
 		439198532191A815003A38FC /* ScreenName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenName.swift; sourceTree = "<group>"; };
 		439198592191BC23003A38FC /* UserApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiService.swift; sourceTree = "<group>"; };
 		4395023C219AF91300E9079C /* UserMetaDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMetaDefaults.swift; sourceTree = "<group>"; };
@@ -60,7 +66,7 @@
 		4395EA1721997B22004DD4A3 /* UserApiContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiContainer.swift; sourceTree = "<group>"; };
 		4395EA1E21997E12004DD4A3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4395EA20219989F0004DD4A3 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
-		4395EA2F21999E49004DD4A3 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		4395EA2F21999E49004DD4A3 /* ApiResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResult.swift; sourceTree = "<group>"; };
 		43EB3B5E21945C870052A90C /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		43EB3B61219460DE0052A90C /* Attribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attribute.swift; sourceTree = "<group>"; };
 		43EB3B64219462000052A90C /* EntityProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityProfile.swift; sourceTree = "<group>"; };
@@ -139,6 +145,7 @@
 			children = (
 				431CF5462195BD20002963F0 /* UniParamAction.swift */,
 				4395EA20219989F0004DD4A3 /* Action.swift */,
+				432C5031219D9443002A0EDA /* BiParamAction.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -217,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				43950245219B0C7300E9079C /* ApiAuthPlugin.swift */,
+				432C5044219DA2FB002A0EDA /* NetworkLoggerPlugin.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -225,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				4395EA132199665C004DD4A3 /* FetchUserAction.swift */,
+				432C5033219D981E002A0EDA /* AddFcmDeliveryEndpointAction.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -266,7 +275,7 @@
 		4395EA2E21999E01004DD4A3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4395EA2F21999E49004DD4A3 /* Result.swift */,
+				4395EA2F21999E49004DD4A3 /* ApiResult.swift */,
 				43950240219AFB7100E9079C /* AuthToken.swift */,
 			);
 			path = Model;
@@ -493,10 +502,11 @@
 				43EB3B73219477B00052A90C /* VerificationStatus.swift in Sources */,
 				432C502B219D78E6002A0EDA /* FcmDeliveryEndpoint.swift in Sources */,
 				43EB3B65219462000052A90C /* EntityProfile.swift in Sources */,
-				4395EA3021999E49004DD4A3 /* Result.swift in Sources */,
+				4395EA3021999E49004DD4A3 /* ApiResult.swift in Sources */,
 				4395023F219AF95500E9079C /* TokenDefaults.swift in Sources */,
 				431CF5412195B81E002963F0 /* UserRepositoryContract.swift in Sources */,
 				4395EA1F21997E12004DD4A3 /* Constants.swift in Sources */,
+				432C5045219DA2FB002A0EDA /* NetworkLoggerPlugin.swift in Sources */,
 				4391985A2191BC23003A38FC /* UserApiService.swift in Sources */,
 				4395EA142199665C004DD4A3 /* FetchUserAction.swift in Sources */,
 				43F42525219192D4007759F7 /* User.swift in Sources */,
@@ -506,12 +516,14 @@
 				43EB3B6B2194699C0052A90C /* AuditInfo.swift in Sources */,
 				431CF5432195BA65002963F0 /* UserRepository.swift in Sources */,
 				432C5029219D767B002A0EDA /* DeliveryEndpoint.swift in Sources */,
+				432C5032219D9443002A0EDA /* BiParamAction.swift in Sources */,
 				431CF53D2195B79A002963F0 /* UserRemoteSource.swift in Sources */,
 				43950243219AFBEF00E9079C /* LibDefaults.swift in Sources */,
 				43EB3B5F21945C870052A90C /* Identifiable.swift in Sources */,
 				4395EA1821997B22004DD4A3 /* UserApiContainer.swift in Sources */,
 				43950246219B0C7300E9079C /* ApiAuthPlugin.swift in Sources */,
 				431CF5472195BD20002963F0 /* UniParamAction.swift in Sources */,
+				432C5034219D981E002A0EDA /* AddFcmDeliveryEndpointAction.swift in Sources */,
 				43F9A07D2190477B00CF6296 /* Mitter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

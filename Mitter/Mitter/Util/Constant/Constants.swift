@@ -20,6 +20,7 @@ enum Constants {
         
         enum Actions {
             static let fetchUser = "FetchUserAction"
+            static let addFcmDeliveryEndpoint = "AddFcmDeliveryEndpoint"
         }
     }
     

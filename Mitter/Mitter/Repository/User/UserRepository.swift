@@ -22,11 +22,11 @@ class UserRepository: UserRepositoryContract {
     
     func addUserDeliveryEndpoint(
         userId: String,
-        deliveryEndpoint: DeliveryEndpoint
+        fcmDeliveryEndpoint: FcmDeliveryEndpoint
         ) -> PrimitiveSequence<SingleTrait, DeliveryEndpoint> {
         return userRemoteSource.addUserDeliveryEndpoint(
             userId: userId,
-            deliveryEndpoint: deliveryEndpoint
+            fcmDeliveryEndpoint: fcmDeliveryEndpoint
         )
     }
 }

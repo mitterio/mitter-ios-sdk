@@ -13,7 +13,7 @@ enum UserApiService {
     case getUser(userId: String)
     case addUserDeliveryEndpoint(
         userId: String,
-        deliveryEndpoint: DeliveryEndpoint
+        fcmDeliveryEndpoint: FcmDeliveryEndpoint
     )
 }
 
@@ -48,8 +48,9 @@ extension UserApiService: TargetType {
         switch self {
         case .getUser:
             return .requestPlain
-        case let .addUserDeliveryEndpoint(_, deliveryEndpoint):
-            let requestParams = try! wrap(deliveryEndpoint)
+        case let .addUserDeliveryEndpoint(_, fcmDeliveryEndpoint):
+            let requestParams = try! wrap(fcmDeliveryEndpoint)
+            print("Request Params: \(requestParams)")
             return .requestParameters(parameters: requestParams, encoding: JSONEncoding.default)
         }
     }

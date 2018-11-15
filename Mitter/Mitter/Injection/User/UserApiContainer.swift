@@ -31,6 +31,10 @@ class UserApiContainer {
             ) as! FetchUserAction
     }
     
+    func getAddFcmDeliveryEndpointAction() -> AddFcmDeliveryEndpointAction {
+        return AddFcmDeliveryEndpointAction(userRepository: getUserRepository())
+    }
+    
     private func registerUserApiLayers() {
         container.register(UserRepositoryContract.self, name: Constants.Users.userRemoteSource) {
             _ in UserRemoteSource(
@@ -39,7 +43,8 @@ class UserApiContainer {
                         ApiAuthPlugin(
                             applicationId: self.applicationId,
                             userAuthToken: self.userAuthToken
-                        )
+                        ),
+                        NetworkLoggerPlugin(verbose: true)
                     ]
                 )
             )
@@ -62,5 +67,12 @@ class UserApiContainer {
                     ) as! UserRepository
             )
         }
+    }
+    
+    private func getUserRepository() -> UserRepository {
+        return container.resolve(
+            UserRepositoryContract.self,
+            name: Constants.Users.userRepository
+        ) as! UserRepository
     }
 }

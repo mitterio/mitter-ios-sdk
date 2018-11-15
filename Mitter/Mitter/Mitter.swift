@@ -75,12 +75,28 @@ public class Mitter {
         libDefaults.saveToken(authToken: self.userAuthToken)
     }
     
+    public func registerFcmToken(token: String, completion: @escaping (ApiResult<DeliveryEndpoint>) -> Void) {
+        let addFcmDeliveryEndpointAction = userApiContainer.getAddFcmDeliveryEndpointAction()
+        
+        addFcmDeliveryEndpointAction
+            .execute(t1: getUserId(), t2: token)
+            .subscribe { event in
+                switch event {
+                case .success(let deliveryEndpoint):
+                    completion(ApiResult.success(deliveryEndpoint))
+                case .error(let error):
+                    print("Error is: \(error)")
+                    completion(ApiResult.error)
+                }
+        }
+    }
+    
     public class Users {
         weak var mitter: Mitter!
         
         init() {}
         
-        public func getUser(_ userId: String, completion: @escaping (Result<User>) -> Void) {
+        public func getUser(_ userId: String, completion: @escaping (ApiResult<User>) -> Void) {
             let fetchUserAction = mitter.userApiContainer.getFetchUserAction()
             
             fetchUserAction
@@ -88,15 +104,15 @@ public class Mitter {
                 .subscribe { event in
                     switch event {
                     case .success(let user):
-                        completion(Result.success(user))
+                        completion(ApiResult.success(user))
                     case .error:
-                        completion(Result.error)
+                        completion(ApiResult.error)
                     }
             }
         }
         
-        public func getCurrentUser(completion: @escaping (Result<User>) -> Void) {
-            getUser(mitter.userId, completion: completion)
+        public func getCurrentUser(completion: @escaping (ApiResult<User>) -> Void) {
+            getUser(mitter.getUserId(), completion: completion)
         }
     }
 }

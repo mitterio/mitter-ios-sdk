@@ -20,7 +20,7 @@ public class DeliveryEndpoint: Mappable {
     }
     
     public required init(map: Mapper) throws {
-        serializedEndpoint = try map.from("serializedEndpoints")
+        serializedEndpoint = try map.from("serializedEndpoint")
         endpointType = try map.from("endpointType")
         autoExpireAt = try map.from("autoExpireAt")
     }
