@@ -25,10 +25,7 @@ class UserApiContainer {
     }
     
     func getFetchUserAction() -> FetchUserAction {
-        return container.resolve(
-            Action.self,
-            name: Constants.Users.Actions.fetchUser
-            ) as! FetchUserAction
+        return FetchUserAction(userRepository: getUserRepository())
     }
     
     func getAddFcmDeliveryEndpointAction() -> AddFcmDeliveryEndpointAction {
@@ -56,15 +53,6 @@ class UserApiContainer {
                     UserRepositoryContract.self,
                     name: Constants.Users.userRemoteSource
                     ) as! UserRemoteSource
-            )
-        }
-        
-        container.register(Action.self, name: Constants.Users.Actions.fetchUser) {
-            resolver in FetchUserAction(
-                userRepository: resolver.resolve(
-                    UserRepositoryContract.self,
-                    name: Constants.Users.userRepository
-                    ) as! UserRepository
             )
         }
     }

@@ -31,11 +31,11 @@ class ViewController: UIViewController {
             }
         }
         
-        mitter.registerFcmToken(token: "63hbjhsbjcjkshcjksffhgs") {
+        mitter.registerFcmToken(token: "63hbjhsbjcjkshcjks884jsjsjffhgs") {
             result in
             switch result {
             case .success(let deliveryEndpoint):
-                print("Endpoint is: \(deliveryEndpoint)")
+                print("Endpoint is: \(deliveryEndpoint.serializedEndpoint)")
             case .error:
                 print("Unable to register endpoint!")
             }
