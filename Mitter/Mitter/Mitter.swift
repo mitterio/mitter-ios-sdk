@@ -14,9 +14,9 @@ import Swinject
 import JWTDecode
 
 public class Mitter {
-    let libDefaults: LibDefaults
-    
     public var users = Users()
+    
+    let libDefaults: LibDefaults
     
     private var applicationId: String
     private var userId: String = ""
