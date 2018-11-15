@@ -7,14 +7,21 @@
 //
 
 import Foundation
+import Mapper
 
-public class DeliveryEndpoint {
+public class DeliveryEndpoint: Mappable {
     public let serializedEndpoint: String
     public let endpointType: String
-    public let autoExpireAt: Int64 = Int64.max
+    public var autoExpireAt: Int64 = Int64.max
     
     public init(serializedEndpoint: String, endpointType: String) {
         self.serializedEndpoint = serializedEndpoint
         self.endpointType = endpointType
+    }
+    
+    public required init(map: Mapper) throws {
+        serializedEndpoint = try map.from("serializedEndpoints")
+        endpointType = try map.from("endpointType")
+        autoExpireAt = try map.from("autoExpireAt")
     }
 }

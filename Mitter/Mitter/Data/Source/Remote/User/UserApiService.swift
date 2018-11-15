@@ -11,6 +11,10 @@ import Moya
 
 enum UserApiService {
     case getUser(userId: String)
+    case addUserDeliveryEndpoint(
+        userId: String,
+        deliveryEndpoint: DeliveryEndpoint
+    )
 }
 
 extension UserApiService: TargetType {
@@ -22,6 +26,8 @@ extension UserApiService: TargetType {
         switch self {
         case .getUser(let userId):
             return "/v1/users/\(userId)"
+        case .addUserDeliveryEndpoint(let userId, _):
+            return "/v1/users/\(userId)/delivery-endpoints"
         }
     }
     
@@ -29,6 +35,8 @@ extension UserApiService: TargetType {
         switch self {
         case .getUser:
             return .get
+        case .addUserDeliveryEndpoint:
+            return .post
         }
     }
     
@@ -40,6 +48,9 @@ extension UserApiService: TargetType {
         switch self {
         case .getUser:
             return .requestPlain
+        case let .addUserDeliveryEndpoint(_, deliveryEndpoint):
+            let requestParams = try! wrap(deliveryEndpoint)
+            return .requestParameters(parameters: requestParams, encoding: JSONEncoding.default)
         }
     }
     

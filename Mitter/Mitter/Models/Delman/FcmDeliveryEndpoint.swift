@@ -9,12 +9,8 @@
 import Foundation
 import Mapper
 
-public class FcmDeliveryEndpoint: DeliveryEndpoint, Mappable {
-    public let registrationToken: String
-    
-    public required init(map: Mapper) throws {
-        registrationToken = try map.from("registrationToken")
-        
+public class FcmDeliveryEndpoint: DeliveryEndpoint {
+    public init(registrationToken: String) {
         super.init(
             serializedEndpoint: "\(StandardEndpointTypes.FcmDeliveryEndpoint):\(registrationToken)",
             endpointType: StandardEndpointTypes.FcmDeliveryEndpoint

@@ -11,4 +11,9 @@ import RxSwift
 
 protocol UserRepositoryContract {
     func fetchUser(userId: String) -> PrimitiveSequence<SingleTrait, User>
+    
+    func addUserDeliveryEndpoint(
+        userId: String,
+        deliveryEndpoint: DeliveryEndpoint
+    ) -> PrimitiveSequence<SingleTrait, DeliveryEndpoint>
 }

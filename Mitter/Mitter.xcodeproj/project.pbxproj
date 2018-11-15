@@ -15,6 +15,7 @@
 		432C5029219D767B002A0EDA /* DeliveryEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432C5028219D767B002A0EDA /* DeliveryEndpoint.swift */; };
 		432C502B219D78E6002A0EDA /* FcmDeliveryEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432C502A219D78E6002A0EDA /* FcmDeliveryEndpoint.swift */; };
 		432C502D219D7A87002A0EDA /* StandardEndpointTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432C502C219D7A87002A0EDA /* StandardEndpointTypes.swift */; };
+		432C5030219D90AC002A0EDA /* Wrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432C502F219D90AC002A0EDA /* Wrap.swift */; };
 		439198542191A815003A38FC /* ScreenName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439198532191A815003A38FC /* ScreenName.swift */; };
 		4391985A2191BC23003A38FC /* UserApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439198592191BC23003A38FC /* UserApiService.swift */; };
 		4395023D219AF91300E9079C /* UserMetaDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4395023C219AF91300E9079C /* UserMetaDefaults.swift */; };
@@ -47,6 +48,7 @@
 		432C5028219D767B002A0EDA /* DeliveryEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryEndpoint.swift; sourceTree = "<group>"; };
 		432C502A219D78E6002A0EDA /* FcmDeliveryEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FcmDeliveryEndpoint.swift; sourceTree = "<group>"; };
 		432C502C219D7A87002A0EDA /* StandardEndpointTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardEndpointTypes.swift; sourceTree = "<group>"; };
+		432C502F219D90AC002A0EDA /* Wrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wrap.swift; sourceTree = "<group>"; };
 		439198532191A815003A38FC /* ScreenName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenName.swift; sourceTree = "<group>"; };
 		439198592191BC23003A38FC /* UserApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiService.swift; sourceTree = "<group>"; };
 		4395023C219AF91300E9079C /* UserMetaDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMetaDefaults.swift; sourceTree = "<group>"; };
@@ -151,6 +153,14 @@
 			path = Delman;
 			sourceTree = "<group>";
 		};
+		432C502E219D9099002A0EDA /* Coding */ = {
+			isa = PBXGroup;
+			children = (
+				432C502F219D90AC002A0EDA /* Wrap.swift */,
+			);
+			path = Coding;
+			sourceTree = "<group>";
+		};
 		439198552191BBD8003A38FC /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +248,7 @@
 		4395EA1C21997DE4004DD4A3 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				432C502E219D9099002A0EDA /* Coding */,
 				43950244219B0C5000E9079C /* Network */,
 				4395EA1D21997DFC004DD4A3 /* Constant */,
 			);
@@ -490,6 +501,7 @@
 				4395EA142199665C004DD4A3 /* FetchUserAction.swift in Sources */,
 				43F42525219192D4007759F7 /* User.swift in Sources */,
 				43EB3B71219477580052A90C /* UserLocator.swift in Sources */,
+				432C5030219D90AC002A0EDA /* Wrap.swift in Sources */,
 				432C502D219D7A87002A0EDA /* StandardEndpointTypes.swift in Sources */,
 				43EB3B6B2194699C0052A90C /* AuditInfo.swift in Sources */,
 				431CF5432195BA65002963F0 /* UserRepository.swift in Sources */,
