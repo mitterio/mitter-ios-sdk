@@ -16,6 +16,8 @@ import JWTDecode
 public class Mitter {
     let libDefaults: LibDefaults
     
+    public var users = Users()
+    
     private var applicationId: String
     private var userId: String = ""
     private var userAuthToken: AuthToken = AuthToken()
@@ -43,6 +45,8 @@ public class Mitter {
         let jwt = try? decode(jwt: self.userAuthToken.signedToken)
         userId = "\(jwt?.body["userId"] ?? "")"
         setUserId(userId)
+        
+        users.mitter = self
     }
     
     public func getUserId() -> String {
@@ -71,22 +75,28 @@ public class Mitter {
         libDefaults.saveToken(authToken: self.userAuthToken)
     }
     
-    public func getUser(_ userId: String, completion: @escaping (Result<User>) -> Void) {
-        let fetchUserAction = userApiContainer.getFetchUserAction()
+    public class Users {
+        weak var mitter: Mitter!
         
-        fetchUserAction
-            .execute(t: userId)
-            .subscribe { event in
-                switch event {
-                case .success(let user):
-                    completion(Result.success(user))
-                case .error:
-                    completion(Result.error)
-                }
+        init() {}
+        
+        public func getUser(_ userId: String, completion: @escaping (Result<User>) -> Void) {
+            let fetchUserAction = mitter.userApiContainer.getFetchUserAction()
+            
+            fetchUserAction
+                .execute(t: userId)
+                .subscribe { event in
+                    switch event {
+                    case .success(let user):
+                        completion(Result.success(user))
+                    case .error:
+                        completion(Result.error)
+                    }
             }
-    }
-    
-    public func getCurrentUser(completion: @escaping (Result<User>) -> Void) {
-        getUser(userId, completion: completion)
+        }
+        
+        public func getCurrentUser(completion: @escaping (Result<User>) -> Void) {
+            getUser(mitter.userId, completion: completion)
+        }
     }
 }
