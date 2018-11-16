@@ -9,10 +9,10 @@
 import Foundation
 
 public enum StandardPayloadTypeNames {
-    static let TextMessage = "mitter.mt.Text"
-    static let FormattedTextMessage = "mitter.mt.FormattedText"
-    static let LinkInsetTextMessage = "mitter.mt.LinkInsetText"
-    static let ImageMessage = "mitter.mt.Image"
-    static let EmptyMessage = "mitter.mt.Empty"
-    static let FileMessage = "mitter.mt.File"
+    public static let TextMessage = "mitter.mt.Text"
+    public static let FormattedTextMessage = "mitter.mt.FormattedText"
+    public static let LinkInsetTextMessage = "mitter.mt.LinkInsetText"
+    public static let ImageMessage = "mitter.mt.Image"
+    public static let EmptyMessage = "mitter.mt.Empty"
+    public static let FileMessage = "mitter.mt.File"
 }

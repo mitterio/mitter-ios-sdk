@@ -17,4 +17,9 @@ public struct MessageDatum: Mappable {
         dataType = try map.from("dataType")
         data = try map.from("data")
     }
+    
+    public init(dayaType: String, data: String) {
+        self.dataType = dayaType
+        self.data = data
+    }
 }

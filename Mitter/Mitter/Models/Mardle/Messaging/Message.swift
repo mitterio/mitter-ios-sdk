@@ -17,8 +17,48 @@ public struct Message: Mappable {
     public let senderId: Identifiable<User>
     public let textPayload: String
     public let messageData: [MessageDatum]
+    public let timelineEvents: [TimelineEvent]
+    public let appliedAcls: AppliedAclList
+    public let entityMetadata: EntityMetadata?
+    public let auditInfo: AuditInfo?
     
     public init(map: Mapper) throws {
-        <#code#>
+        messageId = try map.from("messageId")
+        internalId = map.optionalFrom("internalId")
+        messageType = StandardMessageType(rawValue: try map.from("messageType")) ?? StandardMessageType.Standard
+        payloadType = try map.from("payloadType")
+        senderId = try map.from("senderId")
+        textPayload = try map.from("textPayload")
+        messageData = try map.from("messageData")
+        timelineEvents = try map.from("timelineEvents")
+        appliedAcls = AppliedAclList(plusAppliedAcls: [String](), minusAppliedAcls: [String]())
+        entityMetadata = try map.from("entityMetadata")
+        auditInfo = map.optionalFrom("auditInfo")
+    }
+    
+    public init(
+        messageId: String,
+        internalId: String? = nil,
+        messageType: StandardMessageType = StandardMessageType.Standard,
+        payloadType: String = StandardPayloadTypeNames.TextMessage,
+        senderId: Identifiable<User>,
+        textPayload: String,
+        messageData: [MessageDatum] = [MessageDatum](),
+        timelineEvents: [TimelineEvent],
+        appliedAcls: AppliedAclList,
+        entityMetadata: EntityMetadata? = nil,
+        auditInfo: AuditInfo? = nil
+        ) {
+        self.messageId = messageId
+        self.internalId = internalId
+        self.messageType = messageType
+        self.payloadType = payloadType
+        self.senderId = senderId
+        self.textPayload = textPayload
+        self.messageData = messageData
+        self.timelineEvents = timelineEvents
+        self.appliedAcls = appliedAcls
+        self.entityMetadata = entityMetadata
+        self.auditInfo = auditInfo
     }
 }

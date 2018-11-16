@@ -26,9 +26,19 @@ public struct TimelineEvent: Mappable {
         auditInfo = map.optionalFrom("auditInfo")
     }
     
-    init(
-        eventId: String
+    public init(
+        eventId: String,
+        internalId: String? = nil,
+        type: String,
+        eventTimeMs: Int64,
+        subject: Identifiable<User>,
+        auditInfo: AuditInfo? = nil
         ) {
-        <#statements#>
+        self.eventId = eventId
+        self.internalId = internalId
+        self.type = type
+        self.eventTimeMs = eventTimeMs
+        self.subject = subject
+        self.auditInfo = auditInfo
     }
 }

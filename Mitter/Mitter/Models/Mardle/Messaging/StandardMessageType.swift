@@ -8,6 +8,6 @@
 
 import Foundation
 
-public enum StandardMessageType {
+public enum StandardMessageType: String {
     case Standard, Notification, OutOfBand
 }
