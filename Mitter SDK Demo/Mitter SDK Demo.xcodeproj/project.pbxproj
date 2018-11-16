@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4320C5F2219EED39003C4B9F /* Mitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4320C5F1219EED39003C4B9F /* Mitter.framework */; };
-		4320C5F3219EED39003C4B9F /* Mitter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4320C5F1219EED39003C4B9F /* Mitter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4320C5F7219EFC74003C4B9F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4320C5F6219EFC74003C4B9F /* GoogleService-Info.plist */; };
+		4320C5FF219F0087003C4B9F /* Mitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4320C5FE219F0087003C4B9F /* Mitter.framework */; };
+		4320C600219F0087003C4B9F /* Mitter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4320C5FE219F0087003C4B9F /* Mitter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		43F9A08B2190480500CF6296 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F9A08A2190480500CF6296 /* AppDelegate.swift */; };
 		43F9A08D2190480500CF6296 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F9A08C2190480500CF6296 /* ViewController.swift */; };
 		43F9A0902190480500CF6296 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43F9A08E2190480500CF6296 /* Main.storyboard */; };
@@ -24,7 +25,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				4320C5F3219EED39003C4B9F /* Mitter.framework in Embed Frameworks */,
+				4320C600219F0087003C4B9F /* Mitter.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -32,7 +33,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4320C5F1219EED39003C4B9F /* Mitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mitter.framework; sourceTree = "<group>"; };
+		4320C5F6219EFC74003C4B9F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4320C5FE219F0087003C4B9F /* Mitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mitter.framework; sourceTree = "<group>"; };
 		43F9A0872190480500CF6296 /* Mitter SDK Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mitter SDK Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		43F9A08A2190480500CF6296 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43F9A08C2190480500CF6296 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -51,7 +53,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C12E41C8A843F2D8B1451CB5 /* Pods_Mitter_SDK_Demo.framework in Frameworks */,
-				4320C5F2219EED39003C4B9F /* Mitter.framework in Frameworks */,
+				4320C5FF219F0087003C4B9F /* Mitter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,7 +72,7 @@
 		43F9A07E2190480500CF6296 = {
 			isa = PBXGroup;
 			children = (
-				4320C5F1219EED39003C4B9F /* Mitter.framework */,
+				4320C5FE219F0087003C4B9F /* Mitter.framework */,
 				43F9A0892190480500CF6296 /* Mitter SDK Demo */,
 				43F9A0882190480500CF6296 /* Products */,
 				28FD07E8BC294F01AD98D91E /* Pods */,
@@ -89,6 +91,7 @@
 		43F9A0892190480500CF6296 /* Mitter SDK Demo */ = {
 			isa = PBXGroup;
 			children = (
+				4320C5F6219EFC74003C4B9F /* GoogleService-Info.plist */,
 				43F9A08A2190480500CF6296 /* AppDelegate.swift */,
 				43F9A08C2190480500CF6296 /* ViewController.swift */,
 				43F9A08E2190480500CF6296 /* Main.storyboard */,
@@ -169,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43F9A0952190480600CF6296 /* LaunchScreen.storyboard in Resources */,
+				4320C5F7219EFC74003C4B9F /* GoogleService-Info.plist in Resources */,
 				43F9A0922190480600CF6296 /* Assets.xcassets in Resources */,
 				43F9A0902190480500CF6296 /* Main.storyboard in Resources */,
 			);
@@ -403,7 +407,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z7368TPQU7;
+				DEVELOPMENT_TEAM = X4F243NV8Z;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -413,7 +417,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.mitter.demo;
+				PRODUCT_BUNDLE_IDENTIFIER = io.mitter.demoSdk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -426,7 +430,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z7368TPQU7;
+				DEVELOPMENT_TEAM = X4F243NV8Z;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -436,7 +440,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.mitter.demo;
+				PRODUCT_BUNDLE_IDENTIFIER = io.mitter.demoSdk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
