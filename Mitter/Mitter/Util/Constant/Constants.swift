@@ -20,11 +20,11 @@ enum Constants {
     enum Users {
         static let userRemoteSource = "UserRemoteSource"
         static let userRepository = "UserRepository"
-        
-        enum Actions {
-            static let fetchUser = "FetchUserAction"
-            static let addFcmDeliveryEndpoint = "AddFcmDeliveryEndpoint"
-        }
+    }
+    
+    enum Messages {
+        static let messageRemoteSource = "MessageRemoteSource"
+        static let messageRepository = "MessageRepository"
     }
     
     enum Keys {

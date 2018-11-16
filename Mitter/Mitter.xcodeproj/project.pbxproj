@@ -25,6 +25,8 @@
 		4320C5E3219EE5B5003C4B9F /* MessageRepositoryContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4320C5E2219EE5B5003C4B9F /* MessageRepositoryContract.swift */; };
 		4320C5E5219EE61A003C4B9F /* MessageRemoteSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4320C5E4219EE61A003C4B9F /* MessageRemoteSource.swift */; };
 		4320C5E7219EE6EF003C4B9F /* MessageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4320C5E6219EE6EF003C4B9F /* MessageRepository.swift */; };
+		4320C5EA219EE7A1003C4B9F /* FetchMessageAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4320C5E9219EE7A1003C4B9F /* FetchMessageAction.swift */; };
+		4320C5ED219EE848003C4B9F /* MessageApiContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4320C5EC219EE848003C4B9F /* MessageApiContainer.swift */; };
 		432C5029219D767B002A0EDA /* DeliveryEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432C5028219D767B002A0EDA /* DeliveryEndpoint.swift */; };
 		432C502B219D78E6002A0EDA /* FcmDeliveryEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432C502A219D78E6002A0EDA /* FcmDeliveryEndpoint.swift */; };
 		432C502D219D7A87002A0EDA /* StandardEndpointTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432C502C219D7A87002A0EDA /* StandardEndpointTypes.swift */; };
@@ -74,6 +76,8 @@
 		4320C5E2219EE5B5003C4B9F /* MessageRepositoryContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRepositoryContract.swift; sourceTree = "<group>"; };
 		4320C5E4219EE61A003C4B9F /* MessageRemoteSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRemoteSource.swift; sourceTree = "<group>"; };
 		4320C5E6219EE6EF003C4B9F /* MessageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRepository.swift; sourceTree = "<group>"; };
+		4320C5E9219EE7A1003C4B9F /* FetchMessageAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMessageAction.swift; sourceTree = "<group>"; };
+		4320C5EC219EE848003C4B9F /* MessageApiContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageApiContainer.swift; sourceTree = "<group>"; };
 		432C5028219D767B002A0EDA /* DeliveryEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryEndpoint.swift; sourceTree = "<group>"; };
 		432C502A219D78E6002A0EDA /* FcmDeliveryEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FcmDeliveryEndpoint.swift; sourceTree = "<group>"; };
 		432C502C219D7A87002A0EDA /* StandardEndpointTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardEndpointTypes.swift; sourceTree = "<group>"; };
@@ -160,6 +164,7 @@
 		431CF5442195BCFA002963F0 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				4320C5E8219EE794003C4B9F /* Message */,
 				4395EA2E21999E01004DD4A3 /* Model */,
 				4395EA1221996643004DD4A3 /* User */,
 				431CF5452195BD03002963F0 /* Base */,
@@ -220,6 +225,22 @@
 			children = (
 				4320C5E2219EE5B5003C4B9F /* MessageRepositoryContract.swift */,
 				4320C5E6219EE6EF003C4B9F /* MessageRepository.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		4320C5E8219EE794003C4B9F /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				4320C5E9219EE7A1003C4B9F /* FetchMessageAction.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		4320C5EB219EE833003C4B9F /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				4320C5EC219EE848003C4B9F /* MessageApiContainer.swift */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -316,6 +337,7 @@
 		4395EA1521997AE2004DD4A3 /* Injection */ = {
 			isa = PBXGroup;
 			children = (
+				4320C5EB219EE833003C4B9F /* Message */,
 				4395EA1621997B09004DD4A3 /* User */,
 			);
 			path = Injection;
@@ -576,6 +598,7 @@
 				4395023D219AF91300E9079C /* UserMetaDefaults.swift in Sources */,
 				4320C5DB219EDFE5003C4B9F /* Metadata.swift in Sources */,
 				4395EA21219989F0004DD4A3 /* Action.swift in Sources */,
+				4320C5EA219EE7A1003C4B9F /* FetchMessageAction.swift in Sources */,
 				4320C5D9219EDE98003C4B9F /* AppliedAclList.swift in Sources */,
 				439198542191A815003A38FC /* ScreenName.swift in Sources */,
 				4320C5E5219EE61A003C4B9F /* MessageRemoteSource.swift in Sources */,
@@ -585,6 +608,7 @@
 				432C502B219D78E6002A0EDA /* FcmDeliveryEndpoint.swift in Sources */,
 				43EB3B65219462000052A90C /* EntityProfile.swift in Sources */,
 				4395EA3021999E49004DD4A3 /* ApiResult.swift in Sources */,
+				4320C5ED219EE848003C4B9F /* MessageApiContainer.swift in Sources */,
 				4320C5CB219EAA37003C4B9F /* StandardMessageType.swift in Sources */,
 				4395023F219AF95500E9079C /* TokenDefaults.swift in Sources */,
 				431CF5412195B81E002963F0 /* UserRepositoryContract.swift in Sources */,
