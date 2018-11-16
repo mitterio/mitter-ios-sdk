@@ -23,7 +23,7 @@ public class Mitter {
     private var userAuthToken: AuthToken = AuthToken()
     
     private let userApiContainer: UserApiContainer
-    private let disposeBag = DisposeBag()
+    private let messageApiContainer: MessageApiContainer
     
     public init(applicationId: String, userAuthToken: String = "") {
         self.applicationId = applicationId
@@ -38,6 +38,11 @@ public class Mitter {
         }
         
         userApiContainer = UserApiContainer(
+            applicationId: self.applicationId,
+            userAuthToken: self.userAuthToken.signedToken
+        )
+        
+        messageApiContainer = MessageApiContainer(
             applicationId: self.applicationId,
             userAuthToken: self.userAuthToken.signedToken
         )
@@ -92,11 +97,13 @@ public class Mitter {
     }
     
     public class Users {
+        public typealias userApiResult = (ApiResult<User>) -> Void
+        
         weak var mitter: Mitter!
         
         init() {}
         
-        public func getUser(_ userId: String, completion: @escaping (ApiResult<User>) -> Void) {
+        public func getUser(_ userId: String, completion: @escaping userApiResult) {
             let fetchUserAction = mitter.userApiContainer.getFetchUserAction()
             
             fetchUserAction
@@ -111,8 +118,29 @@ public class Mitter {
             }
         }
         
-        public func getCurrentUser(completion: @escaping (ApiResult<User>) -> Void) {
+        public func getCurrentUser(completion: @escaping userApiResult) {
             getUser(mitter.getUserId(), completion: completion)
+        }
+    }
+    
+    public class Messaging {
+        weak var mitter: Mitter!
+        
+        init() {}
+        
+        public func getMessage(_ messageId: String, completion: @escaping (ApiResult<Message>) -> Void) {
+            let fetchMessageAction = mitter.messageApiContainer.getFetchMessageAction()
+            
+            fetchMessageAction
+                .execute(t: messageId)
+                .subscribe { event in
+                    switch event {
+                    case .success(let message):
+                        completion(ApiResult.success(message))
+                    case .error:
+                        completion(ApiResult.error)
+                    }
+            }
         }
     }
 }
