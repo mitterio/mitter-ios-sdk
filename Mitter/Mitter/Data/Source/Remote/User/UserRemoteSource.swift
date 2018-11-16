@@ -20,7 +20,7 @@ class UserRemoteSource: UserRepositoryContract {
     func fetchUser(userId: String) -> PrimitiveSequence<SingleTrait, User> {
         return apiProvider
             .rx
-            .request(.getUser(userId: userId))
+            .request(.fetchUser(userId: userId))
             .map(to: User.self)
     }
     

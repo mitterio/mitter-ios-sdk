@@ -21,6 +21,10 @@
 		4320C5D9219EDE98003C4B9F /* AppliedAclList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4320C5D8219EDE98003C4B9F /* AppliedAclList.swift */; };
 		4320C5DB219EDFE5003C4B9F /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4320C5DA219EDFE5003C4B9F /* Metadata.swift */; };
 		4320C5DD219EE059003C4B9F /* EntityMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4320C5DC219EE059003C4B9F /* EntityMetadata.swift */; };
+		4320C5E0219EE43A003C4B9F /* MessageApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4320C5DF219EE43A003C4B9F /* MessageApiService.swift */; };
+		4320C5E3219EE5B5003C4B9F /* MessageRepositoryContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4320C5E2219EE5B5003C4B9F /* MessageRepositoryContract.swift */; };
+		4320C5E5219EE61A003C4B9F /* MessageRemoteSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4320C5E4219EE61A003C4B9F /* MessageRemoteSource.swift */; };
+		4320C5E7219EE6EF003C4B9F /* MessageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4320C5E6219EE6EF003C4B9F /* MessageRepository.swift */; };
 		432C5029219D767B002A0EDA /* DeliveryEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432C5028219D767B002A0EDA /* DeliveryEndpoint.swift */; };
 		432C502B219D78E6002A0EDA /* FcmDeliveryEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432C502A219D78E6002A0EDA /* FcmDeliveryEndpoint.swift */; };
 		432C502D219D7A87002A0EDA /* StandardEndpointTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432C502C219D7A87002A0EDA /* StandardEndpointTypes.swift */; };
@@ -66,6 +70,10 @@
 		4320C5D8219EDE98003C4B9F /* AppliedAclList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppliedAclList.swift; sourceTree = "<group>"; };
 		4320C5DA219EDFE5003C4B9F /* Metadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
 		4320C5DC219EE059003C4B9F /* EntityMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityMetadata.swift; sourceTree = "<group>"; };
+		4320C5DF219EE43A003C4B9F /* MessageApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageApiService.swift; sourceTree = "<group>"; };
+		4320C5E2219EE5B5003C4B9F /* MessageRepositoryContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRepositoryContract.swift; sourceTree = "<group>"; };
+		4320C5E4219EE61A003C4B9F /* MessageRemoteSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRemoteSource.swift; sourceTree = "<group>"; };
+		4320C5E6219EE6EF003C4B9F /* MessageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRepository.swift; sourceTree = "<group>"; };
 		432C5028219D767B002A0EDA /* DeliveryEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryEndpoint.swift; sourceTree = "<group>"; };
 		432C502A219D78E6002A0EDA /* FcmDeliveryEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FcmDeliveryEndpoint.swift; sourceTree = "<group>"; };
 		432C502C219D7A87002A0EDA /* StandardEndpointTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardEndpointTypes.swift; sourceTree = "<group>"; };
@@ -134,6 +142,7 @@
 		431CF53E2195B7F5002963F0 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				4320C5E1219EE5A6003C4B9F /* Message */,
 				431CF53F2195B807002963F0 /* User */,
 			);
 			path = Repository;
@@ -197,6 +206,24 @@
 			path = Acolyte;
 			sourceTree = "<group>";
 		};
+		4320C5DE219EE41D003C4B9F /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				4320C5DF219EE43A003C4B9F /* MessageApiService.swift */,
+				4320C5E4219EE61A003C4B9F /* MessageRemoteSource.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		4320C5E1219EE5A6003C4B9F /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				4320C5E2219EE5B5003C4B9F /* MessageRepositoryContract.swift */,
+				4320C5E6219EE6EF003C4B9F /* MessageRepository.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
 		432C5027219D7667002A0EDA /* Delman */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +262,7 @@
 		439198572191BBE4003A38FC /* Remote */ = {
 			isa = PBXGroup;
 			children = (
+				4320C5DE219EE41D003C4B9F /* Message */,
 				439198582191BBEA003A38FC /* User */,
 			);
 			path = Remote;
@@ -550,6 +578,7 @@
 				4395EA21219989F0004DD4A3 /* Action.swift in Sources */,
 				4320C5D9219EDE98003C4B9F /* AppliedAclList.swift in Sources */,
 				439198542191A815003A38FC /* ScreenName.swift in Sources */,
+				4320C5E5219EE61A003C4B9F /* MessageRemoteSource.swift in Sources */,
 				43EB3B75219478FB0052A90C /* Application.swift in Sources */,
 				43950241219AFB7100E9079C /* AuthToken.swift in Sources */,
 				43EB3B73219477B00052A90C /* VerificationStatus.swift in Sources */,
@@ -563,6 +592,7 @@
 				432C5045219DA2FB002A0EDA /* NetworkLoggerPlugin.swift in Sources */,
 				4391985A2191BC23003A38FC /* UserApiService.swift in Sources */,
 				4395EA142199665C004DD4A3 /* FetchUserAction.swift in Sources */,
+				4320C5E7219EE6EF003C4B9F /* MessageRepository.swift in Sources */,
 				43F42525219192D4007759F7 /* User.swift in Sources */,
 				43EB3B71219477580052A90C /* UserLocator.swift in Sources */,
 				432C5030219D90AC002A0EDA /* Wrap.swift in Sources */,
@@ -580,6 +610,8 @@
 				4395EA1821997B22004DD4A3 /* UserApiContainer.swift in Sources */,
 				43950246219B0C7300E9079C /* ApiAuthPlugin.swift in Sources */,
 				4320C5D1219EACEB003C4B9F /* TimelineEvent.swift in Sources */,
+				4320C5E0219EE43A003C4B9F /* MessageApiService.swift in Sources */,
+				4320C5E3219EE5B5003C4B9F /* MessageRepositoryContract.swift in Sources */,
 				431CF5472195BD20002963F0 /* UniParamAction.swift in Sources */,
 				4320C5CF219EABBB003C4B9F /* MessageDatum.swift in Sources */,
 				4320C5D3219EBFA7003C4B9F /* StandardTimelineEventTypeNames.swift in Sources */,
