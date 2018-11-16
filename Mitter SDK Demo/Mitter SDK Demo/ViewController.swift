@@ -19,8 +19,9 @@ class ViewController: UIViewController {
     func testSDK() {
         let mitter = Mitter(
             applicationId: "MZzf4-na9nL-O98wq-M1HxS",
-            userAuthToken: "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJtaXR0ZXItaW8iLCJ1c2VyVG9rZW5JZCI6ImVPcm8xN0tyTFN4dklnWEgiLCJ1c2VydG9rZW4iOiJvYWo2YWFsNjM2Z2twZTF2bjVoYzFoZjE5NyIsImFwcGxpY2F0aW9uSWQiOiJNWnpmNC1uYTluTC1POTh3cS1NMUh4UyIsInVzZXJJZCI6ImNzckN5LVNKTDN1LThBS01ULVdxdjZ5In0.5Rhs_9Rls_1IIIu3e-rFcRKnpqVAFixofjJB88MyFxQdDy0q2d287vi89fAmuetk3dJ7mzKkssIUDvEjkvxsJg"
+            userAuthToken: "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJtaXR0ZXItaW8iLCJ1c2VyVG9rZW5JZCI6ImptMmJIN29pam5nTUhJQmYiLCJ1c2VydG9rZW4iOiJqc201cG1zOG9xa2FvM243cGI4dTg0ZGxhOSIsImFwcGxpY2F0aW9uSWQiOiJNWnpmNC1uYTluTC1POTh3cS1NMUh4UyIsInVzZXJJZCI6ImNzckN5LVNKTDN1LThBS01ULVdxdjZ5In0.j8zHSg7Pb73T9t-6unAcuKN80ElVsukxfCLYd2UTP3VrHPDOec55To-4qO9m2MxwSbQUoyslCL_n0KIEhd2_3A"
         )
+        
         mitter.users.getCurrentUser {
             result in
             switch result {
@@ -31,13 +32,23 @@ class ViewController: UIViewController {
             }
         }
         
-        mitter.registerFcmToken(token: "63hbjhsbjcjkshcjks884jsjsjffhgs") {
-            result in
+//        mitter.registerFcmToken(token: "63hbjhsbjcjkshcjks884jsjsjffhgs") {
+//            result in
+//            switch result {
+//            case .success(let deliveryEndpoint):
+//                print("Endpoint is: \(deliveryEndpoint.serializedEndpoint)")
+//            case .error:
+//                print("Unable to register endpoint!")
+//            }
+//        }
+        
+        mitter.messaging.getMessage("ID9QN-PL522-DRtDA-wf70q") { result in
             switch result {
-            case .success(let deliveryEndpoint):
-                print("Endpoint is: \(deliveryEndpoint.serializedEndpoint)")
+            case .success(let message):
+                print("Message is: \(message.textPayload)")
+                print("Message sent by: \(message.senderId.domainId)")
             case .error:
-                print("Unable to register endpoint!")
+                print("Unable to fetch message from server")
             }
         }
     }

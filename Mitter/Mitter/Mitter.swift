@@ -15,6 +15,7 @@ import JWTDecode
 
 public class Mitter {
     public var users = Users()
+    public var messaging = Messaging()
     
     let libDefaults: LibDefaults
     
@@ -52,6 +53,7 @@ public class Mitter {
         setUserId(userId)
         
         users.mitter = self
+        messaging.mitter = self
     }
     
     public func getUserId() -> String {
