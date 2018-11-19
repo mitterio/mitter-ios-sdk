@@ -91,6 +91,7 @@ PODS:
   - RxSwift (4.4.0):
     - RxAtomic (~> 4.4)
   - Swinject (2.5.0)
+  - Unbox (3.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
@@ -103,6 +104,7 @@ DEPENDENCIES:
   - RxCocoa (~> 4.0)
   - RxSwift (~> 4.0)
   - Swinject (~> 2.5.0)
+  - Unbox
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -127,6 +129,7 @@ SPEC REPOS:
     - RxCocoa
     - RxSwift
     - Swinject
+    - Unbox
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
@@ -150,7 +153,8 @@ SPEC CHECKSUMS:
   RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
   Swinject: 82cdb851f63f91bba974e3eca1d69780f2f7677e
+  Unbox: 9ed33b2a31f7a8a049f54b94d40c4a52a28c4d9d
 
-PODFILE CHECKSUM: 89b41dd04293b2b02d486dfc34d52ce65566c038
+PODFILE CHECKSUM: 0f3ad66769beb59cba7fcd64e0543cc34de1303e
 
 COCOAPODS: 1.5.3

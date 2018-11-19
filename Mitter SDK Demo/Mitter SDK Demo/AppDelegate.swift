@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var mitter: Mitter = Mitter(applicationId: "")
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        application.registerForRemoteNotifications()
+        
         FirebaseApp.configure()
         
         if #available(iOS 10.0, *) {
@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             application.registerUserNotificationSettings(settings)
         }
         
-        
+        application.registerForRemoteNotifications()
         
         mitter = Mitter(
             applicationId: "MZzf4-na9nL-O98wq-M1HxS",
@@ -77,11 +77,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Messaging.messaging().appDidReceiveMessage(userInfo)
         // Print message ID.
         if let messageID = userInfo[gcmMessageIDKey] {
-            print("Message ID: \(messageID)")
+            print("Message ID 1: \(messageID)")
         }
         
         // Print full message.
-        print(userInfo)
+        print("Message 2 is: \(userInfo)")
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
@@ -93,11 +93,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Messaging.messaging().appDidReceiveMessage(userInfo)
         // Print message ID.
         if let messageID = userInfo[gcmMessageIDKey] {
-            print("Message ID: \(messageID)")
+            print("Message ID 2: \(messageID)")
         }
         
         // Print full message.
-        print(userInfo)
+        print("Message 2 is: \(userInfo)")
         
         completionHandler(UIBackgroundFetchResult.newData)
     }
@@ -150,11 +150,11 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         // Messaging.messaging().appDidReceiveMessage(userInfo)
         // Print message ID.
         if let messageID = userInfo[gcmMessageIDKey] {
-            print("Message ID: \(messageID)")
+            print("Message ID 3: \(messageID)")
         }
         
         // Print full message.
-        print(userInfo)
+        print("Message 3 is: \(userInfo["data"]!)")
         
         // Change this to your preferred presentation option
         completionHandler([])
@@ -166,11 +166,11 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         let userInfo = response.notification.request.content.userInfo
         // Print message ID.
         if let messageID = userInfo[gcmMessageIDKey] {
-            print("Message ID: \(messageID)")
+            print("Message 4 ID: \(messageID)")
         }
         
         // Print full message.
-        print(userInfo)
+        print("Message 4 is: \(userInfo)")
         
         completionHandler()
     }
