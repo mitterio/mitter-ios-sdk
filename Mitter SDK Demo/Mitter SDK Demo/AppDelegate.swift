@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         mitter = Mitter(
             applicationId: "MZzf4-na9nL-O98wq-M1HxS",
-            userAuthToken: "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJtaXR0ZXItaW8iLCJ1c2VyVG9rZW5JZCI6IlQ3Z3RCWUhmeG9OYlNGUHoiLCJ1c2VydG9rZW4iOiI0dGFsczJhMzI4aWhjdGZsZmVzNWRtMDA0diIsImFwcGxpY2F0aW9uSWQiOiJNWnpmNC1uYTluTC1POTh3cS1NMUh4UyIsInVzZXJJZCI6ImNzckN5LVNKTDN1LThBS01ULVdxdjZ5In0.10smqrs3FrapQHZT5lDhenKJTS4YhmcqpEiWZuSgdBYafLXm77oCmga6nu4MPZSFR6F8jtV6bCx6AJetox5rcw"
+            userAuthToken: "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJtaXR0ZXItaW8iLCJ1c2VyVG9rZW5JZCI6IjZaNmFFeDBPbVREWGtmV0oiLCJ1c2VydG9rZW4iOiI0aWl1a3ZrNTEwanVnNDg0OTJmYnExazg5YSIsImFwcGxpY2F0aW9uSWQiOiJNWnpmNC1uYTluTC1POTh3cS1NMUh4UyIsInVzZXJJZCI6ImNzckN5LVNKTDN1LThBS01ULVdxdjZ5In0.wv1YTy6SDxMxWXd0JOzqZWtS8bgwK-4chI9x0XY-YZmPmtycyW3rpaPRs1VLnfYeKoZarcW1exovuE54pwJTWQ"
         )
         
         return true
@@ -154,7 +154,14 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         }
         
         // Print full message.
-        print("Message 3 is: \(userInfo["data"]!)")
+        let messageString = userInfo["data"] as! String
+        print("Message String: \(messageString)")
+        
+        let messageData = messageString.data(using: .utf8)
+        
+        let messagingPipelinePayload = mitter.parseFcmMessage(data: messageData!)
+        
+        print("Message is: \(messagingPipelinePayload?.payload)")
         
         // Change this to your preferred presentation option
         completionHandler([])

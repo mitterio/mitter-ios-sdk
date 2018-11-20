@@ -13,6 +13,7 @@
 		431C9E3421A41134001C9073 /* NewMessagePayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431C9E3321A41134001C9073 /* NewMessagePayload.swift */; };
 		431C9E3821A425BC001C9073 /* Processor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431C9E3721A425BC001C9073 /* Processor.swift */; };
 		431C9E3A21A425FB001C9073 /* FcmMessageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431C9E3921A425FB001C9073 /* FcmMessageProcessor.swift */; };
+		431C9E3E21A42A86001C9073 /* PushMessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431C9E3D21A42A86001C9073 /* PushMessageManager.swift */; };
 		431CF53D2195B79A002963F0 /* UserRemoteSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431CF53C2195B79A002963F0 /* UserRemoteSource.swift */; };
 		431CF5412195B81E002963F0 /* UserRepositoryContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431CF5402195B81E002963F0 /* UserRepositoryContract.swift */; };
 		431CF5432195BA65002963F0 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431CF5422195BA65002963F0 /* UserRepository.swift */; };
@@ -69,6 +70,7 @@
 		431C9E3321A41134001C9073 /* NewMessagePayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessagePayload.swift; sourceTree = "<group>"; };
 		431C9E3721A425BC001C9073 /* Processor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Processor.swift; sourceTree = "<group>"; };
 		431C9E3921A425FB001C9073 /* FcmMessageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FcmMessageProcessor.swift; sourceTree = "<group>"; };
+		431C9E3D21A42A86001C9073 /* PushMessageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushMessageManager.swift; sourceTree = "<group>"; };
 		431CF53C2195B79A002963F0 /* UserRemoteSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRemoteSource.swift; sourceTree = "<group>"; };
 		431CF5402195B81E002963F0 /* UserRepositoryContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryContract.swift; sourceTree = "<group>"; };
 		431CF5422195BA65002963F0 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
@@ -178,6 +180,22 @@
 				431C9E3721A425BC001C9073 /* Processor.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		431C9E3B21A42A70001C9073 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				431C9E3C21A42A79001C9073 /* Message */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		431C9E3C21A42A79001C9073 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				431C9E3D21A42A86001C9073 /* PushMessageManager.swift */,
+			);
+			path = Message;
 			sourceTree = "<group>";
 		};
 		431CF53E2195B7F5002963F0 /* Repository */ = {
@@ -515,6 +533,7 @@
 		43F9A0732190476500CF6296 /* Mitter */ = {
 			isa = PBXGroup;
 			children = (
+				431C9E3B21A42A70001C9073 /* Manager */,
 				4395EA1C21997DE4004DD4A3 /* Util */,
 				4395EA1521997AE2004DD4A3 /* Injection */,
 				431CF5442195BCFA002963F0 /* Domain */,
@@ -684,6 +703,7 @@
 				4320C5CF219EABBB003C4B9F /* MessageDatum.swift in Sources */,
 				4320C5D3219EBFA7003C4B9F /* StandardTimelineEventTypeNames.swift in Sources */,
 				432C5034219D981E002A0EDA /* AddFcmDeliveryEndpointAction.swift in Sources */,
+				431C9E3E21A42A86001C9073 /* PushMessageManager.swift in Sources */,
 				43F9A07D2190477B00CF6296 /* Mitter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

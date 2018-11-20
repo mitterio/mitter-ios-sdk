@@ -7,13 +7,14 @@
 //
 
 import Foundation
-import Unbox
+import Mapper
 
 class FcmMessageProcessor: Processor {
     typealias T = Data
     typealias V = MessagingPipelinePayload?
     
     func process(t: FcmMessageProcessor.T) -> FcmMessageProcessor.V {
-        return try? unbox(data: t)
+        let JSON = try! JSONSerialization.jsonObject(with: t, options: []) as? NSDictionary
+        return MessagingPipelinePayload.from(JSON!)
     }
 }

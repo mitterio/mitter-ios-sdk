@@ -98,6 +98,14 @@ public class Mitter {
         }
     }
     
+    public func parseFcmMessage(data: Data) -> MessagingPipelinePayload? {
+        return userApiContainer.getPushMessageManager().parseFcmMessage(data: data)
+    }
+    
+    public func isMitterMessage(_ messagingPipelinePayload: MessagingPipelinePayload) -> Bool {
+        return userApiContainer.getPushMessageManager().isMitterMessage(messagingPipelinePayload: messagingPipelinePayload)
+    }
+    
     public class Users {
         public typealias userApiResult = (ApiResult<User>) -> Void
         

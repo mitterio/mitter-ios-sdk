@@ -24,12 +24,20 @@ class UserApiContainer {
         registerUserApiLayers()
     }
     
+    func getPushMessageManager() -> PushMessageManager {
+        return PushMessageManager(fcmMessageProcessor: getFcmMessageProcessor())
+    }
+    
     func getFetchUserAction() -> FetchUserAction {
         return FetchUserAction(userRepository: getUserRepository())
     }
     
     func getAddFcmDeliveryEndpointAction() -> AddFcmDeliveryEndpointAction {
         return AddFcmDeliveryEndpointAction(userRepository: getUserRepository())
+    }
+    
+    private func getFcmMessageProcessor() -> FcmMessageProcessor {
+        return FcmMessageProcessor()
     }
     
     private func registerUserApiLayers() {

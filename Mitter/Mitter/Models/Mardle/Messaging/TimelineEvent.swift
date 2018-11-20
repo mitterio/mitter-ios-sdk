@@ -8,8 +8,9 @@
 
 import Foundation
 import Mapper
+import Unbox
 
-public struct TimelineEvent: Mappable {
+public struct TimelineEvent: Mappable, Unboxable {
     public let eventId: String
     public let internalId: String?
     public let type: String
@@ -24,6 +25,15 @@ public struct TimelineEvent: Mappable {
         eventTimeMs = try map.from("eventTimeMs")
         subject = try map.from("subject")
         auditInfo = map.optionalFrom("auditInfo")
+    }
+    
+    public init(unboxer: Unboxer) throws {
+        eventId = try unboxer.unbox(key: "eventId")
+        internalId = unboxer.unbox(key: "internalId")
+        type = try unboxer.unbox(key: "type")
+        eventTimeMs = try unboxer.unbox(key: "eventTimeMs")
+        subject = try unboxer.unbox(key: "subject")
+        auditInfo = unboxer.unbox(key: "auditInfo")
     }
     
     public init(

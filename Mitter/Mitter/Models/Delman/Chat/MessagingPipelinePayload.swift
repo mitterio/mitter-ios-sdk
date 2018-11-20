@@ -8,19 +8,33 @@
 
 import Foundation
 import Unbox
+import Mapper
 
-public class MessagingPipelinePayload: Unboxable {
+public class MessagingPipelinePayload: Mappable, Unboxable {
     private let type: String
-    let payload: MessagingPipelinePayload?
+    public let payload: MessagingPipelinePayload?
+    
+    public required init(map: Mapper) throws {
+        type = try map.from("@type")
+        
+        switch type {
+        case StandardPipelinePayloadNames.NewMessagePayload:
+            let message: Message = try map.from("message")
+            payload = try NewMessagePayload(map: map, message: message)
+            return
+        default:
+            payload = nil
+            return
+        }
+    }
     
     public required init(unboxer: Unboxer) throws {
         type = try unboxer.unbox(key: "@type")
         
         switch type {
         case StandardPipelinePayloadNames.NewMessagePayload:
-            let message: NewMessagePayload = try unboxer.unbox(key: "message")
-            payload = message
-            
+            let message: Message = try unboxer.unbox(key: "message")
+            payload = try NewMessagePayload(unboxer: unboxer, message: message)
             return
         default:
             payload = nil
