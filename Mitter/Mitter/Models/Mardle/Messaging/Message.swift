@@ -8,8 +8,9 @@
 
 import Foundation
 import Mapper
+import Unbox
 
-public struct Message: Mappable {
+public struct Message: Mappable, Unboxable {
     public let messageId: String
     public let internalId: String?
     public let messageType: StandardMessageType
@@ -60,5 +61,19 @@ public struct Message: Mappable {
         self.appliedAcls = appliedAcls
         self.entityMetadata = entityMetadata
         self.auditInfo = auditInfo
+    }
+    
+    public init(unboxer: Unboxer) throws {
+        messageId = try unboxer.unbox(key: "messageId")
+        internalId = unboxer.unbox(key: "internalId")
+        messageType = StandardMessageType(rawValue: try unboxer.unbox(key: "messageType")) ?? StandardMessageType.Standard
+        payloadType = try unboxer.unbox(key: "payloadType")
+        senderId = try unboxer.unbox(key: "senderId")
+        textPayload = try unboxer.unbox(key: "textPayload")
+        messageData = try unboxer.unbox(key: "messageData")
+        timelineEvents = try unboxer.unbox(key: "timelineEvents")
+        appliedAcls = AppliedAclList(plusAppliedAcls: [String](), minusAppliedAcls: [String]())
+        entityMetadata = unboxer.unbox(key: "entityMetadata")
+        auditInfo = unboxer.unbox(key: "auditInfo")
     }
 }

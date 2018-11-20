@@ -8,11 +8,16 @@
 
 import Foundation
 import Mapper
+import Unbox
 
-public struct EntityMetadata: Mappable {
+public struct EntityMetadata: Mappable, Unboxable {
     public let metadata: [Metadata]
     
     public init(map: Mapper) throws {
         metadata = try map.from("metadata")
+    }
+    
+    public init(unboxer: Unboxer) throws {
+        metadata = try unboxer.unbox(key: "metadata")
     }
 }

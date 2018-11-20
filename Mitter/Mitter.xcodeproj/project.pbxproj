@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		26BA130DBC01858B0A4E6F55 /* Pods_Mitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D03DA1590C2BF3411E86D67B /* Pods_Mitter.framework */; };
+		431C9E2F21A40C35001C9073 /* MessagingPipelinePayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431C9E2E21A40C35001C9073 /* MessagingPipelinePayload.swift */; };
+		431C9E3121A41044001C9073 /* StandardPipelinePayloadNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431C9E3021A41044001C9073 /* StandardPipelinePayloadNames.swift */; };
+		431C9E3421A41134001C9073 /* NewMessagePayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431C9E3321A41134001C9073 /* NewMessagePayload.swift */; };
 		431CF53D2195B79A002963F0 /* UserRemoteSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431CF53C2195B79A002963F0 /* UserRemoteSource.swift */; };
 		431CF5412195B81E002963F0 /* UserRepositoryContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431CF5402195B81E002963F0 /* UserRepositoryContract.swift */; };
 		431CF5432195BA65002963F0 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431CF5422195BA65002963F0 /* UserRepository.swift */; };
@@ -59,6 +62,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		431C9E2E21A40C35001C9073 /* MessagingPipelinePayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingPipelinePayload.swift; sourceTree = "<group>"; };
+		431C9E3021A41044001C9073 /* StandardPipelinePayloadNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardPipelinePayloadNames.swift; sourceTree = "<group>"; };
+		431C9E3321A41134001C9073 /* NewMessagePayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessagePayload.swift; sourceTree = "<group>"; };
 		431CF53C2195B79A002963F0 /* UserRemoteSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRemoteSource.swift; sourceTree = "<group>"; };
 		431CF5402195B81E002963F0 /* UserRepositoryContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryContract.swift; sourceTree = "<group>"; };
 		431CF5422195BA65002963F0 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
@@ -141,6 +147,16 @@
 				7B72975E87A88E8A7E7A5CA2 /* Pods-Mitter.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		431C9E3221A4111B001C9073 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				431C9E2E21A40C35001C9073 /* MessagingPipelinePayload.swift */,
+				431C9E3021A41044001C9073 /* StandardPipelinePayloadNames.swift */,
+				431C9E3321A41134001C9073 /* NewMessagePayload.swift */,
+			);
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		431CF53E2195B7F5002963F0 /* Repository */ = {
@@ -248,6 +264,7 @@
 		432C5027219D7667002A0EDA /* Delman */ = {
 			isa = PBXGroup;
 			children = (
+				431C9E3221A4111B001C9073 /* Chat */,
 				432C5028219D767B002A0EDA /* DeliveryEndpoint.swift */,
 				432C502A219D78E6002A0EDA /* FcmDeliveryEndpoint.swift */,
 				432C502C219D7A87002A0EDA /* StandardEndpointTypes.swift */,
@@ -600,6 +617,7 @@
 				4395EA21219989F0004DD4A3 /* Action.swift in Sources */,
 				4320C5EA219EE7A1003C4B9F /* FetchMessageAction.swift in Sources */,
 				4320C5D9219EDE98003C4B9F /* AppliedAclList.swift in Sources */,
+				431C9E3121A41044001C9073 /* StandardPipelinePayloadNames.swift in Sources */,
 				439198542191A815003A38FC /* ScreenName.swift in Sources */,
 				4320C5E5219EE61A003C4B9F /* MessageRemoteSource.swift in Sources */,
 				43EB3B75219478FB0052A90C /* Application.swift in Sources */,
@@ -610,6 +628,7 @@
 				4395EA3021999E49004DD4A3 /* ApiResult.swift in Sources */,
 				4320C5ED219EE848003C4B9F /* MessageApiContainer.swift in Sources */,
 				4320C5CB219EAA37003C4B9F /* StandardMessageType.swift in Sources */,
+				431C9E3421A41134001C9073 /* NewMessagePayload.swift in Sources */,
 				4395023F219AF95500E9079C /* TokenDefaults.swift in Sources */,
 				431CF5412195B81E002963F0 /* UserRepositoryContract.swift in Sources */,
 				4395EA1F21997E12004DD4A3 /* Constants.swift in Sources */,
@@ -617,6 +636,7 @@
 				4391985A2191BC23003A38FC /* UserApiService.swift in Sources */,
 				4395EA142199665C004DD4A3 /* FetchUserAction.swift in Sources */,
 				4320C5E7219EE6EF003C4B9F /* MessageRepository.swift in Sources */,
+				431C9E2F21A40C35001C9073 /* MessagingPipelinePayload.swift in Sources */,
 				43F42525219192D4007759F7 /* User.swift in Sources */,
 				43EB3B71219477580052A90C /* UserLocator.swift in Sources */,
 				432C5030219D90AC002A0EDA /* Wrap.swift in Sources */,
