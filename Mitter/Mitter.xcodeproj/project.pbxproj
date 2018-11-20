@@ -11,6 +11,8 @@
 		431C9E2F21A40C35001C9073 /* MessagingPipelinePayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431C9E2E21A40C35001C9073 /* MessagingPipelinePayload.swift */; };
 		431C9E3121A41044001C9073 /* StandardPipelinePayloadNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431C9E3021A41044001C9073 /* StandardPipelinePayloadNames.swift */; };
 		431C9E3421A41134001C9073 /* NewMessagePayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431C9E3321A41134001C9073 /* NewMessagePayload.swift */; };
+		431C9E3821A425BC001C9073 /* Processor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431C9E3721A425BC001C9073 /* Processor.swift */; };
+		431C9E3A21A425FB001C9073 /* FcmMessageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431C9E3921A425FB001C9073 /* FcmMessageProcessor.swift */; };
 		431CF53D2195B79A002963F0 /* UserRemoteSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431CF53C2195B79A002963F0 /* UserRemoteSource.swift */; };
 		431CF5412195B81E002963F0 /* UserRepositoryContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431CF5402195B81E002963F0 /* UserRepositoryContract.swift */; };
 		431CF5432195BA65002963F0 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431CF5422195BA65002963F0 /* UserRepository.swift */; };
@@ -65,6 +67,8 @@
 		431C9E2E21A40C35001C9073 /* MessagingPipelinePayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingPipelinePayload.swift; sourceTree = "<group>"; };
 		431C9E3021A41044001C9073 /* StandardPipelinePayloadNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardPipelinePayloadNames.swift; sourceTree = "<group>"; };
 		431C9E3321A41134001C9073 /* NewMessagePayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessagePayload.swift; sourceTree = "<group>"; };
+		431C9E3721A425BC001C9073 /* Processor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Processor.swift; sourceTree = "<group>"; };
+		431C9E3921A425FB001C9073 /* FcmMessageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FcmMessageProcessor.swift; sourceTree = "<group>"; };
 		431CF53C2195B79A002963F0 /* UserRemoteSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRemoteSource.swift; sourceTree = "<group>"; };
 		431CF5402195B81E002963F0 /* UserRepositoryContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryContract.swift; sourceTree = "<group>"; };
 		431CF5422195BA65002963F0 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
@@ -157,6 +161,23 @@
 				431C9E3321A41134001C9073 /* NewMessagePayload.swift */,
 			);
 			path = Chat;
+			sourceTree = "<group>";
+		};
+		431C9E3521A42599001C9073 /* Processor */ = {
+			isa = PBXGroup;
+			children = (
+				431C9E3621A425A8001C9073 /* Base */,
+				431C9E3921A425FB001C9073 /* FcmMessageProcessor.swift */,
+			);
+			path = Processor;
+			sourceTree = "<group>";
+		};
+		431C9E3621A425A8001C9073 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				431C9E3721A425BC001C9073 /* Processor.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		431CF53E2195B7F5002963F0 /* Repository */ = {
@@ -371,6 +392,7 @@
 		4395EA1C21997DE4004DD4A3 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				431C9E3521A42599001C9073 /* Processor */,
 				432C502E219D9099002A0EDA /* Coding */,
 				43950244219B0C5000E9079C /* Network */,
 				4395EA1D21997DFC004DD4A3 /* Constant */,
@@ -611,6 +633,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				431C9E3821A425BC001C9073 /* Processor.swift in Sources */,
 				43EB3B62219460DE0052A90C /* Attribute.swift in Sources */,
 				4395023D219AF91300E9079C /* UserMetaDefaults.swift in Sources */,
 				4320C5DB219EDFE5003C4B9F /* Metadata.swift in Sources */,
@@ -641,6 +664,7 @@
 				43EB3B71219477580052A90C /* UserLocator.swift in Sources */,
 				432C5030219D90AC002A0EDA /* Wrap.swift in Sources */,
 				432C502D219D7A87002A0EDA /* StandardEndpointTypes.swift in Sources */,
+				431C9E3A21A425FB001C9073 /* FcmMessageProcessor.swift in Sources */,
 				4320C5DD219EE059003C4B9F /* EntityMetadata.swift in Sources */,
 				43EB3B6B2194699C0052A90C /* AuditInfo.swift in Sources */,
 				431CF5432195BA65002963F0 /* UserRepository.swift in Sources */,
