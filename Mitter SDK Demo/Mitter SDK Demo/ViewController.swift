@@ -23,13 +23,13 @@ class ViewController: UIViewController {
             result in
             switch result {
             case .success(let user):
-                print("Current User is: \(user.screenName!.screenName)")
+                print("Current User is: \(user)")
             case .error:
                 print("Unable to get user!")
             }
         }
         
-        appDelegate.mitter.messaging.getMessage("Hya1L-ezC8l-tCIIo-LAGbe") { result in
+        appDelegate.mitter.messaging.getMessage("I1uK0-9d93j-1uhXl-J3suo") { result in
             switch result {
             case .success(let message):
                 print("Message is: \(message.textPayload)")

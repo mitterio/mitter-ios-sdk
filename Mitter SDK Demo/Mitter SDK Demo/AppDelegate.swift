@@ -161,8 +161,11 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         
         let messagingPipelinePayload = mitter.parseFcmMessage(data: messageData!)
         let textPayload = messagingPipelinePayload!.message!.textPayload
+        let senderId = messagingPipelinePayload!.message!.timelineEvents[0].subject.domainId
         
+        print("Message Object: \(messagingPipelinePayload!.message)")
         print("Message Text is: \(textPayload)")
+        print("Message Sent by: \(senderId)")
         
         // Change this to your preferred presentation option
         completionHandler([])
