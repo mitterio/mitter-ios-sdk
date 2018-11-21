@@ -160,8 +160,9 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         let messageData = messageString.data(using: .utf8)
         
         let messagingPipelinePayload = mitter.parseFcmMessage(data: messageData!)
+        let textPayload = messagingPipelinePayload!.message!.textPayload
         
-        print("Message is: \(messagingPipelinePayload?.payload)")
+        print("Message Text is: \(textPayload)")
         
         // Change this to your preferred presentation option
         completionHandler([])
