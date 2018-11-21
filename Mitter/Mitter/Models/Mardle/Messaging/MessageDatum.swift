@@ -11,15 +11,15 @@ import Mapper
 
 public struct MessageDatum: Mappable {
     public let dataType: String
-    public let data: String
+    public let data: NSDictionary
     
     public init(map: Mapper) throws {
         dataType = try map.from("dataType")
         data = try map.from("data")
     }
     
-    public init(dayaType: String, data: String) {
-        self.dataType = dayaType
+    public init(dataType: String, data: NSDictionary) {
+        self.dataType = dataType
         self.data = data
     }
 }

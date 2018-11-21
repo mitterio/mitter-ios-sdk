@@ -8,19 +8,13 @@
 
 import Foundation
 import Mapper
-import Unbox
 
-public struct AuditInfo: Mappable, Unboxable {
+public struct AuditInfo: Mappable {
     public let createdAt: Int64?
     public let updatedAt: Int64?
     
     public init(map: Mapper) throws {
         createdAt = map.optionalFrom("createdAt")
         updatedAt = map.optionalFrom("updatedAt")
-    }
-    
-    public init(unboxer: Unboxer) throws {
-        createdAt = unboxer.unbox(key: "createdAt")
-        updatedAt = unboxer.unbox(key: "updatedAt")
     }
 }

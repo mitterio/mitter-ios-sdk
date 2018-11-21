@@ -8,17 +8,16 @@
 
 import Foundation
 import Mapper
-import Unbox
 
-public struct Message: Mappable, Unboxable {
+public struct Message: Mappable {
     public let messageId: String
     public let internalId: String?
     public let messageType: StandardMessageType
     public let payloadType: String
     public let senderId: Identifiable<User>
     public let textPayload: String
-    //public let messageData: [MessageDatum]
-    //public let timelineEvents: [TimelineEvent]
+    public let messageData: [MessageDatum]
+    public let timelineEvents: [TimelineEvent]
     public let appliedAcls: AppliedAclList
     public let entityMetadata: EntityMetadata?
     public let auditInfo: AuditInfo?
@@ -26,12 +25,12 @@ public struct Message: Mappable, Unboxable {
     public init(map: Mapper) throws {
         messageId = try map.from("messageId")
         internalId = map.optionalFrom("internalId")
-        messageType = StandardMessageType(rawValue: try map.from("messageType")) ?? StandardMessageType.Standard
+        messageType = map.optionalFrom("messageType") ?? StandardMessageType.Standard
         payloadType = try map.from("payloadType")
         senderId = try map.from("senderId")
         textPayload = try map.from("textPayload")
-        //messageData = try map.from("messageData")
-        //timelineEvents = try map.from("timelineEvents")
+        messageData = try map.from("messageData")
+        timelineEvents = try map.from("timelineEvents")
         appliedAcls = AppliedAclList(plusAppliedAcls: [String](), minusAppliedAcls: [String]())
         entityMetadata = try map.from("entityMetadata")
         auditInfo = map.optionalFrom("auditInfo")
@@ -56,25 +55,10 @@ public struct Message: Mappable, Unboxable {
         self.payloadType = payloadType
         self.senderId = senderId
         self.textPayload = textPayload
-        //self.messageData = messageData
-        //self.timelineEvents = timelineEvents
+        self.messageData = messageData
+        self.timelineEvents = timelineEvents
         self.appliedAcls = appliedAcls
         self.entityMetadata = entityMetadata
         self.auditInfo = auditInfo
-    }
-    
-    public init(unboxer: Unboxer) throws {
-        messageId = try unboxer.unbox(key: "messageId")
-        internalId = unboxer.unbox(key: "internalId")
-        messageType = StandardMessageType(rawValue: try unboxer.unbox(key: "messageType")) ?? StandardMessageType.Standard
-        payloadType = try unboxer.unbox(key: "payloadType")
-        senderId = try unboxer.unbox(key: "senderId")
-        textPayload = try unboxer.unbox(key: "textPayload")
-        //messageData = try unboxer.unbox(key: "messageData")
-        //timelineEvents = try unboxer.unbox(key: "timelineEvents")
-        //timelineEvents = [TimelineEvent]()
-        appliedAcls = AppliedAclList(plusAppliedAcls: [String](), minusAppliedAcls: [String]())
-        entityMetadata = unboxer.unbox(key: "entityMetadata")
-        auditInfo = unboxer.unbox(key: "auditInfo")
     }
 }

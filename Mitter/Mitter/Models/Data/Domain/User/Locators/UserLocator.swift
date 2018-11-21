@@ -21,7 +21,7 @@ public struct UserLocator: Mappable {
     
     public init(map: Mapper) throws {
         try type = map.from("@type")
-        try verificationStatus = VerificationStatus(rawValue: map.from("verificationStatus")) ?? VerificationStatus.StatusNotProvided
+        verificationStatus = map.optionalFrom("verificationStatus") ?? VerificationStatus.StatusNotProvided
         try userLocatorId = map.from("userLocatorId")
         try locator = map.from("locator")
         try identifier = map.from("identifier")
