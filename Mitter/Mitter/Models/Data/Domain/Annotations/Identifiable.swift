@@ -19,6 +19,6 @@ public struct Identifiable<T>: Mappable, CustomStringConvertible {
     }
     
     public var description: String {
-        return "\(ofType): \(domainId)"
+        return "\(ofType) ID: \(domainId)"
     }
 }
