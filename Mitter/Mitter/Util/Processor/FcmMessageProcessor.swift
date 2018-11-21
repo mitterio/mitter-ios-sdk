@@ -10,11 +10,12 @@ import Foundation
 import Mapper
 
 class FcmMessageProcessor: Processor {
-    typealias T = Data
+    typealias T = String
     typealias V = MessagingPipelinePayload?
     
     func process(t: FcmMessageProcessor.T) -> FcmMessageProcessor.V {
-        let JSON = try! JSONSerialization.jsonObject(with: t, options: []) as? NSDictionary
+        let fcmMessageData = t.data(using: .utf8)
+        let JSON = try! JSONSerialization.jsonObject(with: fcmMessageData!, options: []) as? NSDictionary
         return MessagingPipelinePayload.from(JSON!)
     }
 }

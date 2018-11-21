@@ -98,12 +98,34 @@ public class Mitter {
         }
     }
     
-    public func parseFcmMessage(data: Data) -> MessagingPipelinePayload? {
+    public func parseFcmMessage(data: String) -> MessagingPipelinePayload? {
         return userApiContainer.getPushMessageManager().parseFcmMessage(data: data)
     }
     
-    public func isMitterMessage(_ messagingPipelinePayload: MessagingPipelinePayload) -> Bool {
+    public func isMitterMessage(_ messagingPipelinePayload: MessagingPipelinePayload?) -> Bool {
         return userApiContainer.getPushMessageManager().isMitterMessage(messagingPipelinePayload: messagingPipelinePayload)
+    }
+    
+    public func processPushMessage(_ messagingPipelinePayload: MessagingPipelinePayload) -> Payload {
+        switch messagingPipelinePayload.type {
+        case StandardPipelinePayloadNames.NewChannelPayload:
+            return Payload.NewChannelPayload(messagingPipelinePayload.channel!)
+        case StandardPipelinePayloadNames.NewMessagePayload:
+            return Payload.NewMessagePayload(messagingPipelinePayload.message!, messagingPipelinePayload.channelId!)
+        case StandardPipelinePayloadNames.NewChannelTimelineEventPayload:
+            return Payload.NewChannelTimelineEventPayload(messagingPipelinePayload.timelineEvent!, messagingPipelinePayload.channelId!)
+        case StandardPipelinePayloadNames.NewMessageTimelineEventPayload:
+            return Payload.NewMessageTimelineEventPayload(messagingPipelinePayload.timelineEvent!, messagingPipelinePayload.messageId!)
+        case StandardPipelinePayloadNames.ParticipationChangedEventPayload:
+            return Payload.ParticipationChangedEventPayload(
+                messagingPipelinePayload.participantId!,
+                messagingPipelinePayload.channelId!,
+                messagingPipelinePayload.newStatus!,
+                messagingPipelinePayload.oldStatus!
+            )
+        default:
+            return Payload.Empty
+        }
     }
     
     public class Users {

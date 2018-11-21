@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         mitter = Mitter(
             applicationId: "MZzf4-na9nL-O98wq-M1HxS",
-            userAuthToken: "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJtaXR0ZXItaW8iLCJ1c2VyVG9rZW5JZCI6IjZaNmFFeDBPbVREWGtmV0oiLCJ1c2VydG9rZW4iOiI0aWl1a3ZrNTEwanVnNDg0OTJmYnExazg5YSIsImFwcGxpY2F0aW9uSWQiOiJNWnpmNC1uYTluTC1POTh3cS1NMUh4UyIsInVzZXJJZCI6ImNzckN5LVNKTDN1LThBS01ULVdxdjZ5In0.wv1YTy6SDxMxWXd0JOzqZWtS8bgwK-4chI9x0XY-YZmPmtycyW3rpaPRs1VLnfYeKoZarcW1exovuE54pwJTWQ"
+            userAuthToken: "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJtaXR0ZXItaW8iLCJ1c2VyVG9rZW5JZCI6IlpZWnZPaXRnMGI0RzBOR3MiLCJ1c2VydG9rZW4iOiJmMGgwN2FwcWpuMm0xdXY4dnRsZjZ1aTMzaSIsImFwcGxpY2F0aW9uSWQiOiJNWnpmNC1uYTluTC1POTh3cS1NMUh4UyIsInVzZXJJZCI6ImNzckN5LVNKTDN1LThBS01ULVdxdjZ5In0.8JoygEGanIixyr8joN680IsFq7jCQ6ZF3ttEcbddWI3oQpqCDqg1wnI2qWF14ZZQZZo7TOPHu40wlOmHI0wPYg"
         )
         
         return true
@@ -146,26 +146,19 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         let userInfo = notification.request.content.userInfo
         
-        // With swizzling disabled you must let Messaging know about the message, for Analytics
-        // Messaging.messaging().appDidReceiveMessage(userInfo)
-        // Print message ID.
-        if let messageID = userInfo[gcmMessageIDKey] {
-            print("Message ID 3: \(messageID)")
-        }
-        
-        // Print full message.
         let messageString = userInfo["data"] as! String
-        print("Message String: \(messageString)")
+        let messagingPipelinePayload = mitter.parseFcmMessage(data: messageString)
         
-        let messageData = messageString.data(using: .utf8)
-        
-        let messagingPipelinePayload = mitter.parseFcmMessage(data: messageData!)
-        let textPayload = messagingPipelinePayload!.message!.textPayload
-        let senderId = messagingPipelinePayload!.message!.timelineEvents[0].subject.domainId
-        
-        print("Message Object: \(messagingPipelinePayload!.message)")
-        print("Message Text is: \(textPayload)")
-        print("Message Sent by: \(senderId)")
+        if mitter.isMitterMessage(messagingPipelinePayload) {
+            let payload = mitter.processPushMessage(messagingPipelinePayload!)
+            
+            switch payload {
+            case .NewMessagePayload(let message, let channelId):
+                print("Received Message: \(message), for Channel: \(channelId)")
+            default:
+                print("Nothing to print!")
+            }
+        }
         
         // Change this to your preferred presentation option
         completionHandler([])

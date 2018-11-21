@@ -10,6 +10,7 @@
 		26BA130DBC01858B0A4E6F55 /* Pods_Mitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D03DA1590C2BF3411E86D67B /* Pods_Mitter.framework */; };
 		431901C021A582A4007EA588 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431901BF21A582A4007EA588 /* Channel.swift */; };
 		431901C221A5839C007EA588 /* ParticipationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431901C121A5839C007EA588 /* ParticipationStatus.swift */; };
+		431901C421A586AD007EA588 /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431901C321A586AD007EA588 /* Payload.swift */; };
 		431C9E2F21A40C35001C9073 /* MessagingPipelinePayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431C9E2E21A40C35001C9073 /* MessagingPipelinePayload.swift */; };
 		431C9E3121A41044001C9073 /* StandardPipelinePayloadNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431C9E3021A41044001C9073 /* StandardPipelinePayloadNames.swift */; };
 		431C9E3821A425BC001C9073 /* Processor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431C9E3721A425BC001C9073 /* Processor.swift */; };
@@ -68,6 +69,7 @@
 /* Begin PBXFileReference section */
 		431901BF21A582A4007EA588 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		431901C121A5839C007EA588 /* ParticipationStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipationStatus.swift; sourceTree = "<group>"; };
+		431901C321A586AD007EA588 /* Payload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
 		431C9E2E21A40C35001C9073 /* MessagingPipelinePayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingPipelinePayload.swift; sourceTree = "<group>"; };
 		431C9E3021A41044001C9073 /* StandardPipelinePayloadNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardPipelinePayloadNames.swift; sourceTree = "<group>"; };
 		431C9E3721A425BC001C9073 /* Processor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Processor.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 			children = (
 				431C9E2E21A40C35001C9073 /* MessagingPipelinePayload.swift */,
 				431C9E3021A41044001C9073 /* StandardPipelinePayloadNames.swift */,
+				431901C321A586AD007EA588 /* Payload.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -673,6 +676,7 @@
 				4395EA3021999E49004DD4A3 /* ApiResult.swift in Sources */,
 				4320C5ED219EE848003C4B9F /* MessageApiContainer.swift in Sources */,
 				4320C5CB219EAA37003C4B9F /* StandardMessageType.swift in Sources */,
+				431901C421A586AD007EA588 /* Payload.swift in Sources */,
 				4395023F219AF95500E9079C /* TokenDefaults.swift in Sources */,
 				431CF5412195B81E002963F0 /* UserRepositoryContract.swift in Sources */,
 				4395EA1F21997E12004DD4A3 /* Constants.swift in Sources */,

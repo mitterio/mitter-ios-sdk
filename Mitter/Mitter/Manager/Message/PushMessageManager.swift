@@ -15,7 +15,7 @@ class PushMessageManager {
         self.fcmMessageProcessor = fcmMessageProcessor
     }
     
-    func parseFcmMessage(data: Data) -> MessagingPipelinePayload? {
+    func parseFcmMessage(data: String) -> MessagingPipelinePayload? {
         return fcmMessageProcessor.process(t: data)
     }
     
