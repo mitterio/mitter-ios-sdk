@@ -45,6 +45,8 @@
 		433B5D8021A6B927004675BB /* StandardUserPresenceTypeNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433B5D7F21A6B927004675BB /* StandardUserPresenceTypeNames.swift */; };
 		433B5D8221A6B969004675BB /* Presence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433B5D8121A6B969004675BB /* Presence.swift */; };
 		433B5D8421A6C728004675BB /* FetchUserPresenceAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433B5D8321A6C728004675BB /* FetchUserPresenceAction.swift */; };
+		433B5D8D21A6D17F004675BB /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433B5D8C21A6D17F004675BB /* Empty.swift */; };
+		433B5D8F21A6D245004675BB /* UpdateUserPresenceAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433B5D8E21A6D245004675BB /* UpdateUserPresenceAction.swift */; };
 		439198542191A815003A38FC /* ScreenName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439198532191A815003A38FC /* ScreenName.swift */; };
 		4391985A2191BC23003A38FC /* UserApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439198592191BC23003A38FC /* UserApiService.swift */; };
 		4395023D219AF91300E9079C /* UserMetaDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4395023C219AF91300E9079C /* UserMetaDefaults.swift */; };
@@ -107,6 +109,8 @@
 		433B5D7F21A6B927004675BB /* StandardUserPresenceTypeNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardUserPresenceTypeNames.swift; sourceTree = "<group>"; };
 		433B5D8121A6B969004675BB /* Presence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presence.swift; sourceTree = "<group>"; };
 		433B5D8321A6C728004675BB /* FetchUserPresenceAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUserPresenceAction.swift; sourceTree = "<group>"; };
+		433B5D8C21A6D17F004675BB /* Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empty.swift; sourceTree = "<group>"; };
+		433B5D8E21A6D245004675BB /* UpdateUserPresenceAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserPresenceAction.swift; sourceTree = "<group>"; };
 		439198532191A815003A38FC /* ScreenName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenName.swift; sourceTree = "<group>"; };
 		439198592191BC23003A38FC /* UserApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiService.swift; sourceTree = "<group>"; };
 		4395023C219AF91300E9079C /* UserMetaDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMetaDefaults.swift; sourceTree = "<group>"; };
@@ -331,9 +335,18 @@
 			path = Coding;
 			sourceTree = "<group>";
 		};
+		433B5D8B21A6D168004675BB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				433B5D8C21A6D17F004675BB /* Empty.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		439198552191BBD8003A38FC /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				433B5D8B21A6D168004675BB /* Model */,
 				439198562191BBDD003A38FC /* Source */,
 			);
 			path = Data;
@@ -399,6 +412,7 @@
 				4395EA132199665C004DD4A3 /* FetchUserAction.swift */,
 				432C5033219D981E002A0EDA /* AddFcmDeliveryEndpointAction.swift */,
 				433B5D8321A6C728004675BB /* FetchUserPresenceAction.swift */,
+				433B5D8E21A6D245004675BB /* UpdateUserPresenceAction.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -669,6 +683,7 @@
 			files = (
 				431C9E3821A425BC001C9073 /* Processor.swift in Sources */,
 				43EB3B62219460DE0052A90C /* Attribute.swift in Sources */,
+				433B5D8F21A6D245004675BB /* UpdateUserPresenceAction.swift in Sources */,
 				4395023D219AF91300E9079C /* UserMetaDefaults.swift in Sources */,
 				4320C5DB219EDFE5003C4B9F /* Metadata.swift in Sources */,
 				4395EA21219989F0004DD4A3 /* Action.swift in Sources */,
@@ -699,6 +714,7 @@
 				432C5030219D90AC002A0EDA /* Wrap.swift in Sources */,
 				432C502D219D7A87002A0EDA /* StandardEndpointTypes.swift in Sources */,
 				431C9E3A21A425FB001C9073 /* FcmMessageProcessor.swift in Sources */,
+				433B5D8D21A6D17F004675BB /* Empty.swift in Sources */,
 				431901C221A5839C007EA588 /* ParticipationStatus.swift in Sources */,
 				4320C5DD219EE059003C4B9F /* EntityMetadata.swift in Sources */,
 				43EB3B6B2194699C0052A90C /* AuditInfo.swift in Sources */,

@@ -18,25 +18,25 @@ class ViewController: UIViewController {
     }
     
     func testSDK(appDelegate: AppDelegate) {
-        appDelegate.mitter.users.getCurrentUser {
-            result in
-            switch result {
-            case .success(let user):
-                print("Current User is: \(user)")
-            case .error:
-                print("Unable to get user!")
-            }
-        }
+//        appDelegate.mitter.users.getCurrentUser {
+//            result in
+//            switch result {
+//            case .success(let user):
+//                print("Current User is: \(user)")
+//            case .error:
+//                print("Unable to get user!")
+//            }
+//        }
         
-        appDelegate.mitter.messaging.getMessage("I1uK0-9d93j-1uhXl-J3suo") { result in
-            switch result {
-            case .success(let message):
-                print("Message is: \(message)")
-                print("Message sent by: \(message.senderId.domainId)")
-            case .error:
-                print("Unable to fetch message from server")
-            }
-        }
+//        appDelegate.mitter.messaging.getMessage("I1uK0-9d93j-1uhXl-J3suo") { result in
+//            switch result {
+//            case .success(let message):
+//                print("Message is: \(message)")
+//                print("Message sent by: \(message.senderId.domainId)")
+//            case .error:
+//                print("Unable to fetch message from server")
+//            }
+//        }
         
         appDelegate.mitter.users.getCurrentUserPresence { result in
             switch result {
@@ -46,6 +46,25 @@ class ViewController: UIViewController {
             case .error:
                 print("Unable to fetch presence from server")
             }
+        }
+        
+        let away = Presence(
+            type: StandardUserPresenceTypeNames.Away,
+            timeToLive: 0
+        )
+        let online = Presence(
+            type: StandardUserPresenceTypeNames.Online,
+            timeToLive: 60,
+            expiresTo: away
+        )
+        appDelegate.mitter.users.setCurrentUserPresence(online) { result in
+            switch result {
+            case .success:
+                print("Presence Updated!")
+            case .error:
+                print("Unable to update presence")
+            }
+            
         }
     }
 }

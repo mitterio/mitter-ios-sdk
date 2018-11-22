@@ -14,6 +14,11 @@ protocol UserRepositoryContract {
     
     func fetchUserPresence(userId: String) -> PrimitiveSequence<SingleTrait, Presence>
     
+    func setUserPresence(
+        userId: String,
+        presence: Presence
+    ) -> PrimitiveSequence<SingleTrait, Empty>
+    
     func addUserDeliveryEndpoint(
         userId: String,
         fcmDeliveryEndpoint: FcmDeliveryEndpoint

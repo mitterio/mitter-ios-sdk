@@ -31,6 +31,13 @@ class UserRemoteSource: UserRepositoryContract {
             .map(to: Presence.self)
     }
     
+    func setUserPresence(userId: String, presence: Presence) -> PrimitiveSequence<SingleTrait, Empty> {
+        return apiProvider
+            .rx
+            .request(.setUserPresence(userId: userId, presence: presence))
+            .map(to: Empty.self)
+    }
+    
     func addUserDeliveryEndpoint(
         userId: String,
         fcmDeliveryEndpoint: FcmDeliveryEndpoint

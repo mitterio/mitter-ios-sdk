@@ -155,7 +155,7 @@ public class Mitter {
             getUser(mitter.getUserId(), completion: completion)
         }
         
-        public func getUserPresence(userId: String, completion: @escaping userPresenceApiResult) {
+        public func getUserPresence(_ userId: String, completion: @escaping userPresenceApiResult) {
             let fetchUserPresenceAction = mitter.userApiContainer.getFetchUserPresenceAction()
             
             fetchUserPresenceAction
@@ -171,7 +171,22 @@ public class Mitter {
         }
         
         public func getCurrentUserPresence(completion: @escaping userPresenceApiResult) {
-            getUserPresence(userId: mitter.getUserId(), completion: completion)
+            getUserPresence(mitter.getUserId(), completion: completion)
+        }
+        
+        public func setCurrentUserPresence(_ presence: Presence, completion: @escaping (ApiResult<Empty>) -> Void) {
+            let updateUserPresenceAction = mitter.userApiContainer.getUpdateUserPresenceAction()
+            
+            updateUserPresenceAction
+                .execute(t1: mitter.getUserId(), t2: presence)
+                .subscribe { event in
+                    switch event {
+                    case .success(let empty):
+                        completion(ApiResult.success(empty))
+                    case .error(let error):
+                        completion(self.mitter.handleNoContentResponse(error: error))
+                    }
+            }
         }
     }
     
@@ -194,5 +209,14 @@ public class Mitter {
                     }
             }
         }
+    }
+    
+    private func handleNoContentResponse(error: Error) -> ApiResult<Empty> {
+        let moyaError = error as! MoyaError
+        if moyaError.response!.statusCode == 204 {
+            return ApiResult.success(Empty())
+        }
+        
+        return ApiResult.error
     }
 }

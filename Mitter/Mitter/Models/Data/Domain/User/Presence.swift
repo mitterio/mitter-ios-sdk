@@ -14,6 +14,16 @@ public class Presence: Mappable {
     public let timeToLive: Int64
     public let expiresTo: Presence?
     
+    public init(
+        type: String,
+        timeToLive: Int64,
+        expiresTo: Presence? = nil
+    ) {
+        self.type = type
+        self.timeToLive = timeToLive
+        self.expiresTo = expiresTo
+    }
+    
     public required init(map: Mapper) throws {
         type = try map.from("type")
         timeToLive = try map.from("timeToLive")

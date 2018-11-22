@@ -12,6 +12,7 @@ import Moya
 enum UserApiService {
     case fetchUser(userId: String)
     case fetchUserPresence(userId: String)
+    case setUserPresence(userId: String, presence: Presence)
     case addUserDeliveryEndpoint(
         userId: String,
         fcmDeliveryEndpoint: FcmDeliveryEndpoint
@@ -29,6 +30,8 @@ extension UserApiService: TargetType {
             return "/v1/users/\(userId)"
         case .fetchUserPresence(let userId):
             return "/v1/users/\(userId)/presence"
+        case .setUserPresence(let userId, _):
+            return "/v1/users/\(userId)/presence"
         case .addUserDeliveryEndpoint(let userId, _):
             return "/v1/users/\(userId)/delivery-endpoints"
         }
@@ -40,6 +43,8 @@ extension UserApiService: TargetType {
             return .get
         case .fetchUserPresence:
             return .get
+        case .setUserPresence:
+            return .post
         case .addUserDeliveryEndpoint:
             return .post
         }
@@ -55,7 +60,10 @@ extension UserApiService: TargetType {
             return .requestPlain
         case .fetchUserPresence:
             return .requestPlain
-        case let .addUserDeliveryEndpoint(_, fcmDeliveryEndpoint):
+        case .setUserPresence(_, let presence):
+            let requestParams = try! wrap(presence)
+            return .requestParameters(parameters: requestParams, encoding: JSONEncoding.default)
+        case .addUserDeliveryEndpoint(_, let fcmDeliveryEndpoint):
             let requestParams = try! wrap(fcmDeliveryEndpoint)
             return .requestParameters(parameters: requestParams, encoding: JSONEncoding.default)
         }

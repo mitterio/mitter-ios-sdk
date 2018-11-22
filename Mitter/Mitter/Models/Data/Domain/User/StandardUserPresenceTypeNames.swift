@@ -9,9 +9,9 @@
 import Foundation
 
 public enum StandardUserPresenceTypeNames {
-    static let Online: String = "mitter.up.Online"
-    static let Sleeping: String = "mitter.up.Sleeping"
-    static let Away: String = "mitter.up.Away"
-    static let Missing: String = "mitter.up.Missing"
-    static let Offline: String = "mitter.up.Offline"
+    public static let Online: String = "mitter.up.Online"
+    public static let Sleeping: String = "mitter.up.Sleeping"
+    public static let Away: String = "mitter.up.Away"
+    public static let Missing: String = "mitter.up.Missing"
+    public static let Offline: String = "mitter.up.Offline"
 }
