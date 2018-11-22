@@ -9,6 +9,9 @@
 import Foundation
 
 enum Constants {
+    enum Urls {
+        static let baseUrl = "https://api.staging.mitter.io"
+    }
     enum Headers {
         static let applicationId = "X-Mitter-Application-Id"
         static let userAuthToken = "X-Issued-Mitter-User-Authorization"
@@ -17,10 +20,11 @@ enum Constants {
     enum Users {
         static let userRemoteSource = "UserRemoteSource"
         static let userRepository = "UserRepository"
-        
-        enum Actions {
-            static let fetchUser = "FetchUserAction"
-        }
+    }
+    
+    enum Messages {
+        static let messageRemoteSource = "MessageRemoteSource"
+        static let messageRepository = "MessageRepository"
     }
     
     enum Keys {

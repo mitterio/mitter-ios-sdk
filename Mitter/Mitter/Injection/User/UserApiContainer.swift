@@ -24,11 +24,20 @@ class UserApiContainer {
         registerUserApiLayers()
     }
     
+    func getPushMessageManager() -> PushMessageManager {
+        return PushMessageManager(fcmMessageProcessor: getFcmMessageProcessor())
+    }
+    
     func getFetchUserAction() -> FetchUserAction {
-        return container.resolve(
-            Action.self,
-            name: Constants.Users.Actions.fetchUser
-            ) as! FetchUserAction
+        return FetchUserAction(userRepository: getUserRepository())
+    }
+    
+    func getAddFcmDeliveryEndpointAction() -> AddFcmDeliveryEndpointAction {
+        return AddFcmDeliveryEndpointAction(userRepository: getUserRepository())
+    }
+    
+    private func getFcmMessageProcessor() -> FcmMessageProcessor {
+        return FcmMessageProcessor()
     }
     
     private func registerUserApiLayers() {
@@ -39,7 +48,8 @@ class UserApiContainer {
                         ApiAuthPlugin(
                             applicationId: self.applicationId,
                             userAuthToken: self.userAuthToken
-                        )
+                        ),
+                        NetworkLoggerPlugin(verbose: true)
                     ]
                 )
             )
@@ -53,14 +63,12 @@ class UserApiContainer {
                     ) as! UserRemoteSource
             )
         }
-        
-        container.register(Action.self, name: Constants.Users.Actions.fetchUser) {
-            resolver in FetchUserAction(
-                userRepository: resolver.resolve(
-                    UserRepositoryContract.self,
-                    name: Constants.Users.userRepository
-                    ) as! UserRepository
-            )
-        }
+    }
+    
+    private func getUserRepository() -> UserRepository {
+        return container.resolve(
+            UserRepositoryContract.self,
+            name: Constants.Users.userRepository
+        ) as! UserRepository
     }
 }

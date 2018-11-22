@@ -9,12 +9,16 @@
 import Foundation
 import Mapper
 
-public struct Identifiable<T>: Mappable {
+public struct Identifiable<T>: Mappable, CustomStringConvertible {
     public let domainId: String
-    public let ofType: Identifiable<T>.Type
+    public let ofType: T.Type
     
     public init(map: Mapper) throws {
         try domainId = map.from("identifier")
-        ofType = type(of: self)
+        ofType = T.self
+    }
+    
+    public var description: String {
+        return "\(ofType): \(domainId)"
     }
 }

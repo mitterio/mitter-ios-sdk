@@ -10,25 +10,33 @@ import Foundation
 import Moya
 
 enum UserApiService {
-    case getUser(userId: String)
+    case fetchUser(userId: String)
+    case addUserDeliveryEndpoint(
+        userId: String,
+        fcmDeliveryEndpoint: FcmDeliveryEndpoint
+    )
 }
 
 extension UserApiService: TargetType {
     var baseURL: URL {
-        return URL(string: "https://api.staging.mitter.io")!
+        return URL(string: Constants.Urls.baseUrl)!
     }
     
     var path: String {
         switch self {
-        case .getUser(let userId):
+        case .fetchUser(let userId):
             return "/v1/users/\(userId)"
+        case .addUserDeliveryEndpoint(let userId, _):
+            return "/v1/users/\(userId)/delivery-endpoints"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .getUser:
+        case .fetchUser:
             return .get
+        case .addUserDeliveryEndpoint:
+            return .post
         }
     }
     
@@ -38,8 +46,12 @@ extension UserApiService: TargetType {
     
     var task: Task {
         switch self {
-        case .getUser:
+        case .fetchUser:
             return .requestPlain
+        case let .addUserDeliveryEndpoint(_, fcmDeliveryEndpoint):
+            let requestParams = try! wrap(fcmDeliveryEndpoint)
+            print("Request Params: \(requestParams)")
+            return .requestParameters(parameters: requestParams, encoding: JSONEncoding.default)
         }
     }
     
