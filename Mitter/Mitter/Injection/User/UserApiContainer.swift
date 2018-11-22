@@ -32,6 +32,10 @@ class UserApiContainer {
         return FetchUserAction(userRepository: getUserRepository())
     }
     
+    func getFetchUserPresenceAction() -> FetchUserPresenceAction {
+        return FetchUserPresenceAction(userRepository: getUserRepository())
+    }
+    
     func getAddFcmDeliveryEndpointAction() -> AddFcmDeliveryEndpointAction {
         return AddFcmDeliveryEndpointAction(userRepository: getUserRepository())
     }

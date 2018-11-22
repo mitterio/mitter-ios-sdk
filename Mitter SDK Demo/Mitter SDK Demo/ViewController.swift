@@ -37,5 +37,15 @@ class ViewController: UIViewController {
                 print("Unable to fetch message from server")
             }
         }
+        
+        appDelegate.mitter.users.getCurrentUserPresence { result in
+            switch result {
+            case .success(let userPresence):
+                print("Presence is: \(userPresence.type)")
+                print("Expires to: \(userPresence.expiresTo?.type)")
+            case .error:
+                print("Unable to fetch presence from server")
+            }
+        }
     }
 }

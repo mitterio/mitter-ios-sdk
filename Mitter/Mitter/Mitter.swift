@@ -130,6 +130,7 @@ public class Mitter {
     
     public class Users {
         public typealias userApiResult = (ApiResult<User>) -> Void
+        public typealias userPresenceApiResult = (ApiResult<Presence>) -> Void
         
         weak var mitter: Mitter!
         
@@ -152,6 +153,25 @@ public class Mitter {
         
         public func getCurrentUser(completion: @escaping userApiResult) {
             getUser(mitter.getUserId(), completion: completion)
+        }
+        
+        public func getUserPresence(userId: String, completion: @escaping userPresenceApiResult) {
+            let fetchUserPresenceAction = mitter.userApiContainer.getFetchUserPresenceAction()
+            
+            fetchUserPresenceAction
+                .execute(t: userId)
+                .subscribe { event in
+                    switch event {
+                    case .success(let userPresence):
+                        completion(ApiResult.success(userPresence))
+                    case .error:
+                        completion(ApiResult.error)
+                    }
+            }
+        }
+        
+        public func getCurrentUserPresence(completion: @escaping userPresenceApiResult) {
+            getUserPresence(userId: mitter.getUserId(), completion: completion)
         }
     }
     
