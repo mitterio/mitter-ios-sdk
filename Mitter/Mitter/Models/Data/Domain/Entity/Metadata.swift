@@ -9,10 +9,12 @@
 import Foundation
 import Mapper
 
-public struct Metadata: Mappable {
+public struct Metadata {
     public let key: String
     public let value: String
-    
+}
+
+extension Metadata: Mappable {
     public init(map: Mapper) throws {
         key = try map.from("key")
         value = try map.from("value")

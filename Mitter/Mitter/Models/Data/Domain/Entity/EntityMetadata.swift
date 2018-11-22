@@ -9,9 +9,11 @@
 import Foundation
 import Mapper
 
-public struct EntityMetadata: Mappable {
+public struct EntityMetadata {
     public let metadata: [Metadata]
-    
+}
+
+extension EntityMetadata: Mappable {
     public init(map: Mapper) throws {
         metadata = try map.from("metadata")
     }

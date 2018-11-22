@@ -9,14 +9,9 @@
 import Foundation
 import Mapper
 
-public struct AppliedAclList: Mappable {
+public struct AppliedAclList {
     public let plusAppliedAcls: [String]
     public let minusAppliedAcls: [String]
-    
-    public init(map: Mapper) throws {
-        plusAppliedAcls = try map.from("plusAppliedAcls")
-        minusAppliedAcls = try map.from("minusAppliedAcls")
-    }
     
     init(
         plusAppliedAcls: [String],
@@ -24,5 +19,12 @@ public struct AppliedAclList: Mappable {
         ) {
         self.plusAppliedAcls = plusAppliedAcls
         self.minusAppliedAcls = minusAppliedAcls
+    }
+}
+
+extension AppliedAclList: Mappable {
+    public init(map: Mapper) throws {
+        plusAppliedAcls = try map.from("plusAppliedAcls")
+        minusAppliedAcls = try map.from("minusAppliedAcls")
     }
 }

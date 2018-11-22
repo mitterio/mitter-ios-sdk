@@ -9,7 +9,7 @@
 import Foundation
 import Mapper
 
-public struct Message: Mappable {
+public struct Message {
     public let messageId: String
     public let internalId: String?
     public let messageType: StandardMessageType
@@ -21,20 +21,6 @@ public struct Message: Mappable {
     public let appliedAcls: AppliedAclList
     public let entityMetadata: EntityMetadata?
     public let auditInfo: AuditInfo?
-    
-    public init(map: Mapper) throws {
-        messageId = try map.from("messageId")
-        internalId = map.optionalFrom("internalId")
-        messageType = map.optionalFrom("messageType") ?? StandardMessageType.Standard
-        payloadType = try map.from("payloadType")
-        senderId = try map.from("senderId")
-        textPayload = try map.from("textPayload")
-        messageData = try map.from("messageData")
-        timelineEvents = try map.from("timelineEvents")
-        appliedAcls = AppliedAclList(plusAppliedAcls: [String](), minusAppliedAcls: [String]())
-        entityMetadata = try map.from("entityMetadata")
-        auditInfo = map.optionalFrom("auditInfo")
-    }
     
     public init(
         messageId: String,
@@ -60,5 +46,21 @@ public struct Message: Mappable {
         self.appliedAcls = appliedAcls
         self.entityMetadata = entityMetadata
         self.auditInfo = auditInfo
+    }
+}
+
+extension Message: Mappable {
+    public init(map: Mapper) throws {
+        messageId = try map.from("messageId")
+        internalId = map.optionalFrom("internalId")
+        messageType = map.optionalFrom("messageType") ?? StandardMessageType.Standard
+        payloadType = try map.from("payloadType")
+        senderId = try map.from("senderId")
+        textPayload = try map.from("textPayload")
+        messageData = try map.from("messageData")
+        timelineEvents = try map.from("timelineEvents")
+        appliedAcls = AppliedAclList(plusAppliedAcls: [String](), minusAppliedAcls: [String]())
+        entityMetadata = try map.from("entityMetadata")
+        auditInfo = map.optionalFrom("auditInfo")
     }
 }

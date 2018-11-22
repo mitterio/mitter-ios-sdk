@@ -18,7 +18,6 @@ class ViewController: UIViewController {
     }
     
     func testSDK(appDelegate: AppDelegate) {
-
         appDelegate.mitter.users.getCurrentUser {
             result in
             switch result {
@@ -32,7 +31,7 @@ class ViewController: UIViewController {
         appDelegate.mitter.messaging.getMessage("I1uK0-9d93j-1uhXl-J3suo") { result in
             switch result {
             case .success(let message):
-                print("Message is: \(message.textPayload)")
+                print("Message is: \(message)")
                 print("Message sent by: \(message.senderId.domainId)")
             case .error:
                 print("Unable to fetch message from server")

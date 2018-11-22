@@ -9,7 +9,7 @@
 import Foundation
 import Mapper
 
-public class MessagingPipelinePayload: Mappable {
+public struct MessagingPipelinePayload {
     let type: String
     let message: Message?
     let channelId: Identifiable<Channel>?
@@ -20,8 +20,10 @@ public class MessagingPipelinePayload: Mappable {
     let newStatus: ParticipationStatus?
     let oldStatus: ParticipationStatus?
     public let globalPipelinePayloadId: String
-    
-    public required init(map: Mapper) throws {
+}
+
+extension MessagingPipelinePayload: Mappable {
+    public init(map: Mapper) throws {
         type = try map.from("@type")
         message = map.optionalFrom("message")
         channelId = map.optionalFrom("channelId")

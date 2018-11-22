@@ -9,7 +9,7 @@
 import Foundation
 import Mapper
 
-public struct UserLocator: Mappable {
+public struct UserLocator {
     public let type: String
     public var verificationStatus: VerificationStatus = VerificationStatus.StatusNotProvided
     public let userLocatorId: String
@@ -18,7 +18,9 @@ public struct UserLocator: Mappable {
     public let phoneNumber: String?
     public let email: String?
     public let applicationId: Identifiable<Application>
-    
+}
+
+extension UserLocator: Mappable {
     public init(map: Mapper) throws {
         try type = map.from("@type")
         verificationStatus = map.optionalFrom("verificationStatus") ?? VerificationStatus.StatusNotProvided

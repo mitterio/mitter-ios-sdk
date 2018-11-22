@@ -9,7 +9,7 @@
 import Foundation
 import Mapper
 
-public struct User: Mappable {
+public struct User {
     public let userId: String
     public let internalId: String
     public let screenName: ScreenName?
@@ -19,7 +19,9 @@ public struct User: Mappable {
     public let blocked: Bool?
     public let auditInfo: AuditInfo
     public var userLocators: [UserLocator] = [UserLocator]()
-    
+}
+
+extension User: Mappable {
     public init(map: Mapper) throws {
         try userId = map.from("identifier")
         try internalId = map.from("internalId")

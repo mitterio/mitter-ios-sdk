@@ -9,12 +9,14 @@
 import Foundation
 import Mapper
 
-public struct Attribute: Mappable {
+public struct Attribute {
     public let key: String
     public let contentType: String
     public let contentEncoding: String
     public let value: String
-    
+}
+
+extension Attribute: Mappable {
     public init(map: Mapper) throws {
         try key = map.from("key")
         try contentType = map.from("contentType")
