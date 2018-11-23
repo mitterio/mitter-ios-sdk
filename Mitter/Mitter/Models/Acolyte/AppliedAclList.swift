@@ -13,7 +13,7 @@ public struct AppliedAclList {
     public let plusAppliedAcls: [String]
     public let minusAppliedAcls: [String]
     
-    init(
+    public init(
         plusAppliedAcls: [String],
         minusAppliedAcls: [String]
         ) {

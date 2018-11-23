@@ -28,6 +28,10 @@ class MessageApiContainer {
         return FetchMessageAction(messageRepository: getMessageRepository())
     }
     
+    func getAddTextMessageAction() -> AddTextMessageAction {
+        return AddTextMessageAction(messageRepository: getMessageRepository())
+    }
+    
     private func registerMessageApiLayers() {
         container.register(MessageRepositoryContract.self, name: Constants.Messages.messageRemoteSource) {
             _ in MessageRemoteSource(

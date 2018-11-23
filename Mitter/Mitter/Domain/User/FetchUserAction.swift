@@ -10,16 +10,13 @@ import Foundation
 import RxSwift
 
 class FetchUserAction: UniParamAction {
-    typealias T = String
-    typealias V = User
-    
     private let userRepository: UserRepository
     
     init(userRepository: UserRepository) {
         self.userRepository = userRepository
     }
     
-    func execute(t: FetchUserAction.T) -> PrimitiveSequence<SingleTrait, FetchUserAction.V> {
+    func execute(t: String) -> PrimitiveSequence<SingleTrait, User> {
         return userRepository.fetchUser(userId: t)
     }
 }

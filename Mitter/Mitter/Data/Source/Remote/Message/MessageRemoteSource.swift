@@ -23,4 +23,11 @@ class MessageRemoteSource: MessageRepositoryContract {
             .request(.fetchMessage(messageId: messageId))
             .map(to: Message.self)
     }
+    
+    func addMessageToChannel(channelId: String, message: Message) -> PrimitiveSequence<SingleTrait, Empty> {
+        return apiProvider
+            .rx
+            .request(.addMessageToChannel(channelId: channelId, message: message))
+            .map(to: Empty.self)
+    }
 }

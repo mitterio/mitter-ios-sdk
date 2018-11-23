@@ -131,6 +131,7 @@ public class Mitter {
     public class Users {
         public typealias userApiResult = (ApiResult<User>) -> Void
         public typealias userPresenceApiResult = (ApiResult<Presence>) -> Void
+        public typealias emptyApiResult = (ApiResult<Empty>) -> Void
         
         weak var mitter: Mitter!
         
@@ -174,7 +175,7 @@ public class Mitter {
             getUserPresence(mitter.getUserId(), completion: completion)
         }
         
-        public func setCurrentUserPresence(_ presence: Presence, completion: @escaping (ApiResult<Empty>) -> Void) {
+        public func setCurrentUserPresence(_ presence: Presence, completion: @escaping emptyApiResult) {
             let updateUserPresenceAction = mitter.userApiContainer.getUpdateUserPresenceAction()
             
             updateUserPresenceAction
@@ -191,6 +192,8 @@ public class Mitter {
     }
     
     public class Messaging {
+        public typealias emptyApiResult = (ApiResult<Empty>) -> Void
+        
         weak var mitter: Mitter!
         
         init() {}
@@ -206,6 +209,22 @@ public class Mitter {
                         completion(ApiResult.success(message))
                     case .error:
                         completion(ApiResult.error)
+                    }
+            }
+        }
+        
+        public func sendTextMessage(forChannel channelId: String, _ message: String, completion: @escaping emptyApiResult) {
+            let addTextMessageAction = mitter.messageApiContainer.getAddTextMessageAction()
+            let textMessage = TextMessage(senderId: mitter.getUserId(), message: message)
+            
+            addTextMessageAction
+                .execute(t1: channelId, t2: textMessage)
+                .subscribe { event in
+                    switch event {
+                    case .success(let empty):
+                        completion(ApiResult.success(empty))
+                    case .error(let error):
+                        completion(self.mitter.handleNoContentResponse(error: error))
                     }
             }
         }

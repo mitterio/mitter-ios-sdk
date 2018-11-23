@@ -11,6 +11,7 @@ import Moya
 
 enum MessageApiService {
     case fetchMessage(messageId: String)
+    case addMessageToChannel(channelId: String, message: Message)
 }
 
 extension MessageApiService: TargetType {
@@ -22,6 +23,8 @@ extension MessageApiService: TargetType {
         switch self {
         case .fetchMessage(let messageId):
             return "/v1/messages/\(messageId)"
+        case .addMessageToChannel(let channelId, _):
+            return "/v1/channels/\(channelId)/messages"
         }
     }
     
@@ -29,6 +32,8 @@ extension MessageApiService: TargetType {
         switch self {
         case .fetchMessage:
             return .get
+        case .addMessageToChannel:
+            return .post
         }
     }
     
@@ -40,6 +45,9 @@ extension MessageApiService: TargetType {
         switch self {
         case .fetchMessage:
             return .requestPlain
+        case .addMessageToChannel(_, let message):
+            let requestParams = try! wrap(message)
+            return .requestParameters(parameters: requestParams, encoding: JSONEncoding.default)
         }
     }
     

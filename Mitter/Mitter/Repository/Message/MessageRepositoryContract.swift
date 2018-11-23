@@ -11,4 +11,6 @@ import RxSwift
 
 protocol MessageRepositoryContract {
     func fetchMessage(messageId: String) -> PrimitiveSequence<SingleTrait, Message>
+    
+    func addMessageToChannel(channelId: String, message: Message) -> PrimitiveSequence<SingleTrait, Empty>
 }

@@ -10,10 +10,6 @@ import Foundation
 import RxSwift
 
 class UpdateUserPresenceAction: BiParamAction {
-    typealias T1 = String
-    typealias T2 = Presence
-    typealias V = Empty
-    
     private let userRepository: UserRepository
     
     init(userRepository: UserRepository) {

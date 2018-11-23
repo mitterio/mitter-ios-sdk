@@ -19,4 +19,8 @@ class MessageRepository: MessageRepositoryContract {
     func fetchMessage(messageId: String) -> PrimitiveSequence<SingleTrait, Message> {
         return messageRemoteSource.fetchMessage(messageId: messageId)
     }
+    
+    func addMessageToChannel(channelId: String, message: Message) -> PrimitiveSequence<SingleTrait, Empty> {
+        return messageRemoteSource.addMessageToChannel(channelId: channelId, message: message)
+    }
 }

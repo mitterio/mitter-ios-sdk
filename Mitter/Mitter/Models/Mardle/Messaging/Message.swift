@@ -31,7 +31,7 @@ public struct Message {
         textPayload: String,
         messageData: [MessageDatum] = [MessageDatum](),
         timelineEvents: [TimelineEvent],
-        appliedAcls: AppliedAclList,
+        appliedAcls: AppliedAclList = AppliedAclList(plusAppliedAcls: [String](), minusAppliedAcls: [String]()),
         entityMetadata: EntityMetadata? = nil,
         auditInfo: AuditInfo? = nil
         ) {
