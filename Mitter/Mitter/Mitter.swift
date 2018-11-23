@@ -184,8 +184,8 @@ public class Mitter {
                     switch event {
                     case .success(let empty):
                         completion(ApiResult.success(empty))
-                    case .error(let error):
-                        completion(self.mitter.handleNoContentResponse(error: error))
+                    case .error:
+                        completion(ApiResult.error)
                     }
             }
         }
@@ -220,22 +220,14 @@ public class Mitter {
             addTextMessageAction
                 .execute(t1: channelId, t2: textMessage)
                 .subscribe { event in
+                    print("Api Event: \(event)")
                     switch event {
                     case .success(let empty):
                         completion(ApiResult.success(empty))
-                    case .error(let error):
-                        completion(self.mitter.handleNoContentResponse(error: error))
+                    case .error:
+                        completion(ApiResult.error)
                     }
             }
         }
-    }
-    
-    private func handleNoContentResponse(error: Error) -> ApiResult<Empty> {
-        let moyaError = error as! MoyaError
-        if moyaError.response!.statusCode == 204 {
-            return ApiResult.success(Empty())
-        }
-        
-        return ApiResult.error
     }
 }

@@ -46,7 +46,7 @@ extension MessageApiService: TargetType {
         case .fetchMessage:
             return .requestPlain
         case .addMessageToChannel(_, let message):
-            let requestParams = try! wrap(message)
+            let requestParams = try! wrapModel(message)
             return .requestParameters(parameters: requestParams, encoding: JSONEncoding.default)
         }
     }
@@ -55,6 +55,13 @@ extension MessageApiService: TargetType {
         return [
             "Content-Type": "application/json"
         ]
+    }
+    
+    var validationType: ValidationType {
+        switch self {
+        case .fetchMessage, .addMessageToChannel:
+            return .successCodes
+        }
     }
 }
 

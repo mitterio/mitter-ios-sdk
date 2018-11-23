@@ -67,16 +67,16 @@ class ViewController: UIViewController {
         //
         //        }
         
-//        appDelegate.mitter.messaging.sendTextMessage(
-//            forChannel: "rakfT-XPdJb-WsucS-Pxy4B",
-//            "Hello from iOS!"
-//        ) { result in
-//            switch result {
-//            case .success:
-//                print("Message sent!")
-//            case .error:
-//                print("Couldn't send message")
-//            }
-//        }
+        appDelegate.mitter.messaging.sendTextMessage(
+            forChannel: "rakfT-XPdJb-WsucS-Pxy4B",
+            "Hello from iOS!"
+        ) { result in
+            switch result {
+            case .success:
+                print("Message sent!")
+            case .error:
+                print("Couldn't send message")
+            }
+        }
     }
 }

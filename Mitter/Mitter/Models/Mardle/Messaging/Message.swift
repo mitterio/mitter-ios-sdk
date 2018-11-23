@@ -49,7 +49,7 @@ public struct Message {
     }
 }
 
-extension Message: Mappable {
+extension Message: Mappable, WrapCustomizable {
     public init(map: Mapper) throws {
         messageId = try map.from("messageId")
         internalId = map.optionalFrom("internalId")
@@ -62,5 +62,19 @@ extension Message: Mappable {
         appliedAcls = AppliedAclList(plusAppliedAcls: [String](), minusAppliedAcls: [String]())
         entityMetadata = try map.from("entityMetadata")
         auditInfo = map.optionalFrom("auditInfo")
+    }
+    
+    public func wrap(context: Any?, dateFormatter: DateFormatter?) -> Any? {
+        return [
+            "messageId": messageId,
+            "messageType": messageType.rawValue,
+            "payloadType": payloadType,
+            "senderId": senderId.domainId,
+            "textPayload": textPayload,
+            "messageData": messageData,
+            "timelineEvents": try! wrapModel(timelineEvents),
+            "appliedAcls": try! wrapModel(appliedAcls),
+            "entityMetadata": try! wrapModel(entityMetadata)
+        ]
     }
 }

@@ -72,7 +72,7 @@ public typealias WrappedDictionary = [String : Any]
  *
  *  See also `WrappableKey` (for dictionary keys) and `WrappableEnum` for Enum values.
  */
-public func wrap<T>(_ object: T, context: Any? = nil, dateFormatter: DateFormatter? = nil) throws -> WrappedDictionary {
+public func wrapModel<T>(_ object: T, context: Any? = nil, dateFormatter: DateFormatter? = nil) throws -> WrappedDictionary {
     return try Wrapper(context: context, dateFormatter: dateFormatter).wrap(object: object, enableCustomizedWrapping: true)
 }
 
@@ -81,7 +81,7 @@ public func wrap<T>(_ object: T, context: Any? = nil, dateFormatter: DateFormatt
  *
  *  See the documentation for the dictionary-based `wrap()` function for more information
  */
-public func wrap<T>(_ object: T, writingOptions: JSONSerialization.WritingOptions? = nil, context: Any? = nil, dateFormatter: DateFormatter? = nil) throws -> Data {
+public func wrapModel<T>(_ object: T, writingOptions: JSONSerialization.WritingOptions? = nil, context: Any? = nil, dateFormatter: DateFormatter? = nil) throws -> Data {
     return try Wrapper(context: context, dateFormatter: dateFormatter).wrap(object: object, writingOptions: writingOptions ?? [])
 }
 
@@ -90,8 +90,8 @@ public func wrap<T>(_ object: T, writingOptions: JSONSerialization.WritingOption
  *
  *  See the documentation for the dictionary-based `wrap()` function for more information
  */
-public func wrap<T>(_ objects: [T], context: Any? = nil, dateFormatter: DateFormatter? = nil) throws -> [WrappedDictionary] {
-    return try objects.map { try wrap($0, context: context, dateFormatter: dateFormatter) }
+public func wrapModel<T>(_ objects: [T], context: Any? = nil, dateFormatter: DateFormatter? = nil) throws -> [WrappedDictionary] {
+    return try objects.map { try wrapModel($0, context: context, dateFormatter: dateFormatter) }
 }
 
 /**
@@ -99,8 +99,8 @@ public func wrap<T>(_ objects: [T], context: Any? = nil, dateFormatter: DateForm
  *
  *  See the documentation for the dictionary-based `wrap()` function for more information
  */
-public func wrap<T>(_ objects: [T], writingOptions: JSONSerialization.WritingOptions? = nil, context: Any? = nil, dateFormatter: DateFormatter? = nil) throws -> Data {
-    let dictionaries: [WrappedDictionary] = try wrap(objects, context: context, dateFormatter: dateFormatter)
+public func wrapModel<T>(_ objects: [T], writingOptions: JSONSerialization.WritingOptions? = nil, context: Any? = nil, dateFormatter: DateFormatter? = nil) throws -> Data {
+    let dictionaries: [WrappedDictionary] = try wrapModel(objects, context: context, dateFormatter: dateFormatter)
     return try JSONSerialization.data(withJSONObject: dictionaries, options: writingOptions ?? [])
 }
 

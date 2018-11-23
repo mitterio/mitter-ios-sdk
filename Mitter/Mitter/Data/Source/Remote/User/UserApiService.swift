@@ -61,10 +61,10 @@ extension UserApiService: TargetType {
         case .fetchUserPresence:
             return .requestPlain
         case .setUserPresence(_, let presence):
-            let requestParams = try! wrap(presence)
+            let requestParams = try! wrapModel(presence)
             return .requestParameters(parameters: requestParams, encoding: JSONEncoding.default)
         case .addUserDeliveryEndpoint(_, let fcmDeliveryEndpoint):
-            let requestParams = try! wrap(fcmDeliveryEndpoint)
+            let requestParams = try! wrapModel(fcmDeliveryEndpoint)
             return .requestParameters(parameters: requestParams, encoding: JSONEncoding.default)
         }
     }

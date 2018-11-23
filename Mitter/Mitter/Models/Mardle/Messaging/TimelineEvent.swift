@@ -34,7 +34,7 @@ public struct TimelineEvent {
     }
 }
 
-extension TimelineEvent: Mappable {
+extension TimelineEvent: Mappable, WrapCustomizable {
     public init(map: Mapper) throws {
         eventId = try map.from("eventId")
         internalId = map.optionalFrom("internalId")
@@ -42,5 +42,14 @@ extension TimelineEvent: Mappable {
         eventTimeMs = try map.from("eventTimeMs")
         subject = try map.from("subject")
         auditInfo = map.optionalFrom("auditInfo")
+    }
+    
+    public func wrap(context: Any?, dateFormatter: DateFormatter?) -> Any? {
+        return [
+            "eventId": eventId,
+            "type": type,
+            "eventTimeMs": eventTimeMs,
+            "subject": subject.domainId
+        ]
     }
 }
