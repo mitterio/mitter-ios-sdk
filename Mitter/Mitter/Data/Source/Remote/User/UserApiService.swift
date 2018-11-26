@@ -74,6 +74,13 @@ extension UserApiService: TargetType {
             "Content-Type": "application/json"
         ]
     }
+    
+    var validationType: ValidationType {
+        switch self {
+        case .fetchUser, .fetchUserPresence, .setUserPresence, .addUserDeliveryEndpoint:
+            return .successCodes
+        }
+    }
 }
 
 private extension String {

@@ -65,6 +65,10 @@
 		43A9BF1921ABBD6E00D209E2 /* FetchMessagesInChannelAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A9BF1821ABBD6E00D209E2 /* FetchMessagesInChannelAction.swift */; };
 		43A9BF1E21ABCAFB00D209E2 /* StandardRuleSetNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A9BF1D21ABCAFB00D209E2 /* StandardRuleSetNames.swift */; };
 		43A9BF2021ABE5DB00D209E2 /* ChannelParticipation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A9BF1F21ABE5DB00D209E2 /* ChannelParticipation.swift */; };
+		43A9BF2321ABEDDC00D209E2 /* ChannelApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A9BF2221ABEDDC00D209E2 /* ChannelApiService.swift */; };
+		43A9BF2621ABF2B200D209E2 /* ChannelRepositoryContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A9BF2521ABF2B200D209E2 /* ChannelRepositoryContract.swift */; };
+		43A9BF2821ABF32500D209E2 /* ChannelRemoteSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A9BF2721ABF32500D209E2 /* ChannelRemoteSource.swift */; };
+		43A9BF2A21ABF3AA00D209E2 /* ChannelRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A9BF2921ABF3AA00D209E2 /* ChannelRepository.swift */; };
 		43EB3B5F21945C870052A90C /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EB3B5E21945C870052A90C /* Identifiable.swift */; };
 		43EB3B62219460DE0052A90C /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EB3B61219460DE0052A90C /* Attribute.swift */; };
 		43EB3B65219462000052A90C /* EntityProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EB3B64219462000052A90C /* EntityProfile.swift */; };
@@ -135,6 +139,10 @@
 		43A9BF1821ABBD6E00D209E2 /* FetchMessagesInChannelAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMessagesInChannelAction.swift; sourceTree = "<group>"; };
 		43A9BF1D21ABCAFB00D209E2 /* StandardRuleSetNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardRuleSetNames.swift; sourceTree = "<group>"; };
 		43A9BF1F21ABE5DB00D209E2 /* ChannelParticipation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelParticipation.swift; sourceTree = "<group>"; };
+		43A9BF2221ABEDDC00D209E2 /* ChannelApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelApiService.swift; sourceTree = "<group>"; };
+		43A9BF2521ABF2B200D209E2 /* ChannelRepositoryContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelRepositoryContract.swift; sourceTree = "<group>"; };
+		43A9BF2721ABF32500D209E2 /* ChannelRemoteSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelRemoteSource.swift; sourceTree = "<group>"; };
+		43A9BF2921ABF3AA00D209E2 /* ChannelRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelRepository.swift; sourceTree = "<group>"; };
 		43EB3B5E21945C870052A90C /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		43EB3B61219460DE0052A90C /* Attribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attribute.swift; sourceTree = "<group>"; };
 		43EB3B64219462000052A90C /* EntityProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityProfile.swift; sourceTree = "<group>"; };
@@ -227,6 +235,7 @@
 		431CF53E2195B7F5002963F0 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				43A9BF2421ABEF0300D209E2 /* Channel */,
 				4320C5E1219EE5A6003C4B9F /* Message */,
 				431CF53F2195B807002963F0 /* User */,
 			);
@@ -388,6 +397,7 @@
 		439198572191BBE4003A38FC /* Remote */ = {
 			isa = PBXGroup;
 			children = (
+				43A9BF2121ABEDC600D209E2 /* Channel */,
 				4320C5DE219EE41D003C4B9F /* Message */,
 				439198582191BBEA003A38FC /* User */,
 			);
@@ -486,6 +496,24 @@
 				4335D97121A7FC0800DB33AB /* TextMessage.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		43A9BF2121ABEDC600D209E2 /* Channel */ = {
+			isa = PBXGroup;
+			children = (
+				43A9BF2221ABEDDC00D209E2 /* ChannelApiService.swift */,
+				43A9BF2721ABF32500D209E2 /* ChannelRemoteSource.swift */,
+			);
+			path = Channel;
+			sourceTree = "<group>";
+		};
+		43A9BF2421ABEF0300D209E2 /* Channel */ = {
+			isa = PBXGroup;
+			children = (
+				43A9BF2521ABF2B200D209E2 /* ChannelRepositoryContract.swift */,
+				43A9BF2921ABF3AA00D209E2 /* ChannelRepository.swift */,
+			);
+			path = Channel;
 			sourceTree = "<group>";
 		};
 		43EB3B5D21945C6F0052A90C /* Annotations */ = {
@@ -712,7 +740,9 @@
 				433B5D8F21A6D245004675BB /* UpdateUserPresenceAction.swift in Sources */,
 				4395023D219AF91300E9079C /* UserMetaDefaults.swift in Sources */,
 				4320C5DB219EDFE5003C4B9F /* Metadata.swift in Sources */,
+				43A9BF2621ABF2B200D209E2 /* ChannelRepositoryContract.swift in Sources */,
 				43A9BF2021ABE5DB00D209E2 /* ChannelParticipation.swift in Sources */,
+				43A9BF2821ABF32500D209E2 /* ChannelRemoteSource.swift in Sources */,
 				4395EA21219989F0004DD4A3 /* Action.swift in Sources */,
 				4320C5EA219EE7A1003C4B9F /* FetchMessageAction.swift in Sources */,
 				4320C5D9219EDE98003C4B9F /* AppliedAclList.swift in Sources */,
@@ -722,6 +752,7 @@
 				4320C5E5219EE61A003C4B9F /* MessageRemoteSource.swift in Sources */,
 				43EB3B75219478FB0052A90C /* Application.swift in Sources */,
 				43950241219AFB7100E9079C /* AuthToken.swift in Sources */,
+				43A9BF2321ABEDDC00D209E2 /* ChannelApiService.swift in Sources */,
 				43EB3B73219477B00052A90C /* VerificationStatus.swift in Sources */,
 				4335D97721A8008F00DB33AB /* DateExtensions.swift in Sources */,
 				432C502B219D78E6002A0EDA /* FcmDeliveryEndpoint.swift in Sources */,
@@ -729,6 +760,7 @@
 				4395EA3021999E49004DD4A3 /* ApiResult.swift in Sources */,
 				4320C5ED219EE848003C4B9F /* MessageApiContainer.swift in Sources */,
 				4320C5CB219EAA37003C4B9F /* StandardMessageType.swift in Sources */,
+				43A9BF2A21ABF3AA00D209E2 /* ChannelRepository.swift in Sources */,
 				431901C421A586AD007EA588 /* Payload.swift in Sources */,
 				4395023F219AF95500E9079C /* TokenDefaults.swift in Sources */,
 				431CF5412195B81E002963F0 /* UserRepositoryContract.swift in Sources */,
