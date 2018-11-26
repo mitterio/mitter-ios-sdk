@@ -24,6 +24,10 @@ class MessageApiContainer {
         registerMessageApiLayers()
     }
     
+    func getFetchMessagesInChannelAction() -> FetchMessagesInChannelAction {
+        return FetchMessagesInChannelAction(messageRepository: getMessageRepository())
+    }
+    
     func getFetchMessageAction() -> FetchMessageAction {
         return FetchMessageAction(messageRepository: getMessageRepository())
     }

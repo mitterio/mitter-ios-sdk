@@ -10,6 +10,7 @@ import Foundation
 import Moya
 
 enum MessageApiService {
+    case fetchMessagesInChannel(channelId: String)
     case fetchMessage(messageId: String)
     case addMessageToChannel(channelId: String, message: Message)
 }
@@ -21,6 +22,8 @@ extension MessageApiService: TargetType {
     
     var path: String {
         switch self {
+        case .fetchMessagesInChannel(let channelId):
+            return "/v1/channels/\(channelId)/messages"
         case .fetchMessage(let messageId):
             return "/v1/messages/\(messageId)"
         case .addMessageToChannel(let channelId, _):
@@ -30,6 +33,8 @@ extension MessageApiService: TargetType {
     
     var method: Moya.Method {
         switch self {
+        case .fetchMessagesInChannel:
+            return .get
         case .fetchMessage:
             return .get
         case .addMessageToChannel:
@@ -43,6 +48,8 @@ extension MessageApiService: TargetType {
     
     var task: Task {
         switch self {
+        case .fetchMessagesInChannel:
+            return .requestPlain
         case .fetchMessage:
             return .requestPlain
         case .addMessageToChannel(_, let message):
@@ -59,7 +66,7 @@ extension MessageApiService: TargetType {
     
     var validationType: ValidationType {
         switch self {
-        case .fetchMessage, .addMessageToChannel:
+        case .fetchMessagesInChannel, .fetchMessage, .addMessageToChannel:
             return .successCodes
         }
     }

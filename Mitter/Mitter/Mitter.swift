@@ -198,6 +198,21 @@ public class Mitter {
         
         init() {}
         
+        public func getMessagesInChannel(_ channelId: String, completion: @escaping (ApiResult<[Message]>) -> Void) {
+            let fetchMessagesInChannelAction = mitter.messageApiContainer.getFetchMessagesInChannelAction()
+            
+            fetchMessagesInChannelAction
+                .execute(t: channelId)
+                .subscribe { event in
+                    switch event {
+                    case .success(let messages):
+                        completion(ApiResult.success(messages))
+                    case .error:
+                        completion(ApiResult.error)
+                    }
+            }
+        }
+        
         public func getMessage(_ messageId: String, completion: @escaping (ApiResult<Message>) -> Void) {
             let fetchMessageAction = mitter.messageApiContainer.getFetchMessageAction()
             

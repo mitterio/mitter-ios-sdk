@@ -10,6 +10,8 @@ import Foundation
 import RxSwift
 
 protocol MessageRepositoryContract {
+    func fetchMessagesInChannel(channelId: String) -> PrimitiveSequence<SingleTrait, [Message]>
+    
     func fetchMessage(messageId: String) -> PrimitiveSequence<SingleTrait, Message>
     
     func addMessageToChannel(channelId: String, message: Message) -> PrimitiveSequence<SingleTrait, Empty>
