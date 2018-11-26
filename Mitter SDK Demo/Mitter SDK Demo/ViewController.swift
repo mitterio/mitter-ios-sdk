@@ -67,15 +67,26 @@ class ViewController: UIViewController {
         //
         //        }
         
-        appDelegate.mitter.messaging.sendTextMessage(
-            forChannel: "rakfT-XPdJb-WsucS-Pxy4B",
-            "Hello from iOS!"
-        ) { result in
+        //        appDelegate.mitter.messaging.sendTextMessage(
+        //            forChannel: "rakfT-XPdJb-WsucS-Pxy4B",
+        //            "Hello from iOS!"
+        //        ) { result in
+        //            switch result {
+        //            case .success:
+        //                print("Message sent!")
+        //            case .error:
+        //                print("Couldn't send message")
+        //            }
+        //        }
+        
+        
+        appDelegate.mitter.messaging.getMessagesInChannel("rakfT-XPdJb-WsucS-Pxy4B") {
+            result in
             switch result {
-            case .success:
-                print("Message sent!")
+            case .success(let messages):
+                print("Messages: \(messages)")
             case .error:
-                print("Couldn't send message")
+                print("Couldn't fetch messages")
             }
         }
     }
