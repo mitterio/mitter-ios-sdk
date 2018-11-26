@@ -63,6 +63,8 @@
 		4395EA21219989F0004DD4A3 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4395EA20219989F0004DD4A3 /* Action.swift */; };
 		4395EA3021999E49004DD4A3 /* ApiResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4395EA2F21999E49004DD4A3 /* ApiResult.swift */; };
 		43A9BF1921ABBD6E00D209E2 /* FetchMessagesInChannelAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A9BF1821ABBD6E00D209E2 /* FetchMessagesInChannelAction.swift */; };
+		43A9BF1E21ABCAFB00D209E2 /* StandardRuleSetNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A9BF1D21ABCAFB00D209E2 /* StandardRuleSetNames.swift */; };
+		43A9BF2021ABE5DB00D209E2 /* ChannelParticipation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A9BF1F21ABE5DB00D209E2 /* ChannelParticipation.swift */; };
 		43EB3B5F21945C870052A90C /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EB3B5E21945C870052A90C /* Identifiable.swift */; };
 		43EB3B62219460DE0052A90C /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EB3B61219460DE0052A90C /* Attribute.swift */; };
 		43EB3B65219462000052A90C /* EntityProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EB3B64219462000052A90C /* EntityProfile.swift */; };
@@ -131,6 +133,8 @@
 		4395EA20219989F0004DD4A3 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		4395EA2F21999E49004DD4A3 /* ApiResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResult.swift; sourceTree = "<group>"; };
 		43A9BF1821ABBD6E00D209E2 /* FetchMessagesInChannelAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMessagesInChannelAction.swift; sourceTree = "<group>"; };
+		43A9BF1D21ABCAFB00D209E2 /* StandardRuleSetNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardRuleSetNames.swift; sourceTree = "<group>"; };
+		43A9BF1F21ABE5DB00D209E2 /* ChannelParticipation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelParticipation.swift; sourceTree = "<group>"; };
 		43EB3B5E21945C870052A90C /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		43EB3B61219460DE0052A90C /* Attribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attribute.swift; sourceTree = "<group>"; };
 		43EB3B64219462000052A90C /* EntityProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityProfile.swift; sourceTree = "<group>"; };
@@ -278,6 +282,8 @@
 				4320C5D2219EBFA7003C4B9F /* StandardTimelineEventTypeNames.swift */,
 				431901BF21A582A4007EA588 /* Channel.swift */,
 				431901C121A5839C007EA588 /* ParticipationStatus.swift */,
+				43A9BF1D21ABCAFB00D209E2 /* StandardRuleSetNames.swift */,
+				43A9BF1F21ABE5DB00D209E2 /* ChannelParticipation.swift */,
 			);
 			path = Messaging;
 			sourceTree = "<group>";
@@ -706,11 +712,13 @@
 				433B5D8F21A6D245004675BB /* UpdateUserPresenceAction.swift in Sources */,
 				4395023D219AF91300E9079C /* UserMetaDefaults.swift in Sources */,
 				4320C5DB219EDFE5003C4B9F /* Metadata.swift in Sources */,
+				43A9BF2021ABE5DB00D209E2 /* ChannelParticipation.swift in Sources */,
 				4395EA21219989F0004DD4A3 /* Action.swift in Sources */,
 				4320C5EA219EE7A1003C4B9F /* FetchMessageAction.swift in Sources */,
 				4320C5D9219EDE98003C4B9F /* AppliedAclList.swift in Sources */,
 				431C9E3121A41044001C9073 /* StandardPipelinePayloadNames.swift in Sources */,
 				439198542191A815003A38FC /* ScreenName.swift in Sources */,
+				43A9BF1E21ABCAFB00D209E2 /* StandardRuleSetNames.swift in Sources */,
 				4320C5E5219EE61A003C4B9F /* MessageRemoteSource.swift in Sources */,
 				43EB3B75219478FB0052A90C /* Application.swift in Sources */,
 				43950241219AFB7100E9079C /* AuthToken.swift in Sources */,
