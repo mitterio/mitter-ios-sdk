@@ -89,5 +89,16 @@ class ViewController: UIViewController {
                 print("Couldn't fetch messages")
             }
         }
+        
+        let stan = Participant(id: "csrCy-SJL3u-8AKMT-Wqv6y")
+        let rahul = Participant(id: "E3CAM-jjw8A-WeqDe-cWFe7")
+        appDelegate.mitter.channels.createDirectMessageChannel(participants: [stan, rahul]) { result in
+            switch result {
+            case .success(let channelId):
+                print("New channel created: \(channelId)")
+            case .error:
+                print("Couldn't create channel")
+            }
+        }
     }
 }

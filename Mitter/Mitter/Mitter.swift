@@ -15,6 +15,7 @@ import JWTDecode
 
 public class Mitter {
     public var users = Users()
+    public var channels = Channels()
     public var messaging = Messaging()
     
     let libDefaults: LibDefaults
@@ -24,6 +25,7 @@ public class Mitter {
     private var userAuthToken: AuthToken = AuthToken()
     
     private let userApiContainer: UserApiContainer
+    private let channelApiContainer: ChannelApiContainer
     private let messageApiContainer: MessageApiContainer
     
     public init(applicationId: String, userAuthToken: String = "") {
@@ -43,6 +45,11 @@ public class Mitter {
             userAuthToken: self.userAuthToken.signedToken
         )
         
+        channelApiContainer = ChannelApiContainer(
+            applicationId: self.applicationId,
+            userAuthToken: self.userAuthToken.signedToken
+        )
+        
         messageApiContainer = MessageApiContainer(
             applicationId: self.applicationId,
             userAuthToken: self.userAuthToken.signedToken
@@ -53,6 +60,7 @@ public class Mitter {
         setUserId(userId)
         
         users.mitter = self
+        channels.mitter = self
         messaging.mitter = self
     }
     
@@ -184,6 +192,29 @@ public class Mitter {
                     switch event {
                     case .success(let empty):
                         completion(ApiResult.success(empty))
+                    case .error:
+                        completion(ApiResult.error)
+                    }
+            }
+        }
+    }
+    
+    public class Channels {
+        public typealias emptyApiResult = (ApiResult<Empty>) -> Void
+        
+        weak var mitter: Mitter!
+        
+        init() {}
+        
+        public func createDirectMessageChannel(participants: [Participant], completion: @escaping (ApiResult<Identifiable<Channel>>) -> Void) {
+            let addDirectMessageChannelAction = mitter.channelApiContainer.getAddDirectMessageChannelAction()
+            
+            addDirectMessageChannelAction
+                .execute(t: participants)
+                .subscribe { event in
+                    switch event {
+                    case .success(let identifier):
+                        completion(ApiResult.success(identifier))
                     case .error:
                         completion(ApiResult.error)
                     }

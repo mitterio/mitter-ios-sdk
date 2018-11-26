@@ -10,5 +10,10 @@ import Foundation
 
 public struct Participant {
     public let id: String
-    public let status: ParticipationStatus = ParticipationStatus.Active
+    public let status: ParticipationStatus
+    
+    public init(id: String, status: ParticipationStatus = ParticipationStatus.Active) {
+        self.id = id
+        self.status = status
+    }
 }
