@@ -69,6 +69,10 @@
 		43A9BF2621ABF2B200D209E2 /* ChannelRepositoryContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A9BF2521ABF2B200D209E2 /* ChannelRepositoryContract.swift */; };
 		43A9BF2821ABF32500D209E2 /* ChannelRemoteSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A9BF2721ABF32500D209E2 /* ChannelRemoteSource.swift */; };
 		43A9BF2A21ABF3AA00D209E2 /* ChannelRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A9BF2921ABF3AA00D209E2 /* ChannelRepository.swift */; };
+		43A9BF2D21ABF49000D209E2 /* AddDirectMessageChannelAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A9BF2C21ABF49000D209E2 /* AddDirectMessageChannelAction.swift */; };
+		43A9BF2F21ABF4FE00D209E2 /* Participant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A9BF2E21ABF4FE00D209E2 /* Participant.swift */; };
+		43A9BF3121ABF59600D209E2 /* DataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A9BF3021ABF59600D209E2 /* DataMapper.swift */; };
+		43A9BF3421AC1C2C00D209E2 /* ChannelApiContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A9BF3321AC1C2C00D209E2 /* ChannelApiContainer.swift */; };
 		43EB3B5F21945C870052A90C /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EB3B5E21945C870052A90C /* Identifiable.swift */; };
 		43EB3B62219460DE0052A90C /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EB3B61219460DE0052A90C /* Attribute.swift */; };
 		43EB3B65219462000052A90C /* EntityProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EB3B64219462000052A90C /* EntityProfile.swift */; };
@@ -143,6 +147,10 @@
 		43A9BF2521ABF2B200D209E2 /* ChannelRepositoryContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelRepositoryContract.swift; sourceTree = "<group>"; };
 		43A9BF2721ABF32500D209E2 /* ChannelRemoteSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelRemoteSource.swift; sourceTree = "<group>"; };
 		43A9BF2921ABF3AA00D209E2 /* ChannelRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelRepository.swift; sourceTree = "<group>"; };
+		43A9BF2C21ABF49000D209E2 /* AddDirectMessageChannelAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDirectMessageChannelAction.swift; sourceTree = "<group>"; };
+		43A9BF2E21ABF4FE00D209E2 /* Participant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Participant.swift; sourceTree = "<group>"; };
+		43A9BF3021ABF59600D209E2 /* DataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMapper.swift; sourceTree = "<group>"; };
+		43A9BF3321AC1C2C00D209E2 /* ChannelApiContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelApiContainer.swift; sourceTree = "<group>"; };
 		43EB3B5E21945C870052A90C /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		43EB3B61219460DE0052A90C /* Attribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attribute.swift; sourceTree = "<group>"; };
 		43EB3B64219462000052A90C /* EntityProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityProfile.swift; sourceTree = "<group>"; };
@@ -254,6 +262,7 @@
 		431CF5442195BCFA002963F0 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				43A9BF2B21ABF45100D209E2 /* Channel */,
 				4320C5E8219EE794003C4B9F /* Message */,
 				4395EA2E21999E01004DD4A3 /* Model */,
 				4395EA1221996643004DD4A3 /* User */,
@@ -364,6 +373,7 @@
 			isa = PBXGroup;
 			children = (
 				4335D97621A8008F00DB33AB /* DateExtensions.swift */,
+				43A9BF3021ABF59600D209E2 /* DataMapper.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -454,6 +464,7 @@
 		4395EA1521997AE2004DD4A3 /* Injection */ = {
 			isa = PBXGroup;
 			children = (
+				43A9BF3221AC1C1F00D209E2 /* Channel */,
 				4320C5EB219EE833003C4B9F /* Message */,
 				4395EA1621997B09004DD4A3 /* User */,
 			);
@@ -494,6 +505,7 @@
 				4395EA2F21999E49004DD4A3 /* ApiResult.swift */,
 				43950240219AFB7100E9079C /* AuthToken.swift */,
 				4335D97121A7FC0800DB33AB /* TextMessage.swift */,
+				43A9BF2E21ABF4FE00D209E2 /* Participant.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -512,6 +524,22 @@
 			children = (
 				43A9BF2521ABF2B200D209E2 /* ChannelRepositoryContract.swift */,
 				43A9BF2921ABF3AA00D209E2 /* ChannelRepository.swift */,
+			);
+			path = Channel;
+			sourceTree = "<group>";
+		};
+		43A9BF2B21ABF45100D209E2 /* Channel */ = {
+			isa = PBXGroup;
+			children = (
+				43A9BF2C21ABF49000D209E2 /* AddDirectMessageChannelAction.swift */,
+			);
+			path = Channel;
+			sourceTree = "<group>";
+		};
+		43A9BF3221AC1C1F00D209E2 /* Channel */ = {
+			isa = PBXGroup;
+			children = (
+				43A9BF3321AC1C2C00D209E2 /* ChannelApiContainer.swift */,
 			);
 			path = Channel;
 			sourceTree = "<group>";
@@ -746,6 +774,7 @@
 				4395EA21219989F0004DD4A3 /* Action.swift in Sources */,
 				4320C5EA219EE7A1003C4B9F /* FetchMessageAction.swift in Sources */,
 				4320C5D9219EDE98003C4B9F /* AppliedAclList.swift in Sources */,
+				43A9BF2F21ABF4FE00D209E2 /* Participant.swift in Sources */,
 				431C9E3121A41044001C9073 /* StandardPipelinePayloadNames.swift in Sources */,
 				439198542191A815003A38FC /* ScreenName.swift in Sources */,
 				43A9BF1E21ABCAFB00D209E2 /* StandardRuleSetNames.swift in Sources */,
@@ -762,12 +791,14 @@
 				4320C5CB219EAA37003C4B9F /* StandardMessageType.swift in Sources */,
 				43A9BF2A21ABF3AA00D209E2 /* ChannelRepository.swift in Sources */,
 				431901C421A586AD007EA588 /* Payload.swift in Sources */,
+				43A9BF2D21ABF49000D209E2 /* AddDirectMessageChannelAction.swift in Sources */,
 				4395023F219AF95500E9079C /* TokenDefaults.swift in Sources */,
 				431CF5412195B81E002963F0 /* UserRepositoryContract.swift in Sources */,
 				4395EA1F21997E12004DD4A3 /* Constants.swift in Sources */,
 				432C5045219DA2FB002A0EDA /* NetworkLoggerPlugin.swift in Sources */,
 				4391985A2191BC23003A38FC /* UserApiService.swift in Sources */,
 				4395EA142199665C004DD4A3 /* FetchUserAction.swift in Sources */,
+				43A9BF3121ABF59600D209E2 /* DataMapper.swift in Sources */,
 				4320C5E7219EE6EF003C4B9F /* MessageRepository.swift in Sources */,
 				431C9E2F21A40C35001C9073 /* MessagingPipelinePayload.swift in Sources */,
 				43F42525219192D4007759F7 /* User.swift in Sources */,
@@ -798,6 +829,7 @@
 				4320C5E3219EE5B5003C4B9F /* MessageRepositoryContract.swift in Sources */,
 				431CF5472195BD20002963F0 /* UniParamAction.swift in Sources */,
 				4335D97421A7FC6E00DB33AB /* AddTextMessageAction.swift in Sources */,
+				43A9BF3421AC1C2C00D209E2 /* ChannelApiContainer.swift in Sources */,
 				4320C5CF219EABBB003C4B9F /* MessageDatum.swift in Sources */,
 				4320C5D3219EBFA7003C4B9F /* StandardTimelineEventTypeNames.swift in Sources */,
 				432C5034219D981E002A0EDA /* AddFcmDeliveryEndpointAction.swift in Sources */,

@@ -61,13 +61,6 @@ class MessageApiContainer {
         }
     }
     
-    private func getUserRepository() -> UserRepository {
-        return container.resolve(
-            UserRepositoryContract.self,
-            name: Constants.Users.userRepository
-            ) as! UserRepository
-    }
-    
     private func getMessageRepository() -> MessageRepository {
         return container.resolve(
             MessageRepositoryContract.self,
