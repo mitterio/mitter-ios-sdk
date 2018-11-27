@@ -201,15 +201,31 @@ public class Mitter {
     
     public class Channels {
         public typealias emptyApiResult = (ApiResult<Empty>) -> Void
+        public typealias channelIdentifiableApiResult = (ApiResult<Identifiable<Channel>>) -> Void
         
         weak var mitter: Mitter!
         
         init() {}
         
-        public func createDirectMessageChannel(participants: [Participant], completion: @escaping (ApiResult<Identifiable<Channel>>) -> Void) {
+        public func createDirectMessageChannel(participants: [Participant], completion: @escaping channelIdentifiableApiResult) {
             let addDirectMessageChannelAction = mitter.channelApiContainer.getAddDirectMessageChannelAction()
             
             addDirectMessageChannelAction
+                .execute(t: participants)
+                .subscribe { event in
+                    switch event {
+                    case .success(let identifier):
+                        completion(ApiResult.success(identifier))
+                    case .error:
+                        completion(ApiResult.error)
+                    }
+            }
+        }
+        
+        public func createGroupMessageChannel(participants: [Participant], completion: @escaping channelIdentifiableApiResult) {
+            let addGroupChatChannelAction = mitter.channelApiContainer.getAddGroupChatChannelAction()
+            
+            addGroupChatChannelAction
                 .execute(t: participants)
                 .subscribe { event in
                     switch event {

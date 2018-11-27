@@ -28,6 +28,10 @@ class ChannelApiContainer {
         return AddDirectMessageChannelAction(channelRepository: getChannelRepository())
     }
     
+    func getAddGroupChatChannelAction() -> AddGroupChatChannelAction {
+        return AddGroupChatChannelAction(channelRepository: getChannelRepository())
+    }
+    
     private func registerChannelApiLayers() {
         container.register(ChannelRepositoryContract.self, name: Constants.Channels.channelRemoteSource) {
             _ in ChannelRemoteSource(

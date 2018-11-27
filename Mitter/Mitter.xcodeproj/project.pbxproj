@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		26BA130DBC01858B0A4E6F55 /* Pods_Mitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D03DA1590C2BF3411E86D67B /* Pods_Mitter.framework */; };
+		430096BB21AD2D00009060AD /* AddGroupChatChannelAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430096BA21AD2D00009060AD /* AddGroupChatChannelAction.swift */; };
 		431901C021A582A4007EA588 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431901BF21A582A4007EA588 /* Channel.swift */; };
 		431901C221A5839C007EA588 /* ParticipationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431901C121A5839C007EA588 /* ParticipationStatus.swift */; };
 		431901C421A586AD007EA588 /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431901C321A586AD007EA588 /* Payload.swift */; };
@@ -86,6 +87,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		430096BA21AD2D00009060AD /* AddGroupChatChannelAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupChatChannelAction.swift; sourceTree = "<group>"; };
 		431901BF21A582A4007EA588 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		431901C121A5839C007EA588 /* ParticipationStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipationStatus.swift; sourceTree = "<group>"; };
 		431901C321A586AD007EA588 /* Payload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
@@ -532,6 +534,7 @@
 			isa = PBXGroup;
 			children = (
 				43A9BF2C21ABF49000D209E2 /* AddDirectMessageChannelAction.swift */,
+				430096BA21AD2D00009060AD /* AddGroupChatChannelAction.swift */,
 			);
 			path = Channel;
 			sourceTree = "<group>";
@@ -764,6 +767,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				431C9E3821A425BC001C9073 /* Processor.swift in Sources */,
+				430096BB21AD2D00009060AD /* AddGroupChatChannelAction.swift in Sources */,
 				43EB3B62219460DE0052A90C /* Attribute.swift in Sources */,
 				433B5D8F21A6D245004675BB /* UpdateUserPresenceAction.swift in Sources */,
 				4395023D219AF91300E9079C /* UserMetaDefaults.swift in Sources */,
