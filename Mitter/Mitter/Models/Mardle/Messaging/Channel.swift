@@ -40,7 +40,7 @@ public struct Channel {
     }
 }
 
-extension Channel: Mappable {
+extension Channel: Mappable, WrapCustomizable {
     public init(map: Mapper) throws {
         channelId = try map.from("channelId")
         defaultRuleSet = try map.from("defaultRuleSet")
@@ -50,5 +50,16 @@ extension Channel: Mappable {
         entityMetadata = map.optionalFrom("entityMetadata")
         entityProfile = map.optionalFrom("entityProfile")
         timelineEvents = map.optionalFrom("timelineEvents") ?? [TimelineEvent]()
+    }
+    
+    public func wrap(context: Any?, dateFormatter: DateFormatter?) -> Any? {
+        let participationList = try! wrapModel(participation ?? [ChannelParticipation]())
+        
+        return [
+            "channelId": channelId,
+            "defaultRuleSet": defaultRuleSet,
+            "participation": participationList,
+            "systemChannel": systemChannel
+        ]
     }
 }

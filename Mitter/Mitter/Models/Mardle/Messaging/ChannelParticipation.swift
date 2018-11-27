@@ -30,12 +30,19 @@ public struct ChannelParticipation {
     }
 }
 
-extension ChannelParticipation: Mappable {
+extension ChannelParticipation: Mappable, WrapCustomizable {
     public init(map: Mapper) throws {
         participantId = try map.from("participantId")
         participationStatus = try map.from("participationStatus")
         channelId = map.optionalFrom("channelId")
         participant = map.optionalFrom("participant")
         auditInfo = map.optionalFrom("auditInfo")
+    }
+    
+    public func wrap(context: Any?, dateFormatter: DateFormatter?) -> Any? {
+        return [
+            "participantId": participantId.domainId,
+            "participationStatus": participationStatus.rawValue
+        ]
     }
 }
