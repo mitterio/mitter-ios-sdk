@@ -9,10 +9,12 @@
 import Foundation
 import Mapper
 
-public struct AuditInfo: Mappable {
+public struct AuditInfo {
     public let createdAt: Int64?
     public let updatedAt: Int64?
-    
+}
+
+extension AuditInfo: Mappable {
     public init(map: Mapper) throws {
         createdAt = map.optionalFrom("createdAt")
         updatedAt = map.optionalFrom("updatedAt")

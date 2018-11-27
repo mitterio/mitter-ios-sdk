@@ -17,10 +17,24 @@ class MessageRemoteSource: MessageRepositoryContract {
         self.apiProvider = apiProvider
     }
     
+    func fetchMessagesInChannel(channelId: String) -> PrimitiveSequence<SingleTrait, [Message]> {
+        return apiProvider
+        .rx
+        .request(.fetchMessagesInChannel(channelId: channelId))
+        .map(to: [Message].self)
+    }
+    
     func fetchMessage(messageId: String) -> PrimitiveSequence<SingleTrait, Message> {
         return apiProvider
             .rx
             .request(.fetchMessage(messageId: messageId))
             .map(to: Message.self)
+    }
+    
+    func addMessageToChannel(channelId: String, message: Message) -> PrimitiveSequence<SingleTrait, Empty> {
+        return apiProvider
+            .rx
+            .request(.addMessageToChannel(channelId: channelId, message: message))
+            .map(to: Empty.self)
     }
 }

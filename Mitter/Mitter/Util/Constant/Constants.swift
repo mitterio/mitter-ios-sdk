@@ -22,6 +22,11 @@ enum Constants {
         static let userRepository = "UserRepository"
     }
     
+    enum Channels {
+        static let channelRemoteSource = "ChannelRemoteSource"
+        static let channelRepository = "ChannelRepository"
+    }
+    
     enum Messages {
         static let messageRemoteSource = "MessageRemoteSource"
         static let messageRepository = "MessageRepository"

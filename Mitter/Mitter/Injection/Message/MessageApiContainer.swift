@@ -24,8 +24,16 @@ class MessageApiContainer {
         registerMessageApiLayers()
     }
     
+    func getFetchMessagesInChannelAction() -> FetchMessagesInChannelAction {
+        return FetchMessagesInChannelAction(messageRepository: getMessageRepository())
+    }
+    
     func getFetchMessageAction() -> FetchMessageAction {
         return FetchMessageAction(messageRepository: getMessageRepository())
+    }
+    
+    func getAddTextMessageAction() -> AddTextMessageAction {
+        return AddTextMessageAction(messageRepository: getMessageRepository())
     }
     
     private func registerMessageApiLayers() {
@@ -51,13 +59,6 @@ class MessageApiContainer {
                     ) as! MessageRemoteSource
             )
         }
-    }
-    
-    private func getUserRepository() -> UserRepository {
-        return container.resolve(
-            UserRepositoryContract.self,
-            name: Constants.Users.userRepository
-            ) as! UserRepository
     }
     
     private func getMessageRepository() -> MessageRepository {

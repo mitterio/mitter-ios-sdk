@@ -9,17 +9,19 @@
 import Foundation
 import Mapper
 
-public struct MessageDatum: Mappable {
+public struct MessageDatum {
     public let dataType: String
     public let data: NSDictionary
-    
-    public init(map: Mapper) throws {
-        dataType = try map.from("dataType")
-        data = try map.from("data")
-    }
     
     public init(dataType: String, data: NSDictionary) {
         self.dataType = dataType
         self.data = data
+    }
+}
+
+extension MessageDatum: Mappable {
+    public init(map: Mapper) throws {
+        dataType = try map.from("dataType")
+        data = try map.from("data")
     }
 }

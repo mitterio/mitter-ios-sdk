@@ -9,5 +9,5 @@
 import Foundation
 
 public enum StandardEndpointTypes {
-    static let FcmDeliveryEndpoint: String = "fcm"
+    public static let FcmDeliveryEndpoint: String = "fcm"
 }

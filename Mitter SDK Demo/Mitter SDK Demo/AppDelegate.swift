@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         mitter = Mitter(
             applicationId: "MZzf4-na9nL-O98wq-M1HxS",
-            userAuthToken: "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJtaXR0ZXItaW8iLCJ1c2VyVG9rZW5JZCI6IlpZWnZPaXRnMGI0RzBOR3MiLCJ1c2VydG9rZW4iOiJmMGgwN2FwcWpuMm0xdXY4dnRsZjZ1aTMzaSIsImFwcGxpY2F0aW9uSWQiOiJNWnpmNC1uYTluTC1POTh3cS1NMUh4UyIsInVzZXJJZCI6ImNzckN5LVNKTDN1LThBS01ULVdxdjZ5In0.8JoygEGanIixyr8joN680IsFq7jCQ6ZF3ttEcbddWI3oQpqCDqg1wnI2qWF14ZZQZZo7TOPHu40wlOmHI0wPYg"
+            userAuthToken: "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJtaXR0ZXItaW8iLCJ1c2VyVG9rZW5JZCI6IkhYbkZJSXIydUpQRHMzankiLCJ1c2VydG9rZW4iOiJhaHFtNTgzcjRwbzEwZmNqZTllaHE5dDV1NCIsImFwcGxpY2F0aW9uSWQiOiJNWnpmNC1uYTluTC1POTh3cS1NMUh4UyIsInVzZXJJZCI6ImNzckN5LVNKTDN1LThBS01ULVdxdjZ5In0.FTgn0GBgIQrA0NznQEUHyC7SN7rbN9O9cWlI5mejuDG466VSJHjwGWZF2DB3nsn8eoeCg5toIXXh5Sxz2MMU3w"
         )
         
         return true

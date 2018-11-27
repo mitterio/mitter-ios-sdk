@@ -15,6 +15,7 @@ import JWTDecode
 
 public class Mitter {
     public var users = Users()
+    public var channels = Channels()
     public var messaging = Messaging()
     
     let libDefaults: LibDefaults
@@ -24,6 +25,7 @@ public class Mitter {
     private var userAuthToken: AuthToken = AuthToken()
     
     private let userApiContainer: UserApiContainer
+    private let channelApiContainer: ChannelApiContainer
     private let messageApiContainer: MessageApiContainer
     
     public init(applicationId: String, userAuthToken: String = "") {
@@ -43,6 +45,11 @@ public class Mitter {
             userAuthToken: self.userAuthToken.signedToken
         )
         
+        channelApiContainer = ChannelApiContainer(
+            applicationId: self.applicationId,
+            userAuthToken: self.userAuthToken.signedToken
+        )
+        
         messageApiContainer = MessageApiContainer(
             applicationId: self.applicationId,
             userAuthToken: self.userAuthToken.signedToken
@@ -53,6 +60,7 @@ public class Mitter {
         setUserId(userId)
         
         users.mitter = self
+        channels.mitter = self
         messaging.mitter = self
     }
     
@@ -130,6 +138,8 @@ public class Mitter {
     
     public class Users {
         public typealias userApiResult = (ApiResult<User>) -> Void
+        public typealias userPresenceApiResult = (ApiResult<Presence>) -> Void
+        public typealias emptyApiResult = (ApiResult<Empty>) -> Void
         
         weak var mitter: Mitter!
         
@@ -153,12 +163,102 @@ public class Mitter {
         public func getCurrentUser(completion: @escaping userApiResult) {
             getUser(mitter.getUserId(), completion: completion)
         }
+        
+        public func getUserPresence(_ userId: String, completion: @escaping userPresenceApiResult) {
+            let fetchUserPresenceAction = mitter.userApiContainer.getFetchUserPresenceAction()
+            
+            fetchUserPresenceAction
+                .execute(t: userId)
+                .subscribe { event in
+                    switch event {
+                    case .success(let userPresence):
+                        completion(ApiResult.success(userPresence))
+                    case .error:
+                        completion(ApiResult.error)
+                    }
+            }
+        }
+        
+        public func getCurrentUserPresence(completion: @escaping userPresenceApiResult) {
+            getUserPresence(mitter.getUserId(), completion: completion)
+        }
+        
+        public func setCurrentUserPresence(_ presence: Presence, completion: @escaping emptyApiResult) {
+            let updateUserPresenceAction = mitter.userApiContainer.getUpdateUserPresenceAction()
+            
+            updateUserPresenceAction
+                .execute(t1: mitter.getUserId(), t2: presence)
+                .subscribe { event in
+                    switch event {
+                    case .success(let empty):
+                        completion(ApiResult.success(empty))
+                    case .error:
+                        completion(ApiResult.error)
+                    }
+            }
+        }
     }
     
-    public class Messaging {
+    public class Channels {
+        public typealias emptyApiResult = (ApiResult<Empty>) -> Void
+        public typealias channelIdentifiableApiResult = (ApiResult<Identifiable<Channel>>) -> Void
+        
         weak var mitter: Mitter!
         
         init() {}
+        
+        public func createDirectMessageChannel(participants: [Participant], completion: @escaping channelIdentifiableApiResult) {
+            let addDirectMessageChannelAction = mitter.channelApiContainer.getAddDirectMessageChannelAction()
+            
+            addDirectMessageChannelAction
+                .execute(t: participants)
+                .subscribe { event in
+                    switch event {
+                    case .success(let identifier):
+                        completion(ApiResult.success(identifier))
+                    case .error:
+                        completion(ApiResult.error)
+                    }
+            }
+        }
+        
+        public func createGroupMessageChannel(participants: [Participant], completion: @escaping channelIdentifiableApiResult) {
+            let addGroupChatChannelAction = mitter.channelApiContainer.getAddGroupChatChannelAction()
+            
+            addGroupChatChannelAction
+                .execute(t: participants)
+                .subscribe { event in
+                    switch event {
+                    case .success(let identifier):
+                        completion(ApiResult.success(identifier))
+                    case .error:
+                        completion(ApiResult.error)
+                    }
+            }
+        }
+    }
+    
+    public class Messaging {
+        public typealias emptyApiResult = (ApiResult<Empty>) -> Void
+        
+        weak var mitter: Mitter!
+        
+        init() {}
+        
+        public func getMessagesInChannel(_ channelId: String, completion: @escaping (ApiResult<[Message]>) -> Void) {
+            let fetchMessagesInChannelAction = mitter.messageApiContainer.getFetchMessagesInChannelAction()
+            
+            fetchMessagesInChannelAction
+                .execute(t: channelId)
+                .subscribe { event in
+                    switch event {
+                    case .success(let messages):
+                        completion(ApiResult.success(messages))
+                    case .error:
+                        completion(ApiResult.error)
+                    }
+            }
+        }
         
         public func getMessage(_ messageId: String, completion: @escaping (ApiResult<Message>) -> Void) {
             let fetchMessageAction = mitter.messageApiContainer.getFetchMessageAction()
@@ -169,6 +269,23 @@ public class Mitter {
                     switch event {
                     case .success(let message):
                         completion(ApiResult.success(message))
+                    case .error:
+                        completion(ApiResult.error)
+                    }
+            }
+        }
+        
+        public func sendTextMessage(forChannel channelId: String, _ message: String, completion: @escaping emptyApiResult) {
+            let addTextMessageAction = mitter.messageApiContainer.getAddTextMessageAction()
+            let textMessage = TextMessage(senderId: mitter.getUserId(), message: message)
+            
+            addTextMessageAction
+                .execute(t1: channelId, t2: textMessage)
+                .subscribe { event in
+                    print("Api Event: \(event)")
+                    switch event {
+                    case .success(let empty):
+                        completion(ApiResult.success(empty))
                     case .error:
                         completion(ApiResult.error)
                     }

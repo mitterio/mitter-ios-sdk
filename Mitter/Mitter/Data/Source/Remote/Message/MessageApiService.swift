@@ -10,7 +10,9 @@ import Foundation
 import Moya
 
 enum MessageApiService {
+    case fetchMessagesInChannel(channelId: String)
     case fetchMessage(messageId: String)
+    case addMessageToChannel(channelId: String, message: Message)
 }
 
 extension MessageApiService: TargetType {
@@ -20,15 +22,23 @@ extension MessageApiService: TargetType {
     
     var path: String {
         switch self {
+        case .fetchMessagesInChannel(let channelId):
+            return "/v1/channels/\(channelId)/messages"
         case .fetchMessage(let messageId):
             return "/v1/messages/\(messageId)"
+        case .addMessageToChannel(let channelId, _):
+            return "/v1/channels/\(channelId)/messages"
         }
     }
     
     var method: Moya.Method {
         switch self {
+        case .fetchMessagesInChannel:
+            return .get
         case .fetchMessage:
             return .get
+        case .addMessageToChannel:
+            return .post
         }
     }
     
@@ -38,8 +48,13 @@ extension MessageApiService: TargetType {
     
     var task: Task {
         switch self {
+        case .fetchMessagesInChannel:
+            return .requestPlain
         case .fetchMessage:
             return .requestPlain
+        case .addMessageToChannel(_, let message):
+            let requestParams = try! wrapModel(message)
+            return .requestParameters(parameters: requestParams, encoding: JSONEncoding.default)
         }
     }
     
@@ -47,6 +62,13 @@ extension MessageApiService: TargetType {
         return [
             "Content-Type": "application/json"
         ]
+    }
+    
+    var validationType: ValidationType {
+        switch self {
+        case .fetchMessagesInChannel, .fetchMessage, .addMessageToChannel:
+            return .successCodes
+        }
     }
 }
 

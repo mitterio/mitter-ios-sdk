@@ -9,15 +9,15 @@
 import Foundation
 import Mapper
 
-public struct ScreenName: Mappable {
+public struct ScreenName {
     public let screenName: String
-    
+}
+
+extension ScreenName: Equatable, Mappable {
     public init(map: Mapper) throws {
         try screenName = map.from("screenName")
     }
-}
-
-extension ScreenName: Equatable {
+    
     public static func ==(lhs: ScreenName, rhs: ScreenName) -> Bool {
         guard lhs.screenName == rhs.screenName else {
             return false
