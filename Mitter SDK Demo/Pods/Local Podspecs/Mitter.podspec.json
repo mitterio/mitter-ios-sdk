@@ -4,7 +4,7 @@
   "summary": "Official iOS SDK for the Mitter messaging platform.",
   "description": "Official iOS SDK for using the Mitter messaging platform in iOS apps and build apps around messaging.",
   "homepage": "https://git.mitter.io/mitter-io/mitter-sdk-ios",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "authors": {
     "Rahul Chowdhury": "contact@mitter.io"
   },

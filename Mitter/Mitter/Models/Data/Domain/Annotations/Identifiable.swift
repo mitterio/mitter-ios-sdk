@@ -13,7 +13,7 @@ public struct Identifiable<T>: Mappable, CustomStringConvertible {
     public let domainId: String
     public let ofType: T.Type
     
-    init(domainId: String) {
+    public init(domainId: String) {
         self.domainId = domainId
         ofType = T.self
     }

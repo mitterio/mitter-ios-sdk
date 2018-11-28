@@ -291,7 +291,7 @@ public class Mitter {
             }
         }
         
-        func sendFileMessage(
+        public func sendFileMessage(
             forChannel channelId: String,
             _ message: Message,
             file: URL,
@@ -305,7 +305,8 @@ public class Mitter {
                     switch event {
                     case .success(let empty):
                         completion(ApiResult.success(empty))
-                    case .error:
+                    case .error(let error):
+                        print("File error: \(error)")
                         completion(ApiResult.error)
                     }
             }
