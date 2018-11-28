@@ -13,6 +13,7 @@ enum MessageApiService {
     case fetchMessagesInChannel(channelId: String)
     case fetchMessage(messageId: String)
     case addMessageToChannel(channelId: String, message: Message)
+    case addMultipartMessageToChannel(channelId: String, requestBody: Data, file: URL)
 }
 
 extension MessageApiService: TargetType {
@@ -28,16 +29,16 @@ extension MessageApiService: TargetType {
             return "/v1/messages/\(messageId)"
         case .addMessageToChannel(let channelId, _):
             return "/v1/channels/\(channelId)/messages"
+        case .addMultipartMessageToChannel(let channelId, _, _):
+            return "/v1/channels/\(channelId)/messages"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .fetchMessagesInChannel:
+        case .fetchMessagesInChannel, .fetchMessage:
             return .get
-        case .fetchMessage:
-            return .get
-        case .addMessageToChannel:
+        case .addMessageToChannel, .addMultipartMessageToChannel:
             return .post
         }
     }
@@ -55,6 +56,12 @@ extension MessageApiService: TargetType {
         case .addMessageToChannel(_, let message):
             let requestParams = try! wrapModel(message)
             return .requestParameters(parameters: requestParams, encoding: JSONEncoding.default)
+        case let .addMultipartMessageToChannel(_, requestBody, file):
+            let requestBodyPart = MultipartFormData(provider: .data(requestBody), name: "io.mitter.wire.requestbody")
+            let filePart = MultipartFormData(provider: .file(file), name: "name", fileName: "image")
+            let multipartData = [requestBodyPart, filePart]
+            
+            return .uploadMultipart(multipartData)
         }
     }
     
@@ -66,7 +73,7 @@ extension MessageApiService: TargetType {
     
     var validationType: ValidationType {
         switch self {
-        case .fetchMessagesInChannel, .fetchMessage, .addMessageToChannel:
+        case .fetchMessagesInChannel, .fetchMessage, .addMessageToChannel, .addMultipartMessageToChannel:
             return .successCodes
         }
     }

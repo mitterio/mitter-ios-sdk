@@ -282,7 +282,26 @@ public class Mitter {
             addTextMessageAction
                 .execute(t1: channelId, t2: textMessage)
                 .subscribe { event in
-                    print("Api Event: \(event)")
+                    switch event {
+                    case .success(let empty):
+                        completion(ApiResult.success(empty))
+                    case .error:
+                        completion(ApiResult.error)
+                    }
+            }
+        }
+        
+        func sendFileMessage(
+            forChannel channelId: String,
+            _ message: Message,
+            file: URL,
+            completion: @escaping emptyApiResult
+            ) {
+            let addFileMessageAction = mitter.messageApiContainer.getAddFileMessageAction()
+            
+            addFileMessageAction
+                .execute(t1: channelId, t2: message, t3: file)
+                .subscribe { event in
                     switch event {
                     case .success(let empty):
                         completion(ApiResult.success(empty))

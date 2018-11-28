@@ -36,6 +36,10 @@ class MessageApiContainer {
         return AddTextMessageAction(messageRepository: getMessageRepository())
     }
     
+    func getAddFileMessageAction() -> AddFileMessageAction {
+        return AddFileMessageAction(messageRepository: getMessageRepository())
+    }
+    
     private func registerMessageApiLayers() {
         container.register(MessageRepositoryContract.self, name: Constants.Messages.messageRemoteSource) {
             _ in MessageRemoteSource(

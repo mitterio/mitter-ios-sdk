@@ -19,9 +19,9 @@ class MessageRemoteSource: MessageRepositoryContract {
     
     func fetchMessagesInChannel(channelId: String) -> PrimitiveSequence<SingleTrait, [Message]> {
         return apiProvider
-        .rx
-        .request(.fetchMessagesInChannel(channelId: channelId))
-        .map(to: [Message].self)
+            .rx
+            .request(.fetchMessagesInChannel(channelId: channelId))
+            .map(to: [Message].self)
     }
     
     func fetchMessage(messageId: String) -> PrimitiveSequence<SingleTrait, Message> {
@@ -35,6 +35,15 @@ class MessageRemoteSource: MessageRepositoryContract {
         return apiProvider
             .rx
             .request(.addMessageToChannel(channelId: channelId, message: message))
+            .map(to: Empty.self)
+    }
+    
+    func addFileMessageToChannel(channelId: String, message: Message, file: URL) -> PrimitiveSequence<SingleTrait, Empty> {
+        let messageData = try! wrapModel(message) as Data
+        
+        return apiProvider
+            .rx
+            .request(.addMultipartMessageToChannel(channelId: channelId, requestBody: messageData, file: file))
             .map(to: Empty.self)
     }
 }

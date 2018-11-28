@@ -27,4 +27,8 @@ class MessageRepository: MessageRepositoryContract {
     func addMessageToChannel(channelId: String, message: Message) -> PrimitiveSequence<SingleTrait, Empty> {
         return messageRemoteSource.addMessageToChannel(channelId: channelId, message: message)
     }
+    
+    func addFileMessageToChannel(channelId: String, message: Message, file: URL) -> PrimitiveSequence<SingleTrait, Empty> {
+        return messageRemoteSource.addFileMessageToChannel(channelId: channelId, message: message, file: file)
+    }
 }
