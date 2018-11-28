@@ -74,6 +74,7 @@
 		43A9BF2F21ABF4FE00D209E2 /* Participant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A9BF2E21ABF4FE00D209E2 /* Participant.swift */; };
 		43A9BF3121ABF59600D209E2 /* DataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A9BF3021ABF59600D209E2 /* DataMapper.swift */; };
 		43A9BF3421AC1C2C00D209E2 /* ChannelApiContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A9BF3321AC1C2C00D209E2 /* ChannelApiContainer.swift */; };
+		43B36BAC21AE85D70075B135 /* Mitter.h in Headers */ = {isa = PBXBuildFile; fileRef = 43F9A0742190476500CF6296 /* Mitter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		43EB3B5F21945C870052A90C /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EB3B5E21945C870052A90C /* Identifiable.swift */; };
 		43EB3B62219460DE0052A90C /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EB3B61219460DE0052A90C /* Attribute.swift */; };
 		43EB3B65219462000052A90C /* EntityProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EB3B64219462000052A90C /* EntityProfile.swift */; };
@@ -82,7 +83,6 @@
 		43EB3B73219477B00052A90C /* VerificationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EB3B72219477B00052A90C /* VerificationStatus.swift */; };
 		43EB3B75219478FB0052A90C /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EB3B74219478FB0052A90C /* Application.swift */; };
 		43F42525219192D4007759F7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F42524219192D4007759F7 /* User.swift */; };
-		43F9A0762190476500CF6296 /* Mitter.h in Headers */ = {isa = PBXBuildFile; fileRef = 43F9A0742190476500CF6296 /* Mitter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		43F9A07D2190477B00CF6296 /* Mitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F9A07C2190477B00CF6296 /* Mitter.swift */; };
 /* End PBXBuildFile section */
 
@@ -668,7 +668,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43F9A0762190476500CF6296 /* Mitter.h in Headers */,
+				43B36BAC21AE85D70075B135 /* Mitter.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

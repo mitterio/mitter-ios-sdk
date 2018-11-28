@@ -109,5 +109,8 @@ class ViewController: UIViewController {
                 print("Couldn't create channel")
             }
         }
+        
+        let brandName = appDelegate.mitter.getBrandName()
+        print("Brand Name: \(brandName)")
     }
 }
