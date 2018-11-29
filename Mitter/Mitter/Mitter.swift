@@ -344,6 +344,28 @@ public class Mitter {
                     }
             }
         }
+        
+        public func sendMessage(
+            forChannel channelId: String,
+            withMessage message: Message,
+            withNotificationDetails messageNotification: MessageNotification = getDefaultMessageNotification(),
+            completion: @escaping emptyApiResult
+            ) {
+            let addMessageAction = mitter.messageApiContainer.getAddMessageAction()
+            var messageWithNotification = message
+            messageWithNotification.messageData.append(messageNotification.toMessageDatum())
+            
+            addMessageAction
+                .execute(t1: channelId, t2: messageWithNotification)
+                .subscribe { event in
+                    switch event {
+                    case .success(let empty):
+                        completion(ApiResult.success(empty))
+                    case .error:
+                        completion(ApiResult.error)
+                    }
+            }
+        }
     }
 }
 

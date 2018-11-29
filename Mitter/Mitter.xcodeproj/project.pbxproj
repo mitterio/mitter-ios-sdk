@@ -55,6 +55,7 @@
 		43637A8721AFA8E300C5C28C /* ImageMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43637A8621AFA8E300C5C28C /* ImageMessage.swift */; };
 		43637A8921AFA95200C5C28C /* AddImageMessageAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43637A8821AFA95200C5C28C /* AddImageMessageAction.swift */; };
 		43637A8B21AFAF4800C5C28C /* MessageNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43637A8A21AFAF4800C5C28C /* MessageNotification.swift */; };
+		43637A8D21AFCBEE00C5C28C /* AddMessageAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43637A8C21AFCBEE00C5C28C /* AddMessageAction.swift */; };
 		439198542191A815003A38FC /* ScreenName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439198532191A815003A38FC /* ScreenName.swift */; };
 		4391985A2191BC23003A38FC /* UserApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439198592191BC23003A38FC /* UserApiService.swift */; };
 		4395023D219AF91300E9079C /* UserMetaDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4395023C219AF91300E9079C /* UserMetaDefaults.swift */; };
@@ -140,6 +141,7 @@
 		43637A8621AFA8E300C5C28C /* ImageMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMessage.swift; sourceTree = "<group>"; };
 		43637A8821AFA95200C5C28C /* AddImageMessageAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageMessageAction.swift; sourceTree = "<group>"; };
 		43637A8A21AFAF4800C5C28C /* MessageNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageNotification.swift; sourceTree = "<group>"; };
+		43637A8C21AFCBEE00C5C28C /* AddMessageAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMessageAction.swift; sourceTree = "<group>"; };
 		439198532191A815003A38FC /* ScreenName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenName.swift; sourceTree = "<group>"; };
 		439198592191BC23003A38FC /* UserApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiService.swift; sourceTree = "<group>"; };
 		4395023C219AF91300E9079C /* UserMetaDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMetaDefaults.swift; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 				43A9BF1821ABBD6E00D209E2 /* FetchMessagesInChannelAction.swift */,
 				43B36BB121AEC6790075B135 /* AddFileMessageAction.swift */,
 				43637A8821AFA95200C5C28C /* AddImageMessageAction.swift */,
+				43637A8C21AFCBEE00C5C28C /* AddMessageAction.swift */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -833,6 +836,7 @@
 				431C9E3A21A425FB001C9073 /* FcmMessageProcessor.swift in Sources */,
 				433B5D8D21A6D17F004675BB /* Empty.swift in Sources */,
 				431901C221A5839C007EA588 /* ParticipationStatus.swift in Sources */,
+				43637A8D21AFCBEE00C5C28C /* AddMessageAction.swift in Sources */,
 				4320C5DD219EE059003C4B9F /* EntityMetadata.swift in Sources */,
 				43EB3B6B2194699C0052A90C /* AuditInfo.swift in Sources */,
 				43B36BAE21AEAF8E0075B135 /* TriParamAction.swift in Sources */,

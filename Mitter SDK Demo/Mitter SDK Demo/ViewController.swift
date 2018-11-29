@@ -134,37 +134,76 @@ class ViewController: UIViewController {
 //
 //            }
             
-                        let sender = Identifiable<User>(domainId: "csrCy-SJL3u-8AKMT-Wqv6y")
-            
-                        let sentTimelineEvent = TimelineEvent(
-                            eventId: UUID().uuidString,
-                            type: StandardTimelineEventTypeNames.Messages.SentTime,
-                            eventTimeMs: Int64(Date().timeIntervalSince1970 * 1000),
-                            subject: sender
-                        )
-            
-                        let message = Message(
-                            messageId: UUID().uuidString,
-                            payloadType: StandardPayloadTypeNames.FileMessage,
-                            senderId: sender,
-                            textPayload: "Wassup",
-                            timelineEvents: [sentTimelineEvent]
-                        )
-            
-                        appDelegate.mitter.messaging.sendFileMessage(
-                            forChannel: "rakfT-XPdJb-WsucS-Pxy4B",
-                            withMessage: message,
-                            file: imageUrl
-                        ) { result in
-                            switch result {
-                            case .success:
-                                print("Image uploaded")
-                            case .error:
-                                print("Couldn't upload image")
-                            }
-                        }
+//                        let sender = Identifiable<User>(domainId: "csrCy-SJL3u-8AKMT-Wqv6y")
+//
+//                        let sentTimelineEvent = TimelineEvent(
+//                            eventId: UUID().uuidString,
+//                            type: StandardTimelineEventTypeNames.Messages.SentTime,
+//                            eventTimeMs: Int64(Date().timeIntervalSince1970 * 1000),
+//                            subject: sender
+//                        )
+//
+//                        let message = Message(
+//                            messageId: UUID().uuidString,
+//                            payloadType: StandardPayloadTypeNames.FileMessage,
+//                            senderId: sender,
+//                            textPayload: "Wassup",
+//                            timelineEvents: [sentTimelineEvent]
+//                        )
+//
+//                        appDelegate.mitter.messaging.sendFileMessage(
+//                            forChannel: "rakfT-XPdJb-WsucS-Pxy4B",
+//                            withMessage: message,
+//                            file: imageUrl
+//                        ) { result in
+//                            switch result {
+//                            case .success:
+//                                print("Image uploaded")
+//                            case .error:
+//                                print("Couldn't upload image")
+//                            }
+//                        }
         } catch {
             print("Error while enumerating files \(sampleUrl.path): \(error.localizedDescription)")
+        }
+        
+        let sender = Identifiable<User>(domainId: "csrCy-SJL3u-8AKMT-Wqv6y")
+        
+        let sentTimelineEvent = TimelineEvent(
+            eventId: UUID().uuidString,
+            type: StandardTimelineEventTypeNames.Messages.SentTime,
+            eventTimeMs: Int64(Date().timeIntervalSince1970 * 1000),
+            subject: sender
+        )
+        
+        let messageDatum = MessageDatum(
+            dataType: "com.acme.custom",
+            data: [
+                "name": "Mitter",
+                "website": "https://mitter.io"
+            ]
+        )
+        
+        let message = Message(
+            messageId: UUID().uuidString,
+            payloadType: StandardPayloadTypeNames.TextMessage,
+            senderId: sender,
+            textPayload: "Wassup",
+            messageData: [messageDatum],
+            timelineEvents: [sentTimelineEvent]
+        )
+        
+        appDelegate.mitter.messaging.sendMessage(
+            forChannel: "rakfT-XPdJb-WsucS-Pxy4B",
+            withMessage: message
+        ) { result in
+            switch result {
+            case .success:
+                print("Custom message sent!")
+            case .error:
+                print("Couldn't send custom message")
+            }
+            
         }
     }
 }

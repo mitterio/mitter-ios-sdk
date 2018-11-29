@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "767175D1E3AD311509A222C0BFD5208C"
+               BlueprintIdentifier = "1F4DF44ECAEB86046B31C5254C8FFA60"
                BlueprintName = "Mitter"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "Mitter.framework">
