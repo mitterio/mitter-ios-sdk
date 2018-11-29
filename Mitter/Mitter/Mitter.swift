@@ -275,6 +275,26 @@ public class Mitter {
             }
         }
         
+        public func getTimelineEvents(
+            forChannel channelId: String,
+            messageIds: [String],
+            filterByEvents eventTypes: [String] = [String](),
+            completion: @escaping (ApiResult<[MessageTimelineEvent]>) -> Void
+            ) {
+            let fetchTimelineEventsAction = mitter.messageApiContainer.getFetchTimelineEventsAction()
+            
+            fetchTimelineEventsAction
+                .execute(t1: channelId, t2: messageIds, t3: eventTypes)
+                .subscribe { event in
+                    switch event {
+                    case .success(let message):
+                        completion(ApiResult.success(message))
+                    case .error:
+                        completion(ApiResult.error)
+                    }
+            }
+        }
+        
         public func sendTextMessage(
             forChannel channelId: String,
             _ message: String,
@@ -376,8 +396,7 @@ public class Mitter {
                     switch event {
                     case .success(let empty):
                         completion(ApiResult.success(empty))
-                    case .error(let error):
-                        print("Error: Deleting Messages: \(error)")
+                    case .error:
                         completion(ApiResult.error)
                     }
             }

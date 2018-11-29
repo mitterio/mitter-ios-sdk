@@ -31,6 +31,20 @@ class MessageRemoteSource: MessageRepositoryContract {
             .map(to: Message.self)
     }
     
+    func fetchTimelineEventsForMessages(
+        channelId: String,
+        messageIds: [String],
+        eventTypes: [String]
+        ) -> PrimitiveSequence<SingleTrait, [MessageTimelineEvent]> {
+        let flattenedMessageIds = messageIds.flattenWithCommas()
+        let flattenedEventTypes = eventTypes.flattenWithCommas()
+        
+        return apiProvider
+            .rx
+            .request(.fetchTimelineEventsForMessages(channelId: channelId, messageIds: flattenedMessageIds, eventTypeFilter: flattenedEventTypes))
+            .map(to: [MessageTimelineEvent].self)
+    }
+    
     func addMessageToChannel(channelId: String, message: Message) -> PrimitiveSequence<SingleTrait, Empty> {
         return apiProvider
             .rx
@@ -48,8 +62,8 @@ class MessageRemoteSource: MessageRepositoryContract {
     func removeMessagesFromChannel(channelId: String, messageIds: [String]) -> PrimitiveSequence<SingleTrait, Empty> {
         let flattenedMessageIds = messageIds.flattenWithCommas()
         return apiProvider
-        .rx
-        .request(.removeMessagesFromChannel(channelId: channelId, messageIds: flattenedMessageIds))
-        .map(to: Empty.self)
+            .rx
+            .request(.removeMessagesFromChannel(channelId: channelId, messageIds: flattenedMessageIds))
+            .map(to: Empty.self)
     }
 }

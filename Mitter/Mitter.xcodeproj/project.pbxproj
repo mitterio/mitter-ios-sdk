@@ -58,6 +58,8 @@
 		43637A8D21AFCBEE00C5C28C /* AddMessageAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43637A8C21AFCBEE00C5C28C /* AddMessageAction.swift */; };
 		43637A8F21AFDCEE00C5C28C /* DataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43637A8E21AFDCEE00C5C28C /* DataExtensions.swift */; };
 		43637A9121AFDEAA00C5C28C /* RemoveMessagesFromChannelAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43637A9021AFDEAA00C5C28C /* RemoveMessagesFromChannelAction.swift */; };
+		43637A9421AFEA2200C5C28C /* MessageTimelineEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43637A9321AFEA2200C5C28C /* MessageTimelineEvent.swift */; };
+		43637A9621AFEF2E00C5C28C /* FetchTimelineEventsAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43637A9521AFEF2E00C5C28C /* FetchTimelineEventsAction.swift */; };
 		439198542191A815003A38FC /* ScreenName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439198532191A815003A38FC /* ScreenName.swift */; };
 		4391985A2191BC23003A38FC /* UserApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439198592191BC23003A38FC /* UserApiService.swift */; };
 		4395023D219AF91300E9079C /* UserMetaDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4395023C219AF91300E9079C /* UserMetaDefaults.swift */; };
@@ -146,6 +148,8 @@
 		43637A8C21AFCBEE00C5C28C /* AddMessageAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMessageAction.swift; sourceTree = "<group>"; };
 		43637A8E21AFDCEE00C5C28C /* DataExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtensions.swift; sourceTree = "<group>"; };
 		43637A9021AFDEAA00C5C28C /* RemoveMessagesFromChannelAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveMessagesFromChannelAction.swift; sourceTree = "<group>"; };
+		43637A9321AFEA2200C5C28C /* MessageTimelineEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTimelineEvent.swift; sourceTree = "<group>"; };
+		43637A9521AFEF2E00C5C28C /* FetchTimelineEventsAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTimelineEventsAction.swift; sourceTree = "<group>"; };
 		439198532191A815003A38FC /* ScreenName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenName.swift; sourceTree = "<group>"; };
 		439198592191BC23003A38FC /* UserApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiService.swift; sourceTree = "<group>"; };
 		4395023C219AF91300E9079C /* UserMetaDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMetaDefaults.swift; sourceTree = "<group>"; };
@@ -305,6 +309,7 @@
 		4320C5C6219EA9CE003C4B9F /* Mardle */ = {
 			isa = PBXGroup;
 			children = (
+				43637A9221AFEA0B00C5C28C /* Wire */,
 				4320C5C7219EA9D9003C4B9F /* Messaging */,
 			);
 			path = Mardle;
@@ -363,6 +368,7 @@
 				43637A8821AFA95200C5C28C /* AddImageMessageAction.swift */,
 				43637A8C21AFCBEE00C5C28C /* AddMessageAction.swift */,
 				43637A9021AFDEAA00C5C28C /* RemoveMessagesFromChannelAction.swift */,
+				43637A9521AFEF2E00C5C28C /* FetchTimelineEventsAction.swift */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -411,6 +417,14 @@
 				433B5D8C21A6D17F004675BB /* Empty.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		43637A9221AFEA0B00C5C28C /* Wire */ = {
+			isa = PBXGroup;
+			children = (
+				43637A9321AFEA2200C5C28C /* MessageTimelineEvent.swift */,
+			);
+			path = Wire;
 			sourceTree = "<group>";
 		};
 		439198552191BBD8003A38FC /* Data */ = {
@@ -801,6 +815,7 @@
 				4320C5DB219EDFE5003C4B9F /* Metadata.swift in Sources */,
 				43A9BF2621ABF2B200D209E2 /* ChannelRepositoryContract.swift in Sources */,
 				43A9BF2021ABE5DB00D209E2 /* ChannelParticipation.swift in Sources */,
+				43637A9621AFEF2E00C5C28C /* FetchTimelineEventsAction.swift in Sources */,
 				43A9BF2821ABF32500D209E2 /* ChannelRemoteSource.swift in Sources */,
 				4395EA21219989F0004DD4A3 /* Action.swift in Sources */,
 				4320C5EA219EE7A1003C4B9F /* FetchMessageAction.swift in Sources */,
@@ -818,6 +833,7 @@
 				4335D97721A8008F00DB33AB /* DateExtensions.swift in Sources */,
 				432C502B219D78E6002A0EDA /* FcmDeliveryEndpoint.swift in Sources */,
 				43EB3B65219462000052A90C /* EntityProfile.swift in Sources */,
+				43637A9421AFEA2200C5C28C /* MessageTimelineEvent.swift in Sources */,
 				4395EA3021999E49004DD4A3 /* ApiResult.swift in Sources */,
 				4320C5ED219EE848003C4B9F /* MessageApiContainer.swift in Sources */,
 				4320C5CB219EAA37003C4B9F /* StandardMessageType.swift in Sources */,

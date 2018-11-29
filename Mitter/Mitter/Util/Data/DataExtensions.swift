@@ -14,7 +14,11 @@ extension Array {
             "\(reduced),\(element)"
         })
         
-        let index = reducedArray.index(reducedArray.startIndex, offsetBy: 1)
-        return String(reducedArray[index...])
+        if reducedArray.isEmpty {
+            return ""
+        } else {
+            let index = reducedArray.index(reducedArray.startIndex, offsetBy: 1)
+            return String(reducedArray[index...])
+        }
     }
 }

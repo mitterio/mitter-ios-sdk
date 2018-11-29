@@ -12,6 +12,7 @@ import Moya
 enum MessageApiService {
     case fetchMessagesInChannel(channelId: String)
     case fetchMessage(messageId: String)
+    case fetchTimelineEventsForMessages(channelId: String, messageIds: String, eventTypeFilter: String)
     case addMessageToChannel(channelId: String, message: Message)
     case addMultipartMessageToChannel(channelId: String, message: Message, file: URL)
     case removeMessagesFromChannel(channelId: String, messageIds: String)
@@ -28,6 +29,8 @@ extension MessageApiService: TargetType {
             return "/v1/channels/\(channelId)/messages"
         case .fetchMessage(let messageId):
             return "/v1/messages/\(messageId)"
+        case let .fetchTimelineEventsForMessages(channelId, messageIds, _):
+            return "/v1/channels/\(channelId)/messages/\(messageIds)/timeline"
         case .addMessageToChannel(let channelId, _):
             return "/v1/channels/\(channelId)/messages"
         case .addMultipartMessageToChannel(let channelId, _, _):
@@ -39,7 +42,7 @@ extension MessageApiService: TargetType {
     
     var method: Moya.Method {
         switch self {
-        case .fetchMessagesInChannel, .fetchMessage:
+        case .fetchMessagesInChannel, .fetchMessage, .fetchTimelineEventsForMessages:
             return .get
         case .addMessageToChannel, .addMultipartMessageToChannel:
             return .post
@@ -58,6 +61,9 @@ extension MessageApiService: TargetType {
             return .requestPlain
         case .fetchMessage:
             return .requestPlain
+        case .fetchTimelineEventsForMessages(_, _, let eventTypeFilter):
+            let queryParams = [Constants.Keys.eventTypeFilter : eventTypeFilter]
+            return .requestParameters(parameters: queryParams, encoding: URLEncoding.queryString)
         case .addMessageToChannel(_, let message):
             let requestParams = try! wrapModel(message)
             return .requestParameters(parameters: requestParams, encoding: JSONEncoding.default)
@@ -87,7 +93,12 @@ extension MessageApiService: TargetType {
     
     var validationType: ValidationType {
         switch self {
-        case .fetchMessagesInChannel, .fetchMessage, .addMessageToChannel, .addMultipartMessageToChannel, .removeMessagesFromChannel:
+        case .fetchMessagesInChannel,
+             .fetchMessage,
+             .fetchTimelineEventsForMessages,
+             .addMessageToChannel,
+             .addMultipartMessageToChannel,
+             .removeMessagesFromChannel:
             return .successCodes
         }
     }

@@ -32,6 +32,10 @@ class MessageApiContainer {
         return FetchMessageAction(messageRepository: getMessageRepository())
     }
     
+    func getFetchTimelineEventsAction() -> FetchTimelineEventsAction {
+        return FetchTimelineEventsAction(messageRepository: getMessageRepository())
+    }
+    
     func getAddTextMessageAction() -> AddTextMessageAction {
         return AddTextMessageAction(messageRepository: getMessageRepository())
     }

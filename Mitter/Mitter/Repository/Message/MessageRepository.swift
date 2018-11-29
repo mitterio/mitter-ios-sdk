@@ -24,6 +24,14 @@ class MessageRepository: MessageRepositoryContract {
         return messageRemoteSource.fetchMessage(messageId: messageId)
     }
     
+    func fetchTimelineEventsForMessages(
+        channelId: String,
+        messageIds: [String],
+        eventTypes: [String]
+    ) -> PrimitiveSequence<SingleTrait, [MessageTimelineEvent]> {
+        return messageRemoteSource.fetchTimelineEventsForMessages(channelId: channelId, messageIds: messageIds, eventTypes: eventTypes)
+    }
+    
     func addMessageToChannel(channelId: String, message: Message) -> PrimitiveSequence<SingleTrait, Empty> {
         return messageRemoteSource.addMessageToChannel(channelId: channelId, message: message)
     }
