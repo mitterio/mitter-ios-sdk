@@ -39,11 +39,9 @@ class MessageRemoteSource: MessageRepositoryContract {
     }
     
     func addFileMessageToChannel(channelId: String, message: Message, file: URL) -> PrimitiveSequence<SingleTrait, Empty> {
-        let messageData = try! wrapModel(message) as Data
-        
         return apiProvider
             .rx
-            .request(.addMultipartMessageToChannel(channelId: channelId, requestBody: messageData, file: file))
+            .request(.addMultipartMessageToChannel(channelId: channelId, message: message, file: file))
             .map(to: Empty.self)
     }
 }

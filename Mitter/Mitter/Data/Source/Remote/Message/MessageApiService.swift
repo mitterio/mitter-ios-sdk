@@ -13,7 +13,7 @@ enum MessageApiService {
     case fetchMessagesInChannel(channelId: String)
     case fetchMessage(messageId: String)
     case addMessageToChannel(channelId: String, message: Message)
-    case addMultipartMessageToChannel(channelId: String, requestBody: Data, file: URL)
+    case addMultipartMessageToChannel(channelId: String, message: Message, file: URL)
 }
 
 extension MessageApiService: TargetType {
@@ -56,7 +56,8 @@ extension MessageApiService: TargetType {
         case .addMessageToChannel(_, let message):
             let requestParams = try! wrapModel(message)
             return .requestParameters(parameters: requestParams, encoding: JSONEncoding.default)
-        case let .addMultipartMessageToChannel(_, requestBody, file):
+        case let .addMultipartMessageToChannel(_, message, file):
+            let requestBody = try! wrapModel(message) as Data
             let mimeType = MimeType(url: file)
             
             let requestBodyPart = MultipartFormData(
