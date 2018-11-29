@@ -291,9 +291,30 @@ public class Mitter {
             }
         }
         
+        public func sendImageMessage(
+            forChannel channelId: String,
+            withCaption caption: String = "",
+            image file: URL,
+            completion: @escaping emptyApiResult
+            ) {
+            let addImageMessageAction = mitter.messageApiContainer.getImageMessageAction()
+            let imageMessage = ImageMessage(senderId: mitter.getUserId(), caption: caption)
+            
+            addImageMessageAction
+                .execute(t1: channelId, t2: imageMessage, t3: file)
+                .subscribe { event in
+                    switch event {
+                    case .success(let empty):
+                        completion(ApiResult.success(empty))
+                    case .error:
+                        completion(ApiResult.error)
+                    }
+            }
+        }
+        
         public func sendFileMessage(
             forChannel channelId: String,
-            _ message: Message,
+            withMessage message: Message,
             file: URL,
             completion: @escaping emptyApiResult
             ) {
@@ -305,8 +326,7 @@ public class Mitter {
                     switch event {
                     case .success(let empty):
                         completion(ApiResult.success(empty))
-                    case .error(let error):
-                        print("File error: \(error)")
+                    case .error:
                         completion(ApiResult.error)
                     }
             }

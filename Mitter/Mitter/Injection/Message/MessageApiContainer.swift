@@ -36,6 +36,10 @@ class MessageApiContainer {
         return AddTextMessageAction(messageRepository: getMessageRepository())
     }
     
+    func getImageMessageAction() -> AddImageMessageAction {
+        return AddImageMessageAction(messageRepository: getMessageRepository())
+    }
+    
     func getAddFileMessageAction() -> AddFileMessageAction {
         return AddFileMessageAction(messageRepository: getMessageRepository())
     }
