@@ -44,4 +44,12 @@ class MessageRemoteSource: MessageRepositoryContract {
             .request(.addMultipartMessageToChannel(channelId: channelId, message: message, file: file))
             .map(to: Empty.self)
     }
+    
+    func removeMessagesFromChannel(channelId: String, messageIds: [String]) -> PrimitiveSequence<SingleTrait, Empty> {
+        let flattenedMessageIds = messageIds.flattenWithCommas()
+        return apiProvider
+        .rx
+        .request(.removeMessagesFromChannel(channelId: channelId, messageIds: flattenedMessageIds))
+        .map(to: Empty.self)
+    }
 }

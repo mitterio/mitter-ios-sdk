@@ -366,6 +366,22 @@ public class Mitter {
                     }
             }
         }
+        
+        public func deleteMessagesFromChannel(fromChannel channelId: String, messageIds: [String], completion: @escaping emptyApiResult) {
+            let removeMessagesFromChannelAction = mitter.messageApiContainer.getRemoveMessagesFromChannelAction()
+            
+            removeMessagesFromChannelAction
+                .execute(t1: channelId, t2: messageIds)
+                .subscribe { event in
+                    switch event {
+                    case .success(let empty):
+                        completion(ApiResult.success(empty))
+                    case .error(let error):
+                        print("Error: Deleting Messages: \(error)")
+                        completion(ApiResult.error)
+                    }
+            }
+        }
     }
 }
 

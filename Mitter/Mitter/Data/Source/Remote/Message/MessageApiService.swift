@@ -14,6 +14,7 @@ enum MessageApiService {
     case fetchMessage(messageId: String)
     case addMessageToChannel(channelId: String, message: Message)
     case addMultipartMessageToChannel(channelId: String, message: Message, file: URL)
+    case removeMessagesFromChannel(channelId: String, messageIds: String)
 }
 
 extension MessageApiService: TargetType {
@@ -31,6 +32,8 @@ extension MessageApiService: TargetType {
             return "/v1/channels/\(channelId)/messages"
         case .addMultipartMessageToChannel(let channelId, _, _):
             return "/v1/channels/\(channelId)/messages"
+        case let .removeMessagesFromChannel(channelId, messageIds):
+            return "/v1/channels/\(channelId)/messages/\(messageIds)"
         }
     }
     
@@ -40,6 +43,8 @@ extension MessageApiService: TargetType {
             return .get
         case .addMessageToChannel, .addMultipartMessageToChannel:
             return .post
+        case .removeMessagesFromChannel:
+            return .delete
         }
     }
     
@@ -69,6 +74,8 @@ extension MessageApiService: TargetType {
             let multipartData = [requestBodyPart, filePart]
             
             return .uploadMultipart(multipartData)
+        case .removeMessagesFromChannel:
+            return .requestPlain
         }
     }
     
@@ -80,7 +87,7 @@ extension MessageApiService: TargetType {
     
     var validationType: ValidationType {
         switch self {
-        case .fetchMessagesInChannel, .fetchMessage, .addMessageToChannel, .addMultipartMessageToChannel:
+        case .fetchMessagesInChannel, .fetchMessage, .addMessageToChannel, .addMultipartMessageToChannel, .removeMessagesFromChannel:
             return .successCodes
         }
     }

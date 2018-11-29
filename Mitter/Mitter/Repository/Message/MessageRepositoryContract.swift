@@ -17,4 +17,6 @@ protocol MessageRepositoryContract {
     func addMessageToChannel(channelId: String, message: Message) -> PrimitiveSequence<SingleTrait, Empty>
     
     func addFileMessageToChannel(channelId: String, message: Message, file: URL) -> PrimitiveSequence<SingleTrait, Empty>
+    
+    func removeMessagesFromChannel(channelId: String, messageIds: [String]) -> PrimitiveSequence<SingleTrait, Empty>
 }

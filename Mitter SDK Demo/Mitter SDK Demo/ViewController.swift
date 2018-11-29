@@ -167,43 +167,56 @@ class ViewController: UIViewController {
             print("Error while enumerating files \(sampleUrl.path): \(error.localizedDescription)")
         }
         
-        let sender = Identifiable<User>(domainId: "csrCy-SJL3u-8AKMT-Wqv6y")
+//        let sender = Identifiable<User>(domainId: "csrCy-SJL3u-8AKMT-Wqv6y")
+//
+//        let sentTimelineEvent = TimelineEvent(
+//            eventId: UUID().uuidString,
+//            type: StandardTimelineEventTypeNames.Messages.SentTime,
+//            eventTimeMs: Int64(Date().timeIntervalSince1970 * 1000),
+//            subject: sender
+//        )
+//
+//        let messageDatum = MessageDatum(
+//            dataType: "com.acme.custom",
+//            data: [
+//                "name": "Mitter",
+//                "website": "https://mitter.io"
+//            ]
+//        )
+//
+//        let message = Message(
+//            messageId: UUID().uuidString,
+//            payloadType: StandardPayloadTypeNames.TextMessage,
+//            senderId: sender,
+//            textPayload: "Wassup",
+//            messageData: [messageDatum],
+//            timelineEvents: [sentTimelineEvent]
+//        )
+//
+//        appDelegate.mitter.messaging.sendMessage(
+//            forChannel: "rakfT-XPdJb-WsucS-Pxy4B",
+//            withMessage: message
+//        ) { result in
+//            switch result {
+//            case .success:
+//                print("Custom message sent!")
+//            case .error:
+//                print("Couldn't send custom message")
+//            }
+//        }
         
-        let sentTimelineEvent = TimelineEvent(
-            eventId: UUID().uuidString,
-            type: StandardTimelineEventTypeNames.Messages.SentTime,
-            eventTimeMs: Int64(Date().timeIntervalSince1970 * 1000),
-            subject: sender
-        )
-        
-        let messageDatum = MessageDatum(
-            dataType: "com.acme.custom",
-            data: [
-                "name": "Mitter",
-                "website": "https://mitter.io"
-            ]
-        )
-        
-        let message = Message(
-            messageId: UUID().uuidString,
-            payloadType: StandardPayloadTypeNames.TextMessage,
-            senderId: sender,
-            textPayload: "Wassup",
-            messageData: [messageDatum],
-            timelineEvents: [sentTimelineEvent]
-        )
-        
-        appDelegate.mitter.messaging.sendMessage(
-            forChannel: "rakfT-XPdJb-WsucS-Pxy4B",
-            withMessage: message
-        ) { result in
-            switch result {
-            case .success:
-                print("Custom message sent!")
-            case .error:
-                print("Couldn't send custom message")
-            }
-            
-        }
+//        let messagesToDelete = ["475E0410-5FDB-4919-B266-B781FE81B998", "890462D7-ACE8-4607-AA8E-881E3F520C16"]
+//
+//        appDelegate.mitter.messaging.deleteMessagesFromChannel(
+//            fromChannel: "rakfT-XPdJb-WsucS-Pxy4B",
+//            messageIds: messagesToDelete
+//        ) { result in
+//            switch result {
+//            case .success:
+//                print("Messages deleted!")
+//            case .error:
+//                print("Couldn't delete messages")
+//            }
+//        }
     }
 }

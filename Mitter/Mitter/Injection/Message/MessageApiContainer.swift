@@ -48,6 +48,10 @@ class MessageApiContainer {
         return AddMessageAction(messageRepository: getMessageRepository())
     }
     
+    func getRemoveMessagesFromChannelAction() -> RemoveMessagesFromChannelAction {
+        return RemoveMessagesFromChannelAction(messageRepository: getMessageRepository())
+    }
+    
     private func registerMessageApiLayers() {
         container.register(MessageRepositoryContract.self, name: Constants.Messages.messageRemoteSource) {
             _ in MessageRemoteSource(

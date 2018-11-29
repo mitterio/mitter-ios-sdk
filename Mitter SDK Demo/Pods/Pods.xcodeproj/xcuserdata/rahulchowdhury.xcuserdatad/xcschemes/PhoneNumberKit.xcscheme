@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EFC41FF6828F411369BE12D469FBDA24"
+               BlueprintIdentifier = "46959D49DC3005243A24AA653B0C583D"
                BlueprintName = "PhoneNumberKit"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "PhoneNumberKit.framework">
