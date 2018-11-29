@@ -387,6 +387,22 @@ public class Mitter {
             }
         }
         
+        public func addDeliveredTimelineEvent(channelId: String, messageId: String, completion: @escaping emptyApiResult) {
+            let addDeliveredTimelineEventAction = mitter.messageApiContainer.getDeliveredTimelineEventAction()
+            
+            addDeliveredTimelineEventAction
+                .execute(t1: channelId, t2: messageId, t3: mitter.getUserId())
+                .subscribe { event in
+                    switch event {
+                    case .success(let empty):
+                        completion(ApiResult.success(empty))
+                    case .error(let error):
+                        print("Error: \(error)")
+                        completion(ApiResult.error)
+                    }
+            }
+        }
+        
         public func deleteMessagesFromChannel(fromChannel channelId: String, messageIds: [String], completion: @escaping emptyApiResult) {
             let removeMessagesFromChannelAction = mitter.messageApiContainer.getRemoveMessagesFromChannelAction()
             

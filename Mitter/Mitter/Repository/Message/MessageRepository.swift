@@ -40,6 +40,14 @@ class MessageRepository: MessageRepositoryContract {
         return messageRemoteSource.addFileMessageToChannel(channelId: channelId, message: message, file: file)
     }
     
+    func addTimelineEventToMessage(
+        channelId: String,
+        messageId: String,
+        timelineEvent: TimelineEvent
+    ) -> PrimitiveSequence<SingleTrait, Empty> {
+        return messageRemoteSource.addTimelineEventToMessage(channelId: channelId, messageId: messageId, timelineEvent: timelineEvent)
+    }
+    
     func removeMessagesFromChannel(channelId: String, messageIds: [String]) -> PrimitiveSequence<SingleTrait, Empty> {
         return messageRemoteSource.removeMessagesFromChannel(channelId: channelId, messageIds: messageIds)
     }

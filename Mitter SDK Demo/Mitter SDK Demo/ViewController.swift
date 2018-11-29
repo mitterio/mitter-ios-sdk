@@ -218,20 +218,32 @@ class ViewController: UIViewController {
         //                print("Couldn't delete messages")
         //            }
         //        }
-//        let messagesIdsToCheck = ["475E0410-5FDB-4919-B266-B781FE81B998", "890462D7-ACE8-4607-AA8E-881E3F520C16"]
-//        let eventTypes = [StandardTimelineEventTypeNames.Messages.SentTime]
-//        appDelegate.mitter.messaging.getTimelineEvents(
-//            forChannel: "rakfT-XPdJb-WsucS-Pxy4B",
-//            messageIds: messagesIdsToCheck,
-//            filterByEvents: eventTypes
-//        ) { result in
-//                switch result {
-//                case .success(let timelineEvents):
-//                    print("Timeline Events: \(timelineEvents)")
-//                case .error:
-//                    print("Couldn't delete messages")
-//                }
-//
-//        }
+        //        let messagesIdsToCheck = ["475E0410-5FDB-4919-B266-B781FE81B998", "890462D7-ACE8-4607-AA8E-881E3F520C16"]
+        //        let eventTypes = [StandardTimelineEventTypeNames.Messages.SentTime]
+        //        appDelegate.mitter.messaging.getTimelineEvents(
+        //            forChannel: "rakfT-XPdJb-WsucS-Pxy4B",
+        //            messageIds: messagesIdsToCheck,
+        //            filterByEvents: eventTypes
+        //        ) { result in
+        //                switch result {
+        //                case .success(let timelineEvents):
+        //                    print("Timeline Events: \(timelineEvents)")
+        //                case .error:
+        //                    print("Couldn't delete messages")
+        //                }
+        //
+        //        }
+        let messageIdToMarkDelivered = "475E0410-5FDB-4919-B266-B781FE81B998"
+        appDelegate.mitter.messaging.addDeliveredTimelineEvent(
+            channelId: "rakfT-XPdJb-WsucS-Pxy4B",
+            messageId: messageIdToMarkDelivered) { result in
+                switch result {
+                case .success:
+                    print("Added delivery receipt")
+                case .error:
+                    print("Couldn't add delivery receipt")
+                }
+                
+        }
     }
 }

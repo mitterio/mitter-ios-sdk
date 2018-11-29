@@ -35,7 +35,7 @@ class MessageRemoteSource: MessageRepositoryContract {
         channelId: String,
         messageIds: [String],
         eventTypes: [String]
-        ) -> PrimitiveSequence<SingleTrait, [MessageTimelineEvent]> {
+    ) -> PrimitiveSequence<SingleTrait, [MessageTimelineEvent]> {
         let flattenedMessageIds = messageIds.flattenWithCommas()
         let flattenedEventTypes = eventTypes.flattenWithCommas()
         
@@ -56,6 +56,17 @@ class MessageRemoteSource: MessageRepositoryContract {
         return apiProvider
             .rx
             .request(.addMultipartMessageToChannel(channelId: channelId, message: message, file: file))
+            .map(to: Empty.self)
+    }
+    
+    func addTimelineEventToMessage(
+        channelId: String,
+        messageId: String,
+        timelineEvent: TimelineEvent
+    ) -> PrimitiveSequence<SingleTrait, Empty> {
+        return apiProvider
+            .rx
+            .request(.addTimelineEventsToMessage(channelId: channelId, messageId: messageId, timelineEvent: timelineEvent))
             .map(to: Empty.self)
     }
     

@@ -15,6 +15,7 @@ enum MessageApiService {
     case fetchTimelineEventsForMessages(channelId: String, messageIds: String, eventTypeFilter: String)
     case addMessageToChannel(channelId: String, message: Message)
     case addMultipartMessageToChannel(channelId: String, message: Message, file: URL)
+    case addTimelineEventsToMessage(channelId: String, messageId: String, timelineEvent: TimelineEvent)
     case removeMessagesFromChannel(channelId: String, messageIds: String)
 }
 
@@ -35,6 +36,8 @@ extension MessageApiService: TargetType {
             return "/v1/channels/\(channelId)/messages"
         case .addMultipartMessageToChannel(let channelId, _, _):
             return "/v1/channels/\(channelId)/messages"
+        case let .addTimelineEventsToMessage(channelId, messageId, _):
+            return "/v1/channels/\(channelId)/messages/\(messageId)/timeline"
         case let .removeMessagesFromChannel(channelId, messageIds):
             return "/v1/channels/\(channelId)/messages/\(messageIds)"
         }
@@ -44,7 +47,7 @@ extension MessageApiService: TargetType {
         switch self {
         case .fetchMessagesInChannel, .fetchMessage, .fetchTimelineEventsForMessages:
             return .get
-        case .addMessageToChannel, .addMultipartMessageToChannel:
+        case .addMessageToChannel, .addMultipartMessageToChannel, .addTimelineEventsToMessage:
             return .post
         case .removeMessagesFromChannel:
             return .delete
@@ -80,6 +83,9 @@ extension MessageApiService: TargetType {
             let multipartData = [requestBodyPart, filePart]
             
             return .uploadMultipart(multipartData)
+        case .addTimelineEventsToMessage(_ , _, let timelineEvent):
+            let requestParams = try! wrapModel(timelineEvent)
+            return .requestParameters(parameters: requestParams, encoding: JSONEncoding.default)
         case .removeMessagesFromChannel:
             return .requestPlain
         }
@@ -98,6 +104,7 @@ extension MessageApiService: TargetType {
              .fetchTimelineEventsForMessages,
              .addMessageToChannel,
              .addMultipartMessageToChannel,
+             .addTimelineEventsToMessage,
              .removeMessagesFromChannel:
             return .successCodes
         }

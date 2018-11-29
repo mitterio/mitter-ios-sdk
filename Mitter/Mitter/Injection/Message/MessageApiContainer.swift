@@ -52,6 +52,10 @@ class MessageApiContainer {
         return AddMessageAction(messageRepository: getMessageRepository())
     }
     
+    func getDeliveredTimelineEventAction() -> AddDeliveredTimelineEventAction {
+        return AddDeliveredTimelineEventAction(messageRepository: getMessageRepository())
+    }
+    
     func getRemoveMessagesFromChannelAction() -> RemoveMessagesFromChannelAction {
         return RemoveMessagesFromChannelAction(messageRepository: getMessageRepository())
     }
