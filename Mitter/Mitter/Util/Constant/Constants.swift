@@ -36,6 +36,7 @@ enum Constants {
         static let userId = "UserId"
         static let authToken = "AuthToken"
         static let requestBody = "io.mitter.wire.requestbody"
+        static let notificationDataType = "cloud-notification"
     }
     
     enum ContentType {

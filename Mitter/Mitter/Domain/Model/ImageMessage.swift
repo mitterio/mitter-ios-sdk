@@ -11,4 +11,5 @@ import Foundation
 public struct ImageMessage {
     public let senderId: String
     public let caption: String
+    public let messageNotification: MessageNotification
 }

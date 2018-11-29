@@ -275,9 +275,14 @@ public class Mitter {
             }
         }
         
-        public func sendTextMessage(forChannel channelId: String, _ message: String, completion: @escaping emptyApiResult) {
+        public func sendTextMessage(
+            forChannel channelId: String,
+            _ message: String,
+            withNotificationDetails messageNotification: MessageNotification = getDefaultMessageNotification(),
+            completion: @escaping emptyApiResult
+            ) {
             let addTextMessageAction = mitter.messageApiContainer.getAddTextMessageAction()
-            let textMessage = TextMessage(senderId: mitter.getUserId(), message: message)
+            let textMessage = TextMessage(senderId: mitter.getUserId(), message: message, messageNotification: messageNotification)
             
             addTextMessageAction
                 .execute(t1: channelId, t2: textMessage)
@@ -295,10 +300,15 @@ public class Mitter {
             forChannel channelId: String,
             withCaption caption: String = "",
             image file: URL,
+            withNotificationDetails messageNotification: MessageNotification = getDefaultMessageNotification(),
             completion: @escaping emptyApiResult
             ) {
             let addImageMessageAction = mitter.messageApiContainer.getImageMessageAction()
-            let imageMessage = ImageMessage(senderId: mitter.getUserId(), caption: caption)
+            let imageMessage = ImageMessage(
+                senderId: mitter.getUserId(),
+                caption: caption,
+                messageNotification: messageNotification
+            )
             
             addImageMessageAction
                 .execute(t1: channelId, t2: imageMessage, t3: file)
@@ -316,12 +326,15 @@ public class Mitter {
             forChannel channelId: String,
             withMessage message: Message,
             file: URL,
+            withNotificationDetails messageNotification: MessageNotification = getDefaultMessageNotification(),
             completion: @escaping emptyApiResult
             ) {
             let addFileMessageAction = mitter.messageApiContainer.getAddFileMessageAction()
+            var messageWithNotification = message
+            messageWithNotification.messageData.append(messageNotification.toMessageDatum())
             
             addFileMessageAction
-                .execute(t1: channelId, t2: message, t3: file)
+                .execute(t1: channelId, t2: messageWithNotification, t3: file)
                 .subscribe { event in
                     switch event {
                     case .success(let empty):
@@ -332,4 +345,11 @@ public class Mitter {
             }
         }
     }
+}
+
+public func getDefaultMessageNotification() -> MessageNotification {
+    return MessageNotification(
+        body: "You've got a new message. Tap to open.",
+        icon: "none",
+        title: "You've got a message!")
 }

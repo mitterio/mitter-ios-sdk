@@ -26,10 +26,13 @@ class AddTextMessageAction: BiParamAction {
             subject: sender
         )
         
+        let notificationMessageDatum = t2.messageNotification.toMessageDatum()
+        
         let message = Message(
             messageId: UUID().uuidString,
             senderId: sender,
             textPayload: t2.message,
+            messageData: [notificationMessageDatum],
             timelineEvents: [sentTimelineEvent]
         )
         

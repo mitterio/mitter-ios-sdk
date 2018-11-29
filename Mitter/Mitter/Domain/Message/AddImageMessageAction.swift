@@ -26,11 +26,14 @@ class AddImageMessageAction: TriParamAction {
             subject: sender
         )
         
+        let notificationMessageDatum = t2.messageNotification.toMessageDatum()
+        
         let message = Message(
             messageId: UUID().uuidString,
             payloadType: StandardPayloadTypeNames.ImageMessage,
             senderId: sender,
             textPayload: t2.caption,
+            messageData: [notificationMessageDatum],
             timelineEvents: [sentTimelineEvent]
         )
         

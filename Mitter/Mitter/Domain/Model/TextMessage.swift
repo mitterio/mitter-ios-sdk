@@ -11,4 +11,5 @@ import Foundation
 public struct TextMessage {
     public let senderId: String
     public let message: String
+    public let messageNotification: MessageNotification
 }
