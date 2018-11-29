@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		26BA130DBC01858B0A4E6F55 /* Pods_Mitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D03DA1590C2BF3411E86D67B /* Pods_Mitter.framework */; };
 		430096BB21AD2D00009060AD /* AddGroupChatChannelAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430096BA21AD2D00009060AD /* AddGroupChatChannelAction.swift */; };
+		430B41A921AFA52500C88278 /* MimeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430B41A821AFA52500C88278 /* MimeType.swift */; };
 		431901C021A582A4007EA588 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431901BF21A582A4007EA588 /* Channel.swift */; };
 		431901C221A5839C007EA588 /* ParticipationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431901C121A5839C007EA588 /* ParticipationStatus.swift */; };
 		431901C421A586AD007EA588 /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431901C321A586AD007EA588 /* Payload.swift */; };
@@ -90,6 +91,7 @@
 
 /* Begin PBXFileReference section */
 		430096BA21AD2D00009060AD /* AddGroupChatChannelAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupChatChannelAction.swift; sourceTree = "<group>"; };
+		430B41A821AFA52500C88278 /* MimeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MimeType.swift; sourceTree = "<group>"; };
 		431901BF21A582A4007EA588 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		431901C121A5839C007EA588 /* ParticipationStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipationStatus.swift; sourceTree = "<group>"; };
 		431901C321A586AD007EA588 /* Payload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
@@ -382,6 +384,7 @@
 			children = (
 				4335D97621A8008F00DB33AB /* DateExtensions.swift */,
 				43A9BF3021ABF59600D209E2 /* DataMapper.swift */,
+				430B41A821AFA52500C88278 /* MimeType.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -813,6 +816,7 @@
 				431C9E2F21A40C35001C9073 /* MessagingPipelinePayload.swift in Sources */,
 				43F42525219192D4007759F7 /* User.swift in Sources */,
 				43EB3B71219477580052A90C /* UserLocator.swift in Sources */,
+				430B41A921AFA52500C88278 /* MimeType.swift in Sources */,
 				432C5030219D90AC002A0EDA /* Wrap.swift in Sources */,
 				432C502D219D7A87002A0EDA /* StandardEndpointTypes.swift in Sources */,
 				43A9BF1921ABBD6E00D209E2 /* FetchMessagesInChannelAction.swift in Sources */,

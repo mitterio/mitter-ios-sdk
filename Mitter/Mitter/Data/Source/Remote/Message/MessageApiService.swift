@@ -57,8 +57,14 @@ extension MessageApiService: TargetType {
             let requestParams = try! wrapModel(message)
             return .requestParameters(parameters: requestParams, encoding: JSONEncoding.default)
         case let .addMultipartMessageToChannel(_, requestBody, file):
-            let requestBodyPart = MultipartFormData(provider: .data(requestBody), name: "io.mitter.wire.requestbody", mimeType: "application/json")
-            let filePart = MultipartFormData(provider: .file(file), name: "name", fileName: "image", mimeType: "image/jpg")
+            let mimeType = MimeType(url: file)
+            
+            let requestBodyPart = MultipartFormData(
+                provider: .data(requestBody),
+                name: Constants.Keys.requestBody,
+                mimeType: Constants.ContentType.json
+            )
+            let filePart = MultipartFormData(provider: .file(file), name: "name", fileName: "image", mimeType: mimeType.value)
             let multipartData = [requestBodyPart, filePart]
             
             return .uploadMultipart(multipartData)
@@ -67,7 +73,7 @@ extension MessageApiService: TargetType {
     
     var headers: [String : String]? {
         return [
-            "Content-Type": "application/json"
+            "Content-Type": Constants.ContentType.json
         ]
     }
     

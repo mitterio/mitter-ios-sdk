@@ -46,7 +46,7 @@ extension ChannelApiService: TargetType {
     
     var headers: [String : String]? {
         return [
-            "Content-Type": "application/json"
+            "Content-Type": Constants.ContentType.json
         ]
     }
     

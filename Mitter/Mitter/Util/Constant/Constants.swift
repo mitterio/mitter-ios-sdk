@@ -35,5 +35,10 @@ enum Constants {
     enum Keys {
         static let userId = "UserId"
         static let authToken = "AuthToken"
+        static let requestBody = "io.mitter.wire.requestbody"
+    }
+    
+    enum ContentType {
+        static let json = "application/json"
     }
 }
