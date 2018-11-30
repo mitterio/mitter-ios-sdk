@@ -12,5 +12,7 @@ import RxSwift
 protocol ChannelRepositoryContract {
     func fetchChannel(channelId: String) -> PrimitiveSequence<SingleTrait, Channel>
     
+    func fetchChannelsForUser(userId: String) -> PrimitiveSequence<SingleTrait, [ParticipatedChannel]>
+    
     func addChannel(channel: Channel) -> PrimitiveSequence<SingleTrait, Identifiable<Channel>>
 }

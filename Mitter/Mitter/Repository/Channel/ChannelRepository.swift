@@ -20,6 +20,10 @@ class ChannelRepository: ChannelRepositoryContract {
         return channelRemoteSource.fetchChannel(channelId: channelId)
     }
     
+    func fetchChannelsForUser(userId: String) -> PrimitiveSequence<SingleTrait, [ParticipatedChannel]> {
+        return channelRemoteSource.fetchChannelsForUser(userId: userId)
+    }
+    
     func addChannel(channel: Channel) -> PrimitiveSequence<SingleTrait, Identifiable<Channel>> {
         return channelRemoteSource.addChannel(channel: channel)
     }

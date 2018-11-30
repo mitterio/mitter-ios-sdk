@@ -55,6 +55,8 @@
 		43614C6321B0E06400F7E8BF /* AddReadTimelineEventAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43614C6221B0E06400F7E8BF /* AddReadTimelineEventAction.swift */; };
 		43614C6521B0E89100F7E8BF /* FetchChannelAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43614C6421B0E89100F7E8BF /* FetchChannelAction.swift */; };
 		43614C6721B0E8ED00F7E8BF /* AddChannelAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43614C6621B0E8ED00F7E8BF /* AddChannelAction.swift */; };
+		43614C6921B131A200F7E8BF /* ParticipatedChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43614C6821B131A200F7E8BF /* ParticipatedChannel.swift */; };
+		43614C6B21B1336E00F7E8BF /* FetchChannelsForUserAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43614C6A21B1336E00F7E8BF /* FetchChannelsForUserAction.swift */; };
 		43637A8721AFA8E300C5C28C /* ImageMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43637A8621AFA8E300C5C28C /* ImageMessage.swift */; };
 		43637A8921AFA95200C5C28C /* AddImageMessageAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43637A8821AFA95200C5C28C /* AddImageMessageAction.swift */; };
 		43637A8B21AFAF4800C5C28C /* MessageNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43637A8A21AFAF4800C5C28C /* MessageNotification.swift */; };
@@ -149,6 +151,8 @@
 		43614C6221B0E06400F7E8BF /* AddReadTimelineEventAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReadTimelineEventAction.swift; sourceTree = "<group>"; };
 		43614C6421B0E89100F7E8BF /* FetchChannelAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchChannelAction.swift; sourceTree = "<group>"; };
 		43614C6621B0E8ED00F7E8BF /* AddChannelAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChannelAction.swift; sourceTree = "<group>"; };
+		43614C6821B131A200F7E8BF /* ParticipatedChannel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipatedChannel.swift; sourceTree = "<group>"; };
+		43614C6A21B1336E00F7E8BF /* FetchChannelsForUserAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchChannelsForUserAction.swift; sourceTree = "<group>"; };
 		43637A8621AFA8E300C5C28C /* ImageMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMessage.swift; sourceTree = "<group>"; };
 		43637A8821AFA95200C5C28C /* AddImageMessageAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageMessageAction.swift; sourceTree = "<group>"; };
 		43637A8A21AFAF4800C5C28C /* MessageNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageNotification.swift; sourceTree = "<group>"; };
@@ -336,6 +340,7 @@
 				431901C121A5839C007EA588 /* ParticipationStatus.swift */,
 				43A9BF1D21ABCAFB00D209E2 /* StandardRuleSetNames.swift */,
 				43A9BF1F21ABE5DB00D209E2 /* ChannelParticipation.swift */,
+				43614C6821B131A200F7E8BF /* ParticipatedChannel.swift */,
 			);
 			path = Messaging;
 			sourceTree = "<group>";
@@ -588,6 +593,7 @@
 				430096BA21AD2D00009060AD /* AddGroupChatChannelAction.swift */,
 				43614C6421B0E89100F7E8BF /* FetchChannelAction.swift */,
 				43614C6621B0E8ED00F7E8BF /* AddChannelAction.swift */,
+				43614C6A21B1336E00F7E8BF /* FetchChannelsForUserAction.swift */,
 			);
 			path = Channel;
 			sourceTree = "<group>";
@@ -843,6 +849,7 @@
 				43A9BF2321ABEDDC00D209E2 /* ChannelApiService.swift in Sources */,
 				43EB3B73219477B00052A90C /* VerificationStatus.swift in Sources */,
 				43637A8921AFA95200C5C28C /* AddImageMessageAction.swift in Sources */,
+				43614C6921B131A200F7E8BF /* ParticipatedChannel.swift in Sources */,
 				4335D97721A8008F00DB33AB /* DateExtensions.swift in Sources */,
 				432C502B219D78E6002A0EDA /* FcmDeliveryEndpoint.swift in Sources */,
 				43EB3B65219462000052A90C /* EntityProfile.swift in Sources */,
@@ -868,6 +875,7 @@
 				43EB3B71219477580052A90C /* UserLocator.swift in Sources */,
 				430B41A921AFA52500C88278 /* MimeType.swift in Sources */,
 				432C5030219D90AC002A0EDA /* Wrap.swift in Sources */,
+				43614C6B21B1336E00F7E8BF /* FetchChannelsForUserAction.swift in Sources */,
 				432C502D219D7A87002A0EDA /* StandardEndpointTypes.swift in Sources */,
 				43A9BF1921ABBD6E00D209E2 /* FetchMessagesInChannelAction.swift in Sources */,
 				431C9E3A21A425FB001C9073 /* FcmMessageProcessor.swift in Sources */,

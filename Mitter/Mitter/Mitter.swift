@@ -202,6 +202,7 @@ public class Mitter {
     public class Channels {
         public typealias emptyApiResult = (ApiResult<Empty>) -> Void
         public typealias channelIdentifiableApiResult = (ApiResult<Identifiable<Channel>>) -> Void
+        public typealias participatedChannelsApiResult = (ApiResult<[ParticipatedChannel]>) -> Void
         
         weak var mitter: Mitter!
         
@@ -220,6 +221,25 @@ public class Mitter {
                         completion(ApiResult.error)
                     }
             }
+        }
+        
+        public func getChannelsForUser(userId: String, completion: @escaping participatedChannelsApiResult) {
+            let fetchChannelsForUserAction = mitter.channelApiContainer.getFetchChannelsForUserAction()
+            
+            fetchChannelsForUserAction
+                .execute(t: userId)
+                .subscribe { event in
+                    switch event {
+                    case .success(let participatedChannels):
+                        completion(ApiResult.success(participatedChannels))
+                    case .error:
+                        completion(ApiResult.error)
+                    }
+            }
+        }
+        
+        public func getChannelsForCurrentUser(completion: @escaping participatedChannelsApiResult) {
+            getChannelsForUser(userId: mitter.getUserId(), completion: completion)
         }
         
         public func createDirectMessageChannel(participants: [Participant], completion: @escaping channelIdentifiableApiResult) {

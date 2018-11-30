@@ -117,9 +117,9 @@ class ViewController: UIViewController {
         print("Directory: \(sampleUrl)")
         
         do {
-//            let fileURLs = try fileManager.contentsOfDirectory(at: sampleUrl, includingPropertiesForKeys: nil)
-//            let imageUrl = fileURLs[0]
-//            print("File URLs: \(fileURLs)")
+            //            let fileURLs = try fileManager.contentsOfDirectory(at: sampleUrl, includingPropertiesForKeys: nil)
+            //            let imageUrl = fileURLs[0]
+            //            print("File URLs: \(fileURLs)")
             
             //            appDelegate.mitter.messaging.sendImageMessage(
             //                forChannel: "rakfT-XPdJb-WsucS-Pxy4B",
@@ -246,32 +246,39 @@ class ViewController: UIViewController {
         //
         //        }
         
-//        appDelegate.mitter.channels.getChannel("rakfT-XPdJb-WsucS-Pxy4B") { result in
+        //        appDelegate.mitter.channels.getChannel("rakfT-XPdJb-WsucS-Pxy4B") { result in
+        //            switch result {
+        //            case .success(let channel):
+        //                print("Channel: \(channel)")
+        //            case .error:
+        //                print("Couldn't get channel")
+        //            }
+        //        }
+        
+        //        let stan = ChannelParticipation(participantId: Identifiable(domainId: "csrCy-SJL3u-8AKMT-Wqv6y"))
+        //        let channel = Channel(
+        //            channelId: UUID().uuidString,
+        //            defaultRuleSet: StandardRuleSetNames.GroupChat,
+        //            participation: [stan]
+        //        )
+        //
+        //        appDelegate.mitter.channels.createChannel(channel) { result in
+        //                        switch result {
+        //                        case .success(let identifier):
+        //                            print("Created Channel ID: \(identifier)")
+        //                        case .error:
+        //                            print("Couldn't create channel")
+        //                        }
+        //
+        //        }
+        
+//        appDelegate.mitter.channels.getChannelsForCurrentUser() { result in
 //            switch result {
-//            case .success(let channel):
-//                print("Channel: \(channel)")
+//            case .success(let channels):
+//                print("Participated Channels: \(channels)")
 //            case .error:
-//                print("Couldn't get channel")
+//                print("Couldn't fetch participated channels")
 //            }
-//        }
-        
-//        let stan = ChannelParticipation(participantId: Identifiable(domainId: "csrCy-SJL3u-8AKMT-Wqv6y"))
-//        let channel = Channel(
-//            channelId: UUID().uuidString,
-//            defaultRuleSet: StandardRuleSetNames.GroupChat,
-//            participation: [stan]
-//        )
-//
-//        appDelegate.mitter.channels.createChannel(channel) { result in
-//                        switch result {
-//                        case .success(let identifier):
-//                            print("Created Channel ID: \(identifier)")
-//                        case .error:
-//                            print("Couldn't create channel")
-//                        }
-//
-//        }
-        
-        
+        }
     }
 }
