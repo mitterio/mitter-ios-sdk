@@ -16,7 +16,7 @@ public struct ChannelParticipation {
     public let participant: User?
     public let auditInfo: AuditInfo?
     
-    init(
+    public init(
         participantId: Identifiable<User>,
         participationStatus: ParticipationStatus = ParticipationStatus.Active,
         channelId: Identifiable<Channel>? = nil,

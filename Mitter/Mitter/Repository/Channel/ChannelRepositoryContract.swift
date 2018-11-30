@@ -10,5 +10,7 @@ import Foundation
 import RxSwift
 
 protocol ChannelRepositoryContract {
+    func fetchChannel(channelId: String) -> PrimitiveSequence<SingleTrait, Channel>
+    
     func addChannel(channel: Channel) -> PrimitiveSequence<SingleTrait, Identifiable<Channel>>
 }

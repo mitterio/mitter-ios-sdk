@@ -53,6 +53,8 @@
 		433B5D8D21A6D17F004675BB /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433B5D8C21A6D17F004675BB /* Empty.swift */; };
 		433B5D8F21A6D245004675BB /* UpdateUserPresenceAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433B5D8E21A6D245004675BB /* UpdateUserPresenceAction.swift */; };
 		43614C6321B0E06400F7E8BF /* AddReadTimelineEventAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43614C6221B0E06400F7E8BF /* AddReadTimelineEventAction.swift */; };
+		43614C6521B0E89100F7E8BF /* FetchChannelAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43614C6421B0E89100F7E8BF /* FetchChannelAction.swift */; };
+		43614C6721B0E8ED00F7E8BF /* AddChannelAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43614C6621B0E8ED00F7E8BF /* AddChannelAction.swift */; };
 		43637A8721AFA8E300C5C28C /* ImageMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43637A8621AFA8E300C5C28C /* ImageMessage.swift */; };
 		43637A8921AFA95200C5C28C /* AddImageMessageAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43637A8821AFA95200C5C28C /* AddImageMessageAction.swift */; };
 		43637A8B21AFAF4800C5C28C /* MessageNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43637A8A21AFAF4800C5C28C /* MessageNotification.swift */; };
@@ -145,6 +147,8 @@
 		433B5D8C21A6D17F004675BB /* Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empty.swift; sourceTree = "<group>"; };
 		433B5D8E21A6D245004675BB /* UpdateUserPresenceAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserPresenceAction.swift; sourceTree = "<group>"; };
 		43614C6221B0E06400F7E8BF /* AddReadTimelineEventAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReadTimelineEventAction.swift; sourceTree = "<group>"; };
+		43614C6421B0E89100F7E8BF /* FetchChannelAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchChannelAction.swift; sourceTree = "<group>"; };
+		43614C6621B0E8ED00F7E8BF /* AddChannelAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChannelAction.swift; sourceTree = "<group>"; };
 		43637A8621AFA8E300C5C28C /* ImageMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMessage.swift; sourceTree = "<group>"; };
 		43637A8821AFA95200C5C28C /* AddImageMessageAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageMessageAction.swift; sourceTree = "<group>"; };
 		43637A8A21AFAF4800C5C28C /* MessageNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageNotification.swift; sourceTree = "<group>"; };
@@ -582,6 +586,8 @@
 			children = (
 				43A9BF2C21ABF49000D209E2 /* AddDirectMessageChannelAction.swift */,
 				430096BA21AD2D00009060AD /* AddGroupChatChannelAction.swift */,
+				43614C6421B0E89100F7E8BF /* FetchChannelAction.swift */,
+				43614C6621B0E8ED00F7E8BF /* AddChannelAction.swift */,
 			);
 			path = Channel;
 			sourceTree = "<group>";
@@ -815,6 +821,7 @@
 			files = (
 				431C9E3821A425BC001C9073 /* Processor.swift in Sources */,
 				430096BB21AD2D00009060AD /* AddGroupChatChannelAction.swift in Sources */,
+				43614C6521B0E89100F7E8BF /* FetchChannelAction.swift in Sources */,
 				43EB3B62219460DE0052A90C /* Attribute.swift in Sources */,
 				433B5D8F21A6D245004675BB /* UpdateUserPresenceAction.swift in Sources */,
 				4395023D219AF91300E9079C /* UserMetaDefaults.swift in Sources */,
@@ -843,6 +850,7 @@
 				4395EA3021999E49004DD4A3 /* ApiResult.swift in Sources */,
 				4320C5ED219EE848003C4B9F /* MessageApiContainer.swift in Sources */,
 				4320C5CB219EAA37003C4B9F /* StandardMessageType.swift in Sources */,
+				43614C6721B0E8ED00F7E8BF /* AddChannelAction.swift in Sources */,
 				43A9BF2A21ABF3AA00D209E2 /* ChannelRepository.swift in Sources */,
 				431901C421A586AD007EA588 /* Payload.swift in Sources */,
 				43A9BF2D21ABF49000D209E2 /* AddDirectMessageChannelAction.swift in Sources */,

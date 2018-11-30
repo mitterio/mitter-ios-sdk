@@ -207,6 +207,21 @@ public class Mitter {
         
         init() {}
         
+        public func getChannel(_ channelId: String, completion: @escaping (ApiResult<Channel>) -> Void) {
+            let fetchChannelAction = mitter.channelApiContainer.getFetchChannelAction()
+            
+            fetchChannelAction
+                .execute(t: channelId)
+                .subscribe { event in
+                    switch event {
+                    case .success(let channel):
+                        completion(ApiResult.success(channel))
+                    case .error:
+                        completion(ApiResult.error)
+                    }
+            }
+        }
+        
         public func createDirectMessageChannel(participants: [Participant], completion: @escaping channelIdentifiableApiResult) {
             let addDirectMessageChannelAction = mitter.channelApiContainer.getAddDirectMessageChannelAction()
             
@@ -227,6 +242,21 @@ public class Mitter {
             
             addGroupChatChannelAction
                 .execute(t: participants)
+                .subscribe { event in
+                    switch event {
+                    case .success(let identifier):
+                        completion(ApiResult.success(identifier))
+                    case .error:
+                        completion(ApiResult.error)
+                    }
+            }
+        }
+        
+        func createChannel(_ channel: Channel, completion: @escaping channelIdentifiableApiResult) {
+            let addChannelAction = mitter.channelApiContainer.getAddChannelAction()
+            
+            addChannelAction
+                .execute(t: channel)
                 .subscribe { event in
                     switch event {
                     case .success(let identifier):

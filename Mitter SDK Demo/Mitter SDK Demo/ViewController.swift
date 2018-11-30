@@ -117,9 +117,9 @@ class ViewController: UIViewController {
         print("Directory: \(sampleUrl)")
         
         do {
-            let fileURLs = try fileManager.contentsOfDirectory(at: sampleUrl, includingPropertiesForKeys: nil)
-            let imageUrl = fileURLs[0]
-            print("File URLs: \(fileURLs)")
+//            let fileURLs = try fileManager.contentsOfDirectory(at: sampleUrl, includingPropertiesForKeys: nil)
+//            let imageUrl = fileURLs[0]
+//            print("File URLs: \(fileURLs)")
             
             //            appDelegate.mitter.messaging.sendImageMessage(
             //                forChannel: "rakfT-XPdJb-WsucS-Pxy4B",
@@ -233,17 +233,26 @@ class ViewController: UIViewController {
         //                }
         //
         //        }
-        let messageIdToMarkDelivered = "475E0410-5FDB-4919-B266-B781FE81B998"
-        appDelegate.mitter.messaging.addDeliveredTimelineEvent(
-            channelId: "rakfT-XPdJb-WsucS-Pxy4B",
-            messageId: messageIdToMarkDelivered) { result in
-                switch result {
-                case .success:
-                    print("Added delivery receipt")
-                case .error:
-                    print("Couldn't add delivery receipt")
-                }
-                
-        }
+        //        let messageIdToMarkDelivered = "475E0410-5FDB-4919-B266-B781FE81B998"
+        //        appDelegate.mitter.messaging.addDeliveredTimelineEvent(
+        //            channelId: "rakfT-XPdJb-WsucS-Pxy4B",
+        //            messageId: messageIdToMarkDelivered) { result in
+        //                switch result {
+        //                case .success:
+        //                    print("Added delivery receipt")
+        //                case .error:
+        //                    print("Couldn't add delivery receipt")
+        //                }
+        //
+        //        }
+        
+//        appDelegate.mitter.channels.getChannel("rakfT-XPdJb-WsucS-Pxy4B") { result in
+//            switch result {
+//            case .success(let channel):
+//                print("Channel: \(channel)")
+//            case .error:
+//                print("Couldn't get channel")
+//            }
+//        }
     }
 }

@@ -10,6 +10,7 @@ import Foundation
 import Moya
 
 enum ChannelApiService {
+    case fetchChannel(channelId: String)
     case addChannel(channel: Channel)
 }
 
@@ -20,6 +21,8 @@ extension ChannelApiService: TargetType {
     
     var path: String {
         switch self {
+        case .fetchChannel(let channelId):
+            return "/v1/channels/\(channelId)"
         case .addChannel:
             return "/v1/channels"
         }
@@ -27,6 +30,8 @@ extension ChannelApiService: TargetType {
     
     var method: Moya.Method {
         switch self {
+        case .fetchChannel:
+            return .get
         case .addChannel:
             return .post
         }
@@ -38,6 +43,8 @@ extension ChannelApiService: TargetType {
     
     var task: Task {
         switch self {
+        case .fetchChannel:
+            return .requestPlain
         case .addChannel(let channel):
             let requestParams = try! wrapModel(channel)
             return .requestParameters(parameters: requestParams, encoding: JSONEncoding.default)
@@ -52,7 +59,7 @@ extension ChannelApiService: TargetType {
     
     var validationType: ValidationType {
         switch self {
-        case .addChannel:
+        case .fetchChannel, .addChannel:
             return .successCodes
         }
     }
