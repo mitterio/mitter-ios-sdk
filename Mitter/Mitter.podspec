@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.author             = { "Rahul Chowdhury" => "contact@mitter.io" }
   s.social_media_url   = "http://twitter.com/mitter_io"
   s.platform     = :ios
-  s.source       = { :git => "URL", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/mitterio/mitter-ios-sdk.git", :tag => "#{s.version}" }
   s.source_files  = "Mitter", "Mitter/**/*.{h,m,swift}"
 
   s.dependency "RxSwift", "~> 4.0"
