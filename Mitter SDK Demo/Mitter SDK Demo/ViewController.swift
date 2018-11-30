@@ -254,5 +254,24 @@ class ViewController: UIViewController {
 //                print("Couldn't get channel")
 //            }
 //        }
+        
+//        let stan = ChannelParticipation(participantId: Identifiable(domainId: "csrCy-SJL3u-8AKMT-Wqv6y"))
+//        let channel = Channel(
+//            channelId: UUID().uuidString,
+//            defaultRuleSet: StandardRuleSetNames.GroupChat,
+//            participation: [stan]
+//        )
+//
+//        appDelegate.mitter.channels.createChannel(channel) { result in
+//                        switch result {
+//                        case .success(let identifier):
+//                            print("Created Channel ID: \(identifier)")
+//                        case .error:
+//                            print("Couldn't create channel")
+//                        }
+//
+//        }
+        
+        
     }
 }

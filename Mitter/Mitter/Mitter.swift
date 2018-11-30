@@ -252,7 +252,7 @@ public class Mitter {
             }
         }
         
-        func createChannel(_ channel: Channel, completion: @escaping channelIdentifiableApiResult) {
+        public func createChannel(_ channel: Channel, completion: @escaping channelIdentifiableApiResult) {
             let addChannelAction = mitter.channelApiContainer.getAddChannelAction()
             
             addChannelAction
