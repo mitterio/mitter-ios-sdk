@@ -279,6 +279,6 @@ class ViewController: UIViewController {
 //            case .error:
 //                print("Couldn't fetch participated channels")
 //            }
-        }
+//        }
     }
 }
