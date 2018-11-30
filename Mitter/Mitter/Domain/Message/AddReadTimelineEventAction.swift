@@ -1,15 +1,15 @@
 //
-//  AddDeliveredTimelineEventAction.swift
+//  AddReadTimelineEventAction.swift
 //  Mitter
 //
-//  Created by Rahul Chowdhury on 29/11/18.
+//  Created by Rahul Chowdhury on 30/11/18.
 //  Copyright © 2018 Chronosphere Technologies Pvt. Ltd. All rights reserved.
 //
 
 import Foundation
 import RxSwift
 
-class AddDeliveredTimelineEventAction: TriParamAction {
+class AddReadTimelineEventAction: TriParamAction {
     private let messageRepository: MessageRepository
     
     init(messageRepository: MessageRepository) {
@@ -18,13 +18,13 @@ class AddDeliveredTimelineEventAction: TriParamAction {
     
     func execute(t1: String, t2: String, t3: String) -> PrimitiveSequence<SingleTrait, Empty> {
         let receiver = Identifiable<User>(domainId: t3)
-        let deliveredTimelineEvent = TimelineEvent(
+        let readTimelineEvent = TimelineEvent(
             eventId: UUID().uuidString,
-            type: StandardTimelineEventTypeNames.Messages.DeliveredTime,
+            type: StandardTimelineEventTypeNames.Messages.ReadTime,
             eventTimeMs: getCurrentTimeInMillis(),
             subject: receiver
         )
         
-        return messageRepository.addTimelineEventToMessage(channelId: t1, messageId: t2, timelineEvent: deliveredTimelineEvent)
+        return messageRepository.addTimelineEventToMessage(channelId: t1, messageId: t2, timelineEvent: readTimelineEvent)
     }
 }

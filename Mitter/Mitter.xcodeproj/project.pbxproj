@@ -52,6 +52,7 @@
 		433B5D8421A6C728004675BB /* FetchUserPresenceAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433B5D8321A6C728004675BB /* FetchUserPresenceAction.swift */; };
 		433B5D8D21A6D17F004675BB /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433B5D8C21A6D17F004675BB /* Empty.swift */; };
 		433B5D8F21A6D245004675BB /* UpdateUserPresenceAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433B5D8E21A6D245004675BB /* UpdateUserPresenceAction.swift */; };
+		43614C6321B0E06400F7E8BF /* AddReadTimelineEventAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43614C6221B0E06400F7E8BF /* AddReadTimelineEventAction.swift */; };
 		43637A8721AFA8E300C5C28C /* ImageMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43637A8621AFA8E300C5C28C /* ImageMessage.swift */; };
 		43637A8921AFA95200C5C28C /* AddImageMessageAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43637A8821AFA95200C5C28C /* AddImageMessageAction.swift */; };
 		43637A8B21AFAF4800C5C28C /* MessageNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43637A8A21AFAF4800C5C28C /* MessageNotification.swift */; };
@@ -143,6 +144,7 @@
 		433B5D8321A6C728004675BB /* FetchUserPresenceAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUserPresenceAction.swift; sourceTree = "<group>"; };
 		433B5D8C21A6D17F004675BB /* Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empty.swift; sourceTree = "<group>"; };
 		433B5D8E21A6D245004675BB /* UpdateUserPresenceAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserPresenceAction.swift; sourceTree = "<group>"; };
+		43614C6221B0E06400F7E8BF /* AddReadTimelineEventAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReadTimelineEventAction.swift; sourceTree = "<group>"; };
 		43637A8621AFA8E300C5C28C /* ImageMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMessage.swift; sourceTree = "<group>"; };
 		43637A8821AFA95200C5C28C /* AddImageMessageAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageMessageAction.swift; sourceTree = "<group>"; };
 		43637A8A21AFAF4800C5C28C /* MessageNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageNotification.swift; sourceTree = "<group>"; };
@@ -372,6 +374,7 @@
 				43637A9021AFDEAA00C5C28C /* RemoveMessagesFromChannelAction.swift */,
 				43637A9521AFEF2E00C5C28C /* FetchTimelineEventsAction.swift */,
 				43637A9721AFF63E00C5C28C /* AddDeliveredTimelineEventAction.swift */,
+				43614C6221B0E06400F7E8BF /* AddReadTimelineEventAction.swift */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -888,6 +891,7 @@
 				43A9BF3421AC1C2C00D209E2 /* ChannelApiContainer.swift in Sources */,
 				43B36BB221AEC6790075B135 /* AddFileMessageAction.swift in Sources */,
 				4320C5CF219EABBB003C4B9F /* MessageDatum.swift in Sources */,
+				43614C6321B0E06400F7E8BF /* AddReadTimelineEventAction.swift in Sources */,
 				4320C5D3219EBFA7003C4B9F /* StandardTimelineEventTypeNames.swift in Sources */,
 				43637A8B21AFAF4800C5C28C /* MessageNotification.swift in Sources */,
 				43637A8721AFA8E300C5C28C /* ImageMessage.swift in Sources */,

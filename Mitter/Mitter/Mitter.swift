@@ -388,7 +388,7 @@ public class Mitter {
         }
         
         public func addDeliveredTimelineEvent(channelId: String, messageId: String, completion: @escaping emptyApiResult) {
-            let addDeliveredTimelineEventAction = mitter.messageApiContainer.getDeliveredTimelineEventAction()
+            let addDeliveredTimelineEventAction = mitter.messageApiContainer.getAddDeliveredTimelineEventAction()
             
             addDeliveredTimelineEventAction
                 .execute(t1: channelId, t2: messageId, t3: mitter.getUserId())
@@ -396,8 +396,22 @@ public class Mitter {
                     switch event {
                     case .success(let empty):
                         completion(ApiResult.success(empty))
-                    case .error(let error):
-                        print("Error: \(error)")
+                    case .error:
+                        completion(ApiResult.error)
+                    }
+            }
+        }
+        
+        public func addReadTimelineEvent(channelId: String, messageId: String, completion: @escaping emptyApiResult) {
+            let addReadTimelineEventAction = mitter.messageApiContainer.getAddReadTimelineEventAction()
+            
+            addReadTimelineEventAction
+                .execute(t1: channelId, t2: messageId, t3: mitter.getUserId())
+                .subscribe { event in
+                    switch event {
+                    case .success(let empty):
+                        completion(ApiResult.success(empty))
+                    case .error:
                         completion(ApiResult.error)
                     }
             }
