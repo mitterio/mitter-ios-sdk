@@ -24,12 +24,24 @@ class ChannelApiContainer {
         registerChannelApiLayers()
     }
     
+    func getFetchChannelAction() -> FetchChannelAction {
+        return FetchChannelAction(channelRepository: getChannelRepository())
+    }
+    
+    func getFetchChannelsForUserAction() -> FetchChannelsForUserAction {
+        return FetchChannelsForUserAction(channelRepository: getChannelRepository())
+    }
+    
     func getAddDirectMessageChannelAction() -> AddDirectMessageChannelAction {
         return AddDirectMessageChannelAction(channelRepository: getChannelRepository())
     }
     
     func getAddGroupChatChannelAction() -> AddGroupChatChannelAction {
         return AddGroupChatChannelAction(channelRepository: getChannelRepository())
+    }
+    
+    func getAddChannelAction() -> AddChannelAction {
+        return AddChannelAction(channelRepository: getChannelRepository())
     }
     
     private func registerChannelApiLayers() {

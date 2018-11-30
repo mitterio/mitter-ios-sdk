@@ -32,8 +32,36 @@ class MessageApiContainer {
         return FetchMessageAction(messageRepository: getMessageRepository())
     }
     
+    func getFetchTimelineEventsAction() -> FetchTimelineEventsAction {
+        return FetchTimelineEventsAction(messageRepository: getMessageRepository())
+    }
+    
     func getAddTextMessageAction() -> AddTextMessageAction {
         return AddTextMessageAction(messageRepository: getMessageRepository())
+    }
+    
+    func getImageMessageAction() -> AddImageMessageAction {
+        return AddImageMessageAction(messageRepository: getMessageRepository())
+    }
+    
+    func getAddFileMessageAction() -> AddFileMessageAction {
+        return AddFileMessageAction(messageRepository: getMessageRepository())
+    }
+    
+    func getAddMessageAction() -> AddMessageAction {
+        return AddMessageAction(messageRepository: getMessageRepository())
+    }
+    
+    func getAddDeliveredTimelineEventAction() -> AddDeliveredTimelineEventAction {
+        return AddDeliveredTimelineEventAction(messageRepository: getMessageRepository())
+    }
+    
+    func getAddReadTimelineEventAction() -> AddReadTimelineEventAction {
+        return AddReadTimelineEventAction(messageRepository: getMessageRepository())
+    }
+    
+    func getRemoveMessagesFromChannelAction() -> RemoveMessagesFromChannelAction {
+        return RemoveMessagesFromChannelAction(messageRepository: getMessageRepository())
     }
     
     private func registerMessageApiLayers() {

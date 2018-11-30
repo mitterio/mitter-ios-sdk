@@ -202,10 +202,45 @@ public class Mitter {
     public class Channels {
         public typealias emptyApiResult = (ApiResult<Empty>) -> Void
         public typealias channelIdentifiableApiResult = (ApiResult<Identifiable<Channel>>) -> Void
+        public typealias participatedChannelsApiResult = (ApiResult<[ParticipatedChannel]>) -> Void
         
         weak var mitter: Mitter!
         
         init() {}
+        
+        public func getChannel(_ channelId: String, completion: @escaping (ApiResult<Channel>) -> Void) {
+            let fetchChannelAction = mitter.channelApiContainer.getFetchChannelAction()
+            
+            fetchChannelAction
+                .execute(t: channelId)
+                .subscribe { event in
+                    switch event {
+                    case .success(let channel):
+                        completion(ApiResult.success(channel))
+                    case .error:
+                        completion(ApiResult.error)
+                    }
+            }
+        }
+        
+        public func getChannelsForUser(userId: String, completion: @escaping participatedChannelsApiResult) {
+            let fetchChannelsForUserAction = mitter.channelApiContainer.getFetchChannelsForUserAction()
+            
+            fetchChannelsForUserAction
+                .execute(t: userId)
+                .subscribe { event in
+                    switch event {
+                    case .success(let participatedChannels):
+                        completion(ApiResult.success(participatedChannels))
+                    case .error:
+                        completion(ApiResult.error)
+                    }
+            }
+        }
+        
+        public func getChannelsForCurrentUser(completion: @escaping participatedChannelsApiResult) {
+            getChannelsForUser(userId: mitter.getUserId(), completion: completion)
+        }
         
         public func createDirectMessageChannel(participants: [Participant], completion: @escaping channelIdentifiableApiResult) {
             let addDirectMessageChannelAction = mitter.channelApiContainer.getAddDirectMessageChannelAction()
@@ -227,6 +262,21 @@ public class Mitter {
             
             addGroupChatChannelAction
                 .execute(t: participants)
+                .subscribe { event in
+                    switch event {
+                    case .success(let identifier):
+                        completion(ApiResult.success(identifier))
+                    case .error:
+                        completion(ApiResult.error)
+                    }
+            }
+        }
+        
+        public func createChannel(_ channel: Channel, completion: @escaping channelIdentifiableApiResult) {
+            let addChannelAction = mitter.channelApiContainer.getAddChannelAction()
+            
+            addChannelAction
+                .execute(t: channel)
                 .subscribe { event in
                     switch event {
                     case .success(let identifier):
@@ -275,14 +325,154 @@ public class Mitter {
             }
         }
         
-        public func sendTextMessage(forChannel channelId: String, _ message: String, completion: @escaping emptyApiResult) {
+        public func getTimelineEvents(
+            forChannel channelId: String,
+            messageIds: [String],
+            filterByEvents eventTypes: [String] = [String](),
+            completion: @escaping (ApiResult<[MessageTimelineEvent]>) -> Void
+            ) {
+            let fetchTimelineEventsAction = mitter.messageApiContainer.getFetchTimelineEventsAction()
+            
+            fetchTimelineEventsAction
+                .execute(t1: channelId, t2: messageIds, t3: eventTypes)
+                .subscribe { event in
+                    switch event {
+                    case .success(let message):
+                        completion(ApiResult.success(message))
+                    case .error:
+                        completion(ApiResult.error)
+                    }
+            }
+        }
+        
+        public func sendTextMessage(
+            forChannel channelId: String,
+            _ message: String,
+            withNotificationDetails messageNotification: MessageNotification = getDefaultMessageNotification(),
+            completion: @escaping emptyApiResult
+            ) {
             let addTextMessageAction = mitter.messageApiContainer.getAddTextMessageAction()
-            let textMessage = TextMessage(senderId: mitter.getUserId(), message: message)
+            let textMessage = TextMessage(senderId: mitter.getUserId(), message: message, messageNotification: messageNotification)
             
             addTextMessageAction
                 .execute(t1: channelId, t2: textMessage)
                 .subscribe { event in
-                    print("Api Event: \(event)")
+                    switch event {
+                    case .success(let empty):
+                        completion(ApiResult.success(empty))
+                    case .error:
+                        completion(ApiResult.error)
+                    }
+            }
+        }
+        
+        public func sendImageMessage(
+            forChannel channelId: String,
+            withCaption caption: String = "",
+            image file: URL,
+            withNotificationDetails messageNotification: MessageNotification = getDefaultMessageNotification(),
+            completion: @escaping emptyApiResult
+            ) {
+            let addImageMessageAction = mitter.messageApiContainer.getImageMessageAction()
+            let imageMessage = ImageMessage(
+                senderId: mitter.getUserId(),
+                caption: caption,
+                messageNotification: messageNotification
+            )
+            
+            addImageMessageAction
+                .execute(t1: channelId, t2: imageMessage, t3: file)
+                .subscribe { event in
+                    switch event {
+                    case .success(let empty):
+                        completion(ApiResult.success(empty))
+                    case .error:
+                        completion(ApiResult.error)
+                    }
+            }
+        }
+        
+        public func sendFileMessage(
+            forChannel channelId: String,
+            withMessage message: Message,
+            file: URL,
+            withNotificationDetails messageNotification: MessageNotification = getDefaultMessageNotification(),
+            completion: @escaping emptyApiResult
+            ) {
+            let addFileMessageAction = mitter.messageApiContainer.getAddFileMessageAction()
+            var messageWithNotification = message
+            messageWithNotification.messageData.append(messageNotification.toMessageDatum())
+            
+            addFileMessageAction
+                .execute(t1: channelId, t2: messageWithNotification, t3: file)
+                .subscribe { event in
+                    switch event {
+                    case .success(let empty):
+                        completion(ApiResult.success(empty))
+                    case .error:
+                        completion(ApiResult.error)
+                    }
+            }
+        }
+        
+        public func sendMessage(
+            forChannel channelId: String,
+            withMessage message: Message,
+            withNotificationDetails messageNotification: MessageNotification = getDefaultMessageNotification(),
+            completion: @escaping emptyApiResult
+            ) {
+            let addMessageAction = mitter.messageApiContainer.getAddMessageAction()
+            var messageWithNotification = message
+            messageWithNotification.messageData.append(messageNotification.toMessageDatum())
+            
+            addMessageAction
+                .execute(t1: channelId, t2: messageWithNotification)
+                .subscribe { event in
+                    switch event {
+                    case .success(let empty):
+                        completion(ApiResult.success(empty))
+                    case .error:
+                        completion(ApiResult.error)
+                    }
+            }
+        }
+        
+        public func addDeliveredTimelineEvent(channelId: String, messageId: String, completion: @escaping emptyApiResult) {
+            let addDeliveredTimelineEventAction = mitter.messageApiContainer.getAddDeliveredTimelineEventAction()
+            
+            addDeliveredTimelineEventAction
+                .execute(t1: channelId, t2: messageId, t3: mitter.getUserId())
+                .subscribe { event in
+                    switch event {
+                    case .success(let empty):
+                        completion(ApiResult.success(empty))
+                    case .error:
+                        completion(ApiResult.error)
+                    }
+            }
+        }
+        
+        public func addReadTimelineEvent(channelId: String, messageId: String, completion: @escaping emptyApiResult) {
+            let addReadTimelineEventAction = mitter.messageApiContainer.getAddReadTimelineEventAction()
+            
+            addReadTimelineEventAction
+                .execute(t1: channelId, t2: messageId, t3: mitter.getUserId())
+                .subscribe { event in
+                    switch event {
+                    case .success(let empty):
+                        completion(ApiResult.success(empty))
+                    case .error:
+                        completion(ApiResult.error)
+                    }
+            }
+        }
+        
+        public func deleteMessagesFromChannel(fromChannel channelId: String, messageIds: [String], completion: @escaping emptyApiResult) {
+            let removeMessagesFromChannelAction = mitter.messageApiContainer.getRemoveMessagesFromChannelAction()
+            
+            removeMessagesFromChannelAction
+                .execute(t1: channelId, t2: messageIds)
+                .subscribe { event in
                     switch event {
                     case .success(let empty):
                         completion(ApiResult.success(empty))
@@ -292,4 +482,11 @@ public class Mitter {
             }
         }
     }
+}
+
+public func getDefaultMessageNotification() -> MessageNotification {
+    return MessageNotification(
+        body: "You've got a new message. Tap to open.",
+        icon: "none",
+        title: "You've got a message!")
 }

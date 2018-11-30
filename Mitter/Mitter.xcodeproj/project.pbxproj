@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		26BA130DBC01858B0A4E6F55 /* Pods_Mitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D03DA1590C2BF3411E86D67B /* Pods_Mitter.framework */; };
 		430096BB21AD2D00009060AD /* AddGroupChatChannelAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430096BA21AD2D00009060AD /* AddGroupChatChannelAction.swift */; };
+		430B41A921AFA52500C88278 /* MimeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430B41A821AFA52500C88278 /* MimeType.swift */; };
 		431901C021A582A4007EA588 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431901BF21A582A4007EA588 /* Channel.swift */; };
 		431901C221A5839C007EA588 /* ParticipationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431901C121A5839C007EA588 /* ParticipationStatus.swift */; };
 		431901C421A586AD007EA588 /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431901C321A586AD007EA588 /* Payload.swift */; };
@@ -51,6 +52,20 @@
 		433B5D8421A6C728004675BB /* FetchUserPresenceAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433B5D8321A6C728004675BB /* FetchUserPresenceAction.swift */; };
 		433B5D8D21A6D17F004675BB /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433B5D8C21A6D17F004675BB /* Empty.swift */; };
 		433B5D8F21A6D245004675BB /* UpdateUserPresenceAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433B5D8E21A6D245004675BB /* UpdateUserPresenceAction.swift */; };
+		43614C6321B0E06400F7E8BF /* AddReadTimelineEventAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43614C6221B0E06400F7E8BF /* AddReadTimelineEventAction.swift */; };
+		43614C6521B0E89100F7E8BF /* FetchChannelAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43614C6421B0E89100F7E8BF /* FetchChannelAction.swift */; };
+		43614C6721B0E8ED00F7E8BF /* AddChannelAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43614C6621B0E8ED00F7E8BF /* AddChannelAction.swift */; };
+		43614C6921B131A200F7E8BF /* ParticipatedChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43614C6821B131A200F7E8BF /* ParticipatedChannel.swift */; };
+		43614C6B21B1336E00F7E8BF /* FetchChannelsForUserAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43614C6A21B1336E00F7E8BF /* FetchChannelsForUserAction.swift */; };
+		43637A8721AFA8E300C5C28C /* ImageMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43637A8621AFA8E300C5C28C /* ImageMessage.swift */; };
+		43637A8921AFA95200C5C28C /* AddImageMessageAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43637A8821AFA95200C5C28C /* AddImageMessageAction.swift */; };
+		43637A8B21AFAF4800C5C28C /* MessageNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43637A8A21AFAF4800C5C28C /* MessageNotification.swift */; };
+		43637A8D21AFCBEE00C5C28C /* AddMessageAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43637A8C21AFCBEE00C5C28C /* AddMessageAction.swift */; };
+		43637A8F21AFDCEE00C5C28C /* DataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43637A8E21AFDCEE00C5C28C /* DataExtensions.swift */; };
+		43637A9121AFDEAA00C5C28C /* RemoveMessagesFromChannelAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43637A9021AFDEAA00C5C28C /* RemoveMessagesFromChannelAction.swift */; };
+		43637A9421AFEA2200C5C28C /* MessageTimelineEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43637A9321AFEA2200C5C28C /* MessageTimelineEvent.swift */; };
+		43637A9621AFEF2E00C5C28C /* FetchTimelineEventsAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43637A9521AFEF2E00C5C28C /* FetchTimelineEventsAction.swift */; };
+		43637A9821AFF63E00C5C28C /* AddDeliveredTimelineEventAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43637A9721AFF63E00C5C28C /* AddDeliveredTimelineEventAction.swift */; };
 		439198542191A815003A38FC /* ScreenName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439198532191A815003A38FC /* ScreenName.swift */; };
 		4391985A2191BC23003A38FC /* UserApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439198592191BC23003A38FC /* UserApiService.swift */; };
 		4395023D219AF91300E9079C /* UserMetaDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4395023C219AF91300E9079C /* UserMetaDefaults.swift */; };
@@ -75,6 +90,8 @@
 		43A9BF3121ABF59600D209E2 /* DataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A9BF3021ABF59600D209E2 /* DataMapper.swift */; };
 		43A9BF3421AC1C2C00D209E2 /* ChannelApiContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A9BF3321AC1C2C00D209E2 /* ChannelApiContainer.swift */; };
 		43B36BAC21AE85D70075B135 /* Mitter.h in Headers */ = {isa = PBXBuildFile; fileRef = 43F9A0742190476500CF6296 /* Mitter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43B36BAE21AEAF8E0075B135 /* TriParamAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B36BAD21AEAF8E0075B135 /* TriParamAction.swift */; };
+		43B36BB221AEC6790075B135 /* AddFileMessageAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B36BB121AEC6790075B135 /* AddFileMessageAction.swift */; };
 		43EB3B5F21945C870052A90C /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EB3B5E21945C870052A90C /* Identifiable.swift */; };
 		43EB3B62219460DE0052A90C /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EB3B61219460DE0052A90C /* Attribute.swift */; };
 		43EB3B65219462000052A90C /* EntityProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EB3B64219462000052A90C /* EntityProfile.swift */; };
@@ -88,6 +105,7 @@
 
 /* Begin PBXFileReference section */
 		430096BA21AD2D00009060AD /* AddGroupChatChannelAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupChatChannelAction.swift; sourceTree = "<group>"; };
+		430B41A821AFA52500C88278 /* MimeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MimeType.swift; sourceTree = "<group>"; };
 		431901BF21A582A4007EA588 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		431901C121A5839C007EA588 /* ParticipationStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipationStatus.swift; sourceTree = "<group>"; };
 		431901C321A586AD007EA588 /* Payload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
@@ -130,6 +148,20 @@
 		433B5D8321A6C728004675BB /* FetchUserPresenceAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUserPresenceAction.swift; sourceTree = "<group>"; };
 		433B5D8C21A6D17F004675BB /* Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empty.swift; sourceTree = "<group>"; };
 		433B5D8E21A6D245004675BB /* UpdateUserPresenceAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserPresenceAction.swift; sourceTree = "<group>"; };
+		43614C6221B0E06400F7E8BF /* AddReadTimelineEventAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReadTimelineEventAction.swift; sourceTree = "<group>"; };
+		43614C6421B0E89100F7E8BF /* FetchChannelAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchChannelAction.swift; sourceTree = "<group>"; };
+		43614C6621B0E8ED00F7E8BF /* AddChannelAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChannelAction.swift; sourceTree = "<group>"; };
+		43614C6821B131A200F7E8BF /* ParticipatedChannel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipatedChannel.swift; sourceTree = "<group>"; };
+		43614C6A21B1336E00F7E8BF /* FetchChannelsForUserAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchChannelsForUserAction.swift; sourceTree = "<group>"; };
+		43637A8621AFA8E300C5C28C /* ImageMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMessage.swift; sourceTree = "<group>"; };
+		43637A8821AFA95200C5C28C /* AddImageMessageAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageMessageAction.swift; sourceTree = "<group>"; };
+		43637A8A21AFAF4800C5C28C /* MessageNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageNotification.swift; sourceTree = "<group>"; };
+		43637A8C21AFCBEE00C5C28C /* AddMessageAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMessageAction.swift; sourceTree = "<group>"; };
+		43637A8E21AFDCEE00C5C28C /* DataExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtensions.swift; sourceTree = "<group>"; };
+		43637A9021AFDEAA00C5C28C /* RemoveMessagesFromChannelAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveMessagesFromChannelAction.swift; sourceTree = "<group>"; };
+		43637A9321AFEA2200C5C28C /* MessageTimelineEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTimelineEvent.swift; sourceTree = "<group>"; };
+		43637A9521AFEF2E00C5C28C /* FetchTimelineEventsAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTimelineEventsAction.swift; sourceTree = "<group>"; };
+		43637A9721AFF63E00C5C28C /* AddDeliveredTimelineEventAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDeliveredTimelineEventAction.swift; sourceTree = "<group>"; };
 		439198532191A815003A38FC /* ScreenName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenName.swift; sourceTree = "<group>"; };
 		439198592191BC23003A38FC /* UserApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiService.swift; sourceTree = "<group>"; };
 		4395023C219AF91300E9079C /* UserMetaDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMetaDefaults.swift; sourceTree = "<group>"; };
@@ -153,6 +185,8 @@
 		43A9BF2E21ABF4FE00D209E2 /* Participant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Participant.swift; sourceTree = "<group>"; };
 		43A9BF3021ABF59600D209E2 /* DataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMapper.swift; sourceTree = "<group>"; };
 		43A9BF3321AC1C2C00D209E2 /* ChannelApiContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelApiContainer.swift; sourceTree = "<group>"; };
+		43B36BAD21AEAF8E0075B135 /* TriParamAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriParamAction.swift; sourceTree = "<group>"; };
+		43B36BB121AEC6790075B135 /* AddFileMessageAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFileMessageAction.swift; sourceTree = "<group>"; };
 		43EB3B5E21945C870052A90C /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		43EB3B61219460DE0052A90C /* Attribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attribute.swift; sourceTree = "<group>"; };
 		43EB3B64219462000052A90C /* EntityProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityProfile.swift; sourceTree = "<group>"; };
@@ -279,6 +313,7 @@
 				431CF5462195BD20002963F0 /* UniParamAction.swift */,
 				4395EA20219989F0004DD4A3 /* Action.swift */,
 				432C5031219D9443002A0EDA /* BiParamAction.swift */,
+				43B36BAD21AEAF8E0075B135 /* TriParamAction.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -286,6 +321,7 @@
 		4320C5C6219EA9CE003C4B9F /* Mardle */ = {
 			isa = PBXGroup;
 			children = (
+				43637A9221AFEA0B00C5C28C /* Wire */,
 				4320C5C7219EA9D9003C4B9F /* Messaging */,
 			);
 			path = Mardle;
@@ -304,6 +340,7 @@
 				431901C121A5839C007EA588 /* ParticipationStatus.swift */,
 				43A9BF1D21ABCAFB00D209E2 /* StandardRuleSetNames.swift */,
 				43A9BF1F21ABE5DB00D209E2 /* ChannelParticipation.swift */,
+				43614C6821B131A200F7E8BF /* ParticipatedChannel.swift */,
 			);
 			path = Messaging;
 			sourceTree = "<group>";
@@ -340,6 +377,13 @@
 				4320C5E9219EE7A1003C4B9F /* FetchMessageAction.swift */,
 				4335D97321A7FC6E00DB33AB /* AddTextMessageAction.swift */,
 				43A9BF1821ABBD6E00D209E2 /* FetchMessagesInChannelAction.swift */,
+				43B36BB121AEC6790075B135 /* AddFileMessageAction.swift */,
+				43637A8821AFA95200C5C28C /* AddImageMessageAction.swift */,
+				43637A8C21AFCBEE00C5C28C /* AddMessageAction.swift */,
+				43637A9021AFDEAA00C5C28C /* RemoveMessagesFromChannelAction.swift */,
+				43637A9521AFEF2E00C5C28C /* FetchTimelineEventsAction.swift */,
+				43637A9721AFF63E00C5C28C /* AddDeliveredTimelineEventAction.swift */,
+				43614C6221B0E06400F7E8BF /* AddReadTimelineEventAction.swift */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -376,6 +420,8 @@
 			children = (
 				4335D97621A8008F00DB33AB /* DateExtensions.swift */,
 				43A9BF3021ABF59600D209E2 /* DataMapper.swift */,
+				430B41A821AFA52500C88278 /* MimeType.swift */,
+				43637A8E21AFDCEE00C5C28C /* DataExtensions.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -386,6 +432,14 @@
 				433B5D8C21A6D17F004675BB /* Empty.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		43637A9221AFEA0B00C5C28C /* Wire */ = {
+			isa = PBXGroup;
+			children = (
+				43637A9321AFEA2200C5C28C /* MessageTimelineEvent.swift */,
+			);
+			path = Wire;
 			sourceTree = "<group>";
 		};
 		439198552191BBD8003A38FC /* Data */ = {
@@ -508,6 +562,8 @@
 				43950240219AFB7100E9079C /* AuthToken.swift */,
 				4335D97121A7FC0800DB33AB /* TextMessage.swift */,
 				43A9BF2E21ABF4FE00D209E2 /* Participant.swift */,
+				43637A8621AFA8E300C5C28C /* ImageMessage.swift */,
+				43637A8A21AFAF4800C5C28C /* MessageNotification.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -535,6 +591,9 @@
 			children = (
 				43A9BF2C21ABF49000D209E2 /* AddDirectMessageChannelAction.swift */,
 				430096BA21AD2D00009060AD /* AddGroupChatChannelAction.swift */,
+				43614C6421B0E89100F7E8BF /* FetchChannelAction.swift */,
+				43614C6621B0E8ED00F7E8BF /* AddChannelAction.swift */,
+				43614C6A21B1336E00F7E8BF /* FetchChannelsForUserAction.swift */,
 			);
 			path = Channel;
 			sourceTree = "<group>";
@@ -768,12 +827,14 @@
 			files = (
 				431C9E3821A425BC001C9073 /* Processor.swift in Sources */,
 				430096BB21AD2D00009060AD /* AddGroupChatChannelAction.swift in Sources */,
+				43614C6521B0E89100F7E8BF /* FetchChannelAction.swift in Sources */,
 				43EB3B62219460DE0052A90C /* Attribute.swift in Sources */,
 				433B5D8F21A6D245004675BB /* UpdateUserPresenceAction.swift in Sources */,
 				4395023D219AF91300E9079C /* UserMetaDefaults.swift in Sources */,
 				4320C5DB219EDFE5003C4B9F /* Metadata.swift in Sources */,
 				43A9BF2621ABF2B200D209E2 /* ChannelRepositoryContract.swift in Sources */,
 				43A9BF2021ABE5DB00D209E2 /* ChannelParticipation.swift in Sources */,
+				43637A9621AFEF2E00C5C28C /* FetchTimelineEventsAction.swift in Sources */,
 				43A9BF2821ABF32500D209E2 /* ChannelRemoteSource.swift in Sources */,
 				4395EA21219989F0004DD4A3 /* Action.swift in Sources */,
 				4320C5EA219EE7A1003C4B9F /* FetchMessageAction.swift in Sources */,
@@ -787,17 +848,22 @@
 				43950241219AFB7100E9079C /* AuthToken.swift in Sources */,
 				43A9BF2321ABEDDC00D209E2 /* ChannelApiService.swift in Sources */,
 				43EB3B73219477B00052A90C /* VerificationStatus.swift in Sources */,
+				43637A8921AFA95200C5C28C /* AddImageMessageAction.swift in Sources */,
+				43614C6921B131A200F7E8BF /* ParticipatedChannel.swift in Sources */,
 				4335D97721A8008F00DB33AB /* DateExtensions.swift in Sources */,
 				432C502B219D78E6002A0EDA /* FcmDeliveryEndpoint.swift in Sources */,
 				43EB3B65219462000052A90C /* EntityProfile.swift in Sources */,
+				43637A9421AFEA2200C5C28C /* MessageTimelineEvent.swift in Sources */,
 				4395EA3021999E49004DD4A3 /* ApiResult.swift in Sources */,
 				4320C5ED219EE848003C4B9F /* MessageApiContainer.swift in Sources */,
 				4320C5CB219EAA37003C4B9F /* StandardMessageType.swift in Sources */,
+				43614C6721B0E8ED00F7E8BF /* AddChannelAction.swift in Sources */,
 				43A9BF2A21ABF3AA00D209E2 /* ChannelRepository.swift in Sources */,
 				431901C421A586AD007EA588 /* Payload.swift in Sources */,
 				43A9BF2D21ABF49000D209E2 /* AddDirectMessageChannelAction.swift in Sources */,
 				4395023F219AF95500E9079C /* TokenDefaults.swift in Sources */,
 				431CF5412195B81E002963F0 /* UserRepositoryContract.swift in Sources */,
+				43637A8F21AFDCEE00C5C28C /* DataExtensions.swift in Sources */,
 				4395EA1F21997E12004DD4A3 /* Constants.swift in Sources */,
 				432C5045219DA2FB002A0EDA /* NetworkLoggerPlugin.swift in Sources */,
 				4391985A2191BC23003A38FC /* UserApiService.swift in Sources */,
@@ -807,14 +873,18 @@
 				431C9E2F21A40C35001C9073 /* MessagingPipelinePayload.swift in Sources */,
 				43F42525219192D4007759F7 /* User.swift in Sources */,
 				43EB3B71219477580052A90C /* UserLocator.swift in Sources */,
+				430B41A921AFA52500C88278 /* MimeType.swift in Sources */,
 				432C5030219D90AC002A0EDA /* Wrap.swift in Sources */,
+				43614C6B21B1336E00F7E8BF /* FetchChannelsForUserAction.swift in Sources */,
 				432C502D219D7A87002A0EDA /* StandardEndpointTypes.swift in Sources */,
 				43A9BF1921ABBD6E00D209E2 /* FetchMessagesInChannelAction.swift in Sources */,
 				431C9E3A21A425FB001C9073 /* FcmMessageProcessor.swift in Sources */,
 				433B5D8D21A6D17F004675BB /* Empty.swift in Sources */,
 				431901C221A5839C007EA588 /* ParticipationStatus.swift in Sources */,
+				43637A8D21AFCBEE00C5C28C /* AddMessageAction.swift in Sources */,
 				4320C5DD219EE059003C4B9F /* EntityMetadata.swift in Sources */,
 				43EB3B6B2194699C0052A90C /* AuditInfo.swift in Sources */,
+				43B36BAE21AEAF8E0075B135 /* TriParamAction.swift in Sources */,
 				431CF5432195BA65002963F0 /* UserRepository.swift in Sources */,
 				432C5029219D767B002A0EDA /* DeliveryEndpoint.swift in Sources */,
 				432C5032219D9443002A0EDA /* BiParamAction.swift in Sources */,
@@ -830,14 +900,20 @@
 				433B5D8221A6B969004675BB /* Presence.swift in Sources */,
 				4320C5D1219EACEB003C4B9F /* TimelineEvent.swift in Sources */,
 				4320C5E0219EE43A003C4B9F /* MessageApiService.swift in Sources */,
+				43637A9121AFDEAA00C5C28C /* RemoveMessagesFromChannelAction.swift in Sources */,
 				4320C5E3219EE5B5003C4B9F /* MessageRepositoryContract.swift in Sources */,
 				431CF5472195BD20002963F0 /* UniParamAction.swift in Sources */,
 				4335D97421A7FC6E00DB33AB /* AddTextMessageAction.swift in Sources */,
 				43A9BF3421AC1C2C00D209E2 /* ChannelApiContainer.swift in Sources */,
+				43B36BB221AEC6790075B135 /* AddFileMessageAction.swift in Sources */,
 				4320C5CF219EABBB003C4B9F /* MessageDatum.swift in Sources */,
+				43614C6321B0E06400F7E8BF /* AddReadTimelineEventAction.swift in Sources */,
 				4320C5D3219EBFA7003C4B9F /* StandardTimelineEventTypeNames.swift in Sources */,
+				43637A8B21AFAF4800C5C28C /* MessageNotification.swift in Sources */,
+				43637A8721AFA8E300C5C28C /* ImageMessage.swift in Sources */,
 				432C5034219D981E002A0EDA /* AddFcmDeliveryEndpointAction.swift in Sources */,
 				431C9E3E21A42A86001C9073 /* PushMessageManager.swift in Sources */,
+				43637A9821AFF63E00C5C28C /* AddDeliveredTimelineEventAction.swift in Sources */,
 				431901C021A582A4007EA588 /* Channel.swift in Sources */,
 				433B5D8421A6C728004675BB /* FetchUserPresenceAction.swift in Sources */,
 				43F9A07D2190477B00CF6296 /* Mitter.swift in Sources */,

@@ -11,7 +11,7 @@ import Foundation
 public enum StandardTimelineEventTypeNames {
     public static let CreationTime: String = "io.mitter.types.timeline.CreationTime"
     
-    enum Messages {
+    public enum Messages {
         public static let SentTime: String = "mitter.mtet.SentTime"
         public static let ReceivedTime: String = "mitter.mtet.ReceivedTime"
         public static let DeliveredTime: String = "mitter.mtet.DeliveredTime"

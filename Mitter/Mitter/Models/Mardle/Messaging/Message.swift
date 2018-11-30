@@ -16,7 +16,7 @@ public struct Message {
     public let payloadType: String
     public let senderId: Identifiable<User>
     public let textPayload: String
-    public let messageData: [MessageDatum]
+    public var messageData: [MessageDatum]
     public let timelineEvents: [TimelineEvent]
     public let appliedAcls: AppliedAclList
     public let entityMetadata: EntityMetadata?
@@ -71,7 +71,7 @@ extension Message: Mappable, WrapCustomizable {
             "payloadType": payloadType,
             "senderId": senderId.domainId,
             "textPayload": textPayload,
-            "messageData": messageData,
+            "messageData": try! wrapModel(messageData),
             "timelineEvents": try! wrapModel(timelineEvents),
             "appliedAcls": try! wrapModel(appliedAcls),
             "entityMetadata": try! wrapModel(entityMetadata)

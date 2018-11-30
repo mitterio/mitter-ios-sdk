@@ -1,22 +1,22 @@
 //
-//  AddTextMessageAction.swift
+//  AddImageMessageAction.swift
 //  Mitter
 //
-//  Created by Rahul Chowdhury on 23/11/18.
+//  Created by Rahul Chowdhury on 29/11/18.
 //  Copyright © 2018 Chronosphere Technologies Pvt. Ltd. All rights reserved.
 //
 
 import Foundation
 import RxSwift
 
-class AddTextMessageAction: BiParamAction {
+class AddImageMessageAction: TriParamAction {
     private let messageRepository: MessageRepository
     
     init(messageRepository: MessageRepository) {
         self.messageRepository = messageRepository
     }
     
-    func execute(t1: String, t2: TextMessage) -> PrimitiveSequence<SingleTrait, Empty> {
+    func execute(t1: String, t2: ImageMessage, t3: URL) -> PrimitiveSequence<SingleTrait, Empty> {
         let sender = Identifiable<User>(domainId: t2.senderId)
         
         let sentTimelineEvent = TimelineEvent(
@@ -30,12 +30,13 @@ class AddTextMessageAction: BiParamAction {
         
         let message = Message(
             messageId: UUID().uuidString,
+            payloadType: StandardPayloadTypeNames.ImageMessage,
             senderId: sender,
-            textPayload: t2.message,
+            textPayload: t2.caption,
             messageData: [notificationMessageDatum],
             timelineEvents: [sentTimelineEvent]
         )
         
-        return messageRepository.addMessageToChannel(channelId: t1, message: message)
+        return messageRepository.addFileMessageToChannel(channelId: t1, message: message, file: t3)
     }
 }

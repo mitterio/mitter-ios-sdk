@@ -17,6 +17,20 @@ class ChannelRemoteSource: ChannelRepositoryContract {
         self.apiProvider = apiProvider
     }
     
+    func fetchChannel(channelId: String) -> PrimitiveSequence<SingleTrait, Channel> {
+        return apiProvider
+            .rx
+            .request(.fetchChannel(channelId: channelId))
+            .map(to: Channel.self)
+    }
+    
+    func fetchChannelsForUser(userId: String) -> PrimitiveSequence<SingleTrait, [ParticipatedChannel]> {
+        return apiProvider
+        .rx
+        .request(.fetchChannelsForUser(userId: userId))
+        .map(to: [ParticipatedChannel].self)
+    }
+    
     func addChannel(channel: Channel) -> PrimitiveSequence<SingleTrait, Identifiable<Channel>> {
         return apiProvider
             .rx

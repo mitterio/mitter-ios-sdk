@@ -19,7 +19,7 @@ public struct Channel {
     public let entityProfile: EntityProfile<Channel>?
     public let timelineEvents: [TimelineEvent]?
     
-    init(
+    public init(
         channelId: String,
         defaultRuleSet: String,
         participation: [ChannelParticipation]? = [ChannelParticipation](),
