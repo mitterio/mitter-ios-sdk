@@ -10,7 +10,7 @@ import Foundation
 
 enum Constants {
     enum Urls {
-        static let baseUrl = "https://api.staging.mitter.io"
+        static let baseUrl = "https://api.mitter.io"
     }
     enum Headers {
         static let applicationId = "X-Mitter-Application-Id"
