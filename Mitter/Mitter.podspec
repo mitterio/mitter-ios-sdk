@@ -24,5 +24,7 @@ Pod::Spec.new do |s|
   s.dependency "PhoneNumberKit", "~> 2.5"
   s.dependency "Swinject", "~> 2.5.0"
   s.dependency "JWTDecode", "~> 2.1"
+  s.dependency "Firebase/Core"
+  s.dependency "Firebase/Messaging"
   
 end

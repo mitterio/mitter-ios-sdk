@@ -12,6 +12,7 @@ enum Constants {
     enum Urls {
         static let baseUrl = "https://api.mitter.io"
     }
+    
     enum Headers {
         static let applicationId = "X-Mitter-Application-Id"
         static let userAuthToken = "X-Issued-Mitter-User-Authorization"
