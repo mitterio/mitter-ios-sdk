@@ -13,6 +13,7 @@ enum ChannelApiService {
     case fetchChannel(channelId: String)
     case fetchChannelsForUser(userId: String)
     case addChannel(channel: Channel)
+    case removeChannel(channelId: String)
 }
 
 extension ChannelApiService: TargetType {
@@ -28,6 +29,8 @@ extension ChannelApiService: TargetType {
             return "/v1/users/\(userId)/channels"
         case .addChannel:
             return "/v1/channels"
+        case .removeChannel(let channelId):
+            return "/v1/channels/\(channelId)"
         }
     }
     
@@ -37,6 +40,8 @@ extension ChannelApiService: TargetType {
             return .get
         case .addChannel:
             return .post
+        case .removeChannel:
+            return .delete
         }
     }
     
@@ -53,6 +58,8 @@ extension ChannelApiService: TargetType {
         case .addChannel(let channel):
             let requestParams = try! wrapModel(channel)
             return .requestParameters(parameters: requestParams, encoding: JSONEncoding.default)
+        case .removeChannel:
+            return .requestPlain
         }
     }
     
@@ -64,7 +71,7 @@ extension ChannelApiService: TargetType {
     
     var validationType: ValidationType {
         switch self {
-        case .fetchChannel, .fetchChannelsForUser, .addChannel:
+        case .fetchChannel, .fetchChannelsForUser, .addChannel, .removeChannel:
             return .successCodes
         }
     }

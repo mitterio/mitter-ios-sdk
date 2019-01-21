@@ -37,4 +37,11 @@ class ChannelRemoteSource: ChannelRepositoryContract {
             .request(.addChannel(channel: channel))
             .map(to: Identifiable<Channel>.self)
     }
+    
+    func removeChannel(channelId: String) -> PrimitiveSequence<SingleTrait, Empty> {
+        return apiProvider
+        .rx
+        .request(.removeChannel(channelId: channelId))
+        .map(to: Empty.self)
+    }
 }
