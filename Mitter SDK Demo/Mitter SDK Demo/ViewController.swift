@@ -18,15 +18,15 @@ class ViewController: UIViewController {
     }
     
     func testSDK(appDelegate: AppDelegate) {
-        //        appDelegate.mitter.users.getCurrentUser {
-        //            result in
-        //            switch result {
-        //            case .success(let user):
-        //                print("Current User is: \(user)")
-        //            case .error:
-        //                print("Unable to get user!")
-        //            }
-        //        }
+        appDelegate.mitter.users.getCurrentUser {
+            result in
+            switch result {
+            case .success(let user):
+                print("Current User is: \(user)")
+            case .error:
+                print("Unable to get user!")
+            }
+        }
         
         //        appDelegate.mitter.messaging.getMessage("I1uK0-9d93j-1uhXl-J3suo") { result in
         //            switch result {
@@ -92,16 +92,16 @@ class ViewController: UIViewController {
         //                    }
         //                }
         
-        //        let stan = Participant(id: "csrCy-SJL3u-8AKMT-Wqv6y")
-        //        let rahul = Participant(id: "E3CAM-jjw8A-WeqDe-cWFe7")
-        //        appDelegate.mitter.channels.createDirectMessageChannel(participants: [stan, rahul]) { result in
-        //            switch result {
-        //            case .success(let channelId):
-        //                print("New channel created: \(channelId)")
-        //            case .error:
-        //                print("Couldn't create channel")
-        //            }
-        //        }
+        //                let stan = Participant(id: "ai6E3-EAjuX-JkDhb-8YqBq")
+        //                let captain = Participant(id: "XXiw3-DOjOb-UBtpZ-6npOt")
+        //                appDelegate.mitter.channels.createDirectMessageChannel(participants: [stan, captain]) { result in
+        //                    switch result {
+        //                    case .success(let channelId):
+        //                        print("New channel created: \(channelId)")
+        //                    case .error:
+        //                        print("Couldn't create channel")
+        //                    }
+        //                }
         
         //        appDelegate.mitter.channels.createGroupMessageChannel(participants: [stan, rahul]) { result in
         //            switch result {
@@ -272,13 +272,31 @@ class ViewController: UIViewController {
         //
         //        }
         
-//        appDelegate.mitter.channels.getChannelsForCurrentUser() { result in
-//            switch result {
-//            case .success(let channels):
-//                print("Participated Channels: \(channels)")
-//            case .error:
-//                print("Couldn't fetch participated channels")
-//            }
-//        }
+        //        appDelegate.mitter.channels.getChannelsForCurrentUser() { result in
+        //            switch result {
+        //            case .success(let channels):
+        //                print("Participated Channels: \(channels)")
+        //            case .error:
+        //                print("Couldn't fetch participated channels")
+        //            }
+        //        }
+        
+        //        appDelegate.mitter.channels.removeChannel("B41664D2-9227-4D8B-9C80-34511697BDD1") { result in
+        //            switch result {
+        //            case .success:
+        //                print("Deleted Channel!")
+        //            case .error:
+        //                print("Couldn't delete channel")
+        //            }
+        //        }
+        
+        appDelegate.mitter.channels.getParticipantsForChannel(channelId: "B41664D2-9227-4D8B-9C80-34511697BDD1") { result in
+            switch result {
+            case .success(let participants):
+                print("Participants: \(participants)")
+            case .error:
+                print("Couldn't get participants for channel")
+            }
+        }
     }
 }

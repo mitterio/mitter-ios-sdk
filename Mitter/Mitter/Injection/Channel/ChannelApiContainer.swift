@@ -32,6 +32,10 @@ class ChannelApiContainer {
         return FetchChannelsForUserAction(channelRepository: getChannelRepository())
     }
     
+    func getFetchParticipantsForChannelAction() -> FetchParticipantsForChannelAction {
+        return FetchParticipantsForChannelAction(channelRepository: getChannelRepository())
+    }
+    
     func getAddDirectMessageChannelAction() -> AddDirectMessageChannelAction {
         return AddDirectMessageChannelAction(channelRepository: getChannelRepository())
     }
@@ -42,6 +46,10 @@ class ChannelApiContainer {
     
     func getAddChannelAction() -> AddChannelAction {
         return AddChannelAction(channelRepository: getChannelRepository())
+    }
+    
+    func getRemoveChannelAction() -> RemoveChannelAction {
+        return RemoveChannelAction(channelRepository: getChannelRepository())
     }
     
     private func registerChannelApiLayers() {

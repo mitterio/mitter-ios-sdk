@@ -55,9 +55,11 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (5.3.6):
     - GoogleUtilities/Logger
-  - JWTDecode (2.1.1)
-  - Mitter (0.0.1):
+  - JWTDecode (2.2.0)
+  - Mitter (0.0.5):
     - Alamofire (~> 4.7)
+    - Firebase/Core
+    - Firebase/Messaging
     - JWTDecode (~> 2.1)
     - Moya-ModelMapper/RxSwift (~> 7.1.0)
     - Moya/RxSwift (~> 11.0)
@@ -146,8 +148,8 @@ SPEC CHECKSUMS:
   FirebaseMessaging: 0f14a264b0d7f867e8eff5d3556bc5d0d4e57888
   GoogleAppMeasurement: 5029d78f2b438bd30ffb44e6c558b57c21622727
   GoogleUtilities: 95996bea7c7d9b8fb811b7507669a4a8762f80c7
-  JWTDecode: 83e8b381aafe27158d9f692cbdca2b12d61d460c
-  Mitter: d8a27528bc070ad6d91a93c09c95d0a7f6b473a1
+  JWTDecode: 85a405ab16d5473e99bd89ded1d535090ebd6a0e
+  Mitter: dafdb5c75b080e9bd3d0110815873e87fa47b437
   ModelMapper: 89a61430a75e6265040dc9555ab1feddeb25b986
   Moya: a725035953bc1c0eb1be505ab903984501d82440
   Moya-ModelMapper: 35209257d9e886cedf91289559a41723f5fbd095

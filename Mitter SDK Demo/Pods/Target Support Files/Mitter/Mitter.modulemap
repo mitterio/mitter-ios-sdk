@@ -1,6 +1,0 @@
-framework module Mitter {
-  umbrella header "Mitter-umbrella.h"
-
-  export *
-  module * { export * }
-}

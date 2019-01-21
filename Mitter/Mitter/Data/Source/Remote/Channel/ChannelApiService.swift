@@ -12,6 +12,7 @@ import Moya
 enum ChannelApiService {
     case fetchChannel(channelId: String)
     case fetchChannelsForUser(userId: String)
+    case fetchParticipantsForChannel(channelId: String)
     case addChannel(channel: Channel)
     case removeChannel(channelId: String)
 }
@@ -27,6 +28,8 @@ extension ChannelApiService: TargetType {
             return "/v1/channels/\(channelId)"
         case .fetchChannelsForUser(let userId):
             return "/v1/users/\(userId)/channels"
+        case .fetchParticipantsForChannel(let channelId):
+            return "/v1/channels/\(channelId)/participants"
         case .addChannel:
             return "/v1/channels"
         case .removeChannel(let channelId):
@@ -36,7 +39,7 @@ extension ChannelApiService: TargetType {
     
     var method: Moya.Method {
         switch self {
-        case .fetchChannel, .fetchChannelsForUser:
+        case .fetchChannel, .fetchChannelsForUser, .fetchParticipantsForChannel:
             return .get
         case .addChannel:
             return .post
@@ -55,6 +58,8 @@ extension ChannelApiService: TargetType {
             return .requestPlain
         case .fetchChannelsForUser:
             return .requestPlain
+        case .fetchParticipantsForChannel:
+            return .requestPlain
         case .addChannel(let channel):
             let requestParams = try! wrapModel(channel)
             return .requestParameters(parameters: requestParams, encoding: JSONEncoding.default)
@@ -71,7 +76,7 @@ extension ChannelApiService: TargetType {
     
     var validationType: ValidationType {
         switch self {
-        case .fetchChannel, .fetchChannelsForUser, .addChannel, .removeChannel:
+        case .fetchChannel, .fetchChannelsForUser, .fetchParticipantsForChannel, .addChannel, .removeChannel:
             return .successCodes
         }
     }

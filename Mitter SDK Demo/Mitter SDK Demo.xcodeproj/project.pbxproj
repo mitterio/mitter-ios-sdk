@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4320C5F7219EFC74003C4B9F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4320C5F6219EFC74003C4B9F /* GoogleService-Info.plist */; };
+		432DF34C21F5F06200EACD5E /* Mitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432DF34B21F5F06100EACD5E /* Mitter.framework */; };
+		432DF34D21F5F06200EACD5E /* Mitter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 432DF34B21F5F06100EACD5E /* Mitter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		43F9A08B2190480500CF6296 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F9A08A2190480500CF6296 /* AppDelegate.swift */; };
 		43F9A08D2190480500CF6296 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F9A08C2190480500CF6296 /* ViewController.swift */; };
 		43F9A0902190480500CF6296 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43F9A08E2190480500CF6296 /* Main.storyboard */; };
@@ -23,6 +25,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				432DF34D21F5F06200EACD5E /* Mitter.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -31,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		4320C5F6219EFC74003C4B9F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		432DF34B21F5F06100EACD5E /* Mitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mitter.framework; sourceTree = "<group>"; };
 		436656ED21A2BC280069D317 /* Mitter SDK Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Mitter SDK Demo.entitlements"; sourceTree = "<group>"; };
 		43F9A0872190480500CF6296 /* Mitter SDK Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mitter SDK Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		43F9A08A2190480500CF6296 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +54,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C12E41C8A843F2D8B1451CB5 /* Pods_Mitter_SDK_Demo.framework in Frameworks */,
+				432DF34C21F5F06200EACD5E /* Mitter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +73,7 @@
 		43F9A07E2190480500CF6296 = {
 			isa = PBXGroup;
 			children = (
+				432DF34B21F5F06100EACD5E /* Mitter.framework */,
 				43F9A0892190480500CF6296 /* Mitter SDK Demo */,
 				43F9A0882190480500CF6296 /* Products */,
 				28FD07E8BC294F01AD98D91E /* Pods */,
@@ -219,7 +225,6 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/JWTDecode/JWTDecode.framework",
-				"${BUILT_PRODUCTS_DIR}/Mitter/Mitter.framework",
 				"${BUILT_PRODUCTS_DIR}/ModelMapper/Mapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya-ModelMapper/Moya_ModelMapper.framework",
@@ -239,7 +244,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JWTDecode.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mitter.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya_ModelMapper.framework",

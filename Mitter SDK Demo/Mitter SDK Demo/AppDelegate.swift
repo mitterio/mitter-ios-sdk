@@ -39,8 +39,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.registerForRemoteNotifications()
         
         mitter = Mitter(
-            applicationId: "MZzf4-na9nL-O98wq-M1HxS",
-            userAuthToken: "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJtaXR0ZXItaW8iLCJ1c2VyVG9rZW5JZCI6IkgwUXhDaVNYQ3NnUjk1d0ciLCJ1c2VydG9rZW4iOiJvY3Ezbmg0OXI5cjFybWQ2cDNyZDNka3JlaiIsImFwcGxpY2F0aW9uSWQiOiJNWnpmNC1uYTluTC1POTh3cS1NMUh4UyIsInVzZXJJZCI6ImNzckN5LVNKTDN1LThBS01ULVdxdjZ5In0.NYmh0IWvqBVZ2kiYF5Di0HNGSEqXZClo3f6cCA0UC4X0a_PiAs6ELlCWO-CaXniSAjg3QWwiut89juaUxKbN7A"
+            applicationId: "bECxP-iwZKH-mk1cs-kvnop",
+            userAuthToken: "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJtaXR0ZXItaW8iLCJ1c2VyVG9rZW5JZCI6ImxZaVZ5VFk3cTBWc012WXEiLCJ1c2VydG9rZW4iOiJkN3RoYWQzNmQxbm9ndWZ1Z3QyNWJoZjl1cyIsImFwcGxpY2F0aW9uSWQiOiJiRUN4UC1pd1pLSC1tazFjcy1rdm5vcCIsInVzZXJJZCI6ImFpNkUzLUVBanVYLUprRGhiLThZcUJxIn0.oXhVdfcTSozrr2Wak-IvWIQehlLWXvu4EDy4FiWI3xQ-bdOdltZxjQXOUg3koEOYbqAABDwnwO_6OFvMe_eI-w"
         )
         
         return true

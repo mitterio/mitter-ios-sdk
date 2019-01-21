@@ -44,6 +44,8 @@
 		432C5032219D9443002A0EDA /* BiParamAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432C5031219D9443002A0EDA /* BiParamAction.swift */; };
 		432C5034219D981E002A0EDA /* AddFcmDeliveryEndpointAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432C5033219D981E002A0EDA /* AddFcmDeliveryEndpointAction.swift */; };
 		432C5045219DA2FB002A0EDA /* NetworkLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432C5044219DA2FB002A0EDA /* NetworkLoggerPlugin.swift */; };
+		432DF34521F5B56800EACD5E /* RemoveChannelAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432DF34421F5B56800EACD5E /* RemoveChannelAction.swift */; };
+		432DF34A21F5ECEE00EACD5E /* FetchParticipantsForChannelAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432DF34921F5ECEE00EACD5E /* FetchParticipantsForChannelAction.swift */; };
 		4335D97221A7FC0800DB33AB /* TextMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4335D97121A7FC0800DB33AB /* TextMessage.swift */; };
 		4335D97421A7FC6E00DB33AB /* AddTextMessageAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4335D97321A7FC6E00DB33AB /* AddTextMessageAction.swift */; };
 		4335D97721A8008F00DB33AB /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4335D97621A8008F00DB33AB /* DateExtensions.swift */; };
@@ -140,6 +142,8 @@
 		432C5031219D9443002A0EDA /* BiParamAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiParamAction.swift; sourceTree = "<group>"; };
 		432C5033219D981E002A0EDA /* AddFcmDeliveryEndpointAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFcmDeliveryEndpointAction.swift; sourceTree = "<group>"; };
 		432C5044219DA2FB002A0EDA /* NetworkLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLoggerPlugin.swift; sourceTree = "<group>"; };
+		432DF34421F5B56800EACD5E /* RemoveChannelAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveChannelAction.swift; sourceTree = "<group>"; };
+		432DF34921F5ECEE00EACD5E /* FetchParticipantsForChannelAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchParticipantsForChannelAction.swift; sourceTree = "<group>"; };
 		4335D97121A7FC0800DB33AB /* TextMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMessage.swift; sourceTree = "<group>"; };
 		4335D97321A7FC6E00DB33AB /* AddTextMessageAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTextMessageAction.swift; sourceTree = "<group>"; };
 		4335D97621A8008F00DB33AB /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
@@ -594,6 +598,8 @@
 				43614C6421B0E89100F7E8BF /* FetchChannelAction.swift */,
 				43614C6621B0E8ED00F7E8BF /* AddChannelAction.swift */,
 				43614C6A21B1336E00F7E8BF /* FetchChannelsForUserAction.swift */,
+				432DF34421F5B56800EACD5E /* RemoveChannelAction.swift */,
+				432DF34921F5ECEE00EACD5E /* FetchParticipantsForChannelAction.swift */,
 			);
 			path = Channel;
 			sourceTree = "<group>";
@@ -843,6 +849,7 @@
 				431C9E3121A41044001C9073 /* StandardPipelinePayloadNames.swift in Sources */,
 				439198542191A815003A38FC /* ScreenName.swift in Sources */,
 				43A9BF1E21ABCAFB00D209E2 /* StandardRuleSetNames.swift in Sources */,
+				432DF34A21F5ECEE00EACD5E /* FetchParticipantsForChannelAction.swift in Sources */,
 				4320C5E5219EE61A003C4B9F /* MessageRemoteSource.swift in Sources */,
 				43EB3B75219478FB0052A90C /* Application.swift in Sources */,
 				43950241219AFB7100E9079C /* AuthToken.swift in Sources */,
@@ -908,6 +915,7 @@
 				43B36BB221AEC6790075B135 /* AddFileMessageAction.swift in Sources */,
 				4320C5CF219EABBB003C4B9F /* MessageDatum.swift in Sources */,
 				43614C6321B0E06400F7E8BF /* AddReadTimelineEventAction.swift in Sources */,
+				432DF34521F5B56800EACD5E /* RemoveChannelAction.swift in Sources */,
 				4320C5D3219EBFA7003C4B9F /* StandardTimelineEventTypeNames.swift in Sources */,
 				43637A8B21AFAF4800C5C28C /* MessageNotification.swift in Sources */,
 				43637A8721AFA8E300C5C28C /* ImageMessage.swift in Sources */,

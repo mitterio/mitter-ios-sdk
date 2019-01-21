@@ -1,0 +1,11 @@
+framework module Mitter {
+  umbrella header "Mitter.h"
+
+  export *
+  module * { export * }
+}
+
+module Mitter.Swift {
+    header "Mitter-Swift.h"
+    requires objc
+}

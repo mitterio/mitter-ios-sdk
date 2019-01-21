@@ -14,6 +14,8 @@ protocol ChannelRepositoryContract {
     
     func fetchChannelsForUser(userId: String) -> PrimitiveSequence<SingleTrait, [ParticipatedChannel]>
     
+    func fetchParticipantsForChannel(channelId: String) -> PrimitiveSequence<SingleTrait, [ChannelParticipation]>
+    
     func addChannel(channel: Channel) -> PrimitiveSequence<SingleTrait, Identifiable<Channel>>
     
     func removeChannel(channelId: String) -> PrimitiveSequence<SingleTrait, Empty>
