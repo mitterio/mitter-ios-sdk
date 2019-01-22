@@ -32,6 +32,13 @@ class ChannelRepository: ChannelRepositoryContract {
         return channelRemoteSource.addChannel(channel: channel)
     }
     
+    func addParticipantToChannel(
+        channelId: String,
+        channelParticipation: ChannelParticipation
+        ) -> PrimitiveSequence<SingleTrait, Empty> {
+        return channelRemoteSource.addParticipantToChannel(channelId: channelId, channelParticipation: channelParticipation)
+    }
+    
     func removeChannel(channelId: String) -> PrimitiveSequence<SingleTrait, Empty> {
         return channelRemoteSource.removeChannel(channelId: channelId)
     }
