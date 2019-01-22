@@ -13,6 +13,7 @@
 		431901C021A582A4007EA588 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431901BF21A582A4007EA588 /* Channel.swift */; };
 		431901C221A5839C007EA588 /* ParticipationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431901C121A5839C007EA588 /* ParticipationStatus.swift */; };
 		431901C421A586AD007EA588 /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431901C321A586AD007EA588 /* Payload.swift */; };
+		431AE11D21F71FD900BC578D /* AddParticipantToChannelAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431AE11C21F71FD900BC578D /* AddParticipantToChannelAction.swift */; };
 		431C9E2F21A40C35001C9073 /* MessagingPipelinePayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431C9E2E21A40C35001C9073 /* MessagingPipelinePayload.swift */; };
 		431C9E3121A41044001C9073 /* StandardPipelinePayloadNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431C9E3021A41044001C9073 /* StandardPipelinePayloadNames.swift */; };
 		431C9E3821A425BC001C9073 /* Processor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431C9E3721A425BC001C9073 /* Processor.swift */; };
@@ -111,6 +112,7 @@
 		431901BF21A582A4007EA588 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		431901C121A5839C007EA588 /* ParticipationStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipationStatus.swift; sourceTree = "<group>"; };
 		431901C321A586AD007EA588 /* Payload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
+		431AE11C21F71FD900BC578D /* AddParticipantToChannelAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddParticipantToChannelAction.swift; sourceTree = "<group>"; };
 		431C9E2E21A40C35001C9073 /* MessagingPipelinePayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingPipelinePayload.swift; sourceTree = "<group>"; };
 		431C9E3021A41044001C9073 /* StandardPipelinePayloadNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardPipelinePayloadNames.swift; sourceTree = "<group>"; };
 		431C9E3721A425BC001C9073 /* Processor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Processor.swift; sourceTree = "<group>"; };
@@ -600,6 +602,7 @@
 				43614C6A21B1336E00F7E8BF /* FetchChannelsForUserAction.swift */,
 				432DF34421F5B56800EACD5E /* RemoveChannelAction.swift */,
 				432DF34921F5ECEE00EACD5E /* FetchParticipantsForChannelAction.swift */,
+				431AE11C21F71FD900BC578D /* AddParticipantToChannelAction.swift */,
 			);
 			path = Channel;
 			sourceTree = "<group>";
@@ -879,6 +882,7 @@
 				4320C5E7219EE6EF003C4B9F /* MessageRepository.swift in Sources */,
 				431C9E2F21A40C35001C9073 /* MessagingPipelinePayload.swift in Sources */,
 				43F42525219192D4007759F7 /* User.swift in Sources */,
+				431AE11D21F71FD900BC578D /* AddParticipantToChannelAction.swift in Sources */,
 				43EB3B71219477580052A90C /* UserLocator.swift in Sources */,
 				430B41A921AFA52500C88278 /* MimeType.swift in Sources */,
 				432C5030219D90AC002A0EDA /* Wrap.swift in Sources */,

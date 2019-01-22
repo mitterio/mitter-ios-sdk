@@ -48,6 +48,10 @@ class ChannelApiContainer {
         return AddChannelAction(channelRepository: getChannelRepository())
     }
     
+    func getAddParticipantToChannelAction() -> AddParticipantToChannelAction {
+        return AddParticipantToChannelAction(channelRepository: getChannelRepository())
+    }
+    
     func getRemoveChannelAction() -> RemoveChannelAction {
         return RemoveChannelAction(channelRepository: getChannelRepository())
     }

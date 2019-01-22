@@ -302,6 +302,21 @@ public class Mitter {
             }
         }
         
+        public func addParticipantToChannel(channelId: String, participant: Participant, completion: @escaping emptyApiResult) {
+            let addParticipantToChannelAction = mitter.channelApiContainer.getAddParticipantToChannelAction()
+            
+            addParticipantToChannelAction
+                .execute(t1: channelId, t2: participant)
+                .subscribe { event in
+                    switch event {
+                    case .success(let empty):
+                        completion(ApiResult.success(empty))
+                    case .error:
+                        completion(ApiResult.error)
+                    }
+            }
+        }
+        
         public func removeChannel(_ channelId: String, completion: @escaping emptyApiResult) {
             let removeChannelAction = mitter.channelApiContainer.getRemoveChannelAction()
             
