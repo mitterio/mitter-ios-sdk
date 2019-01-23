@@ -14,6 +14,7 @@ enum ChannelApiService {
     case fetchChannelsForUser(userId: String)
     case fetchParticipantsForChannel(channelId: String)
     case addChannel(channel: Channel)
+    case addParticipantToChannel(channelId: String, channelParticipation: ChannelParticipation)
     case removeChannel(channelId: String)
 }
 
@@ -32,6 +33,8 @@ extension ChannelApiService: TargetType {
             return "/v1/channels/\(channelId)/participants"
         case .addChannel:
             return "/v1/channels"
+        case .addParticipantToChannel(let channelId, _):
+            return "/v1/channels/\(channelId)/participants"
         case .removeChannel(let channelId):
             return "/v1/channels/\(channelId)"
         }
@@ -41,7 +44,7 @@ extension ChannelApiService: TargetType {
         switch self {
         case .fetchChannel, .fetchChannelsForUser, .fetchParticipantsForChannel:
             return .get
-        case .addChannel:
+        case .addChannel, .addParticipantToChannel:
             return .post
         case .removeChannel:
             return .delete
@@ -63,6 +66,9 @@ extension ChannelApiService: TargetType {
         case .addChannel(let channel):
             let requestParams = try! wrapModel(channel)
             return .requestParameters(parameters: requestParams, encoding: JSONEncoding.default)
+        case .addParticipantToChannel(_, let channelParticipation):
+            let requestParams = try! wrapModel(channelParticipation)
+            return .requestParameters(parameters: requestParams, encoding: JSONEncoding.default)
         case .removeChannel:
             return .requestPlain
         }
@@ -76,7 +82,12 @@ extension ChannelApiService: TargetType {
     
     var validationType: ValidationType {
         switch self {
-        case .fetchChannel, .fetchChannelsForUser, .fetchParticipantsForChannel, .addChannel, .removeChannel:
+        case .fetchChannel,
+             .fetchChannelsForUser,
+             .fetchParticipantsForChannel,
+             .addChannel,
+             .addParticipantToChannel,
+             .removeChannel:
             return .successCodes
         }
     }
