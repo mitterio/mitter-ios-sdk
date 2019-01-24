@@ -197,6 +197,21 @@ public class Mitter {
                     }
             }
         }
+        
+        public func getUsersByLocators(_ locators: [String], completion: @escaping (ApiResult<[User]>) -> Void) {
+            let fetchUsersByLocatorsAction = mitter.userApiContainer.getFetchUsersByLocatorsAction()
+            
+            fetchUsersByLocatorsAction
+                .execute(t: locators)
+                .subscribe { event in
+                    switch event {
+                    case .success(let users):
+                        completion(ApiResult.success(users))
+                    case .error:
+                        completion(ApiResult.error)
+                    }
+            }
+        }
     }
     
     public class Channels {

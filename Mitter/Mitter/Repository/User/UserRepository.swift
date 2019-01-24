@@ -24,6 +24,10 @@ class UserRepository: UserRepositoryContract {
         return userRemoteSource.fetchUserPresence(userId: userId)
     }
     
+    func fetchUsersByLocators(locators: [String]) -> PrimitiveSequence<SingleTrait, [User]> {
+        return userRemoteSource.fetchUsersByLocators(locators: locators)
+    }
+    
     func setUserPresence(userId: String, presence: Presence) -> PrimitiveSequence<SingleTrait, Empty> {
         return userRemoteSource.setUserPresence(userId: userId, presence: presence)
     }

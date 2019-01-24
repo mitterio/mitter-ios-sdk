@@ -81,6 +81,7 @@
 		4395EA1F21997E12004DD4A3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4395EA1E21997E12004DD4A3 /* Constants.swift */; };
 		4395EA21219989F0004DD4A3 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4395EA20219989F0004DD4A3 /* Action.swift */; };
 		4395EA3021999E49004DD4A3 /* ApiResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4395EA2F21999E49004DD4A3 /* ApiResult.swift */; };
+		43A68E2A21F9C51A0042DE0D /* FetchUsersByLocatorsAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A68E2921F9C51A0042DE0D /* FetchUsersByLocatorsAction.swift */; };
 		43A9BF1921ABBD6E00D209E2 /* FetchMessagesInChannelAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A9BF1821ABBD6E00D209E2 /* FetchMessagesInChannelAction.swift */; };
 		43A9BF1E21ABCAFB00D209E2 /* StandardRuleSetNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A9BF1D21ABCAFB00D209E2 /* StandardRuleSetNames.swift */; };
 		43A9BF2021ABE5DB00D209E2 /* ChannelParticipation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A9BF1F21ABE5DB00D209E2 /* ChannelParticipation.swift */; };
@@ -180,6 +181,7 @@
 		4395EA1E21997E12004DD4A3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4395EA20219989F0004DD4A3 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		4395EA2F21999E49004DD4A3 /* ApiResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResult.swift; sourceTree = "<group>"; };
+		43A68E2921F9C51A0042DE0D /* FetchUsersByLocatorsAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUsersByLocatorsAction.swift; sourceTree = "<group>"; };
 		43A9BF1821ABBD6E00D209E2 /* FetchMessagesInChannelAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMessagesInChannelAction.swift; sourceTree = "<group>"; };
 		43A9BF1D21ABCAFB00D209E2 /* StandardRuleSetNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardRuleSetNames.swift; sourceTree = "<group>"; };
 		43A9BF1F21ABE5DB00D209E2 /* ChannelParticipation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelParticipation.swift; sourceTree = "<group>"; };
@@ -519,6 +521,7 @@
 				432C5033219D981E002A0EDA /* AddFcmDeliveryEndpointAction.swift */,
 				433B5D8321A6C728004675BB /* FetchUserPresenceAction.swift */,
 				433B5D8E21A6D245004675BB /* UpdateUserPresenceAction.swift */,
+				43A68E2921F9C51A0042DE0D /* FetchUsersByLocatorsAction.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -848,6 +851,7 @@
 				4395EA21219989F0004DD4A3 /* Action.swift in Sources */,
 				4320C5EA219EE7A1003C4B9F /* FetchMessageAction.swift in Sources */,
 				4320C5D9219EDE98003C4B9F /* AppliedAclList.swift in Sources */,
+				43A68E2A21F9C51A0042DE0D /* FetchUsersByLocatorsAction.swift in Sources */,
 				43A9BF2F21ABF4FE00D209E2 /* Participant.swift in Sources */,
 				431C9E3121A41044001C9073 /* StandardPipelinePayloadNames.swift in Sources */,
 				439198542191A815003A38FC /* ScreenName.swift in Sources */,

@@ -36,6 +36,10 @@ class UserApiContainer {
         return FetchUserPresenceAction(userRepository: getUserRepository())
     }
     
+    func getFetchUsersByLocatorsAction() -> FetchUsersByLocatorsAction {
+        return FetchUsersByLocatorsAction(userRepository: getUserRepository())
+    }
+    
     func getUpdateUserPresenceAction() -> UpdateUserPresenceAction {
         return UpdateUserPresenceAction(userRepository: getUserRepository())
     }

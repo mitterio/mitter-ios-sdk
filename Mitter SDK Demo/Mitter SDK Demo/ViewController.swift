@@ -299,17 +299,27 @@ class ViewController: UIViewController {
         //            }
         //        }
         
-        let tonyStark = Participant(id: "8XuBA-76KIs-GaAvN-LTXu1")
-        appDelegate.mitter.channels.addParticipantToChannel(
-            channelId: "B41664D2-9227-4D8B-9C80-34511697BDD1",
-            participant: tonyStark
-        ) { result in
-                switch result {
-                case .success:
-                    print("Added Tony Stark to channel!")
-                case .error:
-                    print("Couldn't add Tony Stark to the channel")
-                }
+        //        let tonyStark = Participant(id: "8XuBA-76KIs-GaAvN-LTXu1")
+        //        appDelegate.mitter.channels.addParticipantToChannel(
+        //            channelId: "B41664D2-9227-4D8B-9C80-34511697BDD1",
+        //            participant: tonyStark
+        //        ) { result in
+        //                switch result {
+        //                case .success:
+        //                    print("Added Tony Stark to channel!")
+        //                case .error:
+        //                    print("Couldn't add Tony Stark to the channel")
+        //                }
+        //        }
+        
+        let locators = ["email:rahul@mitter.io"]
+        appDelegate.mitter.users.getUsersByLocators(locators) { result in
+            switch result {
+            case .success(let users):
+                print("Users: \(users)")
+            case .error:
+                print("Couldn't fetch users by the given locators")
+            }
         }
     }
 }

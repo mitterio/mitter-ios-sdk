@@ -14,6 +14,8 @@ protocol UserRepositoryContract {
     
     func fetchUserPresence(userId: String) -> PrimitiveSequence<SingleTrait, Presence>
     
+    func fetchUsersByLocators(locators: [String]) -> PrimitiveSequence<SingleTrait, [User]>
+    
     func setUserPresence(
         userId: String,
         presence: Presence
