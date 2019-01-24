@@ -8,11 +8,13 @@
 
 import UIKit
 import Mitter
+import GoogleSignIn
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, GIDSignInUIDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        GIDSignIn.sharedInstance().uiDelegate = self
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         testSDK(appDelegate: appDelegate)
     }
