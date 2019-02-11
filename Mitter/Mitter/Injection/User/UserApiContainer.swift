@@ -48,6 +48,10 @@ class UserApiContainer {
         return AddFcmDeliveryEndpointAction(userRepository: getUserRepository())
     }
     
+    func getAuthenticateGoogleSignInAction() -> AuthenticateGoogleSignInAction {
+        return AuthenticateGoogleSignInAction(userRepository: getUserRepository())
+    }
+    
     private func getFcmMessageProcessor() -> FcmMessageProcessor {
         return FcmMessageProcessor()
     }

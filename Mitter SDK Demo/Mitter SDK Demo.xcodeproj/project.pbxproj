@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4320C5F7219EFC74003C4B9F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4320C5F6219EFC74003C4B9F /* GoogleService-Info.plist */; };
-		43A68E2C21F9CBE50042DE0D /* Mitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43A68E2B21F9CBE50042DE0D /* Mitter.framework */; };
-		43A68E2D21F9CBE50042DE0D /* Mitter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 43A68E2B21F9CBE50042DE0D /* Mitter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		436AD952221185B100A3E303 /* Mitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436AD951221185B100A3E303 /* Mitter.framework */; };
+		436AD953221185B100A3E303 /* Mitter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 436AD951221185B100A3E303 /* Mitter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		43F9A08B2190480500CF6296 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F9A08A2190480500CF6296 /* AppDelegate.swift */; };
 		43F9A08D2190480500CF6296 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F9A08C2190480500CF6296 /* ViewController.swift */; };
 		43F9A0902190480500CF6296 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43F9A08E2190480500CF6296 /* Main.storyboard */; };
@@ -25,7 +25,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				43A68E2D21F9CBE50042DE0D /* Mitter.framework in Embed Frameworks */,
+				436AD953221185B100A3E303 /* Mitter.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -35,7 +35,7 @@
 /* Begin PBXFileReference section */
 		4320C5F6219EFC74003C4B9F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		436656ED21A2BC280069D317 /* Mitter SDK Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Mitter SDK Demo.entitlements"; sourceTree = "<group>"; };
-		43A68E2B21F9CBE50042DE0D /* Mitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mitter.framework; sourceTree = "<group>"; };
+		436AD951221185B100A3E303 /* Mitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mitter.framework; path = "../../Library/Developer/Xcode/DerivedData/Mitter-cuoykisprlsvehhkjjtjmbxbagut/Build/Products/Release-iphonesimulator/Mitter.framework"; sourceTree = "<group>"; };
 		43F9A0872190480500CF6296 /* Mitter SDK Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mitter SDK Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		43F9A08A2190480500CF6296 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43F9A08C2190480500CF6296 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,7 +54,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C12E41C8A843F2D8B1451CB5 /* Pods_Mitter_SDK_Demo.framework in Frameworks */,
-				43A68E2C21F9CBE50042DE0D /* Mitter.framework in Frameworks */,
+				436AD952221185B100A3E303 /* Mitter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,7 +73,7 @@
 		43F9A07E2190480500CF6296 = {
 			isa = PBXGroup;
 			children = (
-				43A68E2B21F9CBE50042DE0D /* Mitter.framework */,
+				436AD951221185B100A3E303 /* Mitter.framework */,
 				43F9A0892190480500CF6296 /* Mitter SDK Demo */,
 				43F9A0882190480500CF6296 /* Products */,
 				28FD07E8BC294F01AD98D91E /* Pods */,

@@ -43,8 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         application.registerForRemoteNotifications()
         
         mitter = Mitter(
-            applicationId: "bECxP-iwZKH-mk1cs-kvnop",
-            userAuthToken: "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJtaXR0ZXItaW8iLCJ1c2VyVG9rZW5JZCI6InVZc1VBRFYyVGI3blA1Z0wiLCJ1c2VydG9rZW4iOiJlamFoZTBtbDRwdnRzY2s0b3ZtMG1vMXJucSIsImFwcGxpY2F0aW9uSWQiOiJiRUN4UC1pd1pLSC1tazFjcy1rdm5vcCIsInVzZXJJZCI6ImFpNkUzLUVBanVYLUprRGhiLThZcUJxIn0.MoeDAoAfWjDapJr12MOaXBnwhd8VUt5zpwfQrgx0KHdU0NF-KzaDzw4SL84cOwgDKhZoBVaR8fA0_4PxWf1-Rw"
+            applicationId: "bECxP-iwZKH-mk1cs-kvnop"
         )
         
         return true
@@ -61,15 +60,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         if let error = error {
             print("\(error.localizedDescription)")
         } else {
-            // Perform any operations on signed in user here.
-            let userId = user.userID                  // For client-side use only!
             let idToken = user.authentication.idToken // Safe to send to the server
-            let fullName = user.profile.name
-            let givenName = user.profile.givenName
-            let familyName = user.profile.familyName
-            let email = user.profile.email
-            
-            print("Signed in as: \(fullName!) with email: \(email!) and idToken: \(idToken!)")
+
+            mitter.authenticateGoogleSignIn(idToken!) { result in
+                switch result {
+                case .success:
+                    print("Logged in")
+                case .error:
+                    print("Failed to log in")
+                }
+            }
         }
     }
     

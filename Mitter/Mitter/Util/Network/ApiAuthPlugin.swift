@@ -17,7 +17,10 @@ struct ApiAuthPlugin: PluginType {
         var request = request
         
         request.addValue(applicationId, forHTTPHeaderField: Constants.Headers.applicationId)
-        request.addValue(userAuthToken, forHTTPHeaderField: Constants.Headers.userAuthToken)
+        
+        if (!userAuthToken.isEmpty) {
+            request.addValue(userAuthToken, forHTTPHeaderField: Constants.Headers.userAuthToken)
+        }
         
         return request
     }
