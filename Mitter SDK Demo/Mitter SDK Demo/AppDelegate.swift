@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         FirebaseApp.configure()
         
         // Initialize sign-in
-        GIDSignIn.sharedInstance().clientID = "480923151846-j6bevnv7077iel6og0tvg6gccti2fi3p.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance().clientID = "405299209984-2k3rqc7jtrjitlclfuinhh7mf1jof66c.apps.googleusercontent.com"
         GIDSignIn.sharedInstance().delegate = self
         
         if #available(iOS 10.0, *) {
@@ -69,7 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             let familyName = user.profile.familyName
             let email = user.profile.email
             
-            print("Signed in as: \(fullName!) with email: \(email!)")
+            print("Signed in as: \(fullName!) with email: \(email!) and idToken: \(idToken!)")
         }
     }
     
