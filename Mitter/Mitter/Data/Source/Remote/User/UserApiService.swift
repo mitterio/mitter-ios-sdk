@@ -13,6 +13,7 @@ enum UserApiService {
     case fetchUser(userId: String)
     case fetchUserPresence(userId: String)
     case fetchUsersByLocators(locators: String)
+    case authenticateGoogleSignIn(token: String)
     case setUserPresence(userId: String, presence: Presence)
     case addUserDeliveryEndpoint(
         userId: String,
@@ -33,6 +34,8 @@ extension UserApiService: TargetType {
             return "/v1/users/\(userId)/presence"
         case .fetchUsersByLocators:
             return "/v1/users"
+        case .authenticateGoogleSignIn(let token):
+            return "/auth/openid/google/\(token)"
         case .setUserPresence(let userId, _):
             return "/v1/users/\(userId)/presence"
         case .addUserDeliveryEndpoint(let userId, _):
@@ -47,6 +50,8 @@ extension UserApiService: TargetType {
         case .fetchUserPresence:
             return .get
         case .fetchUsersByLocators:
+            return .get
+        case .authenticateGoogleSignIn:
             return .get
         case .setUserPresence:
             return .post
@@ -68,6 +73,8 @@ extension UserApiService: TargetType {
         case .fetchUsersByLocators(let locators):
             let requestParams = [ Constants.Keys.locators: locators ]
             return .requestParameters(parameters: requestParams, encoding: URLEncoding.queryString)
+        case .authenticateGoogleSignIn:
+            return .requestPlain
         case .setUserPresence(_, let presence):
             let requestParams = try! wrapModel(presence)
             return .requestParameters(parameters: requestParams, encoding: JSONEncoding.default)
@@ -85,7 +92,7 @@ extension UserApiService: TargetType {
     
     var validationType: ValidationType {
         switch self {
-        case .fetchUser, .fetchUserPresence, .fetchUsersByLocators, .setUserPresence, .addUserDeliveryEndpoint:
+        case .fetchUser, .fetchUserPresence, .fetchUsersByLocators, .authenticateGoogleSignIn, .setUserPresence, .addUserDeliveryEndpoint:
             return .successCodes
         }
     }

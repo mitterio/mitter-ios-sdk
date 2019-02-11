@@ -39,6 +39,13 @@ class UserRemoteSource: UserRepositoryContract {
             .map(to: [User].self)
     }
     
+    func authenticateGoogleSignIn(token: String) -> PrimitiveSequence<SingleTrait, FederatedUserRegistration> {
+        return apiProvider
+            .rx
+            .request(.authenticateGoogleSignIn(token: token))
+            .map(to: FederatedUserRegistration.self)
+    }
+    
     func setUserPresence(userId: String, presence: Presence) -> PrimitiveSequence<SingleTrait, Empty> {
         return apiProvider
             .rx

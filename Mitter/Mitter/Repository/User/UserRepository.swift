@@ -28,6 +28,10 @@ class UserRepository: UserRepositoryContract {
         return userRemoteSource.fetchUsersByLocators(locators: locators)
     }
     
+    func authenticateGoogleSignIn(token: String) -> PrimitiveSequence<SingleTrait, FederatedUserRegistration> {
+        return userRemoteSource.authenticateGoogleSignIn(token: token)
+    }
+    
     func setUserPresence(userId: String, presence: Presence) -> PrimitiveSequence<SingleTrait, Empty> {
         return userRemoteSource.setUserPresence(userId: userId, presence: presence)
     }
