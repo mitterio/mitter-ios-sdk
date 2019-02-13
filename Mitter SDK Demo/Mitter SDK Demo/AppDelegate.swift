@@ -10,10 +10,10 @@ import UIKit
 import Firebase
 import UserNotifications
 import Mitter
+import GoogleSignIn
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-    
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     var window: UIWindow?
     let gcmMessageIDKey = "gcm.message_id"
     var mitter: Mitter = Mitter(applicationId: "")
@@ -21,6 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
+        
+        // Initialize sign-in
+        GIDSignIn.sharedInstance().clientID = "405299209984-2k3rqc7jtrjitlclfuinhh7mf1jof66c.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance().delegate = self
         
         if #available(iOS 10.0, *) {
             // For iOS 10 display notification (sent via APNS)
@@ -39,11 +43,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.registerForRemoteNotifications()
         
         mitter = Mitter(
-            applicationId: "bECxP-iwZKH-mk1cs-kvnop",
-            userAuthToken: "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJtaXR0ZXItaW8iLCJ1c2VyVG9rZW5JZCI6IlgzNDBnT0JkUWlUZnRUb1kiLCJ1c2VydG9rZW4iOiIza2RzdjZtbWdhM3Rzbms1ZDJjZzhpcWY0ZyIsImFwcGxpY2F0aW9uSWQiOiJiRUN4UC1pd1pLSC1tazFjcy1rdm5vcCIsInVzZXJJZCI6ImFpNkUzLUVBanVYLUprRGhiLThZcUJxIn0.PMfMFPMirKaFqRZoHEgZ9A-_Av-CAZr7w7wlyLaJovevRrFvuJaevmF04MXbfEZq4nwz1uLDsoDkxOCp6G_D0w"
+            applicationId: "bECxP-iwZKH-mk1cs-kvnop"
         )
         
         return true
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        return GIDSignIn.sharedInstance().handle(url as URL?,
+                                                 sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+                                                 annotation: options[UIApplication.OpenURLOptionsKey.annotation])
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
+              withError error: Error!) {
+        if let error = error {
+            print("\(error.localizedDescription)")
+        } else {
+            let idToken = user.authentication.idToken // Safe to send to the server
+
+            mitter.authenticateGoogleSignIn(idToken!) { result in
+                switch result {
+                case .success:
+                    print("Logged in")
+                case .error:
+                    print("Failed to log in")
+                }
+            }
+        }
     }
     
     func applicationWillResignActive(_ application: UIApplication) {

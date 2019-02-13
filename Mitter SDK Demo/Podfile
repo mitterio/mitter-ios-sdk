@@ -6,4 +6,5 @@ target 'Mitter SDK Demo' do
     pod 'Firebase/Core'
     pod 'Firebase/Messaging'
     pod ‘Mitter’, :path => ‘../Mitter’
+    pod 'GoogleSignIn'
 end

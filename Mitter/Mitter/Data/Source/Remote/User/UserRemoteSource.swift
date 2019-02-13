@@ -31,6 +31,21 @@ class UserRemoteSource: UserRepositoryContract {
             .map(to: Presence.self)
     }
     
+    func fetchUsersByLocators(locators: [String]) -> PrimitiveSequence<SingleTrait, [User]> {
+        let flattenedLocators = locators.flattenWithCommas()
+        return apiProvider
+            .rx
+            .request(.fetchUsersByLocators(locators: flattenedLocators))
+            .map(to: [User].self)
+    }
+    
+    func authenticateGoogleSignIn(token: String) -> PrimitiveSequence<SingleTrait, FederatedUserRegistration> {
+        return apiProvider
+            .rx
+            .request(.authenticateGoogleSignIn(token: token))
+            .map(to: FederatedUserRegistration.self)
+    }
+    
     func setUserPresence(userId: String, presence: Presence) -> PrimitiveSequence<SingleTrait, Empty> {
         return apiProvider
             .rx

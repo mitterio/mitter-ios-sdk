@@ -136,6 +136,23 @@ public class Mitter {
         }
     }
     
+    public func authenticateGoogleSignIn(_ token: String, completion: @escaping (ApiResult<Empty>) -> Void) {
+        let authenticateGoogleSignInAction = userApiContainer.getAuthenticateGoogleSignInAction()
+        
+        authenticateGoogleSignInAction
+            .execute(t: token)
+            .subscribe { event in
+                switch event {
+                case .success(let federatedUserRegistration):
+                    self.setUserId(federatedUserRegistration.federatedUser.federatedUserId)
+                    self.setUserAuthToken(federatedUserRegistration.autoLoginToken)
+                    completion(ApiResult.success(Empty()))
+                case .error:
+                    completion(ApiResult.error)
+                }
+        }
+    }
+    
     public class Users {
         public typealias userApiResult = (ApiResult<User>) -> Void
         public typealias userPresenceApiResult = (ApiResult<Presence>) -> Void
@@ -192,6 +209,21 @@ public class Mitter {
                     switch event {
                     case .success(let empty):
                         completion(ApiResult.success(empty))
+                    case .error:
+                        completion(ApiResult.error)
+                    }
+            }
+        }
+        
+        public func getUsersByLocators(_ locators: [String], completion: @escaping (ApiResult<[User]>) -> Void) {
+            let fetchUsersByLocatorsAction = mitter.userApiContainer.getFetchUsersByLocatorsAction()
+            
+            fetchUsersByLocatorsAction
+                .execute(t: locators)
+                .subscribe { event in
+                    switch event {
+                    case .success(let users):
+                        completion(ApiResult.success(users))
                     case .error:
                         completion(ApiResult.error)
                     }
