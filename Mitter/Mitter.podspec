@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "Mitter"
-  s.version      = "0.0.5"
+  s.version      = "0.0.6"
   s.summary      = "Official iOS SDK for the Mitter messaging platform."
   s.description  = <<-DESC
   Official iOS SDK for using the Mitter messaging platform in iOS apps and build apps around messaging.
@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.swift_version = '4.2'
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.2' }
   s.source       = { :git => "https://github.com/mitterio/mitter-ios-sdk.git", :tag => "#{s.version}" }
-  
+  s.source_files = 'Mitter/Mitter/**/*.{h,m}'
   
   s.dependency "RxSwift", "~> 4.0"
   s.dependency "Moya/RxSwift", "~> 11.0"
