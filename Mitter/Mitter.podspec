@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "Mitter"
-  s.version      = "0.0.5"
+  s.version      = "0.0.6"
   s.summary      = "Official iOS SDK for the Mitter messaging platform."
   s.description  = <<-DESC
   Official iOS SDK for using the Mitter messaging platform in iOS apps and build apps around messaging.

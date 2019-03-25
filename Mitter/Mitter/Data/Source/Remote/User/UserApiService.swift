@@ -23,7 +23,7 @@ enum UserApiService {
 
 extension UserApiService: TargetType {
     var baseURL: URL {
-        return URL(string: Constants.Urls.baseUrl)!
+        return URL(string: Mitter.mitterApiEndpoint)!
     }
     
     var path: String {
@@ -85,9 +85,14 @@ extension UserApiService: TargetType {
     }
     
     var headers: [String : String]? {
-        return [
-            "Content-Type": Constants.ContentType.json
-        ]
+        switch self {
+        case .authenticateGoogleSignIn, .setUserPresence, .addUserDeliveryEndpoint:
+            return [
+                "Content-Type": Constants.ContentType.json
+            ]
+        default:
+            return [:]
+        }
     }
     
     var validationType: ValidationType {

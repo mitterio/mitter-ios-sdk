@@ -1,6 +1,6 @@
 {
   "name": "Mitter",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "summary": "Official iOS SDK for the Mitter messaging platform.",
   "description": "Official iOS SDK for using the Mitter messaging platform in iOS apps and build apps around messaging.",
   "homepage": "https://git.mitter.io/mitter-io/mitter-sdk-ios",
@@ -18,7 +18,7 @@
   },
   "source": {
     "git": "https://github.com/mitterio/mitter-ios-sdk.git",
-    "tag": "0.0.5"
+    "tag": "0.0.6"
   },
   "ios": {
     "vendored_frameworks": "Mitter.framework"

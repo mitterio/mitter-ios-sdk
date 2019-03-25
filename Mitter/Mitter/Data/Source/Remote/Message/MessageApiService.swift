@@ -21,7 +21,7 @@ enum MessageApiService {
 
 extension MessageApiService: TargetType {
     var baseURL: URL {
-        return URL(string: Constants.Urls.baseUrl)!
+        return URL(string: Mitter.mitterApiEndpoint)!
     }
     
     var path: String {
@@ -92,9 +92,14 @@ extension MessageApiService: TargetType {
     }
     
     var headers: [String : String]? {
-        return [
-            "Content-Type": Constants.ContentType.json
-        ]
+        switch self {
+        case .addMessageToChannel, .addMultipartMessageToChannel, .addTimelineEventsToMessage, .removeMessagesFromChannel:
+            return [
+                "Content-Type": Constants.ContentType.json
+            ]
+        default:
+            return [:]
+        }
     }
     
     var validationType: ValidationType {

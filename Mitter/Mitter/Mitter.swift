@@ -14,6 +14,7 @@ import Swinject
 import JWTDecode
 
 public class Mitter {
+    public static var mitterApiEndpoint: String = Constants.Urls.baseUrl
     public var users = Users()
     public var channels = Channels()
     public var messaging = Messaging()
@@ -28,8 +29,13 @@ public class Mitter {
     private let channelApiContainer: ChannelApiContainer
     private let messageApiContainer: MessageApiContainer
     
-    public init(applicationId: String, userAuthToken: String = "") {
+    public init(
+        applicationId: String,
+        userAuthToken: String = "",
+        mitterApiEndpoint: String = "https://api.mitter.io"
+        ) {
         self.applicationId = applicationId
+        Mitter.mitterApiEndpoint = mitterApiEndpoint
         
         libDefaults = LibDefaults(applicationId: applicationId)
         

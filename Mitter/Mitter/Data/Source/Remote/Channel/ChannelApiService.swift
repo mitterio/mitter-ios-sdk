@@ -20,7 +20,7 @@ enum ChannelApiService {
 
 extension ChannelApiService: TargetType {
     var baseURL: URL {
-        return URL(string: Constants.Urls.baseUrl)!
+        return URL(string: Mitter.mitterApiEndpoint)!
     }
     
     var path: String {
@@ -75,9 +75,14 @@ extension ChannelApiService: TargetType {
     }
     
     var headers: [String : String]? {
-        return [
-            "Content-Type": Constants.ContentType.json
-        ]
+        switch self {
+        case .addChannel, .addParticipantToChannel, .removeChannel:
+            return [
+                "Content-Type": Constants.ContentType.json
+            ]
+        default:
+            return [:]
+        }
     }
     
     var validationType: ValidationType {

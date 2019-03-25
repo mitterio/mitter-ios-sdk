@@ -8,24 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		4320C5F7219EFC74003C4B9F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4320C5F6219EFC74003C4B9F /* GoogleService-Info.plist */; };
-		436AD952221185B100A3E303 /* Mitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436AD951221185B100A3E303 /* Mitter.framework */; };
-		436AD953221185B100A3E303 /* Mitter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 436AD951221185B100A3E303 /* Mitter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		43F9A08B2190480500CF6296 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F9A08A2190480500CF6296 /* AppDelegate.swift */; };
 		43F9A08D2190480500CF6296 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F9A08C2190480500CF6296 /* ViewController.swift */; };
 		43F9A0902190480500CF6296 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43F9A08E2190480500CF6296 /* Main.storyboard */; };
 		43F9A0922190480600CF6296 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43F9A0912190480600CF6296 /* Assets.xcassets */; };
 		43F9A0952190480600CF6296 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43F9A0932190480600CF6296 /* LaunchScreen.storyboard */; };
-		C12E41C8A843F2D8B1451CB5 /* Pods_Mitter_SDK_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 731C4CA8501F69F4AF7117B1 /* Pods_Mitter_SDK_Demo.framework */; };
+		CE76AB91735C596CD24AA3CF /* Pods_Mitter_SDK_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B731B3A0EB57B71F1FB796C /* Pods_Mitter_SDK_Demo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		43EB3B4A21941F5F0052A90C /* Embed Frameworks */ = {
+		43619E2F2244F3B3005A0654 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				436AD953221185B100A3E303 /* Mitter.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -33,9 +30,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2B731B3A0EB57B71F1FB796C /* Pods_Mitter_SDK_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mitter_SDK_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4320C5F6219EFC74003C4B9F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		436656ED21A2BC280069D317 /* Mitter SDK Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Mitter SDK Demo.entitlements"; sourceTree = "<group>"; };
-		436AD951221185B100A3E303 /* Mitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mitter.framework; path = "../../Library/Developer/Xcode/DerivedData/Mitter-cuoykisprlsvehhkjjtjmbxbagut/Build/Products/Release-iphonesimulator/Mitter.framework"; sourceTree = "<group>"; };
 		43F9A0872190480500CF6296 /* Mitter SDK Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mitter SDK Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		43F9A08A2190480500CF6296 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43F9A08C2190480500CF6296 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -44,7 +41,6 @@
 		43F9A0942190480600CF6296 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43F9A0962190480600CF6296 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6AFAE692E1901D132BB4E79C /* Pods-Mitter SDK Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mitter SDK Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mitter SDK Demo/Pods-Mitter SDK Demo.debug.xcconfig"; sourceTree = "<group>"; };
-		731C4CA8501F69F4AF7117B1 /* Pods_Mitter_SDK_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mitter_SDK_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA7DE70899FCFA39B8435369 /* Pods-Mitter SDK Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mitter SDK Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mitter SDK Demo/Pods-Mitter SDK Demo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -53,8 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C12E41C8A843F2D8B1451CB5 /* Pods_Mitter_SDK_Demo.framework in Frameworks */,
-				436AD952221185B100A3E303 /* Mitter.framework in Frameworks */,
+				CE76AB91735C596CD24AA3CF /* Pods_Mitter_SDK_Demo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,7 +68,6 @@
 		43F9A07E2190480500CF6296 = {
 			isa = PBXGroup;
 			children = (
-				436AD951221185B100A3E303 /* Mitter.framework */,
 				43F9A0892190480500CF6296 /* Mitter SDK Demo */,
 				43F9A0882190480500CF6296 /* Products */,
 				28FD07E8BC294F01AD98D91E /* Pods */,
@@ -107,7 +101,7 @@
 		5E5187EDD130D6999B2168DD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				731C4CA8501F69F4AF7117B1 /* Pods_Mitter_SDK_Demo.framework */,
+				2B731B3A0EB57B71F1FB796C /* Pods_Mitter_SDK_Demo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -123,9 +117,9 @@
 				43F9A0832190480500CF6296 /* Sources */,
 				43F9A0842190480500CF6296 /* Frameworks */,
 				43F9A0852190480500CF6296 /* Resources */,
-				43EB3B4A21941F5F0052A90C /* Embed Frameworks */,
-				9848791A3E2F327A8A4291A5 /* [CP] Embed Pods Frameworks */,
-				93165450E466A5151497E754 /* [CP] Copy Pods Resources */,
+				43619E2F2244F3B3005A0654 /* Embed Frameworks */,
+				AAE7C2C9262C93ADBAFB5B89 /* [CP] Embed Pods Frameworks */,
+				C9674E7F2DA4A94884B89AA0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -214,29 +208,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		93165450E466A5151497E754 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Mitter SDK Demo/Pods-Mitter SDK Demo-resources.sh",
-				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mitter SDK Demo/Pods-Mitter SDK Demo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9848791A3E2F327A8A4291A5 /* [CP] Embed Pods Frameworks */ = {
+		AAE7C2C9262C93ADBAFB5B89 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -286,6 +258,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mitter SDK Demo/Pods-Mitter SDK Demo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9674E7F2DA4A94884B89AA0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Mitter SDK Demo/Pods-Mitter SDK Demo-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mitter SDK Demo/Pods-Mitter SDK Demo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
