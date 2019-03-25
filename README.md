@@ -14,9 +14,7 @@ If you’re using the Mitter SDK Demo project then just navigate to the Mitter S
 
 Else, if you’re starting with a fresh project, create a `Podfile` in your new project and add the following dependencies:
 
-	pod 'Firebase/Core'
-	pod 'Firebase/Messaging'
-	pod ‘Mitter’, :path => ‘../Mitter’
+	pod ‘Mitter’
 
 Before that, make sure you’ve Cocoapods [installed and setup](https://guides.cocoapods.org/using/using-cocoapods) for your project.
 
