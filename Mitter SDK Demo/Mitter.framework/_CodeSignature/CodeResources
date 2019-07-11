@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/Mitter-Swift.h</key>
 		<data>
-		skm1Fd3NEpQgJJqHLZAFmjD12ww=
+		VsQ/2CA97c8X9THhZwwU5yYGz4E=
 		</data>
 		<key>Headers/Mitter.h</key>
 		<data>
@@ -14,15 +14,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		VX62iKrd1EYQnZgYac2CTbBL7ZA=
+		ktJstv/ZQhlcSpy4+UuZXJveXp8=
 		</data>
 		<key>Modules/Mitter.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		AG2cnF104JcrepuyH9hEqbe9ues=
+		H71LNmvGuJ0jkxq5o4IAcETtS7Y=
 		</data>
 		<key>Modules/Mitter.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		tiw6r+zo6RO7dR6lZtUXNHsAcus=
+		IQs3Hi/ago1ci5Yd0rgfqxCFMmg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -33,13 +33,21 @@
 	<dict>
 		<key>Headers/Mitter-Swift.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			VsQ/2CA97c8X9THhZwwU5yYGz4E=
+			</data>
 			<key>hash2</key>
 			<data>
-			K7skNwgO0SFg97ITyAeyCDeaP7hxTECcptSJ+BL51r8=
+			hNU2VnVS4/a7JVlFRIrGoQqySUQXxSz3ndaSMRZhVVQ=
 			</data>
 		</dict>
 		<key>Headers/Mitter.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			dqtZXxJ2EfbI7P5xBiaHOxc34tI=
+			</data>
 			<key>hash2</key>
 			<data>
 			5rgHqBaceZCc407SGesCAcRhHwBdRhIrNswkThwFEJQ=
@@ -47,20 +55,32 @@
 		</dict>
 		<key>Modules/Mitter.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			H71LNmvGuJ0jkxq5o4IAcETtS7Y=
+			</data>
 			<key>hash2</key>
 			<data>
-			Z6Yzt6UqzH6tJgC3VGfWwKSdoTOu0kruZLyX5HJv2Bc=
+			tYUvIjaKjSlG98wDZWWWH3EoFpulVwaVh5+Tm9VeX5I=
 			</data>
 		</dict>
 		<key>Modules/Mitter.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			IQs3Hi/ago1ci5Yd0rgfqxCFMmg=
+			</data>
 			<key>hash2</key>
 			<data>
-			Ak+IicAl2v4SeEr0lRuVFUjwNFxP1jRKVzgDQ/rQi2Q=
+			nRBAFiyextjqw8ept5bv7QsFDC8Ttx+R9UkQMYJ/Uuo=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			Orlhr+mXAp5/27BJvKra9uof6Fg=
+			</data>
 			<key>hash2</key>
 			<data>
 			mZUHz0DQpVf/QcHpujTaFc8xW5mzJvKNpl43z1caGks=

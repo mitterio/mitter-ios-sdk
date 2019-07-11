@@ -52,7 +52,7 @@
 		4335D97721A8008F00DB33AB /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4335D97621A8008F00DB33AB /* DateExtensions.swift */; };
 		433B5D8021A6B927004675BB /* StandardUserPresenceTypeNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433B5D7F21A6B927004675BB /* StandardUserPresenceTypeNames.swift */; };
 		433B5D8221A6B969004675BB /* Presence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433B5D8121A6B969004675BB /* Presence.swift */; };
-		433B5D8421A6C728004675BB /* FetchUserPresenceAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433B5D8321A6C728004675BB /* FetchUserPresenceAction.swift */; };
+		433B5D8421A6C728004675BB /* FetchUserPresencesAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433B5D8321A6C728004675BB /* FetchUserPresencesAction.swift */; };
 		433B5D8D21A6D17F004675BB /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433B5D8C21A6D17F004675BB /* Empty.swift */; };
 		433B5D8F21A6D245004675BB /* UpdateUserPresenceAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433B5D8E21A6D245004675BB /* UpdateUserPresenceAction.swift */; };
 		434D91AC22D76C0200B85153 /* ImpressedPresence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D91AB22D76C0200B85153 /* ImpressedPresence.swift */; };
@@ -157,7 +157,7 @@
 		4335D97621A8008F00DB33AB /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		433B5D7F21A6B927004675BB /* StandardUserPresenceTypeNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardUserPresenceTypeNames.swift; sourceTree = "<group>"; };
 		433B5D8121A6B969004675BB /* Presence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presence.swift; sourceTree = "<group>"; };
-		433B5D8321A6C728004675BB /* FetchUserPresenceAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUserPresenceAction.swift; sourceTree = "<group>"; };
+		433B5D8321A6C728004675BB /* FetchUserPresencesAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUserPresencesAction.swift; sourceTree = "<group>"; };
 		433B5D8C21A6D17F004675BB /* Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empty.swift; sourceTree = "<group>"; };
 		433B5D8E21A6D245004675BB /* UpdateUserPresenceAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserPresenceAction.swift; sourceTree = "<group>"; };
 		434D91AB22D76C0200B85153 /* ImpressedPresence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpressedPresence.swift; sourceTree = "<group>"; };
@@ -529,7 +529,7 @@
 			children = (
 				4395EA132199665C004DD4A3 /* FetchUserAction.swift */,
 				432C5033219D981E002A0EDA /* AddFcmDeliveryEndpointAction.swift */,
-				433B5D8321A6C728004675BB /* FetchUserPresenceAction.swift */,
+				433B5D8321A6C728004675BB /* FetchUserPresencesAction.swift */,
 				433B5D8E21A6D245004675BB /* UpdateUserPresenceAction.swift */,
 				43A68E2921F9C51A0042DE0D /* FetchUsersByLocatorsAction.swift */,
 				436AD9312211765400A3E303 /* AuthenticateGoogleSignInAction.swift */,
@@ -951,7 +951,7 @@
 				431C9E3E21A42A86001C9073 /* PushMessageManager.swift in Sources */,
 				43637A9821AFF63E00C5C28C /* AddDeliveredTimelineEventAction.swift in Sources */,
 				431901C021A582A4007EA588 /* Channel.swift in Sources */,
-				433B5D8421A6C728004675BB /* FetchUserPresenceAction.swift in Sources */,
+				433B5D8421A6C728004675BB /* FetchUserPresencesAction.swift in Sources */,
 				43F9A07D2190477B00CF6296 /* Mitter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1018,6 +1018,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1075,6 +1076,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";

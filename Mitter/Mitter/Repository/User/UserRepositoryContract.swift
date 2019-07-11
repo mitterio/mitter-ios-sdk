@@ -12,7 +12,7 @@ import RxSwift
 protocol UserRepositoryContract {
     func fetchUser(userId: String) -> PrimitiveSequence<SingleTrait, User>
     
-    func fetchUserPresences(userIds: [String]) -> PrimitiveSequence<SingleTrait, [Presence]>
+    func fetchUserPresences(userIds: [String]) -> PrimitiveSequence<SingleTrait, [UserPresence]>
     
     func fetchUsersByLocators(locators: [String]) -> PrimitiveSequence<SingleTrait, [User]>
     

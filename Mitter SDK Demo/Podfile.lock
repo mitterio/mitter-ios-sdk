@@ -69,7 +69,7 @@ PODS:
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.2.1)
   - JWTDecode (2.2.0)
-  - Mitter (0.0.6):
+  - Mitter (0.0.8):
     - Alamofire (~> 4.7)
     - Firebase/Core
     - Firebase/Messaging
@@ -169,7 +169,7 @@ SPEC CHECKSUMS:
   GoogleUtilities: 95996bea7c7d9b8fb811b7507669a4a8762f80c7
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
   JWTDecode: 85a405ab16d5473e99bd89ded1d535090ebd6a0e
-  Mitter: e4c4569e8041788119af01d0efadaf0185e65267
+  Mitter: 2651415085b9156664d1e6626974758340a954b6
   ModelMapper: 89a61430a75e6265040dc9555ab1feddeb25b986
   Moya: a725035953bc1c0eb1be505ab903984501d82440
   Moya-ModelMapper: 35209257d9e886cedf91289559a41723f5fbd095
@@ -184,4 +184,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 094962bf09e5ce355b0c4bd04e996b091d1827ba
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.1

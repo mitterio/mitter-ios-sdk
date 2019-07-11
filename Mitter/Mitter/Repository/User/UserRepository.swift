@@ -20,8 +20,8 @@ class UserRepository: UserRepositoryContract {
         return userRemoteSource.fetchUser(userId: userId)
     }
     
-    func fetchUserPresence(userId: String) -> PrimitiveSequence<SingleTrait, Presence> {
-        return userRemoteSource.fetchUserPresence(userId: userId)
+    func fetchUserPresences(userIds: [String]) -> PrimitiveSequence<SingleTrait, [UserPresence]> {
+        return userRemoteSource.fetchUserPresences(userIds: userIds)
     }
     
     func fetchUsersByLocators(locators: [String]) -> PrimitiveSequence<SingleTrait, [User]> {

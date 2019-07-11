@@ -43,7 +43,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         application.registerForRemoteNotifications()
         
         mitter = Mitter(
-            applicationId: "bECxP-iwZKH-mk1cs-kvnop"
+            applicationId: "MZzf4-na9nL-O98wq-M1HxS",
+            userAuthToken: "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJtaXR0ZXItaW8iLCJ1c2VyVG9rZW5JZCI6InFHTE9jdmNIdFliYldibUsiLCJ1c2VydG9rZW4iOiJxMnJsY3FtbnY2czhva2s3cms1ZDZmbjhvMyIsImFwcGxpY2F0aW9uSWQiOiJNWnpmNC1uYTluTC1POTh3cS1NMUh4UyIsInVzZXJJZCI6IkUzQ0FNLWpqdzhBLVdlcURlLWNXRmU3In0.tF_mKApOb2YYqInzkOuxSDRklau0fv7KDqh82Qo5rj78pOsAMqQkTgZhmvhsXnzR31X4sJ6sPn-6fLoZIa9kaQ",
+            mitterApiEndpoint: "https://api.staging.mitter.io"
         )
         
 

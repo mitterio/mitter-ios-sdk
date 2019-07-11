@@ -1,28 +1,27 @@
 {
   "name": "Mitter",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "summary": "Official iOS SDK for the Mitter messaging platform.",
   "description": "Official iOS SDK for using the Mitter messaging platform in iOS apps and build apps around messaging.",
   "homepage": "https://git.mitter.io/mitter-io/mitter-sdk-ios",
   "license": "Apache-2.0",
   "authors": {
-    "Rahul Chowdhury": "contact@mitter.io"
+    "mitter.io": "contact@mitter.io"
   },
   "social_media_url": "http://twitter.com/mitter_io",
   "platforms": {
     "ios": "10.0"
   },
-  "swift_version": "4.2",
+  "swift_version": "5.0",
   "pod_target_xcconfig": {
-    "SWIFT_VERSION": "4.2"
+    "SWIFT_VERSION": "5.0"
   },
   "source": {
     "git": "https://github.com/mitterio/mitter-ios-sdk.git",
-    "tag": "0.0.6"
+    "tag": "0.0.8"
   },
-  "ios": {
-    "vendored_frameworks": "Mitter.framework"
-  },
+  "source_files": "Mitter/Mitter/**/*.{swift,h,m}",
+  "static_framework": true,
   "dependencies": {
     "RxSwift": [
       "~> 4.0"

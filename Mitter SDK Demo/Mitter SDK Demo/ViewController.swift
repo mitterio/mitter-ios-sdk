@@ -40,34 +40,34 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
         //            }
         //        }
         
-        //        appDelegate.mitter.users.getCurrentUserPresence { result in
-        //            switch result {
-        //            case .success(let userPresence):
-        //                print("Presence is: \(userPresence.type)")
-        //                print("Expires to: \(userPresence.expiresTo?.type)")
-        //            case .error:
-        //                print("Unable to fetch presence from server")
-        //            }
-        //        }
+//                appDelegate.mitter.users.getCurrentUserPresence { result in
+//                    switch result {
+//                    case .success(let userPresence):
+//                        print("Presence is: \(userPresence.presence.presence?.type)")
+//                        print("Expires to: \(userPresence.presence.presence?.expiresTo)")
+//                    case .error:
+//                        print("Unable to fetch presence from server")
+//                    }
+//                }
         
-        //        let away = Presence(
-        //            type: StandardUserPresenceTypeNames.Away,
-        //            timeToLive: 0
-        //        )
-        //        let online = Presence(
-        //            type: StandardUserPresenceTypeNames.Online,
-        //            timeToLive: 60,
-        //            expiresTo: away
-        //        )
-        //        appDelegate.mitter.users.setCurrentUserPresence(online) { result in
-        //            switch result {
-        //            case .success:
-        //                print("Presence Updated!")
-        //            case .error:
-        //                print("Unable to update presence")
-        //            }
-        //
-        //        }
+//                let away = Presence(
+//                    type: StandardUserPresenceTypeNames.Away,
+//                    timeToLive: 0
+//                )
+//                let online = Presence(
+//                    type: StandardUserPresenceTypeNames.Online,
+//                    timeToLive: 60,
+//                    expiresTo: away
+//                )
+//                appDelegate.mitter.users.setCurrentUserPresence(online) { result in
+//                    switch result {
+//                    case .success:
+//                        print("Presence Updated!")
+//                    case .error:
+//                        print("Unable to update presence")
+//                    }
+//
+//                }
         
         //        let notification = MessageNotification(body: "Hello there!", icon: "default.ico", title: "Yo!")
         //                appDelegate.mitter.messaging.sendTextMessage(
