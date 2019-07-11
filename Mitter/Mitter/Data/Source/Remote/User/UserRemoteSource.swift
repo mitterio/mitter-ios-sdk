@@ -24,11 +24,12 @@ class UserRemoteSource: UserRepositoryContract {
             .map(to: User.self)
     }
     
-    func fetchUserPresence(userId: String) -> PrimitiveSequence<SingleTrait, Presence> {
+    func fetchUserPresences(userIds: [String]) -> PrimitiveSequence<SingleTrait, [Presence]> {
+        let flattenedUserIds = userIds.flattenWithCommas()
         return apiProvider
             .rx
-            .request(.fetchUserPresence(userId: userId))
-            .map(to: Presence.self)
+            .request(.fetchUserPresences(userIds: flattenedUserIds))
+            .map(to: [Presence].self)
     }
     
     func fetchUsersByLocators(locators: [String]) -> PrimitiveSequence<SingleTrait, [User]> {

@@ -55,6 +55,8 @@
 		433B5D8421A6C728004675BB /* FetchUserPresenceAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433B5D8321A6C728004675BB /* FetchUserPresenceAction.swift */; };
 		433B5D8D21A6D17F004675BB /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433B5D8C21A6D17F004675BB /* Empty.swift */; };
 		433B5D8F21A6D245004675BB /* UpdateUserPresenceAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433B5D8E21A6D245004675BB /* UpdateUserPresenceAction.swift */; };
+		434D91AC22D76C0200B85153 /* ImpressedPresence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D91AB22D76C0200B85153 /* ImpressedPresence.swift */; };
+		434D91AE22D76D5100B85153 /* UserPresence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D91AD22D76D5100B85153 /* UserPresence.swift */; };
 		43614C6321B0E06400F7E8BF /* AddReadTimelineEventAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43614C6221B0E06400F7E8BF /* AddReadTimelineEventAction.swift */; };
 		43614C6521B0E89100F7E8BF /* FetchChannelAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43614C6421B0E89100F7E8BF /* FetchChannelAction.swift */; };
 		43614C6721B0E8ED00F7E8BF /* AddChannelAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43614C6621B0E8ED00F7E8BF /* AddChannelAction.swift */; };
@@ -158,6 +160,8 @@
 		433B5D8321A6C728004675BB /* FetchUserPresenceAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUserPresenceAction.swift; sourceTree = "<group>"; };
 		433B5D8C21A6D17F004675BB /* Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empty.swift; sourceTree = "<group>"; };
 		433B5D8E21A6D245004675BB /* UpdateUserPresenceAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserPresenceAction.swift; sourceTree = "<group>"; };
+		434D91AB22D76C0200B85153 /* ImpressedPresence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpressedPresence.swift; sourceTree = "<group>"; };
+		434D91AD22D76D5100B85153 /* UserPresence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPresence.swift; sourceTree = "<group>"; };
 		43614C6221B0E06400F7E8BF /* AddReadTimelineEventAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReadTimelineEventAction.swift; sourceTree = "<group>"; };
 		43614C6421B0E89100F7E8BF /* FetchChannelAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchChannelAction.swift; sourceTree = "<group>"; };
 		43614C6621B0E8ED00F7E8BF /* AddChannelAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChannelAction.swift; sourceTree = "<group>"; };
@@ -702,6 +706,8 @@
 				433B5D8121A6B969004675BB /* Presence.swift */,
 				436AD92D2211733500A3E303 /* FederatedUserRegistration.swift */,
 				436AD92F221173A100A3E303 /* FederatedUser.swift */,
+				434D91AB22D76C0200B85153 /* ImpressedPresence.swift */,
+				434D91AD22D76D5100B85153 /* UserPresence.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -929,11 +935,13 @@
 				4320C5E0219EE43A003C4B9F /* MessageApiService.swift in Sources */,
 				43637A9121AFDEAA00C5C28C /* RemoveMessagesFromChannelAction.swift in Sources */,
 				4320C5E3219EE5B5003C4B9F /* MessageRepositoryContract.swift in Sources */,
+				434D91AC22D76C0200B85153 /* ImpressedPresence.swift in Sources */,
 				431CF5472195BD20002963F0 /* UniParamAction.swift in Sources */,
 				4335D97421A7FC6E00DB33AB /* AddTextMessageAction.swift in Sources */,
 				43A9BF3421AC1C2C00D209E2 /* ChannelApiContainer.swift in Sources */,
 				43B36BB221AEC6790075B135 /* AddFileMessageAction.swift in Sources */,
 				4320C5CF219EABBB003C4B9F /* MessageDatum.swift in Sources */,
+				434D91AE22D76D5100B85153 /* UserPresence.swift in Sources */,
 				43614C6321B0E06400F7E8BF /* AddReadTimelineEventAction.swift in Sources */,
 				432DF34521F5B56800EACD5E /* RemoveChannelAction.swift in Sources */,
 				4320C5D3219EBFA7003C4B9F /* StandardTimelineEventTypeNames.swift in Sources */,

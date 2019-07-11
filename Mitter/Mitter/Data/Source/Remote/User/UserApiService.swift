@@ -11,7 +11,7 @@ import Moya
 
 enum UserApiService {
     case fetchUser(userId: String)
-    case fetchUserPresence(userId: String)
+    case fetchUserPresences(userIds: String)
     case fetchUsersByLocators(locators: String)
     case authenticateGoogleSignIn(token: String)
     case setUserPresence(userId: String, presence: Presence)
@@ -30,8 +30,8 @@ extension UserApiService: TargetType {
         switch self {
         case .fetchUser(let userId):
             return "/v1/users/\(userId)"
-        case .fetchUserPresence(let userId):
-            return "/v1/users/\(userId)/presence"
+        case .fetchUserPresences(let userIds):
+            return "/v1/users/\(userIds)/presence"
         case .fetchUsersByLocators:
             return "/v1/users"
         case .authenticateGoogleSignIn(let token):
@@ -47,7 +47,7 @@ extension UserApiService: TargetType {
         switch self {
         case .fetchUser:
             return .get
-        case .fetchUserPresence:
+        case .fetchUserPresences:
             return .get
         case .fetchUsersByLocators:
             return .get
@@ -68,7 +68,7 @@ extension UserApiService: TargetType {
         switch self {
         case .fetchUser:
             return .requestPlain
-        case .fetchUserPresence:
+        case .fetchUserPresences:
             return .requestPlain
         case .fetchUsersByLocators(let locators):
             let requestParams = [ Constants.Keys.locators: locators ]
@@ -97,7 +97,7 @@ extension UserApiService: TargetType {
     
     var validationType: ValidationType {
         switch self {
-        case .fetchUser, .fetchUserPresence, .fetchUsersByLocators, .authenticateGoogleSignIn, .setUserPresence, .addUserDeliveryEndpoint:
+        case .fetchUser, .fetchUserPresences, .fetchUsersByLocators, .authenticateGoogleSignIn, .setUserPresence, .addUserDeliveryEndpoint:
             return .successCodes
         }
     }
