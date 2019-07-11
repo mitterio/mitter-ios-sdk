@@ -58,7 +58,7 @@
 		434D91AC22D76C0200B85153 /* ImpressedPresence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D91AB22D76C0200B85153 /* ImpressedPresence.swift */; };
 		434D91AE22D76D5100B85153 /* UserPresence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D91AD22D76D5100B85153 /* UserPresence.swift */; };
 		43614C6321B0E06400F7E8BF /* AddReadTimelineEventAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43614C6221B0E06400F7E8BF /* AddReadTimelineEventAction.swift */; };
-		43614C6521B0E89100F7E8BF /* FetchChannelAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43614C6421B0E89100F7E8BF /* FetchChannelAction.swift */; };
+		43614C6521B0E89100F7E8BF /* FetchChannelsAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43614C6421B0E89100F7E8BF /* FetchChannelsAction.swift */; };
 		43614C6721B0E8ED00F7E8BF /* AddChannelAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43614C6621B0E8ED00F7E8BF /* AddChannelAction.swift */; };
 		43614C6921B131A200F7E8BF /* ParticipatedChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43614C6821B131A200F7E8BF /* ParticipatedChannel.swift */; };
 		43614C6B21B1336E00F7E8BF /* FetchChannelsForUserAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43614C6A21B1336E00F7E8BF /* FetchChannelsForUserAction.swift */; };
@@ -163,7 +163,7 @@
 		434D91AB22D76C0200B85153 /* ImpressedPresence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpressedPresence.swift; sourceTree = "<group>"; };
 		434D91AD22D76D5100B85153 /* UserPresence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPresence.swift; sourceTree = "<group>"; };
 		43614C6221B0E06400F7E8BF /* AddReadTimelineEventAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReadTimelineEventAction.swift; sourceTree = "<group>"; };
-		43614C6421B0E89100F7E8BF /* FetchChannelAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchChannelAction.swift; sourceTree = "<group>"; };
+		43614C6421B0E89100F7E8BF /* FetchChannelsAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchChannelsAction.swift; sourceTree = "<group>"; };
 		43614C6621B0E8ED00F7E8BF /* AddChannelAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChannelAction.swift; sourceTree = "<group>"; };
 		43614C6821B131A200F7E8BF /* ParticipatedChannel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipatedChannel.swift; sourceTree = "<group>"; };
 		43614C6A21B1336E00F7E8BF /* FetchChannelsForUserAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchChannelsForUserAction.swift; sourceTree = "<group>"; };
@@ -611,7 +611,7 @@
 			children = (
 				43A9BF2C21ABF49000D209E2 /* AddDirectMessageChannelAction.swift */,
 				430096BA21AD2D00009060AD /* AddGroupChatChannelAction.swift */,
-				43614C6421B0E89100F7E8BF /* FetchChannelAction.swift */,
+				43614C6421B0E89100F7E8BF /* FetchChannelsAction.swift */,
 				43614C6621B0E8ED00F7E8BF /* AddChannelAction.swift */,
 				43614C6A21B1336E00F7E8BF /* FetchChannelsForUserAction.swift */,
 				432DF34421F5B56800EACD5E /* RemoveChannelAction.swift */,
@@ -854,7 +854,7 @@
 			files = (
 				431C9E3821A425BC001C9073 /* Processor.swift in Sources */,
 				430096BB21AD2D00009060AD /* AddGroupChatChannelAction.swift in Sources */,
-				43614C6521B0E89100F7E8BF /* FetchChannelAction.swift in Sources */,
+				43614C6521B0E89100F7E8BF /* FetchChannelsAction.swift in Sources */,
 				43EB3B62219460DE0052A90C /* Attribute.swift in Sources */,
 				433B5D8F21A6D245004675BB /* UpdateUserPresenceAction.swift in Sources */,
 				4395023D219AF91300E9079C /* UserMetaDefaults.swift in Sources */,

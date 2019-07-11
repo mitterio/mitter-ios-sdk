@@ -248,14 +248,14 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
         //
         //        }
         
-        //        appDelegate.mitter.channels.getChannel("rakfT-XPdJb-WsucS-Pxy4B") { result in
-        //            switch result {
-        //            case .success(let channel):
-        //                print("Channel: \(channel)")
-        //            case .error:
-        //                print("Couldn't get channel")
-        //            }
-        //        }
+                appDelegate.mitter.channels.getChannels(["JhzDI-0I7RB-OtWrO-6cFtr", "AC90D5A1-C66E-46B9-BBCB-5ECB983FB81A"]) { result in
+                    switch result {
+                    case .success(let channels):
+                        print("Channel: \(channels)")
+                    case .error:
+                        print("Couldn't get channel")
+                    }
+                }
         
         //        let stan = ChannelParticipation(participantId: Identifiable(domainId: "csrCy-SJL3u-8AKMT-Wqv6y"))
         //        let channel = Channel(

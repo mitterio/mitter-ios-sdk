@@ -17,11 +17,12 @@ class ChannelRemoteSource: ChannelRepositoryContract {
         self.apiProvider = apiProvider
     }
     
-    func fetchChannel(channelId: String) -> PrimitiveSequence<SingleTrait, Channel> {
+    func fetchChannels(channelIds: [String]) -> PrimitiveSequence<SingleTrait, [Channel]> {
+        let flattenedChannelIds = channelIds.flattenWithCommas()
         return apiProvider
             .rx
-            .request(.fetchChannel(channelId: channelId))
-            .map(to: Channel.self)
+            .request(.fetchChannels(channelIds: flattenedChannelIds))
+            .map(to: [Channel].self)
     }
     
     func fetchChannelsForUser(userId: String) -> PrimitiveSequence<SingleTrait, [ParticipatedChannel]> {

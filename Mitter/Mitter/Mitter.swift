@@ -258,11 +258,11 @@ public class Mitter {
         
         init() {}
         
-        public func getChannel(_ channelId: String, completion: @escaping (ApiResult<Channel>) -> Void) {
-            let fetchChannelAction = mitter.channelApiContainer.getFetchChannelAction()
+        public func getChannels(_ channelIds: [String], completion: @escaping (ApiResult<[Channel]>) -> Void) {
+            let fetchChannelsAction = mitter.channelApiContainer.getFetchChannelsAction()
             
-            fetchChannelAction
-                .execute(t: channelId)
+            fetchChannelsAction
+                .execute(t: channelIds)
                 .subscribe { event in
                     switch event {
                     case .success(let channel):
