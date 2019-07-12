@@ -9,14 +9,14 @@
 import Foundation
 import RxSwift
 
-class FetchUserPresenceAction: UniParamAction {
+class FetchUserPresencesAction: UniParamAction {
     private let userRepository: UserRepository
     
     init(userRepository: UserRepository) {
         self.userRepository = userRepository
     }
     
-    func execute(t: String) -> PrimitiveSequence<SingleTrait, Presence> {
-        return userRepository.fetchUserPresence(userId: t)
+    func execute(t: [String]) -> PrimitiveSequence<SingleTrait, [UserPresence]> {
+        return userRepository.fetchUserPresences(userIds: t)
     }
 }

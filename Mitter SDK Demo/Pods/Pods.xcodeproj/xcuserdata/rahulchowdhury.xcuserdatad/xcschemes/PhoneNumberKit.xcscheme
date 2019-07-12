@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1020"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B0487CB725334C59CED4AB001549C45A"
+               BlueprintIdentifier = "2C1E45DB29AB949B168BBFFE6EA61303"
+               BuildableName = "PhoneNumberKit.framework"
                BlueprintName = "PhoneNumberKit"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "PhoneNumberKit.framework">
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

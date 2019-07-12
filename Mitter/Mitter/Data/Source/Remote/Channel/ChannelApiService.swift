@@ -10,7 +10,7 @@ import Foundation
 import Moya
 
 enum ChannelApiService {
-    case fetchChannel(channelId: String)
+    case fetchChannels(channelIds: String)
     case fetchChannelsForUser(userId: String)
     case fetchParticipantsForChannel(channelId: String)
     case addChannel(channel: Channel)
@@ -25,8 +25,8 @@ extension ChannelApiService: TargetType {
     
     var path: String {
         switch self {
-        case .fetchChannel(let channelId):
-            return "/v1/channels/\(channelId)"
+        case .fetchChannels(let channelIds):
+            return "/v1/channels/\(channelIds)"
         case .fetchChannelsForUser(let userId):
             return "/v1/users/\(userId)/channels"
         case .fetchParticipantsForChannel(let channelId):
@@ -42,7 +42,7 @@ extension ChannelApiService: TargetType {
     
     var method: Moya.Method {
         switch self {
-        case .fetchChannel, .fetchChannelsForUser, .fetchParticipantsForChannel:
+        case .fetchChannels, .fetchChannelsForUser, .fetchParticipantsForChannel:
             return .get
         case .addChannel, .addParticipantToChannel:
             return .post
@@ -57,7 +57,7 @@ extension ChannelApiService: TargetType {
     
     var task: Task {
         switch self {
-        case .fetchChannel:
+        case .fetchChannels:
             return .requestPlain
         case .fetchChannelsForUser:
             return .requestPlain
@@ -87,7 +87,7 @@ extension ChannelApiService: TargetType {
     
     var validationType: ValidationType {
         switch self {
-        case .fetchChannel,
+        case .fetchChannels,
              .fetchChannelsForUser,
              .fetchParticipantsForChannel,
              .addChannel,

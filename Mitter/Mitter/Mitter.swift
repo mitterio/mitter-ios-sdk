@@ -161,7 +161,8 @@ public class Mitter {
     
     public class Users {
         public typealias userApiResult = (ApiResult<User>) -> Void
-        public typealias userPresenceApiResult = (ApiResult<Presence>) -> Void
+        public typealias userPresenceApiResult = (ApiResult<UserPresence>) -> Void
+        public typealias userPresencesApiResult = (ApiResult<[UserPresence]>) -> Void
         public typealias emptyApiResult = (ApiResult<Empty>) -> Void
         
         weak var mitter: Mitter!
@@ -187,11 +188,11 @@ public class Mitter {
             getUser(mitter.getUserId(), completion: completion)
         }
         
-        public func getUserPresence(_ userId: String, completion: @escaping userPresenceApiResult) {
-            let fetchUserPresenceAction = mitter.userApiContainer.getFetchUserPresenceAction()
+        public func getUserPresences(_ userIds: [String], completion: @escaping userPresencesApiResult) {
+            let fetchUserPresenceAction = mitter.userApiContainer.getFetchUserPresencesAction()
             
             fetchUserPresenceAction
-                .execute(t: userId)
+                .execute(t: userIds)
                 .subscribe { event in
                     switch event {
                     case .success(let userPresence):
@@ -203,7 +204,18 @@ public class Mitter {
         }
         
         public func getCurrentUserPresence(completion: @escaping userPresenceApiResult) {
-            getUserPresence(mitter.getUserId(), completion: completion)
+            let fetchUserPresenceAction = mitter.userApiContainer.getFetchUserPresencesAction()
+            
+            fetchUserPresenceAction
+                .execute(t: [mitter.getUserId()])
+                .subscribe { event in
+                    switch event {
+                    case .success(let userPresence):
+                        completion(ApiResult.success(userPresence[0]))
+                    case .error:
+                        completion(ApiResult.error)
+                    }
+            }
         }
         
         public func setCurrentUserPresence(_ presence: Presence, completion: @escaping emptyApiResult) {
@@ -246,11 +258,11 @@ public class Mitter {
         
         init() {}
         
-        public func getChannel(_ channelId: String, completion: @escaping (ApiResult<Channel>) -> Void) {
-            let fetchChannelAction = mitter.channelApiContainer.getFetchChannelAction()
+        public func getChannels(_ channelIds: [String], completion: @escaping (ApiResult<[Channel]>) -> Void) {
+            let fetchChannelsAction = mitter.channelApiContainer.getFetchChannelsAction()
             
-            fetchChannelAction
-                .execute(t: channelId)
+            fetchChannelsAction
+                .execute(t: channelIds)
                 .subscribe { event in
                     switch event {
                     case .success(let channel):

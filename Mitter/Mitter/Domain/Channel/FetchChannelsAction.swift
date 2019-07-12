@@ -9,14 +9,14 @@
 import Foundation
 import RxSwift
 
-class FetchChannelAction: UniParamAction {
+class FetchChannelsAction: UniParamAction {
     private let channelRepository: ChannelRepository
     
     init(channelRepository: ChannelRepository) {
         self.channelRepository = channelRepository
     }
     
-    func execute(t: String) -> PrimitiveSequence<SingleTrait, Channel> {
-        return channelRepository.fetchChannel(channelId: t)
+    func execute(t: [String]) -> PrimitiveSequence<SingleTrait, [Channel]> {
+        return channelRepository.fetchChannels(channelIds: t)
     }
 }

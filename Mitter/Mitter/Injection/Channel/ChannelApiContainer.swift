@@ -24,8 +24,8 @@ class ChannelApiContainer {
         registerChannelApiLayers()
     }
     
-    func getFetchChannelAction() -> FetchChannelAction {
-        return FetchChannelAction(channelRepository: getChannelRepository())
+    func getFetchChannelsAction() -> FetchChannelsAction {
+        return FetchChannelsAction(channelRepository: getChannelRepository())
     }
     
     func getFetchChannelsForUserAction() -> FetchChannelsForUserAction {

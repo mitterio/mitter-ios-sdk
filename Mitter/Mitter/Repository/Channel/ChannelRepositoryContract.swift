@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 
 protocol ChannelRepositoryContract {
-    func fetchChannel(channelId: String) -> PrimitiveSequence<SingleTrait, Channel>
+    func fetchChannels(channelIds: [String]) -> PrimitiveSequence<SingleTrait, [Channel]>
     
     func fetchChannelsForUser(userId: String) -> PrimitiveSequence<SingleTrait, [ParticipatedChannel]>
     
